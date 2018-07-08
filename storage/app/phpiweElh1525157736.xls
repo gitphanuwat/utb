@@ -1,0 +1,158 @@
+<meta charset=utf-8" />
+<meta charset="utf-8" />
+<table class="table table-bordered" border="1" style="background-color:#ffffff" width="100%">
+
+		<tr bgcolor="#6bac40">
+			<td colspan="3"><b>ตารางที่ 5.3 การจัดการสิ่งแวดล้อมในชุมชนที่เอื้อต่อการสร้างเสริมสุขภาพ</b></td>
+			
+		</tr>
+		<tr bgcolor="#3e99f4">
+			<th>หัวข้อ</th>
+			<th>จำนวน</th>
+			<th>ร้อยละ</th>
+		</tr>			
+		<tr>
+			<td> 1.1 ไม่มี</td>
+			<td align="right">2</td>
+			<td align="right">11.76</td>
+		</tr>		
+		<tr>
+			<td> 1.2 มี</td>
+			<td align="right">15</td>
+			<td align="right">88.24</td>
+		</tr>		
+		<tr class="hidden">
+			<td>  ไม่ได้รับข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>		
+		<tr class="hidden">
+			<td>  ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>		
+
+		<tr>
+	      <td align="center"><strong>รวม</strong></td>
+	      <td align="right"><strong>17</strong></td>
+	      <td align="right"><strong>100.00</strong></td>
+	    </tr>	
+				<tr>
+			<td bgcolor="#9c9c98" colspan="3">การจัดการสิ่งแวดล้อมในชุมชนที่เอื้อต่อการสร้างเสริมสุขภาพ ( ตอบได้มากกว่า 1 ข้อ )</td>
+		</tr>
+				<tr>
+			<td>1. การตรวจสอบคุณภาพและการปนเปื้อนของอาหารและผู้ประกอบการ</td>
+			<td align="right">11</td>
+			<td align="right">12.64</td>
+		</tr>	
+				<tr>
+			<td>2. การจัดให้มีสถานที่ออกกำลังกายหรือสวนสาธารณะ</td>
+			<td align="right">13</td>
+			<td align="right">14.94</td>
+		</tr>	
+				<tr>
+			<td>3. การจัดให้มีสถานที่สำหรับเป็นที่พบปะหรือทำกิจกรรมเพื่อส่วนรวม</td>
+			<td align="right">12</td>
+			<td align="right">13.79</td>
+		</tr>	
+				<tr>
+			<td>4. การอนุรักษ์แหล่งน้ำ</td>
+			<td align="right">13</td>
+			<td align="right">14.94</td>
+		</tr>	
+				<tr>
+			<td>5. การอนุรักษ์ทรัพยากรธรรมชาติในพื้นที่</td>
+			<td align="right">13</td>
+			<td align="right">14.94</td>
+		</tr>	
+				<tr>
+			<td>6. การส่งเสริมและสนับสนุนการใช้พลังงานอย่างประหยัด</td>
+			<td align="right">12</td>
+			<td align="right">13.79</td>
+		</tr>	
+				<tr>
+			<td>7. การส่งเสริมและสนับสนุนให้มีการผลิตและใช้พลังงานทดแทน</td>
+			<td align="right">11</td>
+			<td align="right">12.64</td>
+		</tr>	
+				<tr>
+			<td>8. อื่นๆ (ระบุ)</td>
+			<td align="right">1</td>
+			<td align="right">1.15</td>
+		</tr>	
+				<tr>
+			<td>9. ยังไม่ได้ดำเนินการ</td>
+			<td align="right">1</td>
+			<td align="right">1.15</td>
+		</tr>	
+				<tr>
+	      <td align="center"><strong>รวม</strong></td>
+	      <td align="right"><strong>87</strong></td>
+	      <td align="right"><strong>100.00</strong></td>
+	    </tr>	
+	
+
+	<tr>
+		<td colspan="3" bgcolor="#ebadbf" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 0 วินาที่		</td>
+	</tr>	
+		<tr>
+		<td bgcolor="#cacaca" colspan="3" align="right">
+			รายงานนี้ปรับปรุงแก้ไขล่าสุดวันที่ 28 ก.ค. 2559 
+		</td>
+	</tr>
+	</table>
+	<div style="background-color:#ffffff;">
+	<div><center><b>การจัดการสิ่งแวดล้อมในชุมชนที่เอื้อต่อการสร้างเสริมสุขภาพ</b></center></div>
+<div id="chart"></div>
+
+<div><center><b>การจัดการสิ่งแวดล้อมในชุมชนที่เอื้อต่อการสร้างเสริมสุขภาพ</b></center></div>
+<div id="chart1_value"></div>
+</div>
+<script>
+var chart = c3.generate({
+    bindto: '#chart',data: {
+        columns: [['1.1. ไม่มี','2'],['1.2. มี','15']]
+    }
+});
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 3000);
+var chart1_value = c3.generate({
+    bindto: '#chart1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. การตรวจสอบคุณภาพและการปนเปื้อนของอาหารและผู้ประกอบการ','2. การจัดให้มีสถานที่ออกกำลังกายหรือสวนสาธารณะ','3. การจัดให้มีสถานที่สำหรับเป็นที่พบปะหรือทำกิจกรรมเพื่อส่วนรวม','4. การอนุรักษ์แหล่งน้ำ','5. การอนุรักษ์ทรัพยากรธรรมชาติในพื้นที่','6. การส่งเสริมและสนับสนุนการใช้พลังงานอย่างประหยัด','7. การส่งเสริมและสนับสนุนให้มีการผลิตและใช้พลังงานทดแทน','8. อื่นๆ (ระบุ)','9. ยังไม่ได้ดำเนินการ',],
+            ['การจัดการสิ่งแวดล้อมในชุมชนที่เอื้อต่อการสร้างเสริมสุขภาพ', 11,13,12,13,13,12,11,1,1,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+</script>
+	

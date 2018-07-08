@@ -1,0 +1,1221 @@
+<meta charset=utf-8" />
+<meta charset="utf-8" />
+<table border="1" class="table table-bordered" style="background-color:#ffffff" width="95%">
+	<tr >
+		<td colspan="7" bgcolor="#6bac40"><b>1.1 จำนวนและร้อยละประชากร จำแนกตามข้อมูลทั่วไป เพศ สัญชาติ ศาสนา สถานภาพ สมรส และการศึกษา</b></td>
+		
+	</tr>
+		<tr>
+			<th colspan="3"  bgcolor="#3e99f4"><div align="center"> ข้อมูลทั่วไป</div></th>
+			<th bgcolor="#3e99f4" width="150"><div align="center">จำนวน <br/>( ทะเบียนราษฏร์ )</div></th>
+			<th bgcolor="#3e99f4" width="150"><div align="center">ร้อยละ ( % ) <br/>( ทะเบียนราษฏร์ )</div></th>
+			<th bgcolor="#3e99f4" width="150"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4" width="150"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+	<tr >
+		<td colspan="7"  bgcolor="#68e6a4"> <b>เพศ</b></td>
+	</tr>
+		<tr>
+		<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. ชาย</td>
+		<td style="text-align:right">0</td>
+		<td style="text-align:right">0.00</td>
+		<td  style="text-align:right">3,282</td>
+		<td  style="text-align:right">48.56</td>
+	</tr>	
+	<tr>
+		<td colspan="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. หญิง</td>
+		<td style="text-align:right">0</td>
+		<td style="text-align:right">0.00</td>
+		<td  style="text-align:right">3,477</td>
+		<td  style="text-align:right">51.44</td>
+	</tr>	
+	<tr>
+		<td colspan="3" style="text-align:center"><b>รวม</b></td>
+		<td style="text-align:right"><b>0</b></td>
+		<td style="text-align:right"><b>0.00			</b></td>
+		<td  style="text-align:right"><b>6,759</b></td>
+		<td  style="text-align:right"><b>100.00</b></td>
+	</tr>
+		<tr >
+		<td rowspan="2" align="center">อายุ(ปี)</td>
+		<td colspan="2" style="text-align:center">ชาย</td>
+		<td colspan="2" style="text-align:center">หญิง</td>
+		<td colspan="2" align="center">รวมชาย - หญิง</td>
+	</tr>	
+	<tr >
+		<td width="150"><div align="center">จำนวน</div></td>
+		<td width="150"><div align="center">ร้อยละ ( % )</div></td>
+		<td width="150"><div align="center">จำนวน</div></td>
+		<td width="150"><div align="center">ร้อยละ ( % )</div></td>		
+		<td width="150"><div align="center">จำนวน</div></td>
+		<td width="150"><div align="center">ร้อยละ ( % )</div></td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">0 - 4 ปี</p></td>
+		<td align="right" >179</td>
+				<td align="right" >5.45</td>
+		<td align="right" >188</td>
+				<td align="right" >5.41</td>
+		<td align="right" >367</td>
+		<td align="right" >5.43</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">5 - 9 ปี</p></td>
+		<td align="right" >195</td>
+				<td align="right" >5.94</td>
+		<td align="right" >174</td>
+				<td align="right" >5.00</td>
+		<td align="right" >369</td>
+		<td align="right" >5.46</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;"> 10 - 14 ปี</p></td>
+		<td align="right" >198</td>
+				<td align="right" >6.03</td>
+		<td align="right" >198</td>
+				<td align="right" >5.69</td>
+		<td align="right" >396</td>
+		<td align="right" >5.86</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;"> 15 - 19 ปี</p></td>
+		<td align="right" >228</td>
+				<td align="right" >6.95</td>
+		<td align="right" >215</td>
+				<td align="right" >6.18</td>
+		<td align="right" >443</td>
+		<td align="right" >6.55</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">20 - 24 ปี</p></td>
+		<td align="right" >234</td>
+				<td align="right" >7.13</td>
+		<td align="right" >266</td>
+				<td align="right" >7.65</td>
+		<td align="right" >500</td>
+		<td align="right" >7.40</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">25 - 29 ปี</p></td>
+		<td align="right" >292</td>
+				<td align="right" >8.90</td>
+		<td align="right" >249</td>
+				<td align="right" >7.16</td>
+		<td align="right" >541</td>
+		<td align="right" >8.00</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">30 - 34 ปี</p></td>
+		<td align="right" >262</td>
+				<td align="right" >7.98</td>
+		<td align="right" >252</td>
+				<td align="right" >7.25</td>
+		<td align="right" >514</td>
+		<td align="right" >7.60</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;"> 35 - 39 ปี</p></td>
+		<td align="right" >276</td>
+				<td align="right" >8.41</td>
+		<td align="right" >255</td>
+				<td align="right" >7.33</td>
+		<td align="right" >531</td>
+		<td align="right" >7.86</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;"> 40 - 44 ปี</p></td>
+		<td align="right" >249</td>
+				<td align="right" >7.59</td>
+		<td align="right" >213</td>
+				<td align="right" >6.13</td>
+		<td align="right" >462</td>
+		<td align="right" >6.84</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">45 - 49 ปี</p></td>
+		<td align="right" >228</td>
+				<td align="right" >6.95</td>
+		<td align="right" >314</td>
+				<td align="right" >9.03</td>
+		<td align="right" >542</td>
+		<td align="right" >8.02</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">50 - 54 ปี</p></td>
+		<td align="right" >275</td>
+				<td align="right" >8.38</td>
+		<td align="right" >281</td>
+				<td align="right" >8.08</td>
+		<td align="right" >556</td>
+		<td align="right" >8.23</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">55 - 59 ปี</p></td>
+		<td align="right" >214</td>
+				<td align="right" >6.52</td>
+		<td align="right" >247</td>
+				<td align="right" >7.10</td>
+		<td align="right" >461</td>
+		<td align="right" >6.82</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;"> 60 - 64 ปี</p></td>
+		<td align="right" >141</td>
+				<td align="right" >4.30</td>
+		<td align="right" >190</td>
+				<td align="right" >5.46</td>
+		<td align="right" >331</td>
+		<td align="right" >4.90</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;"> 65 - 69 ปี</p></td>
+		<td align="right" >110</td>
+				<td align="right" >3.35</td>
+		<td align="right" >127</td>
+				<td align="right" >3.65</td>
+		<td align="right" >237</td>
+		<td align="right" >3.51</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">70 - 74 ปี</p></td>
+		<td align="right" >73</td>
+				<td align="right" >2.22</td>
+		<td align="right" >104</td>
+				<td align="right" >2.99</td>
+		<td align="right" >177</td>
+		<td align="right" >2.62</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">75 - 79 ปี</p></td>
+		<td align="right" >62</td>
+				<td align="right" >1.89</td>
+		<td align="right" >83</td>
+				<td align="right" >2.39</td>
+		<td align="right" >145</td>
+		<td align="right" >2.15</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">80 -84 ปี</p></td>
+		<td align="right" >43</td>
+				<td align="right" >1.31</td>
+		<td align="right" >60</td>
+				<td align="right" >1.73</td>
+		<td align="right" >103</td>
+		<td align="right" >1.52</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">85 -89 ปี</p></td>
+		<td align="right" >16</td>
+				<td align="right" >0.49</td>
+		<td align="right" >39</td>
+				<td align="right" >1.12</td>
+		<td align="right" >55</td>
+		<td align="right" >0.81</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">90 -94 ปี</p></td>
+		<td align="right" >7</td>
+				<td align="right" >0.21</td>
+		<td align="right" >16</td>
+				<td align="right" >0.46</td>
+		<td align="right" >23</td>
+		<td align="right" >0.34</td>
+	</tr>
+		<tr>
+		<td align="center"> <p class="year_ord" style="cursor: pointer;">95 ปีขึ้นไป</p></td>
+		<td align="right" >0</td>
+				<td align="right" >0.00</td>
+		<td align="right" >6</td>
+				<td align="right" >0.17</td>
+		<td align="right" >6</td>
+		<td align="right" >0.09</td>
+	</tr>
+		
+	<tr style="font-weight: bold;">
+		<td align="center"><b>รวม</b></td>
+		<td align="right" ><b>3,282</b></td>
+		<td align="right" ><b>100.00</b></td>
+		<td align="right" ><b>3,477</b></td>
+		<td align="right" ><b>99.98</b></td>
+		<td align="right" ><b>6,759</b></td>
+		<td align="right" ><b>100.01</b></td>
+	</tr>	
+	<?php// if($value == "ข้อมูลผิดปกติ")print('bgcolor="#ff5151"');?>
+	<tr style="color: red;font-weight: bold;" >
+		<td align="center" class="year_ord" style="cursor: pointer;"><b>ข้อมูลผิดปกติ ( ไม่อยู่ในช่วง 0-99 ปี )</b></td>
+		<td align="right" >0</td>
+		<td align="right" >0.00</td>
+		<td align="right" >0</td>
+		<td align="right" >0.00</td>
+		<td align="right" >0</td>
+		<td align="right" >0.00</td>
+	</tr>
+	<tr>
+		<td align="center"><b>รวม ( +ข้อมูลผิดปกติ )</b></td>
+		<td align="right" ><b>3,282</b></td>
+		<td align="right" ><b>100.00</b></td>
+		<td align="right" ><b>3,477</b></td>
+		<td align="right" ><b>100.00</b></td>
+		<td align="right" ><b>6,759</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+	<tr>
+		<td colspan="7">
+						ค่าเฉลี่ยรวม ( µ ) = 38.00&nbsp;&nbsp;
+			<span class="l50">ค่าเฉลี่ยชาย ( µ ) = 36.00</span>&nbsp;&nbsp;
+			<span class="l50">ค่าเฉลี่ยหญิง ( µ ) = 39.00</span>
+		<!--<span class="l50">ส่วนเบี่ยงเบนมาตรฐาน ( σ ) = 311.71</span>--->
+		</td>
+	</tr>
+	<tr>
+		<td colspan="7">ตำสุด ( Min ) = 0&nbsp;&nbsp;
+		<span class="l50">สูงสุด ( Max ) = 99</span>
+		</td>
+	</tr>
+		<tr>
+		<td colspan="7">
+		<div><center><b>เพศ</b></center></div>
+		<div id="chart"></div>
+		<div><center><b>ข้อมูลเพศแยกตามอายุ</b></center></div>
+		<!--<div id="chart2"></div>--->
+		<center><iframe width="100%" frameBorder="0" scrolling="no" height="450" src="http://tcnap.org/d/main/report/sr/google_chart.php?title=0 - 4 ปี,5 - 9 ปี, 10 - 14 ปี, 15 - 19 ปี,20 - 24 ปี,25 - 29 ปี,30 - 34 ปี, 35 - 39 ปี, 40 - 44 ปี,45 - 49 ปี,50 - 54 ปี,55 - 59 ปี, 60 - 64 ปี, 65 - 69 ปี,70 - 74 ปี,75 - 79 ปี,80 -84 ปี,85 -89 ปี,90 -94 ปี,95 ปีขึ้นไป,ข้อมูลผิดปกติ,&m=179,195,198,228,234,292,262,276,249,228,275,214,141,110,73,62,43,16,7,,,&w=188,174,198,215,266,249,252,255,213,314,281,247,190,127,104,83,60,39,16,6,,"></iframe></center>
+		</td>
+	</tr>
+
+		<tr>
+			<th colspan="5"  bgcolor="#3e99f4"><div align="center">สัญชาติ</div></th>
+
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+				<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <a class="nationality" style="cursor: pointer;text-decoration: none;color:black;">ไทย</a>						
+					</td>
+
+				<td align="right"><p class="nationality" style="cursor: pointer;">6,752</p></td>
+														<td align="right">99.90</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <a class="nationality" style="cursor: pointer;text-decoration: none;color:black;">จีน</a>						
+					</td>
+
+				<td align="right"><p class="nationality" style="cursor: pointer;">7</p></td>
+														<td align="right">0.10</td>
+									</tr>
+			<tr>
+		<td align="center"  colspan="5"><b>รวม</b></td>
+		<td align="right" ><b>6,759</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+	<tr>
+	<td colspan="7">
+	<div><center><b>สัญชาติ</b></center></div>
+	<div id="chart3"></div>
+	</td>
+</tr>
+
+			<tr>
+			<th colspan="5"  bgcolor="#3e99f4"><div align="center">ศาสนา</div></th>
+
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+				<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <a class="religious" style="cursor: pointer;text-decoration: none;color:black;">พุทธ</a>						
+					</td>
+
+				<td align="right"><p class="religious" style="cursor: pointer;">6,752</p></td>
+														<td align="right">99.90</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <a class="religious" style="cursor: pointer;text-decoration: none;color:black;">คริสต์</a>						
+					</td>
+
+				<td align="right"><p class="religious" style="cursor: pointer;">7</p></td>
+														<td align="right">0.10</td>
+									</tr>
+			<tr>
+		<td align="center"  colspan="5"><b>รวม</b></td>
+		<td align="right" ><b>6,759</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+	<tr>
+	<td colspan="7">
+<div><center><b>ศาสนา</b></center></div>
+<div id="chart4"></div>
+	</td>
+</tr>
+		<tr>
+			<th colspan="5"  bgcolor="#3e99f4"><div align="center">สถานภาพสมรส</div></th>
+
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+				<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <a class="married_status" style="cursor: pointer;text-decoration: none;color:black;">โสด</a>						
+					</td>
+
+				<td align="right"><p class="married_status" style="cursor: pointer;">2,489</p></td>
+														<td align="right">36.82</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <a class="married_status" style="cursor: pointer;text-decoration: none;color:black;">สมรสจดทะเบียน</a>						
+					</td>
+
+				<td align="right"><p class="married_status" style="cursor: pointer;">1,563</p></td>
+														<td align="right">23.12</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <a class="married_status" style="cursor: pointer;text-decoration: none;color:black;">สมรสไม่จดทะเบียน</a>						
+					</td>
+
+				<td align="right"><p class="married_status" style="cursor: pointer;">1,759</p></td>
+														<td align="right">26.02</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. <a class="married_status" style="cursor: pointer;text-decoration: none;color:black;">หม้าย</a>						
+					</td>
+
+				<td align="right"><p class="married_status" style="cursor: pointer;">402</p></td>
+														<td align="right">5.95</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. <a class="married_status" style="cursor: pointer;text-decoration: none;color:black;">หย่า</a>						
+					</td>
+
+				<td align="right"><p class="married_status" style="cursor: pointer;">75</p></td>
+														<td align="right">1.11</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6. <a class="married_status" style="cursor: pointer;text-decoration: none;color:black;">แยกกันอยู่</a>						
+					</td>
+
+				<td align="right"><p class="married_status" style="cursor: pointer;">70</p></td>
+														<td align="right">1.04</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. <a class="married_status" style="cursor: pointer;text-decoration: none;color:black;">ไม่เข้าข่าย</a>						
+					</td>
+
+				<td align="right"><p class="married_status" style="cursor: pointer;">401</p></td>
+														<td align="right">100.00</td>
+									</tr>
+			<tr>
+		<td align="center"  colspan="5"><b>รวม</b></td>
+		<td align="right" ><b>6,759</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+	<tr>
+	<td colspan="7">
+<div><center><b>สถานภาพสมรส</b></center></div>
+<div id="chart5"></div>
+	</td>
+</tr>
+
+		<tr>
+			<th colspan="5"  bgcolor="#3e99f4"><div align="center">สถานะการศึกษา</div></th>
+
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+			<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <a class="education_1" style="cursor: pointer;text-decoration: none;color:black;">ไม่ได้เรียน</a>						
+					</td>
+
+				<td align="right"><p class="education_1" style="cursor: pointer;">109</p></td>
+														<td align="right">100.00</td>
+									</tr>
+			<tr>
+		<td align="center"  colspan="5"><b>รวม</b></td>
+		<td align="right" ><b>109</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+	<tr>
+	<td colspan="7">
+<div><center><b>สถานะการศึกษา</b></center></div>
+<div id="chart6"></div>
+	</td>
+</tr>
+
+		<tr>
+			<th colspan="5"  bgcolor="#3e99f4"><div align="center">2. กำลังศึกษาอยู่</div></th>
+
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+				<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">อนุบาล</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">118</p></td>
+														<td align="right">9.02</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">ประถมศีกษา</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">546</p></td>
+														<td align="right">41.74</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">ม.ต้น</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">224</p></td>
+														<td align="right">17.13</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">ม.ปลาย</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">165</p></td>
+														<td align="right">12.61</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">ปวช.</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">42</p></td>
+														<td align="right">3.21</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">ปวส.</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">23</p></td>
+														<td align="right">1.76</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">อนุปริญญา</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">3</p></td>
+														<td align="right">0.23</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">ปริญญาตรี</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">182</p></td>
+														<td align="right">13.91</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">สูงกว่าปริญญาตรี</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">4</p></td>
+														<td align="right">0.31</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. <a class="education" style="cursor: pointer;text-decoration: none;color:black;">ไม่ระบุ</a>						
+					</td>
+
+				<td align="right"><p class="education" style="cursor: pointer;">1</p></td>
+														<td align="right">0.08</td>
+									</tr>
+			<tr>
+		<td align="center"  colspan="5"><b>รวม</b></td>
+		<td align="right" ><b>1,308</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+		<tr>
+	<td colspan="7">
+<div><center><b>2. กำลังศึกษาอยู่</b></center></div>
+<div id="chart7"></div>
+	</td>
+</tr>
+
+			<tr>
+			<th colspan="5"  bgcolor="#3e99f4"><div align="center">3. จบการศึกษา ระดับ</div></th>
+
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+				<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">อนุบาล</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">8</p></td>
+														<td align="right">0.16</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">ประถมศีกษา</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">2,656</p></td>
+														<td align="right">52.45</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">ม.ต้น</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">1,042</p></td>
+														<td align="right">20.58</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">ม.ปลาย</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">489</p></td>
+														<td align="right">9.66</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">ปวช.</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">126</p></td>
+														<td align="right">2.49</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">ปวส.</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">110</p></td>
+														<td align="right">2.17</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">อนุปริญญา</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">31</p></td>
+														<td align="right">0.61</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">ปริญญาตรี</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">569</p></td>
+														<td align="right">11.24</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">สูงกว่าปริญญาตรี</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">32</p></td>
+														<td align="right">0.63</td>
+									</tr>
+					<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10. <a class="education_3" style="cursor: pointer;text-decoration: none;color:black;">ไม่ระบุ</a>						
+					</td>
+
+				<td align="right"><p class="education_3" style="cursor: pointer;">1</p></td>
+														<td align="right">0.02</td>
+									</tr>
+			<tr>
+		<td align="center"  colspan="5"><b>รวม</b></td>
+		<td align="right" ><b>5,064</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+		
+			<tr>
+	<td colspan="7">
+	<div><center><b>3. จบการศึกษา ระดับ</b></center></div>
+<div id="chart8"></div>
+	</td>
+</tr>
+
+			<tr>
+			<th colspan="5"  bgcolor="#3e99f4"><div align="center">4.ไม่เข้าข่าย</div></th>
+
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+				<tr >
+				<td  colspan="5">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. <a class="education_4" style="cursor: pointer;text-decoration: none;color:black;">ไม่เข้าข่าย</a>						
+					</td>
+
+				<td align="right"><p class="education_4" style="cursor: pointer;">278</p></td>
+														<td align="right">100.00</td>
+									</tr>
+			<tr>
+		<td align="center"  colspan="5"><b>รวม</b></td>
+		<td align="right" ><b>278</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+		
+	<tr>
+		<td  colspan="5" align="center"><b>รวมทั้งหมด</b></td>
+		<td align="right"><b>6759</b></td>
+		<td align="right" ><b>100.00</b></td>
+	</tr>
+<tr>
+	<td colspan="7">
+	<div><center><b>4.ไม่เข้าข่าย</b></center></div>
+<div id="chart9"></div>
+	</td>
+</tr>
+
+	<tr bgcolor="#ebadbf">
+		<td colspan="7" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 2 วินาที่		</td>
+	</tr>
+		<tr>
+		<td bgcolor="#cacaca" colspan="7" align="right">
+			รายงานนี้ปรับปรุงแก้ไขล่าสุด วันที่ 09 ก.ค. 2559 
+		</td>
+			</tr>
+
+</table>	
+<input type="hidden" id="year_db" value="tcnap_new"/>
+<input type="hidden" id="abt_db" value="6730510"/>
+<input type="hidden" id="mooban_db" value="0"/>
+
+  <div class="modal fade modal-admin" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title"></p></h4>
+        </div>
+        <div class="modal-body modal-admin">
+          <div class="xxx"></div>
+          <input id="y_db" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_year()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>
+  <div class="modal fade" id="myModal_nationality" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_nationality"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_nationality"></div>
+          <input id="y_db_nationality" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_nationality()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+  <div class="modal fade" id="myModal_nationality" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_nationality"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_nationality"></div>
+          <input id="y_db_nationality" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_nationality()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+  
+  <div class="modal fade" id="myModal_religious" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_religious"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_religious"></div>
+          <input id="y_db_religious" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_religious()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+  
+  <div class="modal fade" id="myModal_married_status" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_married_status"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_married_status"></div>
+          <input id="y_db_married_status" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_married_status()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+  
+  
+  <div class="modal fade" id="myModal_education_1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_education_1"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_education_1"></div>
+          <input id="y_db_education_1" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_education_1()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+  
+  <div class="modal fade" id="myModal_education" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_education"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_education"></div>
+          <input id="y_db_education" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_education()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+  
+  <div class="modal fade" id="myModal_education_3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_education_3"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_education_3"></div>
+          <input id="y_db_education_3" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_education_3()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+  
+  <div class="modal fade" id="myModal_education_4" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_education_4"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_education_4"></div>
+          <input id="y_db_education_4" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_1_education_4()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>
+
+
+<script>
+$( document ).ready(function() {
+    $.post("google_chart.php",function(data){
+		$("#test").html(data);
+	});
+	
+	
+	$('.year_ord').click(function(){
+		$(".f1_title").text('ข้อมูลทั่วไป อายุ '+$(this).text());
+		$(".xxx").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db").val('modal/f1_1_year.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_year.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx").html(data);
+		});
+		$('#myModal').modal('show');
+		
+	});	
+	$('.nationality').click(function(){
+		$(".f1_title_nationality").text('ข้อมูลทั่วไป สัญชาติ '+$(this).text());
+		$(".xxx_nationality").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_nationality").val('modal/f1_1_nationality.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_nationality.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_nationality").html(data);
+		});
+		$('#myModal_nationality').modal('show');
+		
+	});	
+	$('.religious').click(function(){
+		$(".f1_title_religious").text('ข้อมูลทั่วไป ศาสนา '+$(this).text());
+		$(".xxx_religious").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_religious").val('modal/f1_1_religious.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_religious.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_religious").html(data);
+		});
+		$('#myModal_religious').modal('show');
+		
+	});	
+	$('.married_status').click(function(){
+		$(".f1_title_married_status").text('ข้อมูลทั่วไป สถานภาพสมรส '+$(this).text());
+		$(".xxx_married_status").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_married_status").val('modal/f1_1_married_status.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_married_status.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_married_status").html(data);
+		});
+		$('#myModal_married_status').modal('show');
+		
+	});	
+	$('.education_1').click(function(){
+		$(".f1_title_education_1").text('ข้อมูลทั่วไป สถานะการศึกษา '+$(this).text());
+		$(".xxx_education_1").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_education_1").val('modal/f1_1_education_1.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_education_1.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_education_1").html(data);
+		});
+		$('#myModal_education_1').modal('show');
+		
+	});	
+	$('.education').click(function(){
+		$(".f1_title_education").text('ข้อมูลทั่วไป กำลังศึกษาอยู่ '+$(this).text());
+		$(".xxx_education").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_education").val('modal/f1_1_education.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_education.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_education").html(data);
+		});
+		$('#myModal_education').modal('show');
+		
+	});	
+	
+	$('.education_3').click(function(){
+		$(".f1_title_education_3").text('ข้อมูลทั่วไป จบศึกษาอยู่ '+$(this).text());
+		$(".xxx_education_3").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_education_3").val('modal/f1_1_education_3.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_education_3.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_education_3").html(data);
+		});
+		$('#myModal_education_3').modal('show');
+		
+	});	
+	$('.education_4').click(function(){
+		$(".f1_title_education_4").text('ข้อมูลทั่วไป สถานะการศึกษา '+$(this).text());
+		$(".xxx_education_4").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_education_4").val('modal/f1_1_education_4.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_1_education_4.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_education_4").html(data);
+		});
+		$('#myModal_education_4').modal('show');
+		
+	});
+});
+function f1_1_year(){
+	location.href = $("#y_db").val();
+}
+function f1_1_nationality(){
+	location.href = $("#y_db_nationality").val();
+}
+function f1_1_religious(){
+	location.href = $("#y_db_religious").val();
+}
+function f1_1_married_status(){
+	location.href = $("#y_db_married_status").val();
+}
+function f1_1_education_1(){
+	location.href = $("#y_db_education_1").val();
+}
+function f1_1_education(){
+	location.href = $("#y_db_education").val();
+}
+function f1_1_education_3(){
+	location.href = $("#y_db_education_3").val();
+}
+function f1_1_education_4(){
+	location.href = $("#y_db_education_4").val();
+}
+var chart = c3.generate({
+    bindto: '#chart',data: {
+        columns: [['ชาย', 3282],['หญิง', 3477]]
+    }
+});
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 3000);
+/*var chart2 = c3.generate({
+     bindto: '#chart2',data: {
+        columns: [
+            36.00        ]
+    },
+    axis: {
+        x: {
+            type: 'category',
+            categories: ['0 - 4 ปี','5 - 9 ปี',' 10 - 14 ปี',' 15 - 19 ปี','20 - 24 ปี','25 - 29 ปี','30 - 34 ปี',' 35 - 39 ปี',' 40 - 44 ปี','45 - 49 ปี','50 - 54 ปี','55 - 59 ปี',' 60 - 64 ปี',' 65 - 69 ปี','70 - 74 ปี','75 - 79 ปี','80 ปี ขึ้นไป','ข้อมูลผิดปกติ']
+        }
+    }
+});
+
+*/
+var chart3 = c3.generate({
+    bindto: '#chart3',data: {
+        x : 'x',
+        columns: [
+            ['x', 'ไทย','จีน',],
+            ['สัญชาติ', 6752,7,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+var chart4 = c3.generate({
+    bindto: '#chart4',data: {
+        x : 'x',
+        columns: [
+            ['x', 'พุทธ','คริสต์',],
+            ['ศาสนา', 6752,7,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+var chart5 = c3.generate({
+    bindto: '#chart5',data: {
+        x : 'x',
+        columns: [
+            ['x', 'โสด','สมรสจดทะเบียน','สมรสไม่จดทะเบียน','หม้าย','หย่า','แยกกันอยู่','ไม่เข้าข่าย',],
+            ['สถานภาพสมรส', 2489,1563,1759,402,75,70,401,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+
+
+
+var chart6 = c3.generate({
+    bindto: '#chart6',data: {
+        columns: [['ไม่ได้เรียน', 109],]
+    }
+});
+setTimeout(function () {
+    chart6.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart6.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart6.transform('pie');
+}, 3000);
+
+
+var chart7 = c3.generate({
+    bindto: '#chart7',data: {
+        x : 'x',
+        columns: [
+            ['x', 'อนุบาล','ประถมศีกษา','ม.ต้น','ม.ปลาย','ปวช.','ปวส.','อนุปริญญา','ปริญญาตรี','สูงกว่าปริญญาตรี','ไม่ระบุ',],
+            ['กำลังศึกษาอยู่', 118,546,224,165,42,23,3,182,4,1,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+var chart8 = c3.generate({
+    bindto: '#chart8',data: {
+        x : 'x',
+        columns: [
+            ['x', 'อนุบาล','ประถมศีกษา','ม.ต้น','ม.ปลาย','ปวช.','ปวส.','อนุปริญญา','ปริญญาตรี','สูงกว่าปริญญาตรี','ไม่ระบุ',],
+            ['จบการศึกษา ระดับ', 8,2656,1042,489,126,110,31,569,32,1,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+var chart9 = c3.generate({
+    bindto: '#chart9',data: {
+        columns: [['ไม่เข้าข่าย', 278],]
+    }
+});
+setTimeout(function () {
+    chart9.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart9.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart9.transform('pie');
+}, 3000);
+</script>
+
+<style>
+    .modal .modal-dialog { width: 80%; }
+</style>

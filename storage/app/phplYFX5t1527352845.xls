@@ -1,0 +1,777 @@
+<meta charset=utf-8" />
+
+<table class="table table-bordered" border="1" style="background-color:#ffffff" width="100%" >
+		<tr >
+		<td bgcolor="#6bac40" colspan="6"><b>1.5 จำนวนและร้อยละประชากร จำแนกตามพฤติกรรมเสี่ยง ภาวะเสี่ยงจากการทำงาน ปัญหาสุขภาพและการเจ็บป่วย และภาวะฉุกเฉินที่ต้องรักษา</b>
+		</td>
+		</tr>
+		<tr>
+			<th bgcolor="#3e99f4" colspan="4">พฤติกรรมเสี่ยง</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tbody>
+		<tr>
+		<td colspan="4">1. ไม่มี</td>
+		<td align="right">2,565</td>
+		<td align="right">93.10</td>
+		</tr>
+		<tr>
+		<td colspan="4">2. มี</td>
+		<td align="right">190</td>
+		<td align="right">6.90</td>
+		</tr>
+		<tr >
+		<td align="center"  colspan="4"><b>รวม</b></td>
+		<td align="right"><b>2,755</b></td>
+		<td align="right"><b>100.00</b></td>
+		</tr>
+		<tr><td colspan="6">&nbsp;</td></tr>
+		<tr>
+		    <th rowspan="2" bgcolor="#4ac6ee">พฤติกรรมเสี่ยง ได้แก่ <br/>( N = 190 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีพฤติกรรมเสี่ยง</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีพฤติกรรมเสี่ยง</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+			<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.1.&nbsp;ดื่มสุราเป็นประจำ</td>
+		<td ><div align="right">109</div></td>
+		<td ><div align="right">57.37</div></td>		
+		<td ><div align="right">81</div></td>
+		<td ><div align="right">42.63</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.2.&nbsp;สูบบุหรี่เป็นประจำ</td>
+		<td ><div align="right">41</div></td>
+		<td ><div align="right">21.58</div></td>		
+		<td ><div align="right">149</div></td>
+		<td ><div align="right">78.42</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.3.&nbsp;นั่งๆ นอนๆ ไม่ค่อยได้ทำงาน</td>
+		<td ><div align="right">9</div></td>
+		<td ><div align="right">4.74</div></td>		
+		<td ><div align="right">181</div></td>
+		<td ><div align="right">95.26</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.4.&nbsp;ไม่ได้ออกกำลังกาย</td>
+		<td ><div align="right">15</div></td>
+		<td ><div align="right">7.89</div></td>		
+		<td ><div align="right">175</div></td>
+		<td ><div align="right">92.11</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.5.&nbsp;มีความเคลียดกังวลใจจนนอนไม่หลับ</td>
+		<td ><div align="right">4</div></td>
+		<td ><div align="right">2.11</div></td>		
+		<td ><div align="right">186</div></td>
+		<td ><div align="right">97.89</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.6.&nbsp;ทำงานหนัก พักผ่อนน้อย</td>
+		<td ><div align="right">16</div></td>
+		<td ><div align="right">8.42</div></td>		
+		<td ><div align="right">174</div></td>
+		<td ><div align="right">91.58</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.7.&nbsp;กินอาหารปริมาณมาก กินจุ กินจุบจิบ</td>
+		<td ><div align="right">2</div></td>
+		<td ><div align="right">1.05</div></td>		
+		<td ><div align="right">188</div></td>
+		<td ><div align="right">98.95</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.8.&nbsp;กินอาหารรสจัด เป็นประจำทุกวัน</td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">0.53</div></td>		
+		<td ><div align="right">189</div></td>
+		<td ><div align="right">99.47</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.9.&nbsp;กินอาหารสุกๆ ดิบๆ</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">190</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.10.&nbsp;ดื่มเครื่องดื่มชูกำลังประจำ</td>
+		<td ><div align="right">4</div></td>
+		<td ><div align="right">2.11</div></td>		
+		<td ><div align="right">186</div></td>
+		<td ><div align="right">97.89</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.11.&nbsp;ขับรถเร็ว ประมาท</td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">0.53</div></td>		
+		<td ><div align="right">189</div></td>
+		<td ><div align="right">99.47</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.12.&nbsp;มีเพศสัมพันธ์ที่ไม่ปลอดภัย</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">190</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.13.&nbsp;การใช้สารเสพติด</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">190</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.14.&nbsp;การใช้ยาชุด ยาแก้ปวด ยาลูกกลอน เป็นประจำ</td>
+		<td ><div align="right">3</div></td>
+		<td ><div align="right">1.58</div></td>		
+		<td ><div align="right">187</div></td>
+		<td ><div align="right">98.42</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.15.&nbsp;ขับขี่รถจักรยานยนต์โดยไม่สวมหมวกนิรภัย</td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">0.53</div></td>		
+		<td ><div align="right">189</div></td>
+		<td ><div align="right">99.47</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.16.&nbsp;ขับขี่รถยนต์โดยไม่คาดเข็มขัดนิรภัย</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">190</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.17.&nbsp;ไม่ได้ตรวจสุขภาพ หรือการคัดกรองโรคเป็นประจำทุกปี</td>
+		<td ><div align="right">4</div></td>
+		<td ><div align="right">2.11</div></td>		
+		<td ><div align="right">186</div></td>
+		<td ><div align="right">97.89</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.18.&nbsp;อื่นๆ (ระบุ) 1. ความดันโลหิต</td>
+		<td ><div align="right">5</div></td>
+		<td ><div align="right">2.63</div></td>		
+		<td ><div align="right">185</div></td>
+		<td ><div align="right">97.37</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+			<tr>
+			<td colspan="6">
+				<div><center><b>1.พฤติกรรมเสี่ยง</b></center></div>
+				<div id="chart1"></div>
+				<div><center><b>1.1 พฤติกรรมเสี่ยง </b></center></div>
+				<div id="chart1_1_value"></div>
+			</td>
+		</tr>
+		<tr>
+			<th bgcolor="#3e99f4" colspan="4"><div>ภาวะเสี่ยงจากการทำงาน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td colspan="4">1. ไม่มี</td>
+		<td align="right">2,719</td>
+		<td align="right">98.69</td>
+		</tr>
+		<tr>
+		<td colspan="4">2. มี</td>
+		<td align="right">36</td>
+		<td align="right">1.31</td>
+		</tr>
+		<tr >
+		<td align="center" colspan="4"><b>รวม</b></td>
+		<td align="right"><b>2,755</b></td>
+		<td align="right"><b>100.00</b></td>
+		</tr>
+		<tr><td colspan="6">&nbsp;</td></tr>
+		<tr >
+		    <th bgcolor="#4ac6ee" rowspan="2" >ภาวะเสี่ยงจากการทำงาน ได้แก่  <br/>( N = 36 )</th>
+		    <th bgcolor="#4ac6ee" colspan="2" ><div align="center">มีภาวะเสี่ยงจากการทำงาน</div> </th>
+		    <th bgcolor="#4ac6ee" colspan="2" ><div align="center">ไม่มีภาวะเสี่ยงจากการทำงาน</div> </th>
+		    <th bgcolor="#4ac6ee" ><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+
+			<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.1.&nbsp;ใช้สารเคมีในการเกษตรโดยป้องกันตนเองไม่เหมาะสม</td>
+		<td ><div align="right">10</div></td>
+		<td ><div align="right">27.78</div></td>		
+		<td ><div align="right">26</div></td>
+		<td ><div align="right">72.22</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.2.&nbsp;ทำงานในบริเวณที่มีการสูดดมสารเคมี สารระเหยที่เป็นอันตราย ต่อสุขภาพ</td>
+		<td ><div align="right">4</div></td>
+		<td ><div align="right">11.11</div></td>		
+		<td ><div align="right">32</div></td>
+		<td ><div align="right">88.89</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.3.&nbsp;ทำงานในบริเวณที่มีเสียงดัง</td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">2.78</div></td>		
+		<td ><div align="right">35</div></td>
+		<td ><div align="right">97.22</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.4.&nbsp;ทำงานในบริเวณที่มีผง ฝุ่นละออง ควัน</td>
+		<td ><div align="right">8</div></td>
+		<td ><div align="right">22.22</div></td>		
+		<td ><div align="right">28</div></td>
+		<td ><div align="right">77.78</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.5.&nbsp;ทำงานใกล้กับเครื่องจักรกล</td>
+		<td ><div align="right">4</div></td>
+		<td ><div align="right">11.11</div></td>		
+		<td ><div align="right">32</div></td>
+		<td ><div align="right">88.89</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.6.&nbsp;ทำงานที่เป็นอันตรายต่อสายตา</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">36</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.7.&nbsp;ทำงานในลักษณะยืน หรือนั่งในท่าเดิมนานๆ</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">36</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.8.&nbsp;ทำงานในบริเวณที่มีอากาศร้อนอบอ้าวหรืออากาศเย็นมากเกินปกติ</td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">2.78</div></td>		
+		<td ><div align="right">35</div></td>
+		<td ><div align="right">97.22</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.9.&nbsp;ทำงานในที่สูง</td>
+		<td ><div align="right">7</div></td>
+		<td ><div align="right">19.44</div></td>		
+		<td ><div align="right">29</div></td>
+		<td ><div align="right">80.56</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.10.&nbsp;อื่นๆ (ระบุ)</td>
+		<td ><div align="right">3</div></td>
+		<td ><div align="right">8.33</div></td>		
+		<td ><div align="right">33</div></td>
+		<td ><div align="right">91.67</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+			<tr>
+			<td colspan="6">
+			<div><center><b>2.ภาวะเสี่ยงจากการทำงาน</b></center></div>
+			<div id="chart2"></div>
+			<div><center><b>2.1 ภาวะเสี่ยงจากการทำงาน </b></center></div>
+			<div id="chart2_1_value"></div>
+			</td>
+		</tr>
+		<tr >
+			<th bgcolor="#3e99f4" colspan="4"><div>ปัญหาสุขภาพและการเจ็บป่วย</div></th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr >
+		<td colspan="4">1. ไม่มี</td>
+		<td align="right">2,611</td>
+		<td align="right">94.77</td>
+		</tr>
+		<tr>
+		<td colspan="4">2. มี</td>
+		<td align="right">144</td>
+		<td align="right">5.23</td>
+		</tr>
+		<tr >
+		<td align="center" colspan="4" ><b>รวม</b></td>
+		<td align="right"><b>2,755</b></td>
+		<td align="right"><b>100.00</b></td>
+		</tr>
+		<tr><td colspan="6">&nbsp;</td></tr>
+		<tr>
+		    <th bgcolor="#4ac6ee" rowspan="2" >ปัญหาสุขภาพและการเจ็บป่วย ได้แก่  <br/>( N = 144 )</th>
+		    <th bgcolor="#4ac6ee" colspan="2" ><div align="center">มีปัญหาสุขภาพ<br/>และการเจ็บป่วย</div> </th>
+		    <th bgcolor="#4ac6ee" colspan="2" ><div align="center">ไม่มีปัญหาสุขภาพ<br/>และการเจ็บป่วย</div> </th>
+		    <th bgcolor="#4ac6ee" ><div align="center" >รวม</div></th>
+		  </tr>
+		<tr >
+			<th bgcolor="#4ac6ee"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+
+			<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.1.&nbsp;ไข้ ไอ เจ็บคอ</td>
+		<td ><div align="right">48</div></td>
+		<td ><div align="right">33.33</div></td>		
+		<td ><div align="right">96</div></td>
+		<td ><div align="right">66.67</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.2.&nbsp;อุจจาระร่วง</td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">0.69</div></td>		
+		<td ><div align="right">143</div></td>
+		<td ><div align="right">99.31</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.3.&nbsp;กระเพาะอาหาร</td>
+		<td ><div align="right">13</div></td>
+		<td ><div align="right">9.03</div></td>		
+		<td ><div align="right">131</div></td>
+		<td ><div align="right">90.97</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.4.&nbsp;ปวดเมื่อยกล้ามเนื้อ</td>
+		<td ><div align="right">74</div></td>
+		<td ><div align="right">51.39</div></td>		
+		<td ><div align="right">70</div></td>
+		<td ><div align="right">48.61</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.5.&nbsp;บาดเจ็บจากการทะเลาะวิวาท ทำร้ายร่างกาย</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">144</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.6.&nbsp;ภาวะขาดสารอาหาร</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">144</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.7.&nbsp;พัฒนาการที่ล่าช้าในเด็กแรกเกิดถึง 5 ปี</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">144</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.8.&nbsp;อื่นๆ (ระบุ) 1. เบาหวาน 2. ความดันสูง 3. พิการจากอุบัติเหตู</td>
+		<td ><div align="right">8</div></td>
+		<td ><div align="right">5.56</div></td>		
+		<td ><div align="right">136</div></td>
+		<td ><div align="right">94.44</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+			<tr>
+			<td colspan="6">
+			<div><center><b>3.ปัญหาสุขภาพและการเจ็บป่วย</b></center></div>
+			<div id="chart3"></div>
+			<div><center><b>3.1 ปัญหาสุขภาพและการเจ็บป่วย</b></center></div>
+			<div id="chart3_1_value"></div>
+			</td>
+		</tr>
+		<tr>
+			<th bgcolor="#3e99f4" colspan="4"><div>ภาวะฉุกเฉินที่ต้องรักษา</div></th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td colspan="4">1. ไม่มี</td>
+		<td align="right">2,728</td>
+		<td align="right">99.02</td>
+		</tr>
+		<tr>
+		<td colspan="4">2. มี</td>
+		<td align="right">27</td>
+		<td align="right">0.98</td>
+		</tr>
+		<tr >
+		<td align="center" colspan="4"><b>รวม</b></td>
+		<td align="right"><b>2,755</b></td>
+		<td align="right"><b>100.00</b></td>
+		</tr>
+		<tr><td colspan="6">&nbsp;</td></tr>
+		<tr>
+		    <th bgcolor="#4ac6ee" rowspan="2" >ภาวะฉุกเฉินที่ต้องรักษา ได้แก่  <br/>( N = 27 )</th>
+		    <th bgcolor="#4ac6ee" colspan="2" ><div align="center">มีภาวะฉุกเฉินที่ต้องรักษา</div> </th>
+		    <th bgcolor="#4ac6ee" colspan="2" ><div align="center">ไม่มีภาวะฉุกเฉินที่ต้องรักษา</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" ><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+			<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.1.&nbsp;ไข้สูง ชัก</td>
+		<td ><div align="right">6</div></td>
+		<td ><div align="right">22.22</div></td>		
+		<td ><div align="right">21</div></td>
+		<td ><div align="right">77.78</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.2.&nbsp;หอบเหนื่อย</td>
+		<td ><div align="right">2</div></td>
+		<td ><div align="right">7.41</div></td>		
+		<td ><div align="right">25</div></td>
+		<td ><div align="right">92.59</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.3.&nbsp;เหนื่อย อ่อนเพลีย ไม่มีแรง</td>
+		<td ><div align="right">15</div></td>
+		<td ><div align="right">55.56</div></td>		
+		<td ><div align="right">12</div></td>
+		<td ><div align="right">44.44</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.4.&nbsp;หมดสติ </td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">3.70</div></td>		
+		<td ><div align="right">26</div></td>
+		<td ><div align="right">96.30</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.5.&nbsp;บาดเจ็บอุบัติเหตุจราจร</td>
+		<td ><div align="right">1</div></td>
+		<td ><div align="right">3.70</div></td>		
+		<td ><div align="right">26</div></td>
+		<td ><div align="right">96.30</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.6.&nbsp;บาดเจ็บจากอุบัติเหตุอื่นๆ</td>
+		<td ><div align="right">2</div></td>
+		<td ><div align="right">7.41</div></td>		
+		<td ><div align="right">25</div></td>
+		<td ><div align="right">92.59</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.7.&nbsp;สุนัขกัด งูกัด สัตว์ทำร้าย</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">27</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.8.&nbsp;อื่นๆ (ระบุ)</td>
+		<td ><div align="right">0</div></td>
+		<td ><div align="right">0.00</div></td>		
+		<td ><div align="right">27</div></td>
+		<td ><div align="right">100.00</div></td>
+		<td ><div align="right">100.00</div></td>
+	</tr> 
+	  
+	 
+		<tr>
+			<td colspan="6">
+				<div><center><b>4.ภาวะฉุกเฉินที่ต้องรักษา</b></center></div>
+				<div id="chart4"></div>
+				<div><center><b>4.1 ภาวะฉุกเฉินที่ต้องรักษา</b></center></div>
+				<div id="chart4_1_value"></div>
+			</td>
+		</tr>
+		<tr >
+		<td bgcolor="#ebadbf" colspan="6" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 0 วินาที่		</td>
+	</tr>  
+		<tr>
+		<td bgcolor="#cacaca" colspan="6" align="right">
+			รายงานนี้ปรับปรุงแก้ไขล่าสุดวันที่ 02 ส.ค. 2558 
+		</td>
+	</tr> 
+		</tbody>
+</table>
+
+
+<script>
+var chart = c3.generate({
+    bindto: '#chart1',data: {
+        columns: [['1. ไม่มี','2565'],['2. มี','190']]
+    }
+});
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 3000);
+
+var chart_1_1_value = c3.generate({
+    bindto: '#chart1_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. ดื่มสุราเป็นประจำ','2. สูบบุหรี่เป็นประจำ','3. นั่งๆ นอนๆ ไม่ค่อยได้ทำงาน','4. ไม่ได้ออกกำลังกาย','5. มีความเคลียดกังวลใจจนนอนไม่หลับ','6. ทำงานหนัก พักผ่อนน้อย','7. กินอาหารปริมาณมาก กินจุ กินจุบจิบ','8. กินอาหารรสจัด เป็นประจำทุกวัน','9. กินอาหารสุกๆ ดิบๆ','10. ดื่มเครื่องดื่มชูกำลังประจำ','11. ขับรถเร็ว ประมาท','12. มีเพศสัมพันธ์ที่ไม่ปลอดภัย','13. การใช้สารเสพติด','14. การใช้ยาชุด ยาแก้ปวด ยาลูกกลอน เป็นประจำ','15. ขับขี่รถจักรยานยนต์โดยไม่สวมหมวกนิรภัย','16. ขับขี่รถยนต์โดยไม่คาดเข็มขัดนิรภัย','17. ไม่ได้ตรวจสุขภาพ หรือการคัดกรองโรคเป็นประจำทุกปี','18. อืนๆ',],
+            ['1.1 พฤติกรรมเสี่ยง ', 109,41,9,15,4,16,2,1,0,4,1,0,0,3,1,0,4,5,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+var chart2 = c3.generate({
+    bindto: '#chart2',data: {
+        columns: [['1. ไม่มี','2719'],['2. มี','36']]
+    }
+});
+
+setTimeout(function () {
+    chart2.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart2.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart2.transform('pie');
+}, 3000);
+
+var chart_2_1_value = c3.generate({
+    bindto: '#chart2_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. ใช้สารเคมีในการเกษตรโดยป้องกันตนเองไม่เหมาะสม','2. ทำงานในบริเวณที่มีการสูดดมสารเคมี สารระเหยที่เป็นอันตราย ต่อสุขภาพ','3. ทำงานในบริเวณที่มีเสียงดัง','4. ทำงานในบริเวณที่มีผง ฝุ่นละออง ควัน','5. ทำงานใกล้กับเครื่องจักรกล','6. ทำงานที่เป็นอันตรายต่อสายตา','7. ทำงานในลักษณะยืน หรือนั่งในท่าเดิมนานๆ','8. ทำงานในบริเวณที่มีอากาศร้อนอบอ้าวหรืออากาศเย็นมากเกินปกติ','9. ทำงานในที่สูง','10. อืนๆ',],
+            ['2.1 ภาวะเสี่ยงจากการทำงาน ', 10,4,1,8,4,0,0,1,7,3,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+var chart3 = c3.generate({
+    bindto: '#chart3',data: {
+        columns: [['1. ไม่มี','2611'],['2. มี','144']]
+    }
+});
+
+setTimeout(function () {
+    chart3.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart3.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart3.transform('pie');
+}, 3000);
+
+var chart_3_1_value = c3.generate({
+    bindto: '#chart3_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. ไข้ ไอ เจ็บคอ','2. อุจจาระร่วง','3. กระเพาะอาหาร','4. ปวดเมื่อยกล้ามเนื้อ','5. บาดเจ็บจากการทะเลาะวิวาท ทำร้ายร่างกาย','6. ภาวะขาดสารอาหาร','7. พัฒนาการที่ล่าช้าในเด็กแรกเกิดถึง 5 ปี','8. อืนๆ',],
+            ['3.1 ปัญหาสุขภาพและการเจ็บป่วย ', 48,1,13,74,0,0,0,8,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+var chart4 = c3.generate({
+    bindto: '#chart4',data: {
+        columns: [['1. ไม่มี','2728'],['2. มี','27']]
+    }
+});
+
+setTimeout(function () {
+    chart4.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart4.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart4.transform('pie');
+}, 3000);
+
+var chart_4_1_value = c3.generate({
+    bindto: '#chart4_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. ไข้สูง ชัก','2. หอบเหนื่อย','3. เหนื่อย อ่อนเพลีย ไม่มีแรง','4. หมดสติ ','5. บาดเจ็บอุบัติเหตุจราจร','6. บาดเจ็บจากอุบัติเหตุอื่นๆ','7. สุนัขกัด งูกัด สัตว์ทำร้าย','8. อืนๆ',],
+            ['4.1 ภาวะฉุกเฉินที่ต้องรักษา ', 6,2,15,1,1,2,0,0,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+</script>

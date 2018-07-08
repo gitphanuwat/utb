@@ -1,0 +1,428 @@
+<meta charset=utf-8" />
+
+<table border="1"class="table table-bordered" style="background-color:#ffffff" width="100%">
+	<thead>
+	<tr>
+		<td colspan="6" bgcolor="#6bac40"><b>3.3 จำแนกตามข้อมูลการอนุรักษ์สิ่งแวดล้อมการอนุรักษ์พลังงาน และการใช้พลังงานทดแทนในครัวเรือน</b></td>	
+	</tr>	
+	<tr>
+		<td colspan="6" bgcolor="#6bac40"><b>การจัดการสิ่งแวดล้อมของครัวเรือน</b></td>
+	</tr>
+	</thead>
+				<tr>
+			<th bgcolor="#3e99f4" colspan="4">1. การใช้พลังงานทดแทน</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+			<td colspan="4">1. ไม่มี</td>
+			<td align="right">2,531</td>
+			<td align="right">89.28</td>
+		</tr>
+		<tr>
+			<td colspan="4">2. มี</td>
+			<td align="right">304</td>
+			<td align="right">10.72</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่ได้รับข้อมูล</td>
+			<td align="right">30</td>
+			<td align="right">1.06</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr align="center">
+			<td align="center" colspan="4"><b>รวม</b></td>
+			<td align="right"><b>2,835</b></td>
+			<td align="right"><b>100.00</b></td>
+		</tr>
+			<tr>
+			<th rowspan="2" bgcolor="#4ac6ee">1.1 การจัดการขยะ ได้แก่ <br/>( N = 304 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีการจัดการขยะ</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีการจัดการขยะ</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">แก๊สชีวมวล</a></td>
+		<td align="right">101</td>
+		<td align="right">33.22</td>		
+		<td align="right">203</td>
+		<td align="right">66.78</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">น้ำมันไบโอดีเซล</a></td>
+		<td align="right">31</td>
+		<td align="right">10.20</td>		
+		<td align="right">273</td>
+		<td align="right">89.80</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การใช้ถ่านอัดแท่ง</a></td>
+		<td align="right">134</td>
+		<td align="right">44.08</td>		
+		<td align="right">170</td>
+		<td align="right">55.92</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">พลังงานน้ำ</a></td>
+		<td align="right">12</td>
+		<td align="right">3.95</td>		
+		<td align="right">292</td>
+		<td align="right">96.05</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">พลังงานลม</a></td>
+		<td align="right">18</td>
+		<td align="right">5.92</td>		
+		<td align="right">286</td>
+		<td align="right">94.08</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">พลังงานแสงอาทิตย์</a></td>
+		<td align="right">23</td>
+		<td align="right">7.57</td>		
+		<td align="right">281</td>
+		<td align="right">92.43</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;7.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การใช้แรงงานคนทดแทนพลังงานอื่นๆ</a></td>
+		<td align="right">79</td>
+		<td align="right">25.99</td>		
+		<td align="right">225</td>
+		<td align="right">74.01</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;8.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การใช้แรงงานสัตว์ทดแทนพลังงานอื่นๆ</a></td>
+		<td align="right">1</td>
+		<td align="right">0.33</td>		
+		<td align="right">303</td>
+		<td align="right">99.67</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;9.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">อื่นๆ (ระบุ)</a> 1. ฟืน 2. การใช้ฟืนจากกิ่งไม้ภายในบ้าน 3. ใช้ศิ้น 4. ถ่าน ฟืน 5. ใช้น้ำมันแก๊ซโซฮอล์ 91 6. ใช้ฟืน 7. ชีวมวลไม้ทำฟืน 8. เติมน้ำมันแก๊สโซฮอล์ 91 9. เติมน้ำมันแก้สโซฮอล์</td>
+		<td align="right">35</td>
+		<td align="right">11.51</td>		
+		<td align="right">269</td>
+		<td align="right">88.49</td>
+		<td align="right">100.00</td>
+	</tr>   
+	    	<tr>
+			<td colspan="6">
+				<div><center><b>1. การใช้พลังงานทดแทน</b></center></div>
+				<div id="chart"></div>
+				<div><center><b>1.1 การใช้พลังงานทดแทน ได้แก่</b></center></div>
+				<div id="chart2"></div>
+			</td>
+		</tr>
+				<tr>
+			<th bgcolor="#3e99f4" colspan="4">2. การเข้าร่วมกิจกรรมการรักษาสิ่งแวดล้อม</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+			<td colspan="4">1. ไม่มี</td>
+			<td align="right">662</td>
+			<td align="right">23.35</td>
+		</tr>
+		<tr>
+			<td colspan="4">2. มี</td>
+			<td align="right">2,173</td>
+			<td align="right">76.65</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่ได้รับข้อมูล</td>
+			<td align="right">24</td>
+			<td align="right">0.85</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr align="center">
+			<td align="center" colspan="4"><b>รวม</b></td>
+			<td align="right"><b>2,835</b></td>
+			<td align="right"><b>100.00</b></td>
+		</tr>
+			<tr>
+			<th rowspan="2" bgcolor="#4ac6ee">2.1 การเข้าร่วมกิจกรรมการรักษาสิ่งแวดล้อม ได้แก่ <br/>( N = 2,173 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีการเข้าร่วมกิจกรรมการรักษาสิ่งแวดล้อม</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีการเข้าร่วมกิจกรรมการรักษาสิ่งแวดล้อม</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การปลูกป่าไม้</a></td>
+		<td align="right">789</td>
+		<td align="right">36.31</td>		
+		<td align="right">1,384</td>
+		<td align="right">63.69</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การปลูกป่าชายเลน</a></td>
+		<td align="right">12</td>
+		<td align="right">0.55</td>		
+		<td align="right">2,161</td>
+		<td align="right">99.45</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;"> การเก็บขยะในที่สาธารณะ</a></td>
+		<td align="right">140</td>
+		<td align="right">6.44</td>		
+		<td align="right">2,033</td>
+		<td align="right">93.56</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;"> การหลีกเลี่ยงการใช้ถุงพลาสติก และกล่องโฟม</a></td>
+		<td align="right">265</td>
+		<td align="right">12.20</td>		
+		<td align="right">1,908</td>
+		<td align="right">87.80</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การทำแนวป้องกันไฟป่า</a></td>
+		<td align="right">106</td>
+		<td align="right">4.88</td>		
+		<td align="right">2,067</td>
+		<td align="right">95.12</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การเก็บกวาดบริเวณบ้านให้สะอาด</a></td>
+		<td align="right">1,896</td>
+		<td align="right">87.25</td>		
+		<td align="right">277</td>
+		<td align="right">12.75</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;7.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">อื่นๆ (ระบุ)</a> 1. ใช้น้ำใช้ไฟอย่างประหยัด 2. ช่วยกันพัฒนาหมู่บ้านในวันสำคัญของชาติ 3. กำจัดแหล่งเพาะพันธุ์ลูกน้ำยุงลาย 4. โรงงานปุ๋ยหมัก</td>
+		<td align="right">7</td>
+		<td align="right">0.32</td>		
+		<td align="right">2,166</td>
+		<td align="right">99.68</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td colspan="6">
+			<div><center><b>2. การเข้าร่วมกิจกรรมการรักษาสิ่งแวดล้อม</b></center></div>
+			<div id="chart3"></div>
+			<div><center><b>2.1 การเข้าร่วมกิจกรรมการรักษาสิ่งแวดล้อม ได้แก่</b></center></div>
+			<div id="chart4"></div>
+		</td>
+	</tr>	
+	<tr bgcolor="#ebadbf">
+		<td colspan="6" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 0 วินาที่		</td>
+	</tr>	
+	<tr>
+		<td bgcolor="#cacaca" colspan="6" align="right">
+			รายงานนี้ปรับปรุงแก้ไขล่าสุดวันที่ 04 ส.ค. 2559 
+		</td>
+	</tr>	
+</table>
+<input type="hidden" id="year_db" value="tcnap_2017"/>
+<input type="hidden" id="abt_db" value="5500911"/>
+<input type="hidden" id="mooban_db" value="0"/>
+  
+  <div class="modal fade" id="myModal_a" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_a"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_a"></div>
+          <input id="y_db_a" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_a()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>    
+  <div class="modal fade" id="myModal_b" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_b"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_b"></div>
+          <input id="y_db_b" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_b()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>    
+   
+
+<script>
+
+$( document ).ready(function() {
+	$('.a').click(function(){
+		$(".f1_title_a").text(' '+$(this).text());
+		$(".xxx_a").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_a").val('modal/f1_3_3_2.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_3_3_2.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_a").html(data);
+		});
+		$('#myModal_a').modal('show');
+		
+	});		
+	$('.b').click(function(){
+		$(".f1_title_b").text(' '+$(this).text());
+		$(".xxx_b").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_b").val('modal/f1_3_3_1.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_3_3_1.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_b").html(data);
+		});
+		$('#myModal_b').modal('show');
+		
+	});		
+		
+	
+});
+function f1_a(){
+	location.href = $("#y_db_a").val();
+}
+function f1_b(){
+	location.href = $("#y_db_b").val();
+}
+
+var chart = c3.generate({
+    bindto: '#chart',data: {
+        columns: [['1. ไม่มี','2531'],['2. มี','304']]
+    }
+});
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 3000);
+
+var chart2 = c3.generate({
+    bindto: '#chart2',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. แก๊สชีวมวล','2. น้ำมันไบโอดีเซล','3. การใช้ถ่านอัดแท่ง','4. พลังงานน้ำ','5. พลังงานลม','6. พลังงานแสงอาทิตย์','7. การใช้แรงงานคนทดแทนพลังงานอื่นๆ','8. การใช้แรงงานสัตว์ทดแทนพลังงานอื่นๆ','9. อืนๆ'],
+            ['การใช้พลังงานทดแทน', 101,31,134,12,18,23,79,1,35],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+var chart3 = c3.generate({
+    bindto: '#chart3',data: {
+        columns: [['1. ไม่มี','662'],['2. มี','2173']]
+    }
+});
+
+setTimeout(function () {
+    chart3.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart3.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart3.transform('pie');
+}, 3000);
+
+
+var chart4 = c3.generate({
+    bindto: '#chart4',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. การปลูกป่าไม้','2. การปลูกป่าชายเลน','3.  การเก็บขยะในที่สาธารณะ','4.  การหลีกเลี่ยงการใช้ถุงพลาสติก และกล่องโฟม','5. การทำแนวป้องกันไฟป่า','6. การเก็บกวาดบริเวณบ้านให้สะอาด','7. อืนๆ'],
+            ['การเข้าร่วมกิจกรรมการรักษาสิ่งแวดล้อม', 789,12,140,265,106,1896,7],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+</script>
+	

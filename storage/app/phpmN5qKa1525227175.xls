@@ -1,0 +1,744 @@
+<meta charset=utf-8" />
+<meta charset="utf-8" />
+<table border="1"class="table table-bordered" style="background-color:#ffffff" width="100%">
+	<thead>
+	<tr>
+		<td colspan="6" bgcolor="#6bac40"><b>3.2 จำแนกตามข้อมูลการจัดการกับสิ่งแวดล้อมในครัวเรือน</b></td>
+	</tr>
+	</thead>
+				<tr>
+			<th bgcolor="#3e99f4" colspan="4">1. การจัดการขย</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+			<td colspan="4">1. ไม่มี</td>
+			<td align="right">168</td>
+			<td align="right">9.23</td>
+		</tr>
+		<tr>
+			<td colspan="4">2. มี</td>
+			<td align="right">1,652</td>
+			<td align="right">90.77</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่ได้รับข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr align="center">
+			<td align="center" colspan="4"><b>รวม</b></td>
+			<td align="right"><b>1,820</b></td>
+			<td align="right"><b>100.00</b></td>
+		</tr>
+			<tr>
+			<th rowspan="2" bgcolor="#4ac6ee">1.1 การจัดการขยะ ได้แก่ <br/>( N = 1,652 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีการจัดการขยะ</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีการจัดการขยะ</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">ใช้บริการจัดเก็บขยะของชุมชน</a></td>
+		<td align="right">1,421</td>
+		<td align="right">86.02</td>		
+		<td align="right">231</td>
+		<td align="right">13.98</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การเผา</a></td>
+		<td align="right">122</td>
+		<td align="right">7.38</td>		
+		<td align="right">1,530</td>
+		<td align="right">92.62</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การฝัง</a></td>
+		<td align="right">17</td>
+		<td align="right">1.03</td>		
+		<td align="right">1,635</td>
+		<td align="right">98.97</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การทำปุ๋ยหมัก</a></td>
+		<td align="right">118</td>
+		<td align="right">7.14</td>		
+		<td align="right">1,534</td>
+		<td align="right">92.86</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การคัดแยกขยะรีไซเคิล</a></td>
+		<td align="right">514</td>
+		<td align="right">31.11</td>		
+		<td align="right">1,138</td>
+		<td align="right">68.89</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">อื่นๆ (ระบุ)</a>1. เป็นอาหารสัตว์2. เทศบาล3. เทศบาลจัดเก็บ4. อาหารสัตว์5. ทิ้งเอง6. เทศาล7. ถนน</td>
+		<td align="right">49</td>
+		<td align="right">2.97</td>		
+		<td align="right">1,603</td>
+		<td align="right">97.03</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td colspan="6">
+			<div><center><b>1.การจัดการขยะ</b></center></div>
+			<div id="chart1"></div>
+			<div><center><b>1.1 การจัดการขยะ </b></center></div>
+			<div id="chart1_1_value"></div>
+		</td>
+	</tr>
+				<tr>
+			<th bgcolor="#3e99f4" colspan="4">2. การจัดการมลพิษหรือมลภาวะต่างๆ</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+			<td colspan="4">1. ไม่มี</td>
+			<td align="right">1,391</td>
+			<td align="right">76.85</td>
+		</tr>
+		<tr>
+			<td colspan="4">2. มี</td>
+			<td align="right">419</td>
+			<td align="right">23.15</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่ได้รับข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr align="center">
+			<td align="center" colspan="4"><b>รวม</b></td>
+			<td align="right"><b>1,810</b></td>
+			<td align="right"><b>100.00</b></td>
+		</tr>
+			<tr>
+			<th rowspan="2" bgcolor="#4ac6ee">2.1 การจัดการมลพิษหรือมลภาวะ ได้แก่ <br/>( N = 419 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีการจัดการมลพิษหรือมลภาวะ</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีการจัดการมลพิษหรือมลภาวะ</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การบำบัดน้ำเสียก่อนปล่อยทิ้ง</a></td>
+		<td align="right">112</td>
+		<td align="right">26.73</td>		
+		<td align="right">307</td>
+		<td align="right">73.27</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การใช้วัสดุหรืออุปกรณ์ป้องกันการเกิดควันหรือฝุ่นละออง</a></td>
+		<td align="right">131</td>
+		<td align="right">31.26</td>		
+		<td align="right">288</td>
+		<td align="right">68.74</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การใช้วัสดุหรืออุปกรณ์ป้องกันการเกิดเสียงดังรบกวน</a></td>
+		<td align="right">63</td>
+		<td align="right">15.04</td>		
+		<td align="right">356</td>
+		<td align="right">84.96</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การป้องกันอันตรายจากการใช้สารเคมี</a></td>
+		<td align="right">219</td>
+		<td align="right">52.27</td>		
+		<td align="right">200</td>
+		<td align="right">47.73</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">การทำเกษตรอินทรีย์และลดปริมาณการใช้สารเคมี</a></td>
+		<td align="right">162</td>
+		<td align="right">38.66</td>		
+		<td align="right">257</td>
+		<td align="right">61.34</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;<a class="b" style="cursor: pointer;color:black;text-decoration: none;">อื่นๆ (ระบุ)</a></td>
+		<td align="right">0</td>
+		<td align="right">0.00</td>		
+		<td align="right">419</td>
+		<td align="right">100.00</td>
+		<td align="right">100.00</td>
+	</tr>   
+		
+	<tr>
+		<td colspan="6">
+			<div><center><b>2.การจัดการมลพิษหรือมลภาวะต่างๆ</b></center></div>
+			<div id="chart2"></div>
+			<div><center><b>2.1 การจัดการมลพิษหรือมลภาวะ </b></center></div>
+			<div id="chart2_1_value"></div>
+		</td>
+	</tr>
+				<tr>
+			<th bgcolor="#3e99f4" colspan="4">3. การจัดหาน้ำสะอาดไว้ใช้อุปโภคและบริโภค</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+			<td colspan="4">1. ไม่มี</td>
+			<td align="right">166</td>
+			<td align="right">9.13</td>
+		</tr>
+		<tr>
+			<td colspan="4">2. มี</td>
+			<td align="right">1,652</td>
+			<td align="right">90.87</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่ได้รับข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr align="center">
+			<td align="center" colspan="4"><b>รวม</b></td>
+			<td align="right"><b>1,818</b></td>
+			<td align="right"><b>100.00</b></td>
+		</tr>
+			<tr>
+			<th rowspan="2" bgcolor="#4ac6ee">3.1 การจัดหาน้ำสะอาดไว้ใช้อุปโภคและบริโภค ได้แก่ <br/>( N = 1,652 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีการจัดหาน้ำสะอาดไว้ใช้อุปโภคและบริโภค</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีการจัดหาน้ำสะอาดไว้ใช้อุปโภคและบริโภค</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;<a class="c" style="cursor: pointer;color:black;text-decoration: none;">การเก็บกักน้ำฝนไว้ใช้</a></td>
+		<td align="right">337</td>
+		<td align="right">20.40</td>		
+		<td align="right">1,315</td>
+		<td align="right">79.60</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;<a class="c" style="cursor: pointer;color:black;text-decoration: none;">การใช้น้ำประปา</a></td>
+		<td align="right">1,029</td>
+		<td align="right">62.29</td>		
+		<td align="right">623</td>
+		<td align="right">37.71</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;<a class="c" style="cursor: pointer;color:black;text-decoration: none;">การใช้น้ำกรอง</a></td>
+		<td align="right">281</td>
+		<td align="right">17.01</td>		
+		<td align="right">1,371</td>
+		<td align="right">82.99</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;<a class="c" style="cursor: pointer;color:black;text-decoration: none;">การซื้อน้ำสะอาด/น้ำกรอง</a></td>
+		<td align="right">757</td>
+		<td align="right">45.82</td>		
+		<td align="right">895</td>
+		<td align="right">54.18</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;<a class="c" style="cursor: pointer;color:black;text-decoration: none;">การใช้น้ำจากแหล่งน้ำธรรมชาติ</a></td>
+		<td align="right">704</td>
+		<td align="right">42.62</td>		
+		<td align="right">948</td>
+		<td align="right">57.38</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;<a class="c" style="cursor: pointer;color:black;text-decoration: none;">อื่นๆ (ระบุ)</a>1. ้น้ำบ่อบาดาล2. บ่อน้ำบาดาล3. การใช้บ่อบาดาล4. น้ำจากศาลเจ้าพ่อพญาไม5. น้ำบ่อบาดาล6. บาดาล7. ใช้น้ำบาดาล8. ศาลเจ้าพ่อพญาไม9. บ่อน่ำ10. น้ำบ่อ11. น้ำบ่อบาดล12. ประปาภูเขา13. บ่อบาดาล14. น้ำบาดาล15. การใช้น้ำบ่อบาดาล16. น้ำจากเจ้าพ่อพญาไม</td>
+		<td align="right">58</td>
+		<td align="right">3.51</td>		
+		<td align="right">1,594</td>
+		<td align="right">96.49</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td colspan="6">
+			<div><center><b>3.การจัดหาน้ำสะอาดไว้ใช้อุปโภคและบริโภค</b></center></div>
+			<div id="chart3"></div>
+			<div><center><b>3.1 การจัดหาน้ำสะอาดไว้ใช้อุปโภคและบริโภค ่</b></center></div>
+			<div id="chart3_1_value"></div>
+		</td>
+	</tr>
+				<tr>
+			<th bgcolor="#3e99f4" colspan="4">4. การจัดการสภาพทีอยู่อาศัยหรือมีโอกาศเกิดอันตราย</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+			<td colspan="4">1. ไม่มี</td>
+			<td align="right">1,377</td>
+			<td align="right">75.87</td>
+		</tr>
+		<tr>
+			<td colspan="4">2. มี</td>
+			<td align="right">438</td>
+			<td align="right">24.13</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่ได้รับข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr align="center">
+			<td align="center" colspan="4"><b>รวม</b></td>
+			<td align="right"><b>1,815</b></td>
+			<td align="right"><b>100.00</b></td>
+		</tr>
+			<tr>
+			<th rowspan="2" bgcolor="#4ac6ee">4.1 การจัดการสภาพที่อยู่อาศัยที่ปลอดภัย ได้แก่ <br/>( N = 438 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีการจัดการสภาพที่อยู่อาศัยที่ปลอดภัย</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีการจัดการสภาพที่อยู่อาศัยที่ปลอดภัย</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;<a class="d" style="cursor: pointer;color:black;text-decoration: none;">การซ่อมแซมสภาพที่อยู่อาศัยที่ชำรุดทรุดโทรม</a></td>
+		<td align="right">268</td>
+		<td align="right" >61.19</td>		
+		<td align="right">170</td>
+		<td align="right" >38.81</td>
+		<td align="right" >100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;<a class="d" style="cursor: pointer;color:black;text-decoration: none;">การจัดหาหรือติดตั้งอุปกรณ์ส่องสว่างเพื่อให้มีแสงสว่างที่เพียงพอ</a></td>
+		<td align="right">323</td>
+		<td align="right" >73.74</td>		
+		<td align="right">115</td>
+		<td align="right" >26.26</td>
+		<td align="right" >100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;<a class="d" style="cursor: pointer;color:black;text-decoration: none;">การทำราวในการเกาะยึดหรือจับ</a></td>
+		<td align="right">196</td>
+		<td align="right" >44.75</td>		
+		<td align="right">242</td>
+		<td align="right" >55.25</td>
+		<td align="right" >100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;<a class="d" style="cursor: pointer;color:black;text-decoration: none;">การจัดทำทางลาดเอียงเพื่อใช้แทนการเดินขึ้นลงบันได</a></td>
+		<td align="right">43</td>
+		<td align="right" >9.82</td>		
+		<td align="right">395</td>
+		<td align="right" >90.18</td>
+		<td align="right" >100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;<a class="d" style="cursor: pointer;color:black;text-decoration: none;">อื่นๆ (ระบุ)</a>1. ดินหลังบ้านทรุดตัว2. บ้านเก่า</td>
+		<td align="right">2</td>
+		<td align="right" >0.46</td>		
+		<td align="right">436</td>
+		<td align="right" >99.54</td>
+		<td align="right" >100.00</td>
+	</tr>   
+		<tr>
+		<td colspan="6">
+			<div><center><b>4.การจัดการสภาพทีอยู่อาศัยหรือมีโอกาศเกิดอันตราย</b></center></div>
+			<div id="chart4"></div>
+			<div><center><b>4.1 การจัดการสภาพทีอยู่อาศัยหรือมีโอกาศเกิดอันตราย </b></center></div>
+			<div id="chart4_1_value"></div>
+		</td>
+	</tr>
+			<tr bgcolor="#ebadbf">
+		<td colspan="6" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 0 วินาที่		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#cacaca" colspan="6" align="right">
+			รายงานนี้ปรับปรุงแก้ไขล่าสุดวันที่ 04 ส.ค. 2559 
+		</td>
+	</tr>
+		</table>
+<input type="hidden" id="year_db" value="tcnap_2017"/>
+<input type="hidden" id="abt_db" value="5550902"/>
+<input type="hidden" id="mooban_db" value="0"/>
+  
+  <div class="modal fade" id="myModal_a" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_a"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_a"></div>
+          <input id="y_db_a" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_a()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>    
+  <div class="modal fade" id="myModal_b" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_b"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_b"></div>
+          <input id="y_db_b" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_b()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>    
+  <div class="modal fade" id="myModal_c" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_c"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_c"></div>
+          <input id="y_db_c" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_c()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>    
+  <div class="modal fade" id="myModal_d" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_d"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_d"></div>
+          <input id="y_db_d" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_d()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+
+<script>
+
+$( document ).ready(function() {
+	$('.a').click(function(){
+		$(".f1_title_a").text(' '+$(this).text());
+		$(".xxx_a").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_a").val('modal/f1_3_2_1.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_3_2_1.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_a").html(data);
+		});
+		$('#myModal_a').modal('show');
+		
+	});		
+	$('.b').click(function(){
+		$(".f1_title_b").text(' '+$(this).text());
+		$(".xxx_b").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_b").val('modal/f1_3_2_2.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_3_2_2.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_b").html(data);
+		});
+		$('#myModal_b').modal('show');
+		
+	});		
+	$('.c').click(function(){
+		$(".f1_title_c").text(' '+$(this).text());
+		$(".xxx_c").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_c").val('modal/f1_3_2_3.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_3_2_3.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_c").html(data);
+		});
+		$('#myModal_c').modal('show');
+		
+	});		
+	$('.d').click(function(){
+		$(".f1_title_d").text(' '+$(this).text());
+		$(".xxx_d").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_d").val('modal/f1_3_2_4.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_3_2_4.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_d").html(data);
+		});
+		$('#myModal_d').modal('show');
+		
+	});			
+	
+});
+function f1_a(){
+	location.href = $("#y_db_a").val();
+}
+function f1_b(){
+	location.href = $("#y_db_b").val();
+}
+function f1_c(){
+	location.href = $("#y_db_c").val();
+}
+function f1_d(){
+	location.href = $("#y_db_d").val();
+}
+
+
+var chart = c3.generate({
+    bindto: '#chart1',data: {
+        columns: [['1. ไม่มี','168'],['2. มี','1652']]
+    }
+});
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 3000);
+
+var chart_1_1_value = c3.generate({
+    bindto: '#chart1_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. ใช้บริการจัดเก็บขยะของชุมชน','2. การเผา','3. การฝัง','4. การทำปุ๋ยหมัก','5. การคัดแยกขยะรีไซเคิล','6. อืนๆ',],
+            ['2.1 การจัดการขยะ ', 1421,122,17,118,514,49,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+var chart2 = c3.generate({
+    bindto: '#chart2',data: {
+        columns: [['1. ไม่มี','1391'],['2. มี','419']]
+    }
+});
+
+setTimeout(function () {
+    chart2.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart2.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart2.transform('pie');
+}, 3000);
+
+var chart_2_1_value = c3.generate({
+    bindto: '#chart2_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. การบำบัดน้ำเสียก่อนปล่อยทิ้ง','2. การใช้วัสดุหรืออุปกรณ์ป้องกันการเกิดควันหรือฝุ่นละออง','3. การใช้วัสดุหรืออุปกรณ์ป้องกันการเกิดเสียงดังรบกวน','4. การป้องกันอันตรายจากการใช้สารเคมี','5. การทำเกษตรอินทรีย์และลดปริมาณการใช้สารเคมี','6. อืนๆ',],
+            ['2.1 การจัดการมลพิษหรือมลภาวะ ', 112,131,63,219,162,0,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+var chart3 = c3.generate({
+    bindto: '#chart3',data: {
+        columns: [['1. ไม่มี','166'],['2. มี','1652']]
+    }
+});
+
+setTimeout(function () {
+    chart3.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart3.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart3.transform('pie');
+}, 3000);
+
+var chart_3_1_value = c3.generate({
+    bindto: '#chart3_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. การเก็บกักน้ำฝนไว้ใช้','2. การใช้น้ำประปา','3. การใช้น้ำกรอง','4. การซื้อน้ำสะอาด/น้ำกรอง','5. การใช้น้ำจากแหล่งน้ำธรรมชาติ','6. อืนๆ',],
+            ['3.1 ช่องทางการสื่อสารของครัวเรือน ', 337,1029,281,757,704,58,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+var chart4 = c3.generate({
+    bindto: '#chart4',data: {
+        columns: [['1. ไม่มี','1377'],['2. มี','438']]
+    }
+});
+
+setTimeout(function () {
+    chart4.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart4.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart4.transform('pie');
+}, 3000);
+
+var chart_4_1_value = c3.generate({
+    bindto: '#chart4_1_value',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. การซ่อมแซมสภาพที่อยู่อาศัยที่ชำรุดทรุดโทรม','2. การจัดหาหรือติดตั้งอุปกรณ์ส่องสว่างเพื่อให้มีแสงสว่างที่เพียงพอ','3. การทำราวในการเกาะยึดหรือจับ','4. การจัดทำทางลาดเอียงเพื่อใช้แทนการเดินขึ้นลงบันได','5. อืนๆ',],
+            ['4.1 การจัดการสภาพทีอยู่อาศัยหรือมีโอกาศเกิดอันตราย ', 268,323,196,43,2,],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+</script>
+		

@@ -1,0 +1,95 @@
+<meta charset=utf-8" />
+	<table class="table table-bordered" align="center" bgcolor="#000000" border="1"  width="100%" style="background-color:#ffffff;">
+	  	<thead style="font-weight: bold">
+			<tr align="center" bgcolor="#95ca91">
+			   <td colspan="2" align="left">ประเภทของพฤติกรรมเสี่ยง</td>
+			</tr>
+			<tr bgcolor="#b395ea">
+				<td>รายละเอียด</td>
+				<td>จำนวนประชากร</td>
+			</tr>
+		</thead>
+		<tbody>
+					<tr>
+				<td>ไม่มี</td>
+				<td  align="right">2136</td>
+			</tr>
+					<tr>
+				<td>ดื่มสุราเป็นประจำ</td>
+				<td  align="right">210</td>
+			</tr>
+					<tr>
+				<td>สูบบุหรี่เป็นประจำ</td>
+				<td  align="right">105</td>
+			</tr>
+					<tr>
+				<td>นั่งๆ นอนๆ ไม่ค่อยได้ทำงาน</td>
+				<td  align="right">40</td>
+			</tr>
+					<tr>
+				<td>ไม่ได้ออกกำลังกาย</td>
+				<td  align="right">134</td>
+			</tr>
+					<tr>
+				<td>มีความเคลียดกังวลใจจนนอนไม่หลับ</td>
+				<td  align="right">53</td>
+			</tr>
+					<tr>
+				<td>ทำงานหนัก พักผ่อนน้อย</td>
+				<td  align="right">131</td>
+			</tr>
+					<tr>
+				<td>กินอาหารปริมาณมาก กินจุ กินจุบจิบ</td>
+				<td  align="right">25</td>
+			</tr>
+					<tr>
+				<td>กินอาหารรสจัด เป็นประจำทุกวัน</td>
+				<td  align="right">40</td>
+			</tr>
+					<tr>
+				<td>กินอาหารสุกๆ ดิบๆ</td>
+				<td  align="right">169</td>
+			</tr>
+					<tr>
+				<td>ดื่มเครื่องดื่มชูกำลังประจำ</td>
+				<td  align="right">66</td>
+			</tr>
+					<tr>
+				<td>ขับรถเร็ว ประมาท</td>
+				<td  align="right">8</td>
+			</tr>
+					<tr>
+				<td>มีเพศสัมพันธ์ที่ไม่ปลอดภัย</td>
+				<td  align="right">5</td>
+			</tr>
+					<tr>
+				<td>การใช้สารเสพติด</td>
+				<td  align="right">5</td>
+			</tr>
+					<tr>
+				<td>การใช้ยาชุด ยาแก้ปวด ยาลูกกลอน เป็นประจำ</td>
+				<td  align="right">11</td>
+			</tr>
+					<tr>
+				<td>ขับขี่รถจักรยานยนต์โดยไม่สวมหมวกนิรภัย</td>
+				<td  align="right">18</td>
+			</tr>
+					<tr>
+				<td>ขับขี่รถยนต์โดยไม่คาดเข็มขัดนิรภัย</td>
+				<td  align="right">5</td>
+			</tr>
+					<tr>
+				<td>ไม่ได้ตรวจสุขภาพ หรือการคัดกรองโรคเป็นประจำทุกปี</td>
+				<td  align="right">231</td>
+			</tr>
+					<tr>
+				<td>อื่นๆ (ระบุ)</td>
+				<td  align="right">6</td>
+			</tr>
+			
+		<tr>
+			<td colspan="2" bgcolor="#ebadbf" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 0 วินาที่		</td>
+	</tr>
+		</tbody>
+	</table>

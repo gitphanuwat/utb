@@ -1,0 +1,39 @@
+<meta charset=utf-8" />
+	<table class="table table-bordered" align="center" bgcolor="#000000" border="1"  width="100%" style="background-color:#ffffff;">
+	  	<thead style="font-weight: bold">
+			<tr align="center" bgcolor="#95ca91">
+			   <td colspan="2" align="left">ทุนทางสังคม</td>
+			</tr>
+			<tr bgcolor="#b395ea">
+				<td>รายละเอียด</td>
+				<td>จำนวนประชากร</td>
+			</tr>
+		</thead>
+		<tbody>
+					<tr>
+				<td>ประธานกลุ่ม / ชมรม / เครือข่าย และแกนนำต่างๆ</td>
+				<td  align="right">17</td>
+			</tr>
+					<tr>
+				<td>คนเก่ง</td>
+				<td  align="right">33</td>
+			</tr>
+					<tr>
+				<td>ผู้นำท้องที่</td>
+				<td  align="right">8</td>
+			</tr>
+					<tr>
+				<td>ผู้นำองค์กรปกครองส่วนท้องถิ่น</td>
+				<td  align="right">11</td>
+			</tr>
+					<tr>
+				<td>ผู้นำที่เป็นบุคลากรของหน่วยงานภาครัฐซึ่งอาศัยอยู่ในพื้นที่</td>
+				<td  align="right">20</td>
+			</tr>
+			
+		<tr>
+			<td colspan="2" bgcolor="#ebadbf" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 0 วินาที่		</td>
+	</tr>
+		</tbody>
+	</table>

@@ -1,0 +1,236 @@
+<meta charset=utf-8" />
+<meta charset="utf-8" />
+<table class="table table-bordered" border="1" style="background-color:#ffffff" width="100%">
+
+	<tr>
+		<td colspan="6" bgcolor="#6bac40"><b>3.1 จำแนกตามข้อมูลปัญหาสิ่งแวดล้อมของครัวเรือน</b></td>
+		</tr>
+		   		<tr>
+			<th bgcolor="#3e99f4" colspan="4">ปัญหาสิ่งแวดล้อมของครัวเรือน</th>
+			<th bgcolor="#3e99f4"><div align="center">จำนวน</div></th>
+			<th bgcolor="#3e99f4"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+			<td colspan="4">1. ไม่มี</td>
+			<td align="right">464</td>
+			<td align="right">50.16</td>
+		</tr>
+		<tr>
+			<td colspan="4">2. มี</td>
+			<td align="right">461</td>
+			<td align="right">49.84</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่ได้รับข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr class="hidden">
+			<td colspan="4"> ไม่มีข้อมูล</td>
+			<td align="right">0</td>
+			<td align="right">0.00</td>
+		</tr>
+		<tr align="center">
+			<td align="center" colspan="4"><b>รวม</b></td>
+			<td align="right"><b>925</b></td>
+			<td align="right"><b>0.00</b></td>
+		</tr>
+			<tr>
+			<th rowspan="2" bgcolor="#4ac6ee">ปัญหาสิ่งแวดล้อมของครัวเรือน ได้แก่ <br/>( N = 461 )</th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">มีปัญหาสิ่งแวดล้อมของครัวเรือน</div> </th>
+		    <th colspan="2" bgcolor="#4ac6ee"><div align="center">ไม่มีปัญหาสิ่งแวดล้อมของครัวเรือน</div> </th>
+		    <th bgcolor="#4ac6ee"><div align="center" >รวม</div></th>
+		  </tr>
+		<tr>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>			
+			<th bgcolor="#4ac6ee" width="100"><div align="center">จำนวน</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+			<th bgcolor="#4ac6ee" width="100"><div align="center">ร้อยละ ( % )</div></th>
+		</tr>
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;1.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">ขยะ</a></td>
+		<td align="right">283</td>
+		<td align="right">61.39</td>		
+		<td align="right">178</td>
+		<td align="right">38.61</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;2.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">น้ำเสีย</a></td>
+		<td align="right">13</td>
+		<td align="right">2.82</td>		
+		<td align="right">448</td>
+		<td align="right">97.18</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;3.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">ควันพิษ ฝุ่นละออง</a></td>
+		<td align="right">65</td>
+		<td align="right">14.10</td>		
+		<td align="right">396</td>
+		<td align="right">85.90</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;4.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">เสียงดัง</a></td>
+		<td align="right">20</td>
+		<td align="right">4.34</td>		
+		<td align="right">441</td>
+		<td align="right">95.66</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;5.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">การใช้สารเคมี</a></td>
+		<td align="right">24</td>
+		<td align="right">5.21</td>		
+		<td align="right">437</td>
+		<td align="right">94.79</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;6.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">สภาพที่อยู่อาศัยชำรุดทรุดโทรม</a></td>
+		<td align="right">9</td>
+		<td align="right">1.95</td>		
+		<td align="right">452</td>
+		<td align="right">98.05</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;7.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">แสงสว่างไม่เพียงพอ</a></td>
+		<td align="right">2</td>
+		<td align="right">0.43</td>		
+		<td align="right">459</td>
+		<td align="right">99.57</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;8.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">ขาดแคลนน้ำสะอาดในการอุปโภคบริโภค</a></td>
+		<td align="right">142</td>
+		<td align="right">30.80</td>		
+		<td align="right">319</td>
+		<td align="right">69.20</td>
+		<td align="right">100.00</td>
+	</tr>   
+		<tr>
+		<td>&nbsp;&nbsp;&nbsp;&nbsp;9.&nbsp;<a class="a" style="cursor: pointer;color:black;text-decoration: none;">อื่นๆ (ระบุ)</a> 1. กลิ่น</td>
+		<td align="right">54</td>
+		<td align="right">11.71</td>		
+		<td align="right">407</td>
+		<td align="right">88.29</td>
+		<td align="right">100.00</td>
+	</tr>   
+			<tr>
+			<td colspan="6">
+				<div><center><b>ปัญหาสิ่งแวดล้อมของครัวเรือน</b></center></div>
+				<div id="chart"></div>
+				<div><center><b>ปัญหาสิ่งแวดล้อมของครัวเรือน </b></center></div>
+				<div id="chart3"></div></td>
+		</tr>
+		<tr bgcolor="#ebadbf">
+		<td colspan="6" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 5 วินาที่		</td>
+	</tr>
+	<tr>
+		<td bgcolor="#cacaca" colspan="6" align="right">
+			รายงานนี้ปรับปรุงแก้ไขล่าสุดวันที่ 04 ส.ค. 2559 
+		</td>
+	</tr>
+</table>
+<input type="hidden" id="year_db" value="tcnap_2017"/>
+<input type="hidden" id="abt_db" value="6551405"/>
+<input type="hidden" id="mooban_db" value="0"/>
+  
+  <div class="modal fade" id="myModal_a" role="dialog">
+    <div class="modal-dialog" style="width: 80%">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"><p class="f1_title_a"></p></h4>
+        </div>
+        <div class="modal-body">
+          <div class="xxx_a"></div>
+          <input id="y_db_a" type="hidden" />
+        </div>
+        <div class="modal-footer">
+         	<button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        	<button type="button" class="btn btn-primary" onclick="f1_3_1_a()">ส่งออก xls</button>
+        </div>
+      </div>
+      
+    	</div>
+  </div>  
+
+<script>
+
+$( document ).ready(function() {
+	$('.a').click(function(){
+		$(".f1_title_a").text(' '+$(this).text());
+		$(".xxx_a").html('<h2>กรุณารอการดึงข้อมูล...</h2>');
+		$("#y_db_a").val('modal/f1_3_1.php?y='+$("#year_db").val()+'&m='+$("#mooban_db").val()+'&a='+$("#abt_db").val()+'&x='+$(this).text()+"&xls=1");
+		$.post('modal/f1_3_1.php',{y:$("#year_db").val(),m:$("#mooban_db").val(),a:$("#abt_db").val(),x:$(this).text()},function(data){
+			$(".xxx_a").html(data);
+		});
+		$('#myModal_a').modal('show');
+		
+	});			
+	
+});
+function f1_3_1_a(){
+	location.href = $("#y_db_a").val();
+}
+
+
+
+
+var chart = c3.generate({
+    bindto: '#chart',data: {
+        columns: [['1. ไม่มี','464'],['2. มี','461']]
+    }
+});
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 1000);
+
+setTimeout(function () {
+    chart.transform('line');
+}, 2000);
+
+setTimeout(function () {
+    chart.transform('pie');
+}, 3000);
+
+
+var chart3 = c3.generate({
+    bindto: '#chart3',data: {
+        x : 'x',
+        columns: [
+            ['x', '1. ขยะ','2. น้ำเสีย','3. ควันพิษ ฝุ่นละออง','4. เสียงดัง','5. การใช้สารเคมี','6. สภาพที่อยู่อาศัยชำรุดทรุดโทรม','7. แสงสว่างไม่เพียงพอ','8. ขาดแคลนน้ำสะอาดในการอุปโภคบริโภค','9. อืนๆ'],
+            ['ปัญหาสิ่งแวดล้อมของครัวเรือน', 283,13,65,20,24,9,2,142,54],
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'category',
+            tick: {
+                rotate: 75,
+                multiline: false
+            },
+            height: 130
+        }
+    },grid: {
+        x: {
+            show: true
+        },
+        y: {
+            show: true
+        }
+    }
+});
+
+
+</script>

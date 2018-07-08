@@ -1,0 +1,63 @@
+<meta charset=utf-8" />
+	<table class="table table-bordered" align="center" bgcolor="#000000" width="100%" border="1"  style="background-color:#ffffff;">
+	  	<thead style="font-weight: bold">
+			<tr align="center" bgcolor="#95ca91">
+			   <td colspan="2" align="left">ประเภทภาวะเสี่ยงจากการทำงาน</td>
+			</tr>
+			<tr bgcolor="#b395ea">
+				<td>รายละเอียด</td>
+				<td>จำนวนประชากร</td>
+			</tr>
+		</thead>
+		<tbody>
+					<tr>
+				<td>ไม่มี</td>
+				<td  align="right">5100</td>
+			</tr>
+					<tr>
+				<td>ใช้สารเคมีในการเกษตรโดยป้องกันตนเองไม่เหมาะสม</td>
+				<td  align="right">194</td>
+			</tr>
+					<tr>
+				<td>ทำงานในบริเวณที่มีการสูดดมสารเคมี สารระเหยที่เป็นอันตราย ต่อสุขภาพ</td>
+				<td  align="right">28</td>
+			</tr>
+					<tr>
+				<td>ทำงานในบริเวณที่มีเสียงดัง</td>
+				<td  align="right">56</td>
+			</tr>
+					<tr>
+				<td>ทำงานในบริเวณที่มีผง ฝุ่นละออง ควัน</td>
+				<td  align="right">184</td>
+			</tr>
+					<tr>
+				<td>ทำงานใกล้กับเครื่องจักรกล</td>
+				<td  align="right">69</td>
+			</tr>
+					<tr>
+				<td>ทำงานที่เป็นอันตรายต่อสายตา</td>
+				<td  align="right">27</td>
+			</tr>
+					<tr>
+				<td>ทำงานในลักษณะยืน หรือนั่งในท่าเดิมนานๆ</td>
+				<td  align="right">50</td>
+			</tr>
+					<tr>
+				<td>ทำงานในบริเวณที่มีอากาศร้อนอบอ้าวหรืออากาศเย็นมากเกินปกติ</td>
+				<td  align="right">59</td>
+			</tr>
+					<tr>
+				<td>ทำงานในที่สูง</td>
+				<td  align="right">160</td>
+			</tr>
+					<tr>
+				<td>อื่นๆ (ระบุ)</td>
+				<td  align="right">45</td>
+			</tr>
+			
+		<tr>
+			<td colspan="2" bgcolor="#ebadbf" align="right">
+			เวลาที่ใช้ในการแสดงรายงาน 0 วินาที่		</td>
+	</tr>
+		</tbody>
+	</table>
