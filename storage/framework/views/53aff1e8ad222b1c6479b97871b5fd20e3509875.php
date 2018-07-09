@@ -84,255 +84,290 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
     </div>
   </div>
 
-  <div id='showgraph2'>
-    <div class="box box-primary">
-        <div class="box-header with-border">
-          <h3 class="box-title">ข้อมูลระบบ (จำแนกตามหน่วยงาน)</h3>
-          <div class="box-tools pull-right">
-            <a href='dss/system' class='name'>
-              <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
-            </a>
-          </div>
+  <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <section class="col-lg-8 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
+            <!-- /.nav-tabs-custom -->
 
-        </div>
-        <div class="box-body with-border">
-            <div class="box-body chart-responsive">
-              <div class="row">
-                <div class="col-md-10">
-                    <div class="chart" id="bar-chart2" style="height: 300px;"></div>
+            <!-- Chat box -->
+            <div class="box box-success">
+              <div class="box-header">
+                <i class="fa fa-comments-o"></i>
+
+                <h3 class="box-title">กิจกรรมชุมชน</h3>
+
+                <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
+                  <div class="btn-group" data-toggle="btn-toggle">
+                    <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i>
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
+                  </div>
                 </div>
-                <div class="col-md-2">
-                  <ul class="chart-legend clearfix">
-                  <?php
-
-                      $i=0;
-                          echo "<li><label class='btn-block btn-social btn-default btn-xs'>
-                          <span>".$cresearcher."</span><span style='color:".$col[$i]."'> นักวิจัย</span>
-                          </label></li>";
-                          $i++;
-                          echo "<li><label class='btn-block btn-social btn-default btn-xs'>
-                          <span>".$cexpert."</span><span style='color:".$col[$i]."'> ผู้เชี่ยวชาญ</span>
-                          </label></li>";
-                          $i++;
-                          echo "<li><label class='btn-block btn-social btn-default btn-xs'>
-                          <span>".$cresearch."</span><span style='color:".$col[$i]."'> งานวิจัย</span>
-                          </label></li>";
-                          $i++;
-                          echo "<li><label class='btn-block btn-social btn-default btn-xs'>
-                          <span>".$ccreative."</span><span style='color:".$col[$i]."'> งานสร้างสรรค์</span>
-                          </label></li>";
-                          $i++;
-                          echo "<li><label class='btn-block btn-social btn-default btn-xs'>
-                          <span>".$carea."</span><span style='color:".$col[$i]."'> พื้นที่ชุมชน</span>
-                          </label></li>";
-                          $i++;
-                          echo "<li><label class='btn-block btn-social btn-default btn-xs'>
-                          <span>".$cproblem."</span><span style='color:".$col[$i]."'> ปัญหาชุมชม</span>
-                          </label></li>";
-                          $i++;
-                  ?>
-                  </ul>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-<div id='showgraph1'>
-  <div class="box box-success">
-    <div class="box-header with-border">
-      <h3 class="box-title">พื้นที่ชุมชน</h3>
-
-      <div class="box-tools pull-right">
-        <a href='eis/area' class='name'>
-          <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
-        </a>
-      </div>
-    </div>
-    <div class="box-body chart-responsive">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="chart" id="bar-chart1" style="height: 250px;"></div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-              <div class="col-md-7">
-                <div class="chart-responsive">
-                  <canvas id="pieChart" height="200"></canvas>
-                </div>
-                <small class='text-muted pull-left'><i class='fa fa-list'></i> ปัญหาเชิงพื้นที่</small>
               </div>
-              <div class="col-md-5">
-                <ul class="chart-legend clearfix">
-                  <?php
-                      $i=0;
-                      foreach ($sumtag as $key => $value) {
-                          echo "<li class='btn-block btn-social btn-default btn-xs btngroup'>
-                          <span>".$value."</span><span style='color:".$col[$i]."'> ".mb_substr($key,0,15,'UTF-8')."..</span>
-                          </li>";
-                          $i++;
-                      }
-                  ?>
-                </ul>
+
+              <div class="box-body chat">
+
+                <div class="item">
+                  <img src="dist/img/user4-128x128.jpg" alt="user image" class="online">
+
+                  <p class="message">
+                    <a href="#" class="name">
+                      <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
+                      อดุลย์ ศรีสืบวงษ์
+                    </a>
+                  #สืบสานประเพณี อบต.แม่พูลจัดงานประเพณีรดน้ำดำหัวผู้สูงอายุแสดงออกถึงความเคารพความกตัญญูกตเวทีต่อผู้สูงอายุ"ขอบคุณนายกฯที่มีรางวัลพิเศษ"มาให้ผู้สูงอายุ
+                  </p>
+                  <div class="attachment">
+                    <h4>Attachments:</h4>
+
+                    <p class="filename">
+                      <img src="dist/img/p1.png">
+                    </p>
+                    <p class="message">
+                      <img src="dist/img/cm1.png">
+                    </p>
+
+                  </div>
+                  <!-- /.attachment -->
+
+                </div>
+
+
+                <!-- /.item -->
+                <!-- chat item -->
+                <div class="item">
+                  <img src="dist/img/user3-128x128.jpg" alt="user image" class="online">
+
+                  <p class="message">
+                    <a href="#" class="name">
+                      <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
+                      อบต.ขุนฝาง
+                    </a>
+                    ศูนย์พัฒนาเด็กเล็กองค์การบริหารส่วนตำบลขุนฝาง พาเด็กๆศึกษาแหล่งเรียนรู้ภายในตำบลขุนฝาง วันที่ 2 กุมภาพันธ์ 2560 เวลา 09.00.น. ณ ขุนฝางบ้านกังหัน, ขุนฝางบ้านสวนฮารีน,ขุนฝางสวนม้าโฮมเสตย์
+                  </p>
+                  <div class="attachment">
+                    <p class="filename">
+                      <img src="dist/img/c2.png">
+                    </p>
+
+                  </div>
+
+                </div>
+                <!-- /.item -->
+                <!-- chat item -->
+                <div class="item">
+                  <img src="dist/img/user6-128x128.jpg" alt="user image" class="online">
+
+                  <p class="message">
+                    <a href="#" class="name">
+                      <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 1:15</small>
+                      อบต.ไร่อ้อย
+                    </a>
+                    พิธีเปิดศูนย์การเรียนรู้เศรษกิจพอเพียง ต.ไร่อ้อย — ที่ อบต.ไร่อ้อย
+                  </p>
+                  <div class="attachment">
+                    <p class="filename">
+                      <img src="dist/img/c3.png">
+                    </p>
+                  </div>
+                </div>
+              <div class="box-footer">
+                <div class="input-group">
+                  <input class="form-control" placeholder="Type message...">
+
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                  </div>
+                </div>
               </div>
             </div>
+          </section>
+          <!-- /.Left col -->
+          <!-- right col (We are only adding the ID to make the widgets sortable)-->
+          <section class="col-lg-4 connectedSortable">
+
+            <!-- Map box -->
+            <div class="box box-info">
+              <div class="box-header">
+                <div class="box-tools pull-right">
+                  <a href='<?php echo e(url('/stat')); ?>' class='name'>
+                    <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
+                  </a>
+                </div>
+                <i class="fa fa-map-marker"></i>
+                <h3 class="box-title">
+                  หน่วยงาน
+                </h3>
+              </div>
+              <div class="box-body chart-responsive">
+                <div id="world-map5" style="height: 100%; width: 100%;">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <!-- /.box-body-->
+            </div>
+            <!-- /.box -->
+
+            <!-- Calendar -->
+            <div class="box box-solid bg-green-gradient">
+              <div class="box-header">
+                <i class="fa fa-calendar"></i>
+
+                <h3 class="box-title">กิจกรรมชุมชน</h3>
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                  <!-- button with a dropdown -->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                      <i class="fa fa-bars"></i></button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                      <li><a href="#">Add new event</a></li>
+                      <li><a href="#">Clear events</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">View calendar</a></li>
+                    </ul>
+                  </div>
+                  <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                  </button>
+                </div>
+                <!-- /. tools -->
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body no-padding">
+                <!--The calendar -->
+                <div id="calendar" style="width: 100%"></div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer text-black">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <!-- Progress bars -->
+                    <div class="clearfix">
+                      <span class="pull-left">อบต.น้ำพี้</span>
+                    </div>
+                    <div>
+                      <a href="#">กิจกรรมบุญบั้งไฟ หมู่บ้าน..</a>
+                    </div>
+
+                    <div class="clearfix">
+                      <span class="pull-left">อบต.บ่อทอง</span>
+                    </div>
+                    <div>
+                      <a href="#">ตักบาทเทโววัดบ่อทอง..</a>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-6">
+                    <div class="clearfix">
+                      <span class="pull-left">อบต.ท่าสัก</span>
+                    </div>
+                    <div>
+                      <a href="#">ประเพณีแห่นางแมว..</a>
+                    </div>
+
+                    <div class="clearfix">
+                      <span class="pull-left">อบต.ชัยจุมพล</span>
+                    </div>
+                    <div>
+                      <a href="#">แห่เทียนเข้าพรรษา..</a>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+            </div>
+            <!-- /.box -->
+
+              <!-- LINE CHART -->
+              <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">สถิติการใช้ระบบ</h3>
+                  <div class="box-tools pull-right">
+                    <a href='<?php echo e(url('/stat')); ?>' class='name'>
+                      <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
+                    </a>
+                  </div>
+                </div>
+                <div class="box-body chart-responsive">
+                  <div class="chart" id="line-chart" style="height: 250px;"></div>
+                </div>
+              </div>
+
+            <div class="box box-info">
+              <div class="box-header">
+                <i class="fa fa-envelope"></i>
+
+                <h3 class="box-title">แจ้งปัญหาชุมชน</h3>
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                  <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                    <i class="fa fa-times"></i></button>
+                </div>
+                <!-- /. tools -->
+              </div>
+              <div class="box-body">
+                <form action="#" method="post">
+                  <div class="form-group">
+                    <input type="email" class="form-control" name="emailto" placeholder="ผู้ส่ง">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="subject" placeholder="หัวเรื่อง">
+                  </div>
+                  <div>
+                    <textarea class="textarea" placeholder="ข้อความ" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                  </div>
+                </form>
+              </div>
+              <div class="box-footer clearfix">
+                <button type="button" class="pull-right btn btn-default" id="sendEmail">ส่งข้อมูล
+                  <i class="fa fa-arrow-circle-right"></i></button>
+              </div>
+            </div>
+
+            <div class="box box-success">
+              <div class="box-header">
+                <h3 class="box-title">สำรวจความคิดเห็น</h3>
+                <p>
+                ท่านต้องการให้ชุมชนพัฒนาและแก้ไขปัญหาในด้านใดโดยเร็วมากที่สุด
+              </p>
+              </div>
+              <div class="box-body">
+                <div class="form-group">
+                  <label>
+                    <input type="radio" name="r1" class="minimal" checked>
+                    ระบบประปาประจำหมู่บ้าน
+                  </label><br>
+                  <label>
+                    <input type="radio" name="r1" class="minimal">
+                    ระบบเส้นทางสัญจรภายในชุมชน
+                  </label><br>
+                  <label>
+                    <input type="radio" name="r1" class="minimal">
+                    ระบบเสียงตามสาย
+                  </label>
+                  <button type="button" class="pull-right btn btn-default" id="sendEmail">ส่งข้อมูล
+                    <i class="fa fa-arrow-circle-right"></i></button>
+
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- right col -->
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- /.row (main row) -->
 
   <!-- Main row -->
   <div class="row">
-    <section class="col-lg-7 connectedSortable">
-      <div class="box box-success">
-        <div class="box-header with-border">
-          <h3 class="box-title">พื้นที่ชุมชน</h3>
-          <div class="box-tools pull-right">
-            <a href='<?php echo e(url('/maps')); ?>' class='name'>
-              <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
-            </a>
-          </div>
-        </div>
-        <div class="box-body no-padding">
-          <div class="row">
-            <div class="col-md-12 col-sm-12">
-              <div class="pad">
-                <div id="world-map-markers" style="height: 325px;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="col-lg-5 connectedSortable">
-      <!-- LINE CHART -->
-      <div class="box box-info">
-        <div class="box-header with-border">
-          <h3 class="box-title">สถิติการใช้ระบบ</h3>
-          <div class="box-tools pull-right">
-            <a href='<?php echo e(url('/stat')); ?>' class='name'>
-              <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
-            </a>
-          </div>
-        </div>
-        <div class="box-body chart-responsive">
-          <div class="chart" id="line-chart" style="height: 325px;"></div>
-        </div>
-      </div>
-    </section>
+
+
   </div>
 
-  <div class="row">
-    <!-- Left col -->
-    <section class="col-lg-12 connectedSortable">
-      <!-- BAR CHART -->
-      <div class="box box-default">
-        <div class="box-header with-border">
-          <i class="fa fa-comments-o"></i>
-          <h3 class="box-title">ข่าวสาร&กิจกรรม</h3>
 
-          <div class="box-tools pull-right">
-            <a href='<?php echo e(url('/infor')); ?>' class='name'>
-              <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
-            </a>
-          </div>
-        </div>
-          <!-- Chat box -->
-            <div class="box-body chat" id="chat-box">
-              <?php foreach($objinfor as $key): ?>
-              <!-- chat item -->
-              <?php
-                  //$id = $objinfor->id;
-                  //$data = Infor::find($id);
-                  $idfile = $key->file_id;
-                  $files = Image::where('file_id', $idfile)->limit(4)->get();
-              ?>
-              <div class="row">
-                <section class="col-lg-12 connectedSortable">
-
-              <div class="item">
-                <img src="<?php echo e(url ('images/avatar/large')); ?>/<?php echo e($key->user->picture); ?>" alt="user image" class="online">
-
-                <p class="message">
-                  <a href="#" class="name">
-                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> <?php echo e($key->created_at); ?></small>
-                    <?php echo e($key->user->headname); ?><?php echo e($key->user->firstname); ?> <?php echo e($key->user->lastname); ?>
-
-                  </a>
-                  <?php echo e($key->title); ?>
-
-                </p>
-                <div class="attachment">
-                  <h4>เอกสารแนบ :</h4>
-
-<?php
-$display = '
-<ul class="mailbox-attachments clearfix">
-<div class="row">';
-
-  @$full_size_dir = @Config::get('images.full_size');
-
-  foreach ($files as $file) {
-    $fullfile = $full_size_dir.$file->filename;
-    @$size = filesize($fullfile);
-    if(@is_array(getimagesize($fullfile))){
-      $display .= "
-       <li>
-          <span class='mailbox-attachment-icon' >
-            <a href='".url('/files').'/'.$file->filename."' class='mailbox-attachment-name' data-toggle='lightbox' data-gallery='example-gallery'>
-              <img src='".url('/files').'/'.$file->filename."' alt='Attachment' height='100'>
-            </a>
-          </span>
-          <div class='mailbox-attachment-info'>
-            <i class='fa fa-camera'></i>".substr($file->original_name,0,15).'...'."
-            <span class='mailbox-attachment-size'>
-              ".round(($size/1000), 2)." kB
-            </span>
-          </div>
-      </li>";
-
-    } else {
-      $display .= "
-      <li>
-          <span class='mailbox-attachment-icon'><i class='fa fa-file-text-o' style='font-size:96px'></i></span>
-          <div class='mailbox-attachment-info'>
-            <a href='".url('/files').'/'.$file->filename."' class='mailbox-attachment-name'><i class='fa fa-paperclip'></i> ".$file->original_name."</a>
-              <span class='mailbox-attachment-size'>
-              ".round(($size/1000), 2)." kB
-                <a href='".url('/files').'/'.$file->filename."' class='btn btn-default btn-xs pull-right'><i class='fa fa-cloud-download'></i></a>
-              </span>
-          </div>
-      </li>";
-    }
-  }
-
-  $display .= '
-  </div>
-</ul>';
-  echo $display;
-
-?>
-                </div>
-                <!-- /.attachment -->
-              </div>
-            </section>
-          </div>
-          <?php endforeach; ?>
-            </div>
-            <!-- /.chat -->
-            <div class="box-footer">
-              <div class="input-group">
-                <a href="<?php echo e(url('/infor')); ?>">แสดงทั้งหมด</a>
-              </div>
-            </div>
-          <!-- /.box (chat box) -->
-        <!-- /.box-body -->
-      </div>
-      <!-- /.box -->
-    </section>
-  </div>
 
 <?php $__env->stopSection(); ?>
 
@@ -365,15 +400,6 @@ $display = '
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-
-<?php
-  if(Auth::user()){
-    include ('makedatajs.php');
-  }
-?>
-<script src="data.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-
 
 <script>
   $(function () {

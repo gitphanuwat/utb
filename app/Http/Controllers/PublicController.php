@@ -17,7 +17,10 @@ use App\Infor;
 use App\University;
 use App\Question;
 ///new
+use App\Center;
 use App\Area;
+use App\Activity;
+use App\Group;
 
 use App\Http\Requests\QuestRequest;
 
@@ -31,9 +34,37 @@ class PublicController extends Controller
 
   public function organize(Request $request)
   {
-    $objarea = Area::get();
-    return view('organize', compact('objarea'));
+    $objcenter = Center::get();
+    return view('organize', compact('objcenter'));
   }
+  public function community(Request $request)
+  {
+    $objarea = Area::get();
+    return view('community', compact('objarea'));
+  }
+  public function activity(Request $request)
+  {
+    $objactivity = Activity::get();
+    return view('activity', compact('objactivity'));
+  }
+  public function group(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('group', compact('objgroup'));
+  }
+  public function knowledge(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('knowledge', compact('objgroup'));
+  }
+
+
+
+
+
+
+
+
 
   public function getSearch(Request $request)
   {
