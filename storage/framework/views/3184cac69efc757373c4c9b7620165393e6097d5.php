@@ -1,25 +1,23 @@
-@extends('layouts.template')
-
-@section('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น')
-@section('subtitle','Local Research Development')
-@section('styles')
+<?php $__env->startSection('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น'); ?>
+<?php $__env->startSection('subtitle','Local Research Development'); ?>
+<?php $__env->startSection('styles'); ?>
 <!-- iCheck -->
-<link rel="stylesheet" href="{{ asset("assets/plugins/iCheck/flat/blue.css") }}">
+<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/iCheck/flat/blue.css")); ?>">
 <!-- Morris chart -->
-<link rel="stylesheet" href="{{ asset("assets/plugins/morris/morris.css") }}">
+<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/morris/morris.css")); ?>">
 <!-- jvectormap -->
-<link rel="stylesheet" href="{{ asset("assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css") }}">
+<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css")); ?>">
 <!-- Date Picker -->
-<link rel="stylesheet" href="{{ asset("assets/plugins/datepicker/datepicker3.css") }}">
+<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/datepicker/datepicker3.css")); ?>">
 <!-- Daterange picker -->
-<link rel="stylesheet" href="{{ asset("assets/plugins/daterangepicker/daterangepicker.css") }}">
+<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/daterangepicker/daterangepicker.css")); ?>">
 <!-- bootstrap wysihtml5 - text editor -->
-<link rel="stylesheet" href="{{ asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}">
+<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css")); ?>">
 
-<link rel="stylesheet" href="{{ asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css") }}">
-<link rel="stylesheet" href="{{ asset("https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css") }}">
+<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css")); ?>">
+<link rel="stylesheet" href="<?php echo e(asset("https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css")); ?>">
 
-@endsection
+<?php $__env->stopSection(); ?>
 
 <?php
 
@@ -34,54 +32,54 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
         '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6'];
 ?>
 
-@section('body')
+<?php $__env->startSection('body'); ?>
   <div class="row">
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>{{$cresearcher}}</h3>
+          <h3><?php echo e($cresearcher); ?></h3>
           <p>หน่วยงาน</p>
         </div>
         <div class="icon">
           <i class="ion ion-person-add"></i>
         </div>
-        <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>{{$cexpert}}</h3>
+          <h3><?php echo e($cexpert); ?></h3>
           <p>ชุมชน</p>
         </div>
         <div class="icon">
           <i class="fa fa-gears "></i>
         </div>
-        <a href="{{url('/eis/expert')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?php echo e(url('/eis/expert')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>{{$cresearch}}</h3>
+          <h3><?php echo e($cresearch); ?></h3>
           <p>สมาชิก</p>
         </div>
         <div class="icon">
           <i class="fa fa-pie-chart"></i>
         </div>
-        <a href="{{url('/eis/research')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?php echo e(url('/eis/research')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>{{$ccreative}}</h3>
+          <h3><?php echo e($ccreative); ?></h3>
           <p>กิจกรรม</p>
         </div>
         <div class="icon">
           <i class="fa fa-bookmark-o"></i>
         </div>
-        <a href="{{url('/eis/creative')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="<?php echo e(url('/eis/creative')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
   </div>
@@ -194,7 +192,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
             <div class="box box-info">
               <div class="box-header">
                 <div class="box-tools pull-right">
-                  <a href='{{url('/stat')}}' class='name'>
+                  <a href='<?php echo e(url('/stat')); ?>' class='name'>
                     <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
                   </a>
                 </div>
@@ -290,7 +288,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
                 <div class="box-header with-border">
                   <h3 class="box-title">สถิติการใช้ระบบ</h3>
                   <div class="box-tools pull-right">
-                    <a href='{{url('/stat')}}' class='name'>
+                    <a href='<?php echo e(url('/stat')); ?>' class='name'>
                       <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
                     </a>
                   </div>
@@ -371,9 +369,9 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
+<?php $__env->startSection('script'); ?>
 
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -385,20 +383,20 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="{{ asset("assets/plugins/morris/morris.min.js") }}"></script>
+<script src="<?php echo e(asset("assets/plugins/morris/morris.min.js")); ?>"></script>
 <!-- Sparkline -->
-<script src="{{ asset("assets/plugins/sparkline/jquery.sparkline.min.js") }}"></script>
+<script src="<?php echo e(asset("assets/plugins/sparkline/jquery.sparkline.min.js")); ?>"></script>
 <!-- jvectormap -->
-<script src="{{ asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js") }}"></script>
-<script src="{{ asset("assets/plugins/jvectormap/jquery-jvectormap-th-mill.js") }}"></script>
+<script src="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js")); ?>"></script>
+<script src="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-th-mill.js")); ?>"></script>
 <!-- jQuery Knob Chart -->
-<script src="{{ asset("assets/plugins/knob/jquery.knob.js") }}"></script>
+<script src="<?php echo e(asset("assets/plugins/knob/jquery.knob.js")); ?>"></script>
 <!-- daterangepicker -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="{{ asset("assets/plugins/daterangepicker/daterangepicker.js") }}"></script>
-<script src="{{ asset("assets/plugins/datepicker/bootstrap-datepicker.js") }}"></script>
-<script src="{{ asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}"></script>
-<script src="{{ asset("assets/plugins/chartjs/Chart.min.js") }}"></script>
+<script src="<?php echo e(asset("assets/plugins/daterangepicker/daterangepicker.js")); ?>"></script>
+<script src="<?php echo e(asset("assets/plugins/datepicker/bootstrap-datepicker.js")); ?>"></script>
+<script src="<?php echo e(asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js")); ?>"></script>
+<script src="<?php echo e(asset("assets/plugins/chartjs/Chart.min.js")); ?>"></script>
 
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
@@ -415,7 +413,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 
   function counterhit(){
     $.ajax({
-      url : '{!! url('/counterhit') !!}',
+      url : '<?php echo url('/counterhit'); ?>',
       type : "get",
       //asyncfalse
       data : {},
@@ -459,4 +457,6 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 ?>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -104,6 +104,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+
 Route::get('file/get/{filename}', [
 	'as' => 'getfile', 'uses' => 'FileController@get']);
 Route::get('file/getload/{filename}', [
@@ -257,3 +258,18 @@ Route::post('test/sendmail','TestController@sendmail');
 Route::get('sendbasicemail','MailController@basic_email');
 Route::get('sendhtmlemail','MailController@html_email');
 Route::get('sendattachmentemail','MailController@attachment_email');
+
+//for uttaraditbook.com
+Route::get('organize','PublicController@organize');
+Route::get('community','PublicController@community');
+Route::get('activity','PublicController@activity');
+Route::get('group','PublicController@group');
+Route::get('knowledge','PublicController@knowledge');
+Route::get('travel','PublicController@travel');
+Route::get('calendar','PublicController@calendar');
+Route::get('poll','PublicController@poll');
+Route::get('complaint','PublicController@complaint');
+Route::get('problem','PublicController@problem');
+Route::get('download','PublicController@download');
+Route::get('about','PublicController@about');
+Route::get('search','PublicController@search');
