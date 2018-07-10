@@ -69,29 +69,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
           <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
       <!-- Custom tabs (Charts with tabs)-->
-      <!-- /.nav-tabs-custom -->
-      <div class="box box-solid bg-light-blue-gradient">
-        <div class="box-header">
-          <!-- tools box -->
-          <div class="pull-right box-tools">
-            <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-              <i class="fa fa-calendar"></i></button>
-            <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-              <i class="fa fa-minus"></i></button>
-          </div>
-          <!-- /. tools -->
-          <i class="fa fa-map-marker"></i>
-          <h3 class="box-title">
-            หน่วยงาน
-          </h3>
-        </div>
-        <div class="box-body">
-          <div id="world-map5" style="height: 400px; width: 100%;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <!-- /.box-body-->
-      </div>
+
       <!-- /.box (chat box) -->
       <div class="box">
         <div class="box-header">

@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น')
-@section('subtitle','แหล่งท่องเที่ยว')
+@section('subtitle','Local Research Development')
 @section('styles')
 
 

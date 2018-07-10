@@ -57,7 +57,41 @@ class PublicController extends Controller
     $objgroup = Group::get();
     return view('knowledge', compact('objgroup'));
   }
-
+  public function travel(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('travel', compact('objgroup'));
+  }
+  public function calendar(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('calendar', compact('objgroup'));
+  }
+  public function poll(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('poll', compact('objgroup'));
+  }
+  public function complaint(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('complaint', compact('objgroup'));
+  }
+  public function problem(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('problem', compact('objgroup'));
+  }
+  public function download(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('download', compact('objgroup'));
+  }
+  public function about(Request $request)
+  {
+    $objgroup = Group::get();
+    return view('about', compact('objgroup'));
+  }
 
 
 

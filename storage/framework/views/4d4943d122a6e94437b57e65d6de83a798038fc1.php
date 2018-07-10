@@ -1,11 +1,9 @@
-@extends('layouts.template')
-
-@section('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น')
-@section('subtitle','แหล่งท่องเที่ยว')
-@section('styles')
+<?php $__env->startSection('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น'); ?>
+<?php $__env->startSection('subtitle','Local Research Development'); ?>
+<?php $__env->startSection('styles'); ?>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
 
 <?php
 
@@ -20,15 +18,15 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
         '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6'];
 ?>
 
-@section('body')
+<?php $__env->startSection('body'); ?>
   <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
                   <div class="info-box">
                     <span class="info-box-icon bg-aqua"><i class="fa fa-home"></i></span>
                     <div class="info-box-content">
                       <span class="info-box-text">อบจ.</span>
-                      <span class="info-box-number">{{$cresearcher}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+                      <span class="info-box-number"><?php echo e($cresearcher); ?></span>
+                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -37,8 +35,8 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
                     <span class="info-box-icon bg-red"><i class="fa fa-home"></i></span>
                     <div class="info-box-content">
                       <span class="info-box-text">เทศบาล.</span>
-                      <span class="info-box-number">{{$cexpert}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+                      <span class="info-box-number"><?php echo e($cexpert); ?></span>
+                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -47,8 +45,8 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
                     <span class="info-box-icon bg-green"><i class="fa fa-home"></i></span>
                     <div class="info-box-content">
                       <span class="info-box-text">อบต.</span>
-                      <span class="info-box-number">{{$cresearch}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+                      <span class="info-box-number"><?php echo e($cresearch); ?></span>
+                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -57,8 +55,8 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
                     <span class="info-box-icon bg-yellow"><i class="fa fa-home"></i></span>
                     <div class="info-box-content">
                       <span class="info-box-text">อื่นๆ.</span>
-                      <span class="info-box-number">{{$ccreative}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+                      <span class="info-box-number"><?php echo e($ccreative); ?></span>
+                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                   </div>
                 </div>
@@ -69,29 +67,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
           <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
       <!-- Custom tabs (Charts with tabs)-->
-      <!-- /.nav-tabs-custom -->
-      <div class="box box-solid bg-light-blue-gradient">
-        <div class="box-header">
-          <!-- tools box -->
-          <div class="pull-right box-tools">
-            <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-              <i class="fa fa-calendar"></i></button>
-            <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-              <i class="fa fa-minus"></i></button>
-          </div>
-          <!-- /. tools -->
-          <i class="fa fa-map-marker"></i>
-          <h3 class="box-title">
-            หน่วยงาน
-          </h3>
-        </div>
-        <div class="box-body">
-          <div id="world-map5" style="height: 400px; width: 100%;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <!-- /.box-body-->
-      </div>
+
       <!-- /.box (chat box) -->
       <div class="box">
         <div class="box-header">
@@ -216,9 +192,9 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
     <!-- right col -->
   </div>
   <!-- /.row (main row) -->
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
+<?php $__env->startSection('script'); ?>
 <!-- DataTables -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
@@ -228,4 +204,6 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
     $("#example1").DataTable();
   });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
