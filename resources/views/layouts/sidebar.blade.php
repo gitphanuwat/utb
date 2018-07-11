@@ -182,6 +182,20 @@ if(Auth::user()){
           </span></a></li>
         </ul>
       </li>
+      <li class="treeview {{ classActiveOnlySegment(1,'analyze') }}">
+        <a href="#">
+          <i class="fa fa-pie-chart"></i>
+          <span>วิเคราะห์ระบบ</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li {!! classActivePath('analyze/struct') !!}><a href="{{ url('analyze/struct')}}"><i class="fa fa-circle-o"></i> กลุ่มข้อมูลตามโครงสร้าง</a></li>
+          <li {!! classActivePath('analyze/recheck') !!}><a href="{{ url('analyze/recheck')}}"><i class="fa fa-circle-o"></i> ตรวจสอบการบันทึกข้อมูล</a></li>
+          <li {!! classActivePath('analyze/userlog') !!}><a href="{{ url('analyze/userlog')}}"><i class="fa fa-circle-o"></i> ตรวจสอบข้อมูลผู้ใช้</a></li>
+        </ul>
+      </li>
       @endif
 
 
@@ -205,6 +219,7 @@ if(Auth::user()){
           </span></a></li>
         </ul>
       </li>
+
       @endif
 
       @if (Auth::user()->role->slug == 'Operator')
@@ -245,14 +260,10 @@ if(Auth::user()){
           </ul>
         </li>
         @elseif (Auth::user()->role->slug == 'Manager')
-        <li class="treeview {{ classActiveOnlySegment(1,'manager') }}">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>จัดการข้อมูลระบบ</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
+        <li class="header">เมนู:ข้อมูลหน่วยงาน</li>
+        <li {!! classActivePath('/') !!}><a href="{{ url('/')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
+          <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+
             <li {!! classActivePath('manager/areauser') !!}><a href="{{ url ('manager/areauser') }}"><i class="fa fa-circle-o"></i> ข้อมูลพื้นที่ชุมชน
               <span class="pull-right-container">
                 <small class="label pull-right bg-gray"><div id = 'carea'>{{ $cobjarea->count() }}</div></small>
@@ -261,8 +272,55 @@ if(Auth::user()){
               <span class="pull-right-container">
                 <small class="label pull-right bg-gray"><div id = 'cexpert'>{{ $cobjexpert->count() }}</div></small>
               </span></a></li>
-            </ul>
-          </li>
+
+              <li {!! classActivePath('organize') !!}><a href="{{ url('/managerset/center')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('community') !!}><a href="{{ url('/managerset/area')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('activity') !!}><a href="{{ url('activity')}}"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('group') !!}><a href="{{ url('group')}}"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('knowledge') !!}><a href="{{ url('knowledge')}}"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('travel') !!}><a href="{{ url('travel')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('calendar') !!}><a href="{{ url('calendar')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('poll') !!}><a href="{{ url('poll')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('complaint') !!}><a href="{{ url('complaint')}}"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('problem') !!}><a href="{{ url('problem')}}"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('download') !!}><a href="{{ url('download')}}"><i class="fa fa-file-text-o"></i> ดาวน์โหลดเอกสาร
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('user/infor') !!}>
+                <a href="{{ url ('user/infor') }}">
+                  <i class="fa fa-weixin"></i> <span>ข่าวสาร&กิจกรรม</span>
+                  <span class="pull-right-container">
+                    <small class="label pull-right bg-gray"><div id = 'cinfor'>{{ $cobjinfor->count() }}</div></small>
+                  </span>
+                </a>
+              </li>
+              <li {!! classActivePath('user/question') !!}>
+                <a href="{{ url ('user/question') }}">
+                  <i class="fa fa-envelope"></i> <span>การสื่อสารกับนักวิจัย</span>
+                  <span class="pull-right-container">
+                    <small class="label pull-right bg-gray"><div id = 'cquestion'>{{ $cobjquestion->count() }}</div></small>
+                  </span>
+                </a>
+              </li>
+              <li><hr></li>
+              <li {!! classActivePath('about') !!}><a href="{{ url('about')}}"><i class="fa fa-book"></i> เกี่ยวกับระบบ</a></li>
+              <li {!! classActivePath('search') !!}><a href="{{ url('search')}}"><i class="fa fa-search"></i> <span>ค้นหาข้อมูล</span></a></li>
+                  <!-- Authentication Links -->
+                  @if (Auth::guest())
+                  <li {!! classActivePath('register') !!}><a href="{{ url('register')}}"><i class="fa fa-user"></i> <span>สมัครสมาชิก</span></a></li>
+                      <li {!! classActivePath('login') !!}><a href="{{ url('login')}}"><i class="fa fa-lock"></i> <span>เข้าสู่ระบบ</span></a></li>
+                  @else
+                      <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                  @endif
         @elseif (Auth::user()->permit != 2)
 
         <li class="treeview {{ classActiveOnlySegment(1,'user') }}">
@@ -301,20 +359,7 @@ if(Auth::user()){
           </li>
         @endif
 
-    <li class="treeview {{ classActiveOnlySegment(1,'analyze') }}">
-      <a href="#">
-        <i class="fa fa-pie-chart"></i>
-        <span>วิเคราะห์ระบบ</span>
-        <span class="pull-right-container">
-          <i class="fa fa-angle-left pull-right"></i>
-        </span>
-      </a>
-      <ul class="treeview-menu">
-        <li {!! classActivePath('analyze/struct') !!}><a href="{{ url('analyze/struct')}}"><i class="fa fa-circle-o"></i> กลุ่มข้อมูลตามโครงสร้าง</a></li>
-        <li {!! classActivePath('analyze/recheck') !!}><a href="{{ url('analyze/recheck')}}"><i class="fa fa-circle-o"></i> ตรวจสอบการบันทึกข้อมูล</a></li>
-        <li {!! classActivePath('analyze/userlog') !!}><a href="{{ url('analyze/userlog')}}"><i class="fa fa-circle-o"></i> ตรวจสอบข้อมูลผู้ใช้</a></li>
-      </ul>
-    </li>
+
 
     @if (Auth::user()->role->slug == 'Admin')
     <li class="treeview {{ classActiveOnlySegment(1,'mnt') }}">
@@ -331,43 +376,35 @@ if(Auth::user()){
     </li>
     @endif
 
-    <li {!! classActivePath('user/infor') !!}>
-      <a href="{{ url ('user/infor') }}">
-        <i class="fa fa-weixin"></i> <span>ข่าวสาร&กิจกรรม</span>
-        <span class="pull-right-container">
-          <small class="label pull-right bg-gray"><div id = 'cinfor'>{{ $cobjinfor->count() }}</div></small>
-        </span>
-      </a>
-    </li>
 
-    <li {!! classActivePath('user/question') !!}>
-      <a href="{{ url ('user/question') }}">
-        <i class="fa fa-envelope"></i> <span>การสื่อสารกับนักวิจัย</span>
-        <span class="pull-right-container">
-          <small class="label pull-right bg-gray"><div id = 'cquestion'>{{ $cobjquestion->count() }}</div></small>
-        </span>
-      </a>
-    </li>
 
-@endif
-
+@else
 
     <li class="header">เมนูหลัก</li>
     <li {!! classActivePath('/') !!}><a href="{{ url('/')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
-      <span class="pull-right-container">
-        <small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small>
-      </span></a></li>
-    <li {!! classActivePath('organize') !!}><a href="{{ url('/organize')}}"><i class="fa fa-home"></i> ข้อมูลหน่วยงาน</a></li>
-    <li {!! classActivePath('community') !!}><a href="{{ url('community')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span></a></li>
-    <li {!! classActivePath('activity') !!}><a href="{{ url('activity')}}"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span></a></li>
-    <li {!! classActivePath('group') !!}><a href="{{ url('group')}}"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span></a></li>
-    <li {!! classActivePath('knowledge') !!}><a href="{{ url('knowledge')}}"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span></a></li>
-    <li {!! classActivePath('travel') !!}><a href="{{ url('travel')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span></a></li>
-    <li {!! classActivePath('calendar') !!}><a href="{{ url('calendar')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span></a></li>
-    <li {!! classActivePath('poll') !!}><a href="{{ url('poll')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span></a></li>
-    <li {!! classActivePath('complaint') !!}><a href="{{ url('complaint')}}"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span></a></li>
-    <li {!! classActivePath('problem') !!}><a href="{{ url('problem')}}"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span></a></li>
-    <li {!! classActivePath('download') !!}><a href="{{ url('download')}}"><i class="fa fa-file-text-o"></i> ดาวน์โหลดเอกสาร</a></li>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('organize') !!}><a href="{{ url('/organize')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('community') !!}><a href="{{ url('community')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('activity') !!}><a href="{{ url('activity')}}"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('group') !!}><a href="{{ url('group')}}"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('knowledge') !!}><a href="{{ url('knowledge')}}"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('travel') !!}><a href="{{ url('travel')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('calendar') !!}><a href="{{ url('calendar')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('poll') !!}><a href="{{ url('poll')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('complaint') !!}><a href="{{ url('complaint')}}"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('problem') !!}><a href="{{ url('problem')}}"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+    <li {!! classActivePath('download') !!}><a href="{{ url('download')}}"><i class="fa fa-file-text-o"></i> ดาวน์โหลดเอกสาร
+      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
     <li {!! classActivePath('about') !!}><a href="{{ url('about')}}"><i class="fa fa-book"></i> เกี่ยวกับระบบ</a></li>
     <li><hr></li>
     <li {!! classActivePath('search') !!}><a href="{{ url('search')}}"><i class="fa fa-search"></i> <span>ค้นหาข้อมูล</span></a></li>
@@ -378,6 +415,7 @@ if(Auth::user()){
         @else
             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
         @endif
+@endif
 
   </ul>
 </section>
