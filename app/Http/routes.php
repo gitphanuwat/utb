@@ -272,4 +272,8 @@ Route::get('complaint','PublicController@complaint');
 Route::get('problem','PublicController@problem');
 Route::get('download','PublicController@download');
 Route::get('about','PublicController@about');
-Route::get('search','PublicController@search');
+//Route::get('search','PublicController@search');
+
+
+Route::get('gmaps', 'HomeController@gmaps');
+Route::get('gmaps1', 'HomeController@gmaps1');

@@ -40,3 +40,15 @@ ALTER TABLE `activitys`
     ADD PRIMARY KEY (`id`);
   ALTER TABLE `groups`
     MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
+
+
+    -- phpMyAdmin SQL Dump
+    -- version 4.4.10
+    -- http://www.phpmyadmin.net
+    --
+    -- Host: localhost:3306
+    -- Generation Time: Jul 10, 2018 at 04:48 PM
+    -- Server version: 5.5.42
+    -- PHP Version: 5.6.10
+
+    

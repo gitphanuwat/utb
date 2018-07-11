@@ -19,201 +19,193 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 ?>
 
 <?php $__env->startSection('body'); ?>
-  <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">อบจ.</span>
-                      <span class="info-box-number"><?php echo e($cresearcher); ?></span>
-                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">เทศบาล.</span>
-                      <span class="info-box-number"><?php echo e($cexpert); ?></span>
-                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">อบต.</span>
-                      <span class="info-box-number"><?php echo e($cresearch); ?></span>
-                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">อื่นๆ.</span>
-                      <span class="info-box-number"><?php echo e($ccreative); ?></span>
-                      <a href="<?php echo e(url('/eis/researcher')); ?>" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-  </div>
+<div class="row">
+<div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="info-box">
+    <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
 
-  <!-- Main row -->
-  <div class="row">
-          <!-- Left col -->
-    <section class="col-lg-12 connectedSortable">
-      <!-- Custom tabs (Charts with tabs)-->
-      <!-- /.nav-tabs-custom -->
-      <div class="box box-solid bg-light-blue-gradient">
-        <div class="box-header">
-          <!-- tools box -->
-          <div class="pull-right box-tools">
-            <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-              <i class="fa fa-calendar"></i></button>
-            <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-              <i class="fa fa-minus"></i></button>
-          </div>
-          <!-- /. tools -->
-          <i class="fa fa-map-marker"></i>
-          <h3 class="box-title">
-            หน่วยงาน
-          </h3>
-        </div>
-        <div class="box-body">
-          <div id="world-map5" style="height: 400px; width: 100%;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-        </div>
-        <!-- /.box-body-->
-      </div>
-      <!-- /.box (chat box) -->
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">ข้อมูลหน่วยงานภายในจังหวัด</h3>
-        </div>
-        <!-- /.box-header -->
-        <div class="box-body">
-          <!-- select -->
+    <div class="info-box-content">
+      <span class="info-box-text">โครงการเด่น</span>
+      <span class="info-box-number">--รายการ</span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+  <!-- /.info-box -->
+</div>
+<!-- /.col -->
+<!-- fix for small devices only -->
+<div class="clearfix visible-sm-block"></div>
+
+<div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="info-box">
+    <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
+
+    <div class="info-box-content">
+      <span class="info-box-text">สถานที่สำคัญ</span>
+      <span class="info-box-number">--รายการ</span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+  <!-- /.info-box -->
+</div>
+<!-- /.col -->
+<div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="info-box">
+    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
+
+    <div class="info-box-content">
+      <span class="info-box-text">ผลิตภัณฑ์ชุมชน</span>
+      <span class="info-box-number">-- รายการ</span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+  <!-- /.info-box -->
+</div>
+<!-- /.col -->
+</div>      <!-- /.row -->
+<!-- Main row -->
+<div class="row">
+<!-- Left col -->
+<section class="col-lg-12 connectedSortable">
+  <!-- Custom tabs (Charts with tabs)-->
+  <!-- /.nav-tabs-custom -->
+            <!-- /.box (chat box) -->
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title">เรื่องเด่นภายในจังหวัด</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <!-- select -->
+      <div class="row">
+        <!-- Left col -->
+        <div class="col-lg-3">
           <div class="form-group" style="width:250px">
             <select class="form-control">
               <option>--เลือกอำเภอ--</option>
             </select>
           </div>
-
-          <table id="example1" class="table table-bordered table-striped">
-            <thead>
-            <tr>
-              <th>ลำดับ</th>
-              <th>ชื่อหน่วยงาน</th>
-              <th>ประเภทหน่วยงาน</th>
-              <th>ที่อยู่</th>
-              <th>เว็บไซต์</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>1</td>
-              <td>อบจ.อุตรดิตถ์</td>
-              <td>อบจ.</td>
-              <td>11/15 ถนนประชานิมิตร ต.ท่าอิฐ อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.uttaradit-pao.go.th</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>เทศบาลเมืองอุตรดิตถ์</td>
-              <td>เทศบาลเมือง</td>
-              <td>ถนนประชานิมิตร ต.ท่าอิฐ อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.uttaraditcity.go.th</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>อบต.หาดงิ้ว</td>
-              <td>อบต.</td>
-              <td>99 หมู่ 3 ต.หาดงิ้ว อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.hadngiw.go.th</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>อบต.วังดิน</td>
-              <td>อบต.</td>
-              <td>99/1 หมู่ 6 ต.ป่าเซ่า อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.pasaouttaradit.go.th</td>
-            </tr>
-
-            <tr>
-              <td>5</td>
-              <td>อบต.บ้านด่านนาขาม</td>
-              <td>อบต.</td>
-              <td>392 หมู่ 5 ต.บ้านด่านนาขาม อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.bdnk.go.th</td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>อบต.แสนตอ</td>
-              <td>อบต.</td>
-              <td>99/1 หมู่ 6 ต.ป่าเซ่า อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.pasaouttaradit.go.th</td>
-            </tr>
-            <tr>
-              <td>7</td>
-              <td>อบต.หาดงิ้ว</td>
-              <td>อบต.</td>
-              <td>99 หมู่ 3 ต.หาดงิ้ว อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.hadngiw.go.th</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>เทศบาลตำบลหาดกรวด</td>
-              <td>เทศบาลตำบล</td>
-              <td>200 หมู่ 3 ต.บ้านด่าน อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.bandan.go.th</td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>เทศบาลตำบลน้ำริด</td>
-              <td>เทศบาลตำบล</td>
-              <td>214 หมู่ 4 ต.งิ้วงาม อ.เมือง จ.อุตรดิตถ์</td>
-              <td>http:/www.ngew-ngam.go.th</td>
-            </tr>
-            <tr>
-              <td>10</td>
-              <td>เทศบาลตำบลท่าเสา</td>
-              <td>เทศบาลตำบล</td>
-              <td>1 หมู่ 10 ต.ท่าเสา อ.เมือง จ.อุตรดิตถ์</td>
-              <td>www.thasao.go.th</td>
-            </tr>
-            <tr>
-              <td>11</td>
-              <td>All others</td>
-              <td>-</td>
-              <td>-</td>
-              <td>U</td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr>
-              <th>ลำดับ</th>
-              <th>ชื่อหน่วยงาน</th>
-              <th>ประเภทหน่วยงาน</th>
-              <th>ที่อยู่</th>
-              <th>เว็บไซต์</th>
-            </tr>
-            </tfoot>
-          </table>
         </div>
-        <!-- /.box-body -->
+        <div class="col-lg-3">
+          <div class="form-group" style="width:250px">
+            <select class="form-control">
+              <option>--เลือกตำบล--</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="form-group" style="width:250px">
+            <select class="form-control">
+              <option>--เลือกหมวดหมู่--</option>
+            </select>
+          </div>
+        </div>
       </div>
+      <table id="example1" class="table table-bordered table-striped">
+        <thead>
+        <tr>
+          <th>ลำดับ</th>
+          <th>หัวเรื่อง</th>
+          <th>สถานที่</th>
+          <th>ผู้รับผิดชอบ</th>
+          <th>ข้อมูลติดต่อ</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>โครงการข้าวอินทรีย์</td>
+          <td>บ้านหาดสองแคว หมู่ 2 ตำบลหาดสองแคว อำเภอตรอน จังหวัดอุตรดิตถ์ 53140</td>
+          <td>อบต.หาดสองแคว</td>
+          <td>055-496098</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>ถนนต้นราชพฤกษ์ที่สวยที่สุดภาคเหนือ</td>
+          <td>หมู่ 10 ต.วังแดง อ.ตรอน จ.อุตรดิตถ์ 53140</td>
+          <td>อบต.วังแดง</td>
+          <td>055491506</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>ศูนย์การเรียนรู้แบบพึ่งตนเอง</td>
+          <td>หมู่ 10 ต.วังแดง อ.ตรอน จ.อุตรดิตถ์ 53140</td>
+          <td>อบต.วังแดง</td>
+          <td>055491506</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>บ้านพักโฮมสเตย์บ้านหาดสองแคว</td>
+          <td>บ้านหาดสองแคว ต.หาดสองแคว อ.ตรอน จ.อุตรดิตถ์ 53140</td>
+          <td>อบต.หาดสองแคว</td>
+          <td>055496098</td>
+        </tr>
 
-    </section>
-    <!-- /.Left col -->
-    <!-- right col (We are only adding the ID to make the widgets sortable)-->
-    <!-- right col -->
+        <tr>
+          <td>5</td>
+          <td>โครงการจักรยานสานฝัน</td>
+          <td>บ้านหาดสองแคว ต.หาดสองแคว อ.ตรอน จ.อุตรดิตถ์ 53140</td>
+          <td>อบต.หาดสองแคว</td>
+          <td>055496098</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>ไทยอาสาป้องกันชาติ</td>
+          <td>ตำบลบ่อทอง อำเภอทองแสนขัน จังหวัด อุตรดิตถ์ 53230</td>
+          <td>อบต.บ่อทอง</td>
+          <td>0558240268</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>ศาลปู่เจ้าทิศน้อย</td>
+          <td>ต.บ่อทอง อ.ทองแสนขัน จ.อุตรดิตถ์</td>
+          <td>เทศบาลตำบลทองแสนขัน</td>
+          <td>055418254</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>ฝึกอบรมอาชีพ"รำกลองยาวผู้สูงอายุ"</td>
+          <td>หมู่ที่ 10 ตำบลบ่อทอง อำเภอทองแสนขัน จังหวัดอุตรดิตถ์</td>
+          <td>อบต.บ่อทอง</td>
+          <td>0558240268</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>ผลิตภัณฑ์จากเหล็กน้ำพี้</td>
+          <td>บ้านน้ำพี้ หมู่ 9 ตำบลน้ำพี้ อำเภอทองแสนขัน จังหวัดอุตรดิตถ์ 53230</td>
+          <td>อบต.น้ำพี้</td>
+          <td>095681970</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>กลุ่มผลิตก๊าซชีวภาพ</td>
+          <td>หมู่ 10 ต.วังแดง อ.ตรอน จ.อุตรดิตถ์ 53140</td>
+          <td>อบต.วังแดง</td>
+          <td>055491506</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <th>ลำดับ</th>
+          <th>ชื่อหน่วยงาน</th>
+          <th>ประเภทหน่วยงาน</th>
+          <th>ที่อยู่</th>
+          <th>เว็บไซต์</th>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+    <!-- /.box-body -->
   </div>
-  <!-- /.row (main row) -->
+
+</section>
+<!-- /.Left col -->
+<!-- right col (We are only adding the ID to make the widgets sortable)-->
+<!-- right col -->
+</div>
+<!-- /.row (main row) -->
+
+
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>

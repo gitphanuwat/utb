@@ -16,6 +16,9 @@ use App\Infor;
 use App\Counter;
 use App\Log;
 
+
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -119,4 +122,14 @@ class HomeController extends Controller
       return $today.' '.$counttotal;
     }
 
+    public function gmaps()
+    {
+      $locations = DB::table('locations')->get();
+      return view('gmaps',compact('locations'));
+    }
+    public function gmaps1()
+    {
+      $locations = DB::table('locations')->get();
+      return view('gmaps1',compact('locations'));
+    }
 }
