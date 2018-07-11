@@ -33,8 +33,9 @@ class HomeController extends Controller
     }
     public function index()
     {
+      $locations = DB::table('locations')->get();
       $objinfor = Infor::limit(2)->orderBy('id', 'desc')->get();
-      return view('home',compact('objinfor'));
+      return view('home',compact('objinfor','locations'));
     }
 
     public function maps()
@@ -131,5 +132,10 @@ class HomeController extends Controller
     {
       $locations = DB::table('locations')->get();
       return view('gmaps1',compact('locations'));
+    }
+    public function gmaps5()
+    {
+      $locations = DB::table('locations')->get();
+      return view('gmaps5',compact('locations'));
     }
 }
