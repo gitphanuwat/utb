@@ -22,6 +22,8 @@ use App\Area;
 use App\Activity;
 use App\Group;
 
+use DB;
+
 use App\Http\Requests\QuestRequest;
 
 class PublicController extends Controller
@@ -34,13 +36,15 @@ class PublicController extends Controller
 
   public function organize(Request $request)
   {
+    $locations = DB::table('locations')->get();
     $objcenter = Center::get();
-    return view('organize', compact('objcenter'));
+    return view('organize', compact('objcenter','locations'));
   }
   public function community(Request $request)
   {
+    $locations = DB::table('locations')->get();
     $objarea = Area::get();
-    return view('community', compact('objarea'));
+    return view('community', compact('objarea','locations'));
   }
   public function activity(Request $request)
   {
@@ -92,10 +96,6 @@ class PublicController extends Controller
     $objgroup = Group::get();
     return view('about', compact('objgroup'));
   }
-
-
-
-
 
 
 

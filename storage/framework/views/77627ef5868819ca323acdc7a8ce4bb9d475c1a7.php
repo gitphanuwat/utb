@@ -1,23 +1,10 @@
 <?php $__env->startSection('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น'); ?>
 <?php $__env->startSection('subtitle','แหล่งท่องเที่ยว'); ?>
 <?php $__env->startSection('styles'); ?>
-
-
 <?php $__env->stopSection(); ?>
-
 <?php
-
-use App\Counter;
-use App\Infor;
-use App\Models\Image;
-
-if(Auth::user()){include ('makedata.php');}
 include('data.php');
-
-$col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6',
-        '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6'];
 ?>
-
 <?php $__env->startSection('body'); ?>
 <div class="row">
       <div class="col-md-4 col-sm-6 col-xs-12">
@@ -86,7 +73,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
               </h3>
             </div>
             <div class="box-body">
-              <div id="world-map5" style="height: 400px; width: 100%;">
+              <div id="map" style="height: 400px; width: 100%;">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
               </div>
             </div>
@@ -216,6 +203,29 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
+<script>
+  var locations = <?php print_r(json_encode($locations)) ?>;
+  var map = new GMaps({
+    el: '#map',
+    lat: 17,
+    lng: 100,
+    zoom: 8,
+  });
+  $.each( locations, function( index, value ){
+      map.addMarker({
+          id: value.id ,
+          lat: value.lat ,
+          lng: value.lng ,
+          title: value.city ,
+          infoWindow: {
+             content: 'หน่วยงาน:'+value.city
+          }
+      });
+});
+</script>
 <!-- DataTables -->
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>

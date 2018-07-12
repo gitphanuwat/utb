@@ -18,7 +18,6 @@
 
 <link rel="stylesheet" href="{{ asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css") }}">
 <link rel="stylesheet" href="{{ asset("https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css") }}">
-
 @endsection
 
 <?php
@@ -204,9 +203,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
                 </h3>
               </div>
               <div class="box-body chart-responsive">
-                <div id="world-map5" style="height: 100%; width: 100%;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
+                <div id="map" style="width: 100%; height: 200px">map</div>
               </div>
               <!-- /.box-body-->
             </div>
@@ -374,6 +371,29 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 @endsection
 
 @section('script')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
+<script>
+  var locations = <?php print_r(json_encode($locations)) ?>;
+  var map = new GMaps({
+    el: '#map',
+    lat: 17,
+    lng: 100,
+    zoom: 8,
+  });
+  $.each( locations, function( index, value ){
+      map.addMarker({
+          id: value.id ,
+          lat: value.lat ,
+          lng: value.lng ,
+          title: value.city ,
+          infoWindow: {
+             content: value.city
+          }
+      });
+});
+</script>
 
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -426,6 +446,8 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
     });
   }
 </script>
+
+
 
 <?php
     $objcounter = Counter::get();

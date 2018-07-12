@@ -34,9 +34,14 @@ class HomeController extends Controller
     }
     public function index()
     {
+      $locations = DB::table('locations')->get();
       $objinfor = Infor::limit(2)->orderBy('id', 'desc')->get();
+<<<<<<< HEAD
       $objcenter = Center::limit(2)->get();
       return view('home',compact('objinfor','objcenter'));
+=======
+      return view('home',compact('objinfor','locations'));
+>>>>>>> b7086d0ed7e9d221a6db9435fb3391863c361084
     }
 
     public function maps()
@@ -134,9 +139,16 @@ class HomeController extends Controller
       $locations = DB::table('locations')->get();
       return view('gmaps1',compact('locations'));
     }
+<<<<<<< HEAD
     public function gmaps2()
     {
       $locations = DB::table('locations')->get();
       return view('gmaps2',compact('locations'));
+=======
+    public function gmaps5()
+    {
+      $locations = DB::table('locations')->get();
+      return view('gmaps5',compact('locations'));
+>>>>>>> b7086d0ed7e9d221a6db9435fb3391863c361084
     }
 }
