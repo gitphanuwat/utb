@@ -73,13 +73,10 @@
           $('#showdetail').show();
           $('.btndetail').hide();
           $('#groupname').focus();
-<<<<<<< HEAD
           //$('#detail').wysihtml5();
           $("#form_data")[0].reset();
           //$('#detail').data("wysihtml5").editor.clear();
-=======
           $('#detail').html('');
->>>>>>> e42c30cfe79a44f352c7a81ce963f6e76455eac9
       });
 
       $('.btncancel').click(function(){
@@ -121,11 +118,8 @@
 
               $('#detail').html('');
               $('#detail').html(e.detail);
-<<<<<<< HEAD
               //$('#detail').wysihtml5();
               //$('#detail').data("wysihtml5").editor.setValue(e.detail);
-=======
->>>>>>> e42c30cfe79a44f352c7a81ce963f6e76455eac9
 
             }
         });

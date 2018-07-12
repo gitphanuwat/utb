@@ -14,7 +14,7 @@ use DB;
 
 use App\Http\Requests\AreauniRequest;
 
-class AreaController extends Controller
+class CenterController extends Controller
 {
      public function __construct()
      {
@@ -24,8 +24,8 @@ class AreaController extends Controller
     public function index()
     {
       $idc = Auth::user()->center_id;
-      $data = Area::where('center_id',$idc)->get();
-      return view('manager.area',compact('data'));
+      $objcen = Center::find($idc);
+      return view('manager.center',compact('objcen'));
     }
 
     public function create()

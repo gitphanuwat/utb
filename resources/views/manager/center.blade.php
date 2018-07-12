@@ -16,14 +16,10 @@
       <!-- /. tools -->
       <i class="fa fa-map-marker"></i>
       <h3 class="box-title">
-        หมู่บ้าน
+        หน่วยงาน
       </h3>
     </div>
-    <div class="box-body">
-      <div id="map" style="height: 400px; width: 100%;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-    </div>
+
     <!-- /.box-body-->
   </div>
           <div class="box box-primary">
@@ -52,7 +48,6 @@
                 <label>หน่วยงาน : </label>{{ Auth::user()->center->name }}
               </div>
             </div>
-
             <form role="form" id="form_data" name="form_data">
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -64,16 +59,16 @@
                   <div class="row">
                     <div class="col col-md-5">
                         <label>ละติจูด</label>
-                        <input type="text" class="form-control" id="lat" name="lat">
+                        <input type="text" class="form-control" id="lat" name="lat" value="{{$objcen->lat or ''}}">
                     </div>
                     <div class="col col-md-5">
                         <label>ลองจิจูด</label>
-                        <input type="text" class="form-control" id="lng" name="lng">
+                        <input type="text" class="form-control" id="lng" name="lng" value="{{$objcen->lng or ''}}">
                     </div>
                     <div class="col col-md-2">
                         <label>&nbsp</label><br>
                         <button type="button" id="upgeo" class="btn btn-default" onclick="setLocation()"><i class="fa fa-refresh"></i></button>
-                        <input type="hidden" class="form-control" id="zm" name="zm">
+                        <input type="hidden" class="form-control" id="zm" name="zm" value="{{$objcen->zm or ''}}">
                     </div>
                   </div>
                 </div>
@@ -83,26 +78,29 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label>ชื่อหมู่บ้าน</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหมู่บ้าน">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงาน" value="{{$objcen->name or ''}}">
                     </div>
                     <div class="form-group">
                       <label>เลขที่หมู่/ถนน</label>
-                      <input type="text" class="form-control" name="moo" id="moo" placeholder="เลขที่หมู่/ถนน">
+                      <input type="text" class="form-control" name="moo" id="moo" placeholder="เลขที่หมู่/ถนน" value="{{$objcen->moo or ''}}">
                     </div>
                     <div class="form-group">
                       <label>แขวง/ตำบล</label>
-                      <input type="text" class="form-control" name="tambon" id="tambon" placeholder="แขวง/ตำบล">
+                      <input type="text" class="form-control" name="tambon" id="tambon" placeholder="แขวง/ตำบล" value="{{$objcen->tambon or ''}}">
                     </div>
                     <div class="form-group">
                       <label>เขต/อำเภอ</label>
-                      <input type="text" class="form-control" name="amphur" id="amphur" placeholder="เขต/อำเภอ">
+                      <input type="text" class="form-control" name="amphur" id="amphur" placeholder="เขต/อำเภอ" value="{{$objcen->amphur or ''}}">
                     </div>
                     <div class="form-group">
                       <label>จังหวัด</label>
-                      <input type="text" class="form-control" name="province" id="province" placeholder="จังหวัด">
+                      <input type="text" class="form-control" name="province" id="province" placeholder="จังหวัด" value="{{$objcen->province or ''}}">
                     </div>
-
-                    <input type="hidden"  id="id">
+                    <div class="form-group">
+                      <label>เบอร์โทร</label>
+                      <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทร" value="{{$objcen->tel or ''}}">
+                    </div>
+                    <input type="hidden"  id="id" value="{{$objcen->id or ''}}">
                     <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
                     <button type="button" class="btn btn-primary updaterecord">อัพเดทข้อมูล</button>
                     <button type="reset" class="btn btn-danger btncancel">ยกเลิก</button>
@@ -116,28 +114,9 @@
       </div>
 @endsection
 @section('script')
+
 <script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
-<script>
-  var locations = <?php print_r(json_encode($data)) ?>;
-  var map = new GMaps({
-    el: '#map',
-    lat: 17,
-    lng: 100,
-    zoom: 8,
-  });
-  $.each( locations, function( index, value ){
-      map.addMarker({
-          id: value.id ,
-          lat: value.lat ,
-          lng: value.lng ,
-          title: value.name ,
-          infoWindow: {
-             content: 'หน่วยงาน:'+value.name
-          }
-      });
-});
-</script>
 
 <!-- DataTables -->
 <script src="{{ asset("assets/plugins/datatables/jquery.dataTables.min.js") }}"></script>
@@ -147,8 +126,9 @@
 
 <script type="text/javascript">
     $(function(){
-      $('#showdetail').hide();
+      //$('#showdetail').hide();
       //$('.btndetail').hide();
+      setLocation();
       $('.updaterecord').hide();
 
       $('.btndetail').click(function(){
@@ -382,19 +362,6 @@
             });
     }) ;
 
-    function displaydata(){
-      $.ajax({
-        url : '{!! url('managerset/area/create') !!}',
-        type : "get",
-        //asyncfalse
-        data : {},
-        success : function(s)
-        {
-          $('.displayrecord').html(s);
-          $("#example1").DataTable();
-        }
-      });
-    }
 
 </script>
 

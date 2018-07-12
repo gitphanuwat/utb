@@ -327,7 +327,6 @@
       </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
-      <?php if ($level==1){ ?>
       <ul class="sidebar-menu">
         <li class="header">เมนูสำหรับสมาชิกระบบ</li>
         <li class="active">
@@ -418,7 +417,6 @@
         <li><a href="search.php"><i class="fa fa-search"></i> <span>ค้นหาข้อมูล</span></a></li>
         <li><a href="login.php"><i class="fa fa-lock"></i> <span>Logout</span></a></li>
       </ul>
-      <?php }else{?>
 
       <ul class="sidebar-menu">
         <li class="header">เมนูหลัก</li>
@@ -440,7 +438,6 @@
         <li><a href="register.php"><i class="fa fa-user"></i> <span>สมัครสมาชิก</span></a></li>
         <li><a href="login.php"><i class="fa fa-lock"></i> <span>เข้าสู่ระบบ</span></a></li>
       </ul>
-      <?php }?>
     </section>
     <!-- /.sidebar -->
   </aside>

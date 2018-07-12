@@ -31,8 +31,8 @@ class AreauniRequest extends Request
           'tambon'=>'required',
           'amphur'=>'required',
           'province'=>'required',
-          'latitude'=>'required',
-          'longitude'=>'required'
+          'lat'=>'required',
+          'lng'=>'required'
         ];
     }
     public function messages()
@@ -43,8 +43,8 @@ class AreauniRequest extends Request
               'tambon.required'=>'ต้องป้อนตำบล',
               'amphur.required'=>'ต้องป้อนอำเภอ',
               'province.required'=>'ต้องป้อนจังหวัด',
-              'latitude.required'=>'ต้องป้อนพิกัดละติจูด',
-              'longitude.required'=>'ต้องป้อนพิกัดลองจิจูด'
+              'lat.required'=>'ต้องป้อนพิกัดละติจูด',
+              'lng.required'=>'ต้องป้อนพิกัดลองจิจูด'
     	];
     }
 }

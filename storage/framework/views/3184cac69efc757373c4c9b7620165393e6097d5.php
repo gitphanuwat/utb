@@ -1,35 +1,14 @@
 <?php $__env->startSection('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น'); ?>
 <?php $__env->startSection('subtitle','Local Research Development'); ?>
 <?php $__env->startSection('styles'); ?>
-<!-- iCheck -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/iCheck/flat/blue.css")); ?>">
-<!-- Morris chart -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/morris/morris.css")); ?>">
-<!-- jvectormap -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css")); ?>">
-<!-- Date Picker -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/datepicker/datepicker3.css")); ?>">
-<!-- Daterange picker -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/daterangepicker/daterangepicker.css")); ?>">
-<!-- bootstrap wysihtml5 - text editor -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css")); ?>">
-
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css")); ?>">
-<link rel="stylesheet" href="<?php echo e(asset("https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css")); ?>">
 
 <?php $__env->stopSection(); ?>
 
 <?php
 
 use App\Counter;
-use App\Infor;
-use App\Models\Image;
-
-if(Auth::user()){include ('makedata.php');}
 include('data.php');
 
-$col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6',
-        '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6'];
 ?>
 
 <?php $__env->startSection('body'); ?>
@@ -202,9 +181,7 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
                 </h3>
               </div>
               <div class="box-body chart-responsive">
-                <div id="world-map5" style="height: 100%; width: 100%;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
+                <div id="map" style="width: 100%; height: 200px">map</div>
               </div>
               <!-- /.box-body-->
             </div>
@@ -372,34 +349,29 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
+  var locations = <?php print_r(json_encode($locations)) ?>;
+  var map = new GMaps({
+    el: '#map',
+    lat: 17,
+    lng: 100,
+    zoom: 8,
+  });
+  $.each( locations, function( index, value ){
+      map.addMarker({
+          id: value.id ,
+          lat: value.lat ,
+          lng: value.lng ,
+          title: value.city ,
+          infoWindow: {
+             content: value.city
+          }
+      });
+});
 </script>
 
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="<?php echo e(asset("assets/plugins/morris/morris.min.js")); ?>"></script>
-<!-- Sparkline -->
-<script src="<?php echo e(asset("assets/plugins/sparkline/jquery.sparkline.min.js")); ?>"></script>
-<!-- jvectormap -->
-<script src="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-th-mill.js")); ?>"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?php echo e(asset("assets/plugins/knob/jquery.knob.js")); ?>"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="<?php echo e(asset("assets/plugins/daterangepicker/daterangepicker.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/datepicker/bootstrap-datepicker.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/chartjs/Chart.min.js")); ?>"></script>
-
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 
 <script>
   $(function () {
@@ -424,6 +396,8 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
     });
   }
 </script>
+
+
 
 <?php
     $objcounter = Counter::get();

@@ -20,7 +20,7 @@
   <div id="map"></div>
 	<script type="text/javascript">
     var map;
-		
+
     $(document).ready(function(){
       map = new GMaps({
         el: '#map',
