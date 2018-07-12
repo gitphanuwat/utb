@@ -16,6 +16,7 @@ use App\Infor;
 use App\Counter;
 use App\Log;
 
+use App\Center;
 
 use DB;
 
@@ -34,7 +35,8 @@ class HomeController extends Controller
     public function index()
     {
       $objinfor = Infor::limit(2)->orderBy('id', 'desc')->get();
-      return view('home',compact('objinfor'));
+      $objcenter = Center::limit(2)->get();
+      return view('home',compact('objinfor','objcenter'));
     }
 
     public function maps()
@@ -131,5 +133,10 @@ class HomeController extends Controller
     {
       $locations = DB::table('locations')->get();
       return view('gmaps1',compact('locations'));
+    }
+    public function gmaps2()
+    {
+      $locations = DB::table('locations')->get();
+      return view('gmaps2',compact('locations'));
     }
 }

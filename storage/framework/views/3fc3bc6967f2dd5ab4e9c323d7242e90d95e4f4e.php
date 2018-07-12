@@ -362,16 +362,16 @@ if(Auth::user()){
       </span></a></li>
     <li <?php echo classActivePath('organize'); ?>><a href="<?php echo e(url('/organize')); ?>"><i class="fa fa-home"></i> ข้อมูลหน่วยงาน</a></li>
     <li <?php echo classActivePath('community'); ?>><a href="<?php echo e(url('community')); ?>"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('activity')); ?>"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('group')); ?>"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('knowledge')); ?>"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('travel')); ?>"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('calendar')); ?>"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('poll')); ?>"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('complaint')); ?>"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('problem')); ?>"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span></a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('download')); ?>"><i class="fa fa-file-text-o"></i> ดาวน์โหลดเอกสาร</a></li>
-    <li <?php echo classActivePath(''); ?>><a href="<?php echo e(url('about')); ?>"><i class="fa fa-book"></i> เกี่ยวกับระบบ</a></li>
+    <li <?php echo classActivePath('activity'); ?>><a href="<?php echo e(url('activity')); ?>"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span></a></li>
+    <li <?php echo classActivePath('group'); ?>><a href="<?php echo e(url('group')); ?>"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span></a></li>
+    <li <?php echo classActivePath('knowledge'); ?>><a href="<?php echo e(url('knowledge')); ?>"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span></a></li>
+    <li <?php echo classActivePath('travel'); ?>><a href="<?php echo e(url('travel')); ?>"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span></a></li>
+    <li <?php echo classActivePath('calendar'); ?>><a href="<?php echo e(url('calendar')); ?>"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span></a></li>
+    <li <?php echo classActivePath('poll'); ?>><a href="<?php echo e(url('poll')); ?>"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span></a></li>
+    <li <?php echo classActivePath('complaint'); ?>><a href="<?php echo e(url('complaint')); ?>"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span></a></li>
+    <li <?php echo classActivePath('problem'); ?>><a href="<?php echo e(url('problem')); ?>"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span></a></li>
+    <li <?php echo classActivePath('download'); ?>><a href="<?php echo e(url('download')); ?>"><i class="fa fa-file-text-o"></i> ดาวน์โหลดเอกสาร</a></li>
+    <li <?php echo classActivePath('about'); ?>><a href="<?php echo e(url('about')); ?>"><i class="fa fa-book"></i> เกี่ยวกับระบบ</a></li>
     <li><hr></li>
     <li <?php echo classActivePath('search'); ?>><a href="<?php echo e(url('search')); ?>"><i class="fa fa-search"></i> <span>ค้นหาข้อมูล</span></a></li>
     <li <?php echo classActivePath('register'); ?>><a href="<?php echo e(url('register')); ?>"><i class="fa fa-user"></i> <span>สมัครสมาชิก</span></a></li>

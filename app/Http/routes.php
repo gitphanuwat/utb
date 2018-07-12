@@ -277,3 +277,4 @@ Route::get('about','PublicController@about');
 
 Route::get('gmaps', 'HomeController@gmaps');
 Route::get('gmaps1', 'HomeController@gmaps1');
+Route::get('gmaps2', 'HomeController@gmaps2');
