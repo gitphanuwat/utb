@@ -1,34 +1,14 @@
 <?php $__env->startSection('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น'); ?>
 <?php $__env->startSection('subtitle','Local Research Development'); ?>
 <?php $__env->startSection('styles'); ?>
-<!-- iCheck -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/iCheck/flat/blue.css")); ?>">
-<!-- Morris chart -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/morris/morris.css")); ?>">
-<!-- jvectormap -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css")); ?>">
-<!-- Date Picker -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/datepicker/datepicker3.css")); ?>">
-<!-- Daterange picker -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/daterangepicker/daterangepicker.css")); ?>">
-<!-- bootstrap wysihtml5 - text editor -->
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css")); ?>">
 
-<link rel="stylesheet" href="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.css")); ?>">
-<link rel="stylesheet" href="<?php echo e(asset("https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css")); ?>">
 <?php $__env->stopSection(); ?>
 
 <?php
 
 use App\Counter;
-use App\Infor;
-use App\Models\Image;
-
-if(Auth::user()){include ('makedata.php');}
 include('data.php');
 
-$col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6',
-        '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6'];
 ?>
 
 <?php $__env->startSection('body'); ?>
@@ -369,7 +349,6 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 <script>
@@ -393,33 +372,6 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
 });
 </script>
 
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="<?php echo e(asset("assets/plugins/morris/morris.min.js")); ?>"></script>
-<!-- Sparkline -->
-<script src="<?php echo e(asset("assets/plugins/sparkline/jquery.sparkline.min.js")); ?>"></script>
-<!-- jvectormap -->
-<script src="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/jvectormap/jquery-jvectormap-th-mill.js")); ?>"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?php echo e(asset("assets/plugins/knob/jquery.knob.js")); ?>"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="<?php echo e(asset("assets/plugins/daterangepicker/daterangepicker.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/datepicker/bootstrap-datepicker.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js")); ?>"></script>
-<script src="<?php echo e(asset("assets/plugins/chartjs/Chart.min.js")); ?>"></script>
-
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 
 <script>
   $(function () {

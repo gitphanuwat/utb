@@ -17,8 +17,9 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo e(asset("assets/dist/css/skins/_all-skins.min.css")); ?>" />
-  <link rel="icon" href="<?php echo asset('images/lrd_logo.ico'); ?>"/>
   <?php echo $__env->yieldContent('styles'); ?>
+  <link rel="icon" href="<?php echo asset('images/lrd_logo.ico'); ?>"/>
+
 </head>
 
 <body class="hold-transition skin-blue-light sidebar-mini">

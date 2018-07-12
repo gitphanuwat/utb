@@ -4,50 +4,17 @@
 @section('body')
 <div class="row">
 <div class="col-md-12">
-  <div class="box box-primary">
-    <div class="box-header">
-      <!-- tools box -->
-      <div class="pull-right box-tools">
-        <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-          <i class="fa fa-calendar"></i></button>
-        <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-          <i class="fa fa-minus"></i></button>
-      </div>
-      <!-- /. tools -->
-      <i class="fa fa-map-marker"></i>
-      <h3 class="box-title">
-        หน่วยงาน
-      </h3>
-    </div>
-
-    <!-- /.box-body-->
-  </div>
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">พื้นที่ชุมชน : {{ Auth::user()->center->name }}</h3>
+              <h3 class="box-title">หน่วยงาน : {{ Auth::user()->center->name }}</h3>
             </div>
             <!-- /.box-header -->
-
-            <div class="box">
-              <!-- /.box-header -->
-              <div class="box-body">
-                <div class="displayrecord">
-                </div>
-                <button type="button" class="btn btn-primary btndetail">เพิ่มข้อมูล >></button>
-              </div>
-              <!-- /.box-body -->
-            </div>
 
 
             <div id='showdetail'>
             <!-- form start -->
 
             <div id = 'msgname'></div>
-            <div class="box-header with-border">
-              <div class="form-group" id="j">
-                <label>หน่วยงาน : </label>{{ Auth::user()->center->name }}
-              </div>
-            </div>
             <form role="form" id="form_data" name="form_data">
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -77,7 +44,7 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>ชื่อหมู่บ้าน</label>
+                      <label>ชื่อหน่วยงาน</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงาน" value="{{$objcen->name or ''}}">
                     </div>
                     <div class="form-group">
@@ -101,7 +68,6 @@
                       <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทร" value="{{$objcen->tel or ''}}">
                     </div>
                     <input type="hidden"  id="id" value="{{$objcen->id or ''}}">
-                    <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
                     <button type="button" class="btn btn-primary updaterecord">อัพเดทข้อมูล</button>
                     <button type="reset" class="btn btn-danger btncancel">ยกเลิก</button>
                   </div>
@@ -110,6 +76,29 @@
         </form>
           </div>
           </div>
+
+
+
+          <div class="box box-primary">
+            <div class="box-header">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
+                  <i class="fa fa-calendar"></i></button>
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+              <i class="fa fa-map-marker"></i>
+              <h3 class="box-title">
+                หน่วยงาน
+              </h3>
+            </div>
+
+            <!-- /.box-body-->
+          </div>
+
+
         </div>
       </div>
 @endsection
@@ -129,7 +118,6 @@
       //$('#showdetail').hide();
       //$('.btndetail').hide();
       setLocation();
-      $('.updaterecord').hide();
 
       $('.btndetail').click(function(){
           $('#showdetail').show();
@@ -138,20 +126,16 @@
           getLocation();
       });
       $('.btncancel').click(function(){
-          $('.updaterecord').hide();
-          $('.saverecord').show();
           $('.btndetail').show();
           $('#showdetail').hide();
           $('#msgname').html('');
 
       });
 
-      displaydata();
+      //displaydata();
 
 
       $('body').delegate('.edit','click',function(){
-        $('.updaterecord').show();
-        $('.saverecord').hide();
         $('#showdetail').show();
         $('.btndetail').hide();
         $('#msgname').html('');
@@ -171,17 +155,13 @@
               //alert(e.name);
               $('#id').val(e.id);
               $('#name').val(e.name);
+              $('#moo').val(e.moo);
               $('#tambon').val(e.tambon);
               $('#amphur').val(e.amphur);
               $('#province').val(e.province);
               $('#lat').val(e.lat);
               $('#lng').val(e.lng);
               $('#zm').val(e.zm);
-              $('#context').val(e.context);
-              $('#people').val(e.people);
-              $('#health').val(e.health);
-              $('#environment').val(e.environment);
-              $('#keyman').val(e.keyman);
               $('#tel').val(e.tel);
               setLocation();
             },
@@ -193,138 +173,35 @@
       });
 
 
-      $('body').delegate('.delete','click',function(){
-        if(confirm("ท่านต้องการลบรายการนี้หรือไม่ ?")){
-        var id = $(this).data('id');
-        $('.updaterecord').hide();
-        $('.saverecord').show();
-        $('#showdetail').hide();
-        $('.btndetail').show();
-        $('#msgname').html('');
-        $.ajax({
-            url : '{!! url('managerset/area') !!}'+'/'+id,
-            type : "POST",
-            //asyncfalse
-            data : {
-              '_method':'DELETE',
-              '_token': '{{ csrf_token() }}'
-            },
-            success : function(d)
-            {
-              //alert(d);
-              $("#form_data")[0].reset();
-              displaydata();
-            },
-            error:function(err){
-                  alert('สิทธิ์การใช้งานไม่ถูกต้อง');
-             }
-        });
-      }
-      });
   });
 
-      $('.saverecord').click(function(){
-          var name = $('#name').val();
-          var tambon = $('#tambon').val();
-          var amphur = $('#amphur').val();
-          var province = $('#province').val();
-          var context = $('#context').val();
-          var people = $('#people').val();
-          var lat = $('#lat').val();
-          var lng = $('#lng').val();
-          var health = $('#health').val();
-          var environment = $('#environment').val();
-          var keyman = $('#keyman').val();
-          var tel = $('#tel').val();
-          //$('#new_group').val('error');
-              //alert(0);
-              $.ajax({
-                  url : '{!! url('managerset/area') !!}',
-                  type : "POST",
-                  data : {
-                    '_token': '{{ csrf_token() }}',
-                    'university_id' : 0,
-                    'center_id' : 0,
-                    'name' : name,
-                    'tambon' : tambon,
-                    'amphur' : amphur,
-                    'province' : province,
-                    'lat' : lat,
-                    'lng' : lng,
-                    'zm' : zm,
-                    'context' : context,
-                    'people' : people,
-                    'health' : health,
-                    'environment' : environment,
-                    'keyman' : keyman,
-                    'tel' : tel
-                  },
-                  success:function(re)
-                  {
-                    //alert(re);
-                    if(re == 0){
-                      displaydata();
-                      $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
-                    }else{
-                      $( '#msgname' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
-                    }
-                    $("#form_data")[0].reset();
-                  },
-                  error:function(err){
-                      //alert(err);
-                      if( err.status === 422 ) {
-                        var errors = err.responseJSON; //this will get the errors response data.
-                        errorsHtml = '<div class="alert alert-danger"><ul>';
-                        $.each( errors, function( key, value ) {
-                          errorsHtml += '<li>' + value[0] + '</li>'; //showing only the first error.
-                        });
-                        errorsHtml += '</ul></di>';
-
-                        $( '#msgname' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
-                      }else{
-                        $( '#msgname' ).html( 'ERROR : '+err.status );
-                      }
-                   }
-              });
-      }) ;
 
 
     $('.updaterecord').click(function(){
       //alert(0);
         var id = $('#id').val();
         var name = $('#name').val();
+        var moo = $('#moo').val();
         var tambon = $('#tambon').val();
         var amphur = $('#amphur').val();
         var province = $('#province').val();
-        var context = $('#context').val();
-        var people = $('#people').val();
-        var health = $('#health').val();
-        var environment = $('#environment').val();
-        var keyman = $('#keyman').val();
         var tel = $('#tel').val();
         var lat = $('#lat').val();
         var lng = $('#lng').val();
         var zm = $('#zm').val();
 
-            //alert(0);
             $.ajax({
-              url : '{!! url('managerset/area') !!}'+'/'+id,
+              url : '{!! url('managerset/center') !!}'+'/'+id,
                 type : "post",
                 //asyncfalse
                 data : {
                   '_method':'PUT',
                   '_token': '{{ csrf_token() }}',
-                  'university_id' : 0,
-                  'center_id' : 0,
                   'name' : name,
+                  'moo' : moo,
                   'tambon' : tambon,
                   'amphur' : amphur,
                   'province' : province,
-                  'context' : context,
-                  'people' : people,
-                  'health' : health,
-                  'environment' : environment,
-                  'keyman' : keyman,
                   'tel' : tel,
                   'lat' : lat,
                   'lng' : lng,
@@ -334,15 +211,13 @@
                 {
                   //alert(re);
                   if(re == 0){
-                    displaydata();
+                    //displaydata();
                     $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
                   }else{
                     $( '#msgname' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
                   }
-                  $('.updaterecord').hide();
-                  $('.saverecord').show();
-                  $('#showdetail').hide();
-                  $('.btndetail').show();
+                  //$('#showdetail').hide();
+                  //$('.btndetail').show();
                   $("#form_data")[0].reset();
                 },
                 error:function(err){

@@ -280,23 +280,23 @@ if(Auth::user()){
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
               <li <?php echo classActivePath('community'); ?>><a href="<?php echo e(url('/managerset/area')); ?>"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('activity'); ?>><a href="<?php echo e(url('activity')); ?>"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span>
+              <li <?php echo classActivePath('activity'); ?>><a href="<?php echo e(url('/managerset/activity')); ?>"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('group'); ?>><a href="<?php echo e(url('group')); ?>"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span>
+              <li <?php echo classActivePath('group'); ?>><a href="<?php echo e(url('/managerset/group')); ?>"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('knowledge'); ?>><a href="<?php echo e(url('knowledge')); ?>"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span>
+              <li <?php echo classActivePath('knowledge'); ?>><a href="<?php echo e(url('/managerset/knowledge')); ?>"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('travel'); ?>><a href="<?php echo e(url('travel')); ?>"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
+              <li <?php echo classActivePath('travel'); ?>><a href="<?php echo e(url('/managerset/travel')); ?>"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('calendar'); ?>><a href="<?php echo e(url('calendar')); ?>"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span>
+              <li <?php echo classActivePath('calendar'); ?>><a href="<?php echo e(url('/managerset/calendar')); ?>"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('poll'); ?>><a href="<?php echo e(url('poll')); ?>"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
+              <li <?php echo classActivePath('poll'); ?>><a href="<?php echo e(url('/managerset/poll')); ?>"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('complaint'); ?>><a href="<?php echo e(url('complaint')); ?>"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
+              <li <?php echo classActivePath('complaint'); ?>><a href="<?php echo e(url('/managerset/complaint')); ?>"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('problem'); ?>><a href="<?php echo e(url('problem')); ?>"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
+              <li <?php echo classActivePath('problem'); ?>><a href="<?php echo e(url('/managerset/problem')); ?>"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
-              <li <?php echo classActivePath('download'); ?>><a href="<?php echo e(url('download')); ?>"><i class="fa fa-file-text-o"></i> ดาวน์โหลดเอกสาร
+              <li <?php echo classActivePath('download'); ?>><a href="<?php echo e(url('/managerset/download')); ?>"><i class="fa fa-file-text-o"></i> ดาวน์โหลดเอกสาร
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>
               <li <?php echo classActivePath('user/infor'); ?>>
                 <a href="<?php echo e(url ('user/infor')); ?>">
@@ -382,7 +382,6 @@ if(Auth::user()){
 
 
 <?php else: ?>
-
     <li class="header">เมนูหลัก</li>
     <li <?php echo classActivePath('/'); ?>><a href="<?php echo e(url('/')); ?>"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'><?php echo e('99'); ?></div></small></span></a></li>

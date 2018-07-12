@@ -24,17 +24,17 @@ class CenterRequest extends Request
     public function rules()
     {
         return [
-          'university_id'=>'required',
-          'name'=>'required',
-          'address'=>'required'
+          //'university_id'=>'required',
+          'name'=>'required'
+          //'address'=>'required'
         ];
     }
     public function messages()
     {
     	return [
-              'university_id.required'=>'ต้องเลือกหน่วยงานมหาวิทยาลัย',
-              'name.required'=>'ต้องป้อนข้อมูลชื่อศูนย์จัดการเครือข่าย',
-              'address.required'=>'ต้องป้อนที่อยู่ศูนย์จัดการเครือข่าย'
+              //'university_id.required'=>'ต้องเลือกหน่วยงานมหาวิทยาลัย',
+              'name.required'=>'ต้องป้อนข้อมูลชื่อหน่วยงาน'
+              //'address.required'=>'ต้องป้อนที่อยู่ศูนย์จัดการเครือข่าย'
     	];
     }
 }
