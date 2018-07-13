@@ -121,7 +121,7 @@ ALTER TABLE `groups`
     `facebook` varchar(200) NULL,
     `picture` varchar(50) NULL,
     `username` varchar(50) NOT NULL,
-    `password` varchar(50) NOT NULL,
+    `password` varchar(100) NOT NULL,
     `status` varchar(1) NULL,
     `permit` varchar(1) NULL,
     `seen` varchar(1) NULL,
