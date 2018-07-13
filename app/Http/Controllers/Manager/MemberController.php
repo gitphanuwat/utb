@@ -24,7 +24,7 @@ class MemberController extends Controller
      {
        //$this->middleware('manager',function(){
        //});
-       $this->middleware('manager');
+       $this->middleware('organize');
 
         $this->user_gestion = $user_gestion;
     		$this->role_gestion = $role_gestion;

@@ -1,12 +1,12 @@
 @extends('layouts.template')
-@section('title','พื้นที่ชุมชน')
+@section('title','หน่วยงานท้องถิ่น')
 @section('subtitle','จัดการข้อมูล')
 @section('body')
 <div class="row">
 <div class="col-md-12">
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">หน่วยงาน : {{ Auth::user()->center->name }}</h3>
+              <h3 class="box-title"><i class="fa fa-map-marker"></i> หน่วยงาน : {{ Auth::user()->organize->name }}</h3>
             </div>
             <!-- /.box-header -->
 
@@ -26,16 +26,16 @@
                   <div class="row">
                     <div class="col col-md-5">
                         <label>ละติจูด</label>
-                        <input type="text" class="form-control" id="lat" name="lat" value="{{$objcen->lat or ''}}">
+                        <input type="text" class="form-control" id="lat" name="lat" value="{{$objorg->lat or ''}}">
                     </div>
                     <div class="col col-md-5">
                         <label>ลองจิจูด</label>
-                        <input type="text" class="form-control" id="lng" name="lng" value="{{$objcen->lng or ''}}">
+                        <input type="text" class="form-control" id="lng" name="lng" value="{{$objorg->lng or ''}}">
                     </div>
                     <div class="col col-md-2">
                         <label>&nbsp</label><br>
                         <button type="button" id="upgeo" class="btn btn-default" onclick="setLocation()"><i class="fa fa-refresh"></i></button>
-                        <input type="hidden" class="form-control" id="zm" name="zm" value="{{$objcen->zm or ''}}">
+                        <input type="hidden" class="form-control" id="zm" name="zm" value="{{$objorg->zm or ''}}">
                     </div>
                   </div>
                 </div>
@@ -45,31 +45,30 @@
                   <div class="box-body">
                     <div class="form-group">
                       <label>ชื่อหน่วยงาน</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงาน" value="{{$objcen->name or ''}}">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงาน" value="{{$objorg->name or ''}}">
                     </div>
                     <div class="form-group">
-                      <label>เลขที่หมู่/ถนน</label>
-                      <input type="text" class="form-control" name="moo" id="moo" placeholder="เลขที่หมู่/ถนน" value="{{$objcen->moo or ''}}">
+                      <label>ประเภทหน่วยงาน</label>
+                      <input type="text" class="form-control" name="type" id="type" placeholder="ประเภทหน่วยงาน" value="{{$objorg->type or ''}}">
                     </div>
                     <div class="form-group">
-                      <label>แขวง/ตำบล</label>
-                      <input type="text" class="form-control" name="tambon" id="tambon" placeholder="แขวง/ตำบล" value="{{$objcen->tambon or ''}}">
+                      <label>ที่อยู่</label>
+                      <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่" value="{{$objorg->address or ''}}">
                     </div>
                     <div class="form-group">
-                      <label>เขต/อำเภอ</label>
-                      <input type="text" class="form-control" name="amphur" id="amphur" placeholder="เขต/อำเภอ" value="{{$objcen->amphur or ''}}">
+                      <label>เว็บไซต์</label>
+                      <input type="text" class="form-control" name="website" id="website" placeholder="เว็บไซต์" value="{{$objorg->website or ''}}">
                     </div>
                     <div class="form-group">
-                      <label>จังหวัด</label>
-                      <input type="text" class="form-control" name="province" id="province" placeholder="จังหวัด" value="{{$objcen->province or ''}}">
+                      <label>เฟสบุ๊ค</label>
+                      <input type="text" class="form-control" name="facebook" id="facebook" placeholder="เฟสบุ๊ค" value="{{$objorg->facebook or ''}}">
                     </div>
                     <div class="form-group">
                       <label>เบอร์โทร</label>
-                      <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทร" value="{{$objcen->tel or ''}}">
+                      <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทร" value="{{$objorg->tel or ''}}">
                     </div>
-                    <input type="hidden"  id="id" value="{{$objcen->id or ''}}">
+                    <input type="hidden"  id="id" value="{{$objorg->id or ''}}">
                     <button type="button" class="btn btn-primary updaterecord">อัพเดทข้อมูล</button>
-                    <button type="reset" class="btn btn-danger btncancel">ยกเลิก</button>
                   </div>
             </div>
           </div>
@@ -78,26 +77,60 @@
           </div>
 
 
-
-          <div class="box box-primary">
+          <div class="box box-success">
             <div class="box-header">
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-                  <i class="fa fa-calendar"></i></button>
-                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                  <i class="fa fa-minus"></i></button>
-              </div>
-              <!-- /. tools -->
               <i class="fa fa-map-marker"></i>
               <h3 class="box-title">
-                หน่วยงาน
+                วิสัยทัศน์
               </h3>
             </div>
-
-            <!-- /.box-body-->
+            <div class="box-header">
+              <div class="form-group">
+                <textarea type="text" class="form-control" name="vision" id="vision" placeholder="วิสัยทัศน์"></textarea>
+              </div>
+            </div>
           </div>
 
+          <div class="box box-warning">
+            <div class="box-header">
+              <i class="fa fa-map-marker"></i>
+              <h3 class="box-title">
+                พันธกิจ
+              </h3>
+            </div>
+            <div class="box-header">
+              <div class="form-group">
+                <textarea type="text" class="form-control" name="basic" id="basic" placeholder="พันธกิจ"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="box box-default">
+            <div class="box-header">
+              <i class="fa fa-map-marker"></i>
+              <h3 class="box-title">
+                ประวัติ
+              </h3>
+            </div>
+            <div class="box-header">
+              <div class="form-group">
+                <textarea type="text" class="form-control" name="history" id="history" placeholder="ประวัติหน่วยงาน"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="box box-default">
+            <div class="box-header">
+              <i class="fa fa-map-marker"></i>
+              <h3 class="box-title">
+                บุคลากร
+              </h3>
+            </div>
+            <div class="box-header">
+              <div class="form-group">
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -125,15 +158,9 @@
           $('#msgname').html('');
           getLocation();
       });
-      $('.btncancel').click(function(){
-          $('.btndetail').show();
-          $('#showdetail').hide();
-          $('#msgname').html('');
 
-      });
 
       //displaydata();
-
 
       $('body').delegate('.edit','click',function(){
         $('#showdetail').show();
@@ -141,12 +168,9 @@
         $('#msgname').html('');
         $('#name').focus();
         var id = $(this).data('id');
-
-        //alert(0);
         $.ajax({
             url : '{!! url('managerset/area') !!}'+'/'+id+'/edit',
             type : "get",
-            //asyncfalse
             data : {
               '_token': '{{ csrf_token() }}'
             },
@@ -155,13 +179,13 @@
               //alert(e.name);
               $('#id').val(e.id);
               $('#name').val(e.name);
-              $('#moo').val(e.moo);
-              $('#tambon').val(e.tambon);
-              $('#amphur').val(e.amphur);
-              $('#province').val(e.province);
+              $('#type').val(e.type);
+              $('#address').val(e.address);
               $('#lat').val(e.lat);
               $('#lng').val(e.lng);
               $('#zm').val(e.zm);
+              $('#website').val(e.website);
+              $('#facebook').val(e.facebook);
               $('#tel').val(e.tel);
               setLocation();
             },
@@ -181,31 +205,31 @@
       //alert(0);
         var id = $('#id').val();
         var name = $('#name').val();
-        var moo = $('#moo').val();
-        var tambon = $('#tambon').val();
-        var amphur = $('#amphur').val();
-        var province = $('#province').val();
-        var tel = $('#tel').val();
+        var type = $('#type').val();
+        var address = $('#address').val();
         var lat = $('#lat').val();
         var lng = $('#lng').val();
         var zm = $('#zm').val();
+        var website = $('#website').val();
+        var facebook = $('#facebook').val();
+        var tel = $('#tel').val();
 
             $.ajax({
-              url : '{!! url('managerset/center') !!}'+'/'+id,
+              url : '{!! url('managerset/organize') !!}'+'/'+id,
                 type : "post",
                 //asyncfalse
                 data : {
                   '_method':'PUT',
                   '_token': '{{ csrf_token() }}',
                   'name' : name,
-                  'moo' : moo,
-                  'tambon' : tambon,
-                  'amphur' : amphur,
-                  'province' : province,
-                  'tel' : tel,
+                  'type' : type,
+                  'address' : address,
                   'lat' : lat,
                   'lng' : lng,
-                  'zm' : zm
+                  'zm' : zm,
+                  'website' : website,
+                  'facebook' : facebook,
+                  'tel' : tel
                 },
                 success : function(re)
                 {

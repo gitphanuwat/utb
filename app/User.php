@@ -49,26 +49,19 @@ class User extends Authenticatable
          $this->save();
      }
 
-     public function role()
-   	{
-   		return $this->belongsTo('App\Role');
-   	}
-    public function university()
-   {
-     return $this->belongsTo('App\University');
-   }
-   public function center()
+   public function role()
+ 	{
+ 		return $this->belongsTo('App\Role');
+ 	}
+
+   public function organize()
   {
-    return $this->belongsTo('App\Center');
+    return $this->belongsTo('App\Organize');
   }
-  public function area()
-  {
-   return $this->belongsTo('App\Area');
-  }
+
+ 
   public function getStatusAttribute()
   {
-      //$user = User::with('role')->find(Auth::user()->role_id);
-      //return $user->role->slug;
       return Auth::user()->role->slug;
   }
 }

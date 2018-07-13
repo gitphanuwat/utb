@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Organize extends Model  {
+class Village extends Model  {
 
-	protected $table = 'organizes';
-
+	protected $table = 'villages';
 
 }

@@ -34,11 +34,9 @@ class HomeController extends Controller
     }
     public function index()
     {
-      $locations = DB::table('locations')->get();
-      $objinfor = Infor::limit(2)->orderBy('id', 'desc')->get();
-      $objcenter = Center::limit(2)->get();
+      $locations = DB::table('organizes')->get();
       //return view('home',compact('objinfor','objcenter'));
-      return view('home',compact('objinfor','locations'));
+      return view('home',compact('locations'));
     }
 
     public function maps()

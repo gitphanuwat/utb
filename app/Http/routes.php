@@ -4,7 +4,7 @@
 Route::group(['middleware' => 'admin'], function () {
     Route::resource('admin/area','Admin\AreaController');
     Route::resource('admin/group','Admin\GroupController');
-    Route::resource('admin/center','Admin\CenterController');
+    Route::resource('admin/organize','Admin\OrganizeController');
     Route::resource('admin/university','Admin\UniverController');
     Route::resource('admin/member','Admin\MemberController');
     Route::post('admin/member/edit', 'Admin\MemberController@edit');
@@ -23,17 +23,17 @@ Route::group(['middleware' => 'admin'], function () {
 
   });
 // University Area
-Route::group(['middleware' => 'university'], function () {
+Route::group(['middleware' => 'amphur'], function () {
     Route::resource('univer/area','Univer\AreaController');
-    Route::resource('univer/center','Univer\CenterController');
+    Route::resource('univer/organize','Univer\OrganizeController');
     Route::resource('univer/member','Univer\MemberController');
     Route::get('univer/member/sort/{role}', 'Univer\MemberController@indexSort');
     Route::put('univer/member/userseen/{user}', 'Univer\MemberController@updateSeen');
 });
 // Manager Area
-Route::group(['middleware' => 'manager'], function () {
-  Route::resource('managerset/center','Manager\CenterController');
-  Route::resource('managerset/area','Manager\AreaController');
+Route::group(['middleware' => 'organize'], function () {
+  Route::resource('managerset/organize','Manager\OrganizeController');
+  Route::resource('managerset/village','Manager\VillageController');
   Route::resource('managerset/member','Manager\MemberController');
   Route::get('manager/memberset/sort/{role}', 'Manager\MemberController@indexSort');
   Route::put('manager/memberset/userseen/{user}', 'Manager\MemberController@updateSeen');

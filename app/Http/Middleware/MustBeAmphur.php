@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class MustBeUniversity
+class MustBeAmphur
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class MustBeUniversity
     public function handle($request, Closure $next)
     {
       $user = $request->user();
-      if($user && $user->status == 'University'){
+      if($user && $user->status == 'Amphur'){
         return $next($request);
       }
       abort(403);

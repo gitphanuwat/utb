@@ -28,7 +28,7 @@
   </div>
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">พื้นที่ชุมชน : {{ Auth::user()->center->name }}</h3>
+              <h3 class="box-title">หน่วยงาน : {{ Auth::user()->organize->name }}</h3>
             </div>
             <!-- /.box-header -->
 
@@ -41,18 +41,8 @@
               </div>
               <!-- /.box-body -->
             </div>
-
-
             <div id='showdetail'>
-            <!-- form start -->
-
             <div id = 'msgname'></div>
-            <div class="box-header with-border">
-              <div class="form-group" id="j">
-                <label>หน่วยงาน : </label>{{ Auth::user()->center->name }}
-              </div>
-            </div>
-
             <form role="form" id="form_data" name="form_data">
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -86,23 +76,24 @@
                       <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหมู่บ้าน">
                     </div>
                     <div class="form-group">
-                      <label>เลขที่หมู่/ถนน</label>
-                      <input type="text" class="form-control" name="moo" id="moo" placeholder="เลขที่หมู่/ถนน">
+                      <label>ที่อยู่</label>
+                      <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่">
                     </div>
                     <div class="form-group">
-                      <label>แขวง/ตำบล</label>
-                      <input type="text" class="form-control" name="tambon" id="tambon" placeholder="แขวง/ตำบล">
+                      <label>จำนวนประชากร</label>
+                      <input type="text" class="form-control" name="people" id="people" placeholder="จำนวนประชากร">
                     </div>
                     <div class="form-group">
-                      <label>เขต/อำเภอ</label>
-                      <input type="text" class="form-control" name="amphur" id="amphur" placeholder="เขต/อำเภอ">
+                      <label>ผู้นำชุมชน</label>
+                      <input type="text" class="form-control" name="leader" id="leader" placeholder="ผู้นำชุมชน">
                     </div>
                     <div class="form-group">
-                      <label>จังหวัด</label>
-                      <input type="text" class="form-control" name="province" id="province" placeholder="จังหวัด">
+                      <label>เบอร์โทรติดต่อ</label>
+                      <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทรติดต่อ">
                     </div>
 
                     <input type="hidden"  id="id">
+                    <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
                     <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
                     <button type="button" class="btn btn-primary updaterecord">อัพเดทข้อมูล</button>
                     <button type="reset" class="btn btn-danger btncancel">ยกเลิก</button>
@@ -180,7 +171,7 @@
 
         //alert(0);
         $.ajax({
-            url : '{!! url('managerset/area') !!}'+'/'+id+'/edit',
+            url : '{!! url('managerset/village') !!}'+'/'+id+'/edit',
             type : "get",
             //asyncfalse
             data : {
@@ -191,17 +182,12 @@
               //alert(e.name);
               $('#id').val(e.id);
               $('#name').val(e.name);
-              $('#tambon').val(e.tambon);
-              $('#amphur').val(e.amphur);
-              $('#province').val(e.province);
+              $('#address').val(e.address);
               $('#lat').val(e.lat);
               $('#lng').val(e.lng);
               $('#zm').val(e.zm);
-              $('#context').val(e.context);
               $('#people').val(e.people);
-              $('#health').val(e.health);
-              $('#environment').val(e.environment);
-              $('#keyman').val(e.keyman);
+              $('#leader').val(e.leader);
               $('#tel').val(e.tel);
               setLocation();
             },
@@ -222,7 +208,7 @@
         $('.btndetail').show();
         $('#msgname').html('');
         $.ajax({
-            url : '{!! url('managerset/area') !!}'+'/'+id,
+            url : '{!! url('managerset/village') !!}'+'/'+id,
             type : "POST",
             //asyncfalse
             data : {
@@ -244,39 +230,29 @@
   });
 
       $('.saverecord').click(function(){
-          var name = $('#name').val();
-          var tambon = $('#tambon').val();
-          var amphur = $('#amphur').val();
-          var province = $('#province').val();
-          var context = $('#context').val();
-          var people = $('#people').val();
-          var lat = $('#lat').val();
-          var lng = $('#lng').val();
-          var health = $('#health').val();
-          var environment = $('#environment').val();
-          var keyman = $('#keyman').val();
-          var tel = $('#tel').val();
+        var organize_id = $('#organize_id').val();
+        var name = $('#name').val();
+        var address = $('#address').val();
+        var lat = $('#lat').val();
+        var lng = $('#lng').val();
+        var zm = $('#zm').val();
+        var people = $('#people').val();
+        var leader = $('#leader').val();
+        var tel = $('#tel').val();
           //$('#new_group').val('error');
-              //alert(0);
               $.ajax({
-                  url : '{!! url('managerset/area') !!}',
+                  url : '{!! url('managerset/village') !!}',
                   type : "POST",
                   data : {
                     '_token': '{{ csrf_token() }}',
-                    'university_id' : 0,
-                    'center_id' : 0,
+                    'organize_id' : organize_id,
                     'name' : name,
-                    'tambon' : tambon,
-                    'amphur' : amphur,
-                    'province' : province,
+                    'address' : address,
                     'lat' : lat,
                     'lng' : lng,
                     'zm' : zm,
-                    'context' : context,
                     'people' : people,
-                    'health' : health,
-                    'environment' : environment,
-                    'keyman' : keyman,
+                    'leader' : leader,
                     'tel' : tel
                   },
                   success:function(re)
@@ -312,43 +288,32 @@
     $('.updaterecord').click(function(){
       //alert(0);
         var id = $('#id').val();
+        var organize_id = $('#organize_id').val();
         var name = $('#name').val();
-        var tambon = $('#tambon').val();
-        var amphur = $('#amphur').val();
-        var province = $('#province').val();
-        var context = $('#context').val();
-        var people = $('#people').val();
-        var health = $('#health').val();
-        var environment = $('#environment').val();
-        var keyman = $('#keyman').val();
-        var tel = $('#tel').val();
+        var address = $('#address').val();
         var lat = $('#lat').val();
         var lng = $('#lng').val();
         var zm = $('#zm').val();
+        var people = $('#people').val();
+        var leader = $('#leader').val();
+        var tel = $('#tel').val();
 
-            //alert(0);
             $.ajax({
-              url : '{!! url('managerset/area') !!}'+'/'+id,
+              url : '{!! url('managerset/village') !!}'+'/'+id,
                 type : "post",
                 //asyncfalse
                 data : {
                   '_method':'PUT',
                   '_token': '{{ csrf_token() }}',
-                  'university_id' : 0,
-                  'center_id' : 0,
                   'name' : name,
-                  'tambon' : tambon,
-                  'amphur' : amphur,
-                  'province' : province,
-                  'context' : context,
-                  'people' : people,
-                  'health' : health,
-                  'environment' : environment,
-                  'keyman' : keyman,
-                  'tel' : tel,
+                  'organize_id' : organize_id,
+                  'address' : address,
                   'lat' : lat,
                   'lng' : lng,
-                  'zm' : zm
+                  'zm' : zm,
+                  'people' : people,
+                  'leader' : leader,
+                  'tel' : tel
                 },
                 success : function(re)
                 {
@@ -384,7 +349,7 @@
 
     function displaydata(){
       $.ajax({
-        url : '{!! url('managerset/area/create') !!}',
+        url : '{!! url('managerset/village/create') !!}',
         type : "get",
         //asyncfalse
         data : {},

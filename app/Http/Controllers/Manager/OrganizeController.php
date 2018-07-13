@@ -6,26 +6,25 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\University;
-use App\Center;
-use App\Area;
+use App\Organize;
+//use App\Area;
 
 use DB;
 
-use App\Http\Requests\CenterRequest;
+use App\Http\Requests\OrganizeRequest;
 
-class CenterController extends Controller
+class OrganizeController extends Controller
 {
      public function __construct()
      {
-       $this->middleware('manager');
+       $this->middleware('organize');
      }
 
     public function index()
     {
-      $idc = Auth::user()->center_id;
-      $objcen = Center::find($idc);
-      return view('manager.center',compact('objcen'));
+      $idc = Auth::user()->organize_id;
+      $objorg = Organize::find($idc);
+      return view('manager.organize',compact('objorg'));
     }
 
     public function create()
@@ -33,7 +32,7 @@ class CenterController extends Controller
 
     }
 
-    public function store(AreauniRequest $request)
+    public function store(OrganizeRequest $request)
     {
 
     }
@@ -49,14 +48,11 @@ class CenterController extends Controller
 
     }
 
-    public function update(CenterRequest $request, $id)
+    public function update(OrganizeRequest $request, $id)
     {
-        $obj = Center::findOrFail($id);
+        $obj = Organize::findOrFail($id);
         $obj->name = $request['name'];
-        $obj->moo = $request['moo'];
-        $obj->tambon = $request['tambon'];
-        $obj->amphur = $request['amphur'];
-        $obj->province = $request['province'];
+        $obj->address = $request['address'];
         $obj->lat = $request['lat'];
         $obj->lng = $request['lng'];
         $obj->zm = $request['zm'];

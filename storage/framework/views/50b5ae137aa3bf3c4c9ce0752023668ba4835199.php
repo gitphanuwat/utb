@@ -40,16 +40,12 @@
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
           <?php if(Auth::user()): ?>
-            <?php if(Auth::user()->role->slug == 'University'): ?>
-              มหาวิทยาลัย : <?php echo e(Auth::user()->university->name); ?>
-
-            <?php endif; ?>
-            <?php if(Auth::user()->role->slug == 'Manager'): ?>
-              ศูนย์จัดการเครือข่าย : <?php echo e(Auth::user()->center->name); ?>
+            <?php if(Auth::user()->role->slug == 'Organize'): ?>
+              ศูนย์จัดการเครือข่าย : <?php echo e(Auth::user()->organize->name); ?>
 
             <?php endif; ?>
             <?php if(Auth::user()->role->slug == 'Operator'): ?>
-              หน่วยพื้นที่ : <?php echo e(Auth::user()->area->name); ?>
+              หน่วยพื้นที่ : <?php echo e(Auth::user()->village->name); ?>
 
             <?php endif; ?>
           <?php endif; ?>

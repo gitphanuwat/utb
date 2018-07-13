@@ -22,7 +22,7 @@ class AreaUserController extends Controller
 {
      public function __construct()
      {
-        $this->middleware('manager');
+        $this->middleware('organize');
      }
 
     public function index()

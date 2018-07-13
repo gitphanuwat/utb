@@ -6,5 +6,4 @@ class Organize extends Model  {
 
 	protected $table = 'organizes';
 
-
 }

@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class MustBeManager
+class MustBeOrganize
 {
     /**
      * Handle an incoming request.
@@ -16,7 +16,7 @@ class MustBeManager
     public function handle($request, Closure $next)
     {
       $user = $request->user();
-      if($user && $user->status == 'Manager'){
+      if($user && $user->status == 'Organize'){
         return $next($request);
       }
       abort(403);

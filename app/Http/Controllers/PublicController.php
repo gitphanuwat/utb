@@ -36,15 +36,13 @@ class PublicController extends Controller
 
   public function organize(Request $request)
   {
-    $locations = DB::table('locations')->get();
-    $objcenter = Center::get();
-    return view('organize', compact('objcenter','locations'));
+    $locations = DB::table('organizes')->get();
+    return view('organize', compact('locations'));
   }
   public function community(Request $request)
   {
-    $locations = DB::table('locations')->get();
-    $objarea = Area::get();
-    return view('community', compact('objarea','locations'));
+    $locations = DB::table('villages')->get();
+    return view('community', compact('locations'));
   }
   public function activity(Request $request)
   {
