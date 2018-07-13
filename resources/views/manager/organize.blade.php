@@ -8,7 +8,7 @@
             <div class="box-header with-border">
               <h3 class="box-title"><i class="fa fa-map-marker"></i> หน่วยงาน : {{ Auth::user()->organize->name }}</h3>
             </div>
-            <!-- /.box-header -->
+            <!-- /.box-headertest -->
 
 
             <div id='showdetail'>
