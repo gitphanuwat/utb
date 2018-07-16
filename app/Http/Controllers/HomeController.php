@@ -16,7 +16,7 @@ use App\Infor;
 use App\Counter;
 use App\Log;
 
-use App\Center;
+use App\Organize;
 
 use DB;
 
@@ -35,7 +35,6 @@ class HomeController extends Controller
     public function index()
     {
       $locations = DB::table('organizes')->get();
-      //return view('home',compact('objinfor','objcenter'));
       return view('home',compact('locations'));
     }
 
@@ -144,4 +143,17 @@ class HomeController extends Controller
       $locations = DB::table('locations')->get();
       return view('gmaps5',compact('locations'));
     }
+
+    public function organize($organize)
+    {
+      //$organize = $request['name'];
+      $data = Organize::where('title',$organize)->first();
+      //$locations = DB::table('organizes')->first();
+      //$data = DB::table("organizes")
+        //        ->where("title",$organize)
+          //      ->get();
+      return view('homepage',compact('data'));
+      //echo $data[0]->name;
+    }
+
 }

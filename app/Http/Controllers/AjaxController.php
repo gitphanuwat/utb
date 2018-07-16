@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
-use App\University;
-use App\Center;
-use App\Area;
+use App\Amphur;
+use App\Organize;
+use App\Village;
 
 class AjaxController extends Controller
 {
@@ -17,48 +17,48 @@ class AjaxController extends Controller
         session([$name => $value]);
     }
 
-    public function loadcenterselect($id)
+    public function loadorganizeselect($id)
     {
-        $centers = DB::table("centers")
-                    ->where("university_id",$id)
+        $organizes = DB::table("organizes")
+                    ->where("amphur_id",$id)
                     ->lists("name","id");
-        session(['university_id' => $id]);
-        return json_encode($centers);
+        session(['amphur_id' => $id]);
+        return json_encode($organizes);
     }
 
     public function loadproblem($id)
     {
         $problem = DB::table("problems")
-                    ->where("area_id",$id)
+                    ->where("village_id",$id)
                     ->lists("title","id");
         return json_encode($problem);
     }
 
-    public function loadarea($id)
+    public function loadvillage($id)
     {
-      $area = DB::table("areas")
-                  ->where("center_id",$id)
+      $village = DB::table("villages")
+                  ->where("organize_id",$id)
                   ->lists("name","id");
-      return json_encode($area);
+      return json_encode($village);
     }
-    public function loadarea_uni($id)
+    public function loadvillage_uni($id)
     {
-      $area = DB::table("areas")
-                  ->where("university_id",$id)
+      $village = DB::table("villages")
+                  ->where("amphur_id",$id)
                   ->lists("name","id");
-      return json_encode($area);
+      return json_encode($village);
     }
-    public function callcenter($idarea)
+    public function callorganize($idvillage)
     {
-      $area = Area::find($idarea);
-      return $area->center_id;
+      $village = Village::find($idvillage);
+      return $village->organize_id;
       //return '6';
     }
 
     public function loadresch($id)
     {
         $data = DB::table("researchers")
-                  ->where("university_id",$id)
+                  ->where("amphur_id",$id)
                   ->get();
         $display ='
         <select name="researcher_id" id="researcher_id" class="form-control select2" style="width:350px">
@@ -80,24 +80,24 @@ class AjaxController extends Controller
     public function loadroleall(Request $request)
     {
       $roleID = $request['role_id'];
-      $universityID = $request['university_id'];
-      $centerID = $request['center_id'];
-      $areaID = $request['area_id'];
+      $amphurID = $request['amphur_id'];
+      $organizeID = $request['organize_id'];
+      $villageID = $request['village_id'];
 
       if($roleID==1){
           $display ='
-          <input type="hidden" name="university_id" id="university_id" value="0">
-          <input type="hidden" name="center_id" id="center_id" value="0">
-          <input type="hidden" name="area_id" id="area_id" value="0">';
+          <input type="hidden" name="amphur_id" id="amphur_id" value="0">
+          <input type="hidden" name="organize_id" id="organize_id" value="0">
+          <input type="hidden" name="village_id" id="village_id" value="0">';
       }
       if($roleID==2){
-          $data = University::lists('name','id');
+          $data = Amphur::lists('name','id');
           $display ='
-          <input type="hidden" name="center_id" id="center_id" value="0">
-          <input type="hidden" name="area_id" id="area_id" value="0">';
+          <input type="hidden" name="organize_id" id="organize_id" value="0">
+          <input type="hidden" name="village_id" id="village_id" value="0">';
           $display .='
-          <select name="university_id" id="university_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกมหาวิทยาลัย ---</option>';
+          <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกเขตอำเภอ ---</option>';
               foreach ($data as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
@@ -105,47 +105,47 @@ class AjaxController extends Controller
           $display .='<br><input type="checkbox" id="permit" name="permit" value="2"> สิทธิ์ระดับผู้บริหาร';
       }
       if($roleID==3){
-        $data = University::lists('name','id');
-        $datacenter = Center::where('university_id',$universityID)->get();
+        $data = Amphur::lists('name','id');
+        $dataorganize = Organize::where('amphur_id',$amphurID)->get();
           $display ='
-          <input type="hidden" name="area_id" id="area_id" value="0">';
+          <input type="hidden" name="village_id" id="village_id" value="0">';
           $display .='
-          <select name="university_id" id="university_id" class="form-control" style="width:350px">
-          <option value="" >--- เลือกมหาวิทยาลัย ---</option>';
+          <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
+          <option value="" >--- เลือกเขตอำเภอ ---</option>';
               foreach ($data as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
           $display .='</select>';
           $display .='
-          <select name="center_id" id="center_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกศูนย์จัดการเครือข่าย ---</option>';
-              foreach ($datacenter as $key){
+          <select name="organize_id" id="organize_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกหน่วยงาน ---</option>';
+              foreach ($dataorganize as $key){
                   $display .='<option value="'.$key->id.'">'.$key->name.'</option>';
               }
           $display .='</select>';
       }
       if($roleID==4){
-        $data = University::lists('name','id');
-        $datacenter = Center::where('university_id',$universityID)->get();
-        $dataarea = Area::where('center_id',$centerID)->get();
+        $data = Amphur::lists('name','id');
+        $dataorganize = Organize::where('amphur_id',$amphurID)->get();
+        $datavillage = Village::where('organize_id',$organizeID)->get();
           $display ='
-          <select name="university_id" id="university_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกมหาวิทยาลัย ---</option>';
+          <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกเขตอำเภอ ---</option>';
               foreach ($data as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
           $display .='</select>';
           $display .='
-          <select name="center_id" id="center_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกศูนย์จัดการเครือข่าย ---</option>';
-              foreach ($datacenter as $key){
+          <select name="organize_id" id="organize_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกหน่วยงาน4 ---</option>';
+              foreach ($dataorganize as $key){
                   $display .='<option value="'.$key->id.'">'.$key->name.'</option>';
               }
           $display .='</select>';
           $display .='
-          <select name="area_id" id="area_id" class="form-control" style="width:350px">
+          <select name="village_id" id="village_id" class="form-control" style="width:350px">
               <option value="">--- เลือกพื้นที่ชุมชน ---</option>';
-              foreach ($dataarea as $key){
+              foreach ($datavillage as $key){
                   $display .='<option value="'.$key->id.'">'.$key->name.'</option>';
               }
           $display .='</select>';
@@ -158,18 +158,18 @@ class AjaxController extends Controller
 
       if($roleID==1){
           $display ='
-          <input type="hidden" name="university_id" id="university_id" value="0">
-          <input type="hidden" name="center_id" id="center_id" value="0">
-          <input type="hidden" name="area_id" id="area_id" value="0">';
+          <input type="hidden" name="amphur_id" id="amphur_id" value="0">
+          <input type="hidden" name="organize_id" id="organize_id" value="0">
+          <input type="hidden" name="village_id" id="village_id" value="0">';
       }
       if($roleID==2){
-          $data = University::lists('name','id');
+          $data = Amphur::lists('name','id');
           $display ='
-          <input type="hidden" name="center_id" id="center_id" value="0">
-          <input type="hidden" name="area_id" id="area_id" value="0">';
+          <input type="hidden" name="organize_id" id="organize_id" value="0">
+          <input type="hidden" name="village_id" id="village_id" value="0">';
           $display .='
-          <select name="university_id" id="university_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกมหาวิทยาลัย ---</option>';
+          <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกเขตอำเภอ ---</option>';
               foreach ($data as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
@@ -177,36 +177,36 @@ class AjaxController extends Controller
           $display .='<br><input type="checkbox" id="permit" name="permit" value="2"> สิทธิ์ระดับผู้บริหาร';
       }
       if($roleID==3){
-          $data = University::lists('name','id');
+          $data = Amphur::lists('name','id');
           $display ='
-          <input type="hidden" name="area_id" id="area_id" value="0">';
+          <input type="hidden" name="village_id" id="village_id" value="0">';
           $display .='
-          <select name="university_id" id="university_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกมหาวิทยาลัย ---</option>';
+          <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกเขตอำเภอ ---</option>';
               foreach ($data as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
           $display .='</select>';
           $display .='
-          <select name="center_id" id="center_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกศูนย์จัดการเครือข่าย ---</option>';
+          <select name="organize_id" id="organize_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกหน่วยงาน ---</option>';
           $display .='</select>';
       }
       if($roleID==4){
-          $data = University::lists('name','id');
+          $data = Amphur::lists('name','id');
           $display ='
-          <select name="university_id" id="university_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกมหาวิทยาลัย ---</option>';
+          <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกเขตอำเภอ ---</option>';
               foreach ($data as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
           $display .='</select>';
           $display .='
-          <select name="center_id" id="center_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกศูนย์จัดการเครือข่าย ---</option>';
+          <select name="organize_id" id="organize_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกหน่วยงาน ---</option>';
           $display .='</select>';
           $display .='
-          <select name="area_id" id="area_id" class="form-control" style="width:350px">
+          <select name="village_id" id="village_id" class="form-control" style="width:350px">
               <option value="">--- เลือกพื้นที่ชุมชน ---</option>';
           $display .='</select>';
       }
@@ -215,27 +215,27 @@ class AjaxController extends Controller
 
     public function loadroleuni(Request $request, $roleID)
     {
-      $centerID = $request['center_id'];
+      $organizeID = $request['organize_id'];
 
       if($roleID==2){
           $display ='
-          <input type="hidden" name="center_id" id="center_id" value="0">
-          <input type="hidden" name="area_id" id="area_id" value="0">';
+          <input type="hidden" name="organize_id" id="organize_id" value="0">
+          <input type="hidden" name="village_id" id="village_id" value="0">';
           $display .='
-          <select name="university_id" id="university_id" class="form-control" style="width:350px">
-          <option value="'.Auth::user()->university_id.'">'.Auth::user()->university->name.'</option>
+          <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
+          <option value="'.Auth::user()->amphur_id.'">'.Auth::user()->amphur->name.'</option>
           </select>';
           $display .='<br><input type="checkbox" id="permit" name="permit" value="2"> สิทธิ์ระดับผู้บริหาร';
       }
       if($roleID==3){
-        $idu = Auth::user()->university_id;
-        $display ='<input type="hidden" name="university_id" id="university_id" value="'.$idu.'">';
-        $display .='<input type="hidden" name="area_id" id="area_id" value="0">';
-        $idu = Auth::user()->university_id;
-        $data = Center::where('university_id',$idu)->lists('name','id');
+        $idu = Auth::user()->amphur_id;
+        $display ='<input type="hidden" name="amphur_id" id="amphur_id" value="'.$idu.'">';
+        $display .='<input type="hidden" name="village_id" id="village_id" value="0">';
+        $idu = Auth::user()->amphur_id;
+        $data = Organize::where('amphur_id',$idu)->lists('name','id');
         $display .='
-        <select name="center_id" id="center_id" class="form-control" style="width:350px">
-            <option value="">--- เลือกศูนย์จัดการเครือข่าย ---</option>';
+        <select name="organize_id" id="organize_id" class="form-control" style="width:350px">
+            <option value="">--- เลือกหน่วยงาน ---</option>';
             foreach ($data as $key => $value){
                 $display .='<option value="'.$key.'">'.$value.'</option>';
             }
@@ -243,23 +243,23 @@ class AjaxController extends Controller
 
       }
       if($roleID==4){
-        $idu = Auth::user()->university_id;
-        $ida = Auth::user()->center_id;
-        $data = Center::where('university_id',$idu)->lists('name','id');
-        $dataarea = Area::where('center_id',$centerID)->lists('name','id');
-        $display ='<input type="hidden" name="university_id" id="university_id" value="'.$idu.'">';
+        $idu = Auth::user()->amphur_id;
+        $ida = Auth::user()->organize_id;
+        $data = Organize::where('amphur_id',$idu)->lists('name','id');
+        $datavillage = Vilage::where('organize_id',$organizeID)->lists('name','id');
+        $display ='<input type="hidden" name="amphur_id" id="amphur_id" value="'.$idu.'">';
           $display .='
-          <select name="center_id" id="center_id" class="form-control" style="width:350px">
-              <option value="">--- เลือกศูนย์จัดการเครือข่าย ---</option>';
+          <select name="organize_id" id="organize_id" class="form-control" style="width:350px">
+              <option value="">--- เลือกหน่วยงาน ---</option>';
               foreach ($data as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
           $display .='</select>';
 
           $display .='
-          <select name="area_id" id="area_id" class="form-control" style="width:350px">
+          <select name="village_id" id="village_id" class="form-control" style="width:350px">
               <option value="">--- เลือกพื้นที่ชุมชน ---</option>';
-              foreach ($dataarea as $key => $value){
+              foreach ($datavillage as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
           $display .='</select>';
@@ -269,24 +269,24 @@ class AjaxController extends Controller
 
     public function loadrolemng(Request $request, $roleID)
     {
-      $universityID = Auth::user()->university_id;
-      $centerID = Auth::user()->center_id;
+      $amphurID = Auth::user()->amphur_id;
+      $organizeID = Auth::user()->organize_id;
 
       if($roleID==3){
-        $display ='<input type="hidden" name="university_id" id="university_id" value="'.$universityID.'">';
-        $display .='<input type="hidden" name="center_id" id="center_id" value="'.$centerID.'">';
-        $display .= '<h4>ศูนย์จัดการเครือข่าย : '.Auth::user()->center->name.'</h4>';
-        $display .='<input type="hidden" name="area_id" id="area_id" value="0">';
+        $display ='<input type="hidden" name="amphur_id" id="amphur_id" value="'.$amphurID.'">';
+        $display .='<input type="hidden" name="organize_id" id="organize_id" value="'.$organizeID.'">';
+        $display .= '<h4>หน่วยงาน : '.Auth::user()->organize->name.'</h4>';
+        $display .='<input type="hidden" name="village_id" id="village_id" value="0">';
       }
       if($roleID==4){
-        $display ='<input type="hidden" name="university_id" id="university_id" value="'.$universityID.'">';
-        $display .='<input type="hidden" name="center_id" id="center_id" value="'.$centerID.'">';
-        $display .= '<h4>ศูนย์จัดการเครือข่าย : '.Auth::user()->center->name.'</h4>';
-        $dataarea = Area::where('center_id',$centerID)->lists('name','id');
+        $display ='<input type="hidden" name="amphur_id" id="amphur_id" value="'.$amphurID.'">';
+        $display .='<input type="hidden" name="organize_id" id="organize_id" value="'.$organizeID.'">';
+        $display .= '<h4>หน่วยงาน : '.Auth::user()->organize->name.'</h4>';
+        $datavillage = Village::where('organize_id',$organizeID)->lists('name','id');
           $display .='
-          <select name="area_id" id="area_id" class="form-control" style="width:350px">
+          <select name="village_id" id="village_id" class="form-control" style="width:350px">
               <option value="">--- เลือกพื้นที่ชุมชน ---</option>';
-              foreach ($dataarea as $key => $value){
+              foreach ($datavillage as $key => $value){
                   $display .='<option value="'.$key.'">'.$value.'</option>';
               }
           $display .='</select>';
@@ -296,27 +296,27 @@ class AjaxController extends Controller
 
     public function loaddata($id)
     {
-        $datacent = Center::find($id);
+        $datacent = Organize::find($id);
         $arrayName = array(
           'id' => $datacent->id,
-          'univ'=>$datacent->university->name,
+          'univ'=>$datacent->amphur->name,
           'cent'=>$datacent->name,
         );
         return json_encode($arrayName);
     }
-    public function loadcentercur($id)
+    public function loadorganizecur($id)
     {
-        $centers = DB::table("centers")
-                    ->where("university_id",$id)
+        $organizes = DB::table("organizes")
+                    ->where("amphur_id",$id)
                     ->lists("name","id");
-        return json_encode($centers);
+        return json_encode($organizes);
     }
-    public function loadcenterlist($id)
+    public function loadorganizelist($id)
     {
-        $centers = DB::table("centers")
-                    ->where("university_id",$id)
+        $organizes = DB::table("organizes")
+                    ->where("amphur_id",$id)
                     ->lists("id","name");
-        return json_encode($centers);
+        return json_encode($organizes);
     }
 
 
@@ -326,12 +326,12 @@ class AjaxController extends Controller
       $idcen = $request['idcen'];
       if($idcen==0){
           if($id==0){
-            $objarea = Area::get();
+            $objvillage = Village::get();
           }else{
-            $objarea = Area::where('university_id','=',$id)->get();
+            $objvillage = Village::where('amphur_id','=',$id)->get();
           }
       }else{
-          $objarea = Area::where('center_id','=',$idcen)->get();
+          $objvillage = Village::where('organize_id','=',$idcen)->get();
       }
 
       $data = "
@@ -366,7 +366,7 @@ class AjaxController extends Controller
                   }
                 },
                 markers: [";
-                  foreach ($objarea as $key) {
+                  foreach ($objvillage as $key) {
                   $data .= "{latLng: [".$key->latitude.", ".$key->longitude."], name: '".$key->name."'},";
                 }
 

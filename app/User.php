@@ -54,12 +54,19 @@ class User extends Authenticatable
  		return $this->belongsTo('App\Role');
  	}
 
-   public function organize()
-  {
-    return $this->belongsTo('App\Organize');
-  }
+public function amphur()
+ {
+   return $this->belongsTo('App\Amphur');
+ }
+ public function organize()
+{
+  return $this->belongsTo('App\Organize');
+}
+public function vilage()
+{
+ return $this->belongsTo('App\Vilage');
+}
 
- 
   public function getStatusAttribute()
   {
       return Auth::user()->role->slug;

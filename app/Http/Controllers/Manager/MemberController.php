@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Role;
-use App\University;
-use App\Center;
-use App\Area;
+use App\Amphur;
+use App\Organize;
+use App\Village;
 use App\Repositories\UserRepositorymng;
 use App\Repositories\RoleRepositorymng;
 
@@ -62,12 +62,12 @@ class MemberController extends Controller
     public function store(MemberRequest $request)
     {
       try {
-      if(Auth::user()->center_id == $request['center_id']){
+      if(Auth::user()->organize_id == $request['organize_id']){
         $obj = new User();
         $obj->role_id = $request['role_id'];
-        $obj->university_id = $request['university_id'];
-        $obj->center_id = $request['center_id'];
-        $obj->area_id = $request['area_id'];
+        $obj->amphur_id = $request['amphur_id'];
+        $obj->organize_id = $request['organize_id'];
+        $obj->village_id = $request['village_id'];
         $obj->headname = $request['headname'];
         $obj->firstname = $request['firstname'];
         $obj->lastname = $request['lastname'];
@@ -91,7 +91,7 @@ class MemberController extends Controller
     public function show($id)
     {
       $obj = User::find($id);
-      if(Auth::user()->center_id == $obj->center_id){
+      if(Auth::user()->organize_id == $obj->organize_id){
         $data['obj']=$obj;
         return view('manager.show',$data);
       }
@@ -102,7 +102,7 @@ class MemberController extends Controller
     public function edit($id)
     {
       $obj = User::find($id);
-      if(Auth::user()->center_id == $obj->center_id){
+      if(Auth::user()->organize_id == $obj->organize_id){
         $data['url']=url('managerset/member/'.$id);
         $data['method']="PUT";
         $data['obj']=$obj;
@@ -115,10 +115,10 @@ class MemberController extends Controller
     {
       try {
       $obj = User::find($id);
-      if(Auth::user()->center_id == $obj->center_id){
-          $obj->university_id = $request['university_id'];
-          $obj->center_id = $request['center_id'];
-          $obj->area_id = $request['area_id'];
+      if(Auth::user()->organize_id == $obj->organize_id){
+          $obj->amphur_id = $request['amphur_id'];
+          $obj->organize_id = $request['organize_id'];
+          $obj->village_id = $request['village_id'];
           $obj->headname = $request['headname'];
           $obj->firstname = $request['firstname'];
           $obj->lastname = $request['lastname'];
@@ -154,7 +154,7 @@ class MemberController extends Controller
     public function destroy($id)
     {
       $obj = User::find($id);
-      if(Auth::user()->center_id == $obj->center_id){
+      if(Auth::user()->organize_id == $obj->organize_id){
           $obj->delete();
           return redirect('managerset/member');
       }

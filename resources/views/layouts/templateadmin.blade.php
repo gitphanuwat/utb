@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="hold-transition skin-blue-light sidebar-mini">
+<body class="hold-transition skin-yellow-light sidebar-mini">
   <!-- Site wrapper -->
   <div class="wrapper">
 
@@ -39,6 +39,14 @@
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
+          @if(Auth::user())
+            @if (Auth::user()->role->slug == 'Organize')
+              ศูนย์จัดการเครือข่าย : {{ Auth::user()->organize->name }}
+            @endif
+            @if (Auth::user()->role->slug == 'Operator')
+              หน่วยพื้นที่ : {{ Auth::user()->village->name }}
+            @endif
+          @endif
         </a>
 
         <div class="navbar-custom-menu">

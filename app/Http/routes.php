@@ -1,11 +1,11 @@
 <?php
 //Finish
-// Admin Area
+// Admin village
 Route::group(['middleware' => 'admin'], function () {
-    Route::resource('admin/area','Admin\AreaController');
     Route::resource('admin/group','Admin\GroupController');
+    Route::resource('admin/amphur','Admin\AmphurController');
     Route::resource('admin/organize','Admin\OrganizeController');
-    Route::resource('admin/university','Admin\UniverController');
+    Route::resource('admin/village','Admin\VillageController');
     Route::resource('admin/member','Admin\MemberController');
     Route::post('admin/member/edit', 'Admin\MemberController@edit');
     Route::get('admin/member/sort/{role}', 'Admin\MemberController@indexSort');
@@ -22,40 +22,43 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('analyze/deletestat','AnalyzeController@deletestat');
 
   });
-// University Area
+// amphur village
 Route::group(['middleware' => 'amphur'], function () {
-    Route::resource('univer/area','Univer\AreaController');
-    Route::resource('univer/organize','Univer\OrganizeController');
-    Route::resource('univer/member','Univer\MemberController');
-    Route::get('univer/member/sort/{role}', 'Univer\MemberController@indexSort');
-    Route::put('univer/member/userseen/{user}', 'Univer\MemberController@updateSeen');
+    //Route::resource('amphur/village','Amphur\VillageController');
+    //Route::resource('amphur/organize','amphur\OrganizeController');
+    //Route::resource('amphur/member','Amphur\MemberController');
+    //Route::get('amphur/member/sort/{role}', 'Amphur\MemberController@indexSort');
+    //Route::put('amphur/member/userseen/{user}', 'Amphur\MemberController@updateSeen');
 });
-// Manager Area
+// Manager village
 Route::group(['middleware' => 'organize'], function () {
   Route::resource('managerset/organize','Manager\OrganizeController');
+  Route::resource('managerset/person','Manager\PersonController');
+  Route::post('managerset/personpost/{id}','Manager\PersonController@personupdate');
+  Route::put('managerset/organize/updatevision/{id}','Manager\OrganizeController@updatevision');
   Route::resource('managerset/village','Manager\VillageController');
   Route::resource('managerset/member','Manager\MemberController');
   Route::get('manager/memberset/sort/{role}', 'Manager\MemberController@indexSort');
   Route::put('manager/memberset/userseen/{user}', 'Manager\MemberController@updateSeen');
   Route::resource('manager/expert','ExpertController');
-  Route::resource('manager/areauser','Manager\AreaUserController');
+  Route::resource('manager/villageuser','Manager\VillageUserController');
   Route::resource('manager/problem','Manager\ProblemController');
-  Route::post('manager/uploadfile','Manager\AreaUserController@uploadFile');
-
+  Route::post('manager/uploadfile','Manager\VillageUserController@uploadFile');
 });
-// Operator Area
+// Operator village
 Route::group(['middleware' => 'operator'], function () {
   Route::resource('operatorset/member','Operator\MemberController');
   Route::get('operatorset/member/sort/{role}', 'Operator\MemberController@indexSort');
   Route::put('operatorset/member/userseen/{user}', 'Operator\MemberController@updateSeen');
   Route::resource('operator/expert','ExpertController');
-  Route::resource('operator/areauser','Operator\AreaUserController');
+  Route::resource('operator/villageuser','Operator\VillageUserController');
   Route::resource('operator/problem','Operator\ProblemController');
-  Route::post('operator/uploadfile','Operator\AreaUserController@uploadFile');
+  Route::post('operator/uploadfile','Operator\VillageUserController@uploadFile');
 
 });
-// All Area For Auth
+// All village For Auth
 Route::group(['middleware' => 'auth'], function () {
+
   Route::post('user/upload', ['as' => 'upload-post', 'uses' =>'ImageController@postUpload']);
   Route::post('user/upload/delete', ['as' => 'upload-remove', 'uses' =>'ImageController@deleteUpload']);
   Route::get('user/server-images/{file_id}', ['as' => 'server-images', 'uses' => 'ImageController@getServerImages']);
@@ -65,13 +68,13 @@ Route::group(['middleware' => 'auth'], function () {
   Route::resource('user/infor','InforController');
   Route::resource('user/creative','CreativeController');
   Route::resource('user/file','FileController');
-  //Route::post('user/areafile','FileController@areaFile');
-  //Route::post('user/areafile', ['as' => 'areafile', 'uses' =>'FileController@areaFile']);
+  //Route::post('user/villagefile','FileController@villageFile');
+  //Route::post('user/villagefile', ['as' => 'villagefile', 'uses' =>'FileController@villageFile']);
 
   Route::resource('user/research','ResearchController');
   Route::resource('user/expert','ExpertController');
-  Route::resource('user/areauser','AreaUserController');
-  Route::post('user/uploadfile','AreaUserController@uploadFile');
+  Route::resource('user/villageuser','VillageUserController');
+  Route::post('user/uploadfile','VillageUserController@uploadFile');
 
   Route::resource('user/problem','ProblemController');
   Route::resource('user/expertlist','ExpertlistController');
@@ -87,7 +90,7 @@ Route::group(['middleware' => 'auth'], function () {
 
   Route::get('analyze/struct','AnalyzeController@struct');
   Route::get('analyze/getcenter','AnalyzeController@getcenter');
-  Route::get('analyze/getarea','AnalyzeController@getarea');
+  Route::get('analyze/getvillage','AnalyzeController@getvillage');
 
   Route::get('analyze/recheck','AnalyzeController@recheck');
   Route::get('analyze/getexp','AnalyzeController@getexp');
@@ -111,7 +114,7 @@ Route::get('file/get/{filename}', [
 Route::get('file/getload/{filename}', [
   'as' => 'getfileload', 'uses' => 'FileController@getload']);
 
-// Guest Area
+// Guest village
 Route::get('about/system', function () {
     return view('about.system');
 });
@@ -138,8 +141,8 @@ Route::get('report/research','ReportController@getResearch');
 Route::get('report/loadresearch','ReportController@loadResearch');
 Route::get('report/creative','ReportController@getCreative');
 Route::get('report/loadcreative','ReportController@loadCreative');
-Route::get('report/area','ReportController@getArea');
-Route::get('report/loadarea','ReportController@loadArea');
+Route::get('report/village','ReportController@getVillage');
+Route::get('report/loadvillage','ReportController@loadVillage');
 Route::get('report/problem','ReportController@getProblem');
 Route::get('report/loadproblem','ReportController@loadProblem');
 
@@ -147,7 +150,7 @@ Route::get('eis/profile','EisprofileController@showProfile');
 Route::get('eis/profileexp','EisprofileController@showProfileexp');
 Route::get('eis/profilecreative','EisprofileController@showProfilecreative');
 Route::get('eis/profileresearch','EisprofileController@showProfileresearch');
-Route::get('eis/profilearea','EisprofileController@showProfilearea');
+Route::get('eis/profilevillage','EisprofileController@showProfilevillage');
 Route::get('eis/profileuseful','EisprofileController@showProfileuseful');
 Route::get('eis/profilepro','EisprofileController@showProfilepro');
 
@@ -174,11 +177,11 @@ Route::get('eis/creative','EiscreativeController@getCreative');
 Route::get('eis/creative/showcreative','EiscreativeController@showCreative');
 Route::get('eis/creative/showgroup','EiscreativeController@showGroup');
 
-Route::get('eis/area','EisareaController@getArea');
-Route::get('eis/area/showexp','EisareaController@showExpert');
-Route::get('eis/area/showpro','EisareaController@showProblem');
-Route::get('eis/area/showgroup','EisareaController@showGroup');
-Route::get('eis/area/showarea','EisareaController@showArea');
+Route::get('eis/village','EisvillageController@getVillage');
+Route::get('eis/village/showexp','EisvillageController@showExpert');
+Route::get('eis/village/showpro','EisvillageController@showProblem');
+Route::get('eis/village/showgroup','EisvillageController@showGroup');
+Route::get('eis/village/showvillage','EisvillageController@showVillage');
 
 Route::get('eis/problem','EisproblemController@getProblem');
 Route::get('eis/problem/showexp','EisproblemController@showExpert');
@@ -216,20 +219,21 @@ Route::get('dss/topic/showare','DsstopicController@showAre');
 Route::get('dss/topic/showpro','DsstopicController@showPro');
 
 Route::get('ajax/problem/{id}',array('as'=>'ajax','uses'=>'AjaxController@loadproblem'));
-Route::get('ajax/{id}',array('as'=>'ajax','uses'=>'AjaxController@loadcenterselect'));
+Route::get('ajax/{id}',array('as'=>'ajax','uses'=>'AjaxController@loadorganizeselect'));
 Route::get('ajax/{name}/{value}',array('as'=>'ajax','uses'=>'AjaxController@createsession'));
 
 Route::post('ajaxroleall',array('as'=>'ajaxrole','uses'=>'AjaxController@loadroleall'));
 Route::get('ajaxrole/{id}',array('as'=>'ajaxrole','uses'=>'AjaxController@loadrole'));
 Route::get('ajaxroleuni/{id}',array('as'=>'ajaxrole','uses'=>'AjaxController@loadroleuni'));
 Route::get('ajaxrolemng/{id}',array('as'=>'ajaxrole','uses'=>'AjaxController@loadrolemng'));
-Route::get('ajaxarea/{id}',array('as'=>'ajaxarea','uses'=>'AjaxController@loadarea'));
-Route::get('ajaxarea_uni/{id}',array('as'=>'ajaxarea_uni','uses'=>'AjaxController@loadarea_uni'));
-Route::get('ajaxcallcenter/{id}',array('as'=>'ajaxareacallcenter','uses'=>'AjaxController@callcenter'));
-Route::get('ajaxresch/{id}',array('as'=>'ajaxarea','uses'=>'AjaxController@loadresch'));
+Route::get('ajaxvillage/{id}',array('as'=>'ajaxvillage','uses'=>'AjaxController@loadvillage'));
+Route::get('ajaxvillage_uni/{id}',array('as'=>'ajaxvillage_uni','uses'=>'AjaxController@loadvillage_uni'));
+Route::get('ajaxcallcenter/{id}',array('as'=>'ajaxvillagecallcenter','uses'=>'AjaxController@callcenter'));
+Route::get('ajaxresch/{id}',array('as'=>'ajaxvillage','uses'=>'AjaxController@loadresch'));
 Route::get('ajaxmap', 'AjaxController@loadmap');
 
 Route::get('/', 'HomeController@index');
+//Route::get('/{name}', 'HomeController@organize');
 Route::get('/maps', 'HomeController@maps');
 Route::get('/counterhit', 'HomeController@counterhit');
 Route::get('/stat', 'HomeController@stat');
@@ -252,7 +256,7 @@ Route::auth();
 Route::post('sendmail','MailController@sendmail');
 
 // For Test
-Route::get('/testareafile', 'TestController@areafile');
+Route::get('/testvillagefile', 'TestController@villagefile');
 Route::get('/test', 'TestController@index');
 Route::post('test/sendmail','TestController@sendmail');
 
@@ -261,8 +265,8 @@ Route::get('sendhtmlemail','MailController@html_email');
 Route::get('sendattachmentemail','MailController@attachment_email');
 
 //for uttaraditbook.com
-Route::get('organize','PublicController@organize');
-Route::get('community','PublicController@community');
+Route::get('public/organize','PublicController@organize');
+Route::get('public/community','PublicController@community');
 Route::get('activity','PublicController@activity');
 Route::get('group','PublicController@group');
 Route::get('knowledge','PublicController@knowledge');

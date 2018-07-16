@@ -2,16 +2,16 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Organize extends Model  {
+class Amphur extends Model  {
 
-	protected $table = 'organizes';
+	protected $table = 'amphurs';
 
-	public function amphur()
+	public function organize()
 	{
-		return $this->belongsTo('App\Amphur');
-	}
+    return $this->hasMany('App\Organize');
+  }
 	public function village()
-  {
+	{
     return $this->hasMany('App\Village');
   }
 

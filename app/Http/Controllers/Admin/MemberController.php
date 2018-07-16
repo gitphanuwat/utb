@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 use App\Role;
-use App\University;
-use App\Center;
-use App\Area;
+use App\Amphur;
+use App\Organize;
+use App\Village;
 use App\Repositories\UserRepository;
 use App\Repositories\RoleRepository;
 
@@ -61,16 +61,15 @@ class MemberController extends Controller
       try {
         $obj = new User();
         $obj->role_id = $request['role_id'];
-        $obj->university_id = $request['university_id'];
-        $obj->center_id = $request['center_id'];
-        $obj->area_id = $request['area_id'];
+        $obj->amphur_id = $request['amphur_id'];
+        $obj->organize_id = $request['organize_id'];
+        $obj->village_id = $request['village_id'];
         $obj->headname = $request['headname'];
         $obj->firstname = $request['firstname'];
         $obj->lastname = $request['lastname'];
         $obj->address = $request['address'];
         $obj->tel = $request['tel'];
         $obj->facebook = $request['facebook'];
-        $obj->permit = $request['permit'];
         $obj->email = $request['email'];
         $obj->password = bcrypt($request['password']);
         $obj->remember_token = $request['_token'];
@@ -96,7 +95,7 @@ class MemberController extends Controller
     {
       $obj = User::find($id);
       $data['obj']=$obj;
-      $objrole = University::lists('name','id');
+      $objrole = amphur::lists('name','id');
       $data['objuni']=$objrole;
         $objsrole = Role::lists('title', 'id');
         $data['objsrole']=$objsrole;
@@ -108,9 +107,9 @@ class MemberController extends Controller
       try {
           $obj = User::findOrFail($id);
           $obj->role_id = $request['role_id'];
-          $obj->university_id = $request['university_id'];
-          $obj->center_id = $request['center_id'];
-          $obj->area_id = $request['area_id'];
+          $obj->amphur_id = $request['amphur_id'];
+          $obj->organize_id = $request['organize_id'];
+          $obj->village_id = $request['village_id'];
           $obj->headname = $request['headname'];
           $obj->firstname = $request['firstname'];
           $obj->lastname = $request['lastname'];

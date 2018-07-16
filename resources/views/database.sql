@@ -18,6 +18,8 @@ ALTER TABLE `types`
 
 CREATE TABLE `organizes` (
   `id` int(11) NOT NULL,
+  `amphur_id` int(11) NOT NULL,
+  `tambon_id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `type` varchar(1) NOT NULL,
   `address` varchar(300) NOT NULL,
@@ -66,7 +68,7 @@ ALTER TABLE `organizes`
     CREATE TABLE `amphurs` (
       `id` int(11) NOT NULL,
       `name` varchar(100) NOT NULL,
-      `slug` varchar(100) NULL,
+      `shortname` varchar(100) NULL,
       `detail` varchar(500) NULL,
       `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
       `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
@@ -89,6 +91,25 @@ ALTER TABLE `organizes`
         ADD PRIMARY KEY (`id`);
       ALTER TABLE `tambons`
         MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+        CREATE TABLE `persons` (
+          `id` int(11) NOT NULL,
+          `organize_id` int(11) NOT NULL,
+          `headname` varchar(100) NOT NULL,
+          `firstname` varchar(100) NOT NULL,
+          `lastname` varchar(100) NOT NULL,
+          `position` varchar(150) NULL,
+          `duedate` varchar(50) NULL,
+          `tel` varchar(20) NULL,
+          `email` varchar(100) NULL,
+          `picture` varchar(100) NULL,
+          `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+        ALTER TABLE `persons`
+          ADD PRIMARY KEY (`id`);
+        ALTER TABLE `persons`
+          MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE `groups` (
   `id` int(11) NOT NULL,

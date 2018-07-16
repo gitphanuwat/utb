@@ -25,9 +25,9 @@ class MemberRequest extends Request
     {
         return [
           'role_id'=>'required',
-          'university_id'=>'required',
-          'center_id'=>'required',
-          'area_id'=>'required',
+          'amphur_id'=>'required',
+          'organize_id'=>'required',
+          'village_id'=>'required',
           'headname'=>'required',
           'firstname'=>'required',
           'lastname'=>'required',
@@ -39,9 +39,9 @@ class MemberRequest extends Request
     {
     	return [
         'role_id.required'=>'กรุณาเลือกสิทธ์',
-        'university_id.required'=>'กรุณาเลือกมหาวิทยาลัย',
-        'center_id.required'=>'กรุณาเลือกศูนย์จัดการเครือข่าย',
-        'area_id.required'=>'กรุณาเลือกพื้นที่ชุมชน',
+        'amphur_id.required'=>'กรุณาเลือกอำเภอ',
+        'organize_id.required'=>'กรุณาเลือกหน่วยงาน',
+        'village_id.required'=>'กรุณาเลือกชุมชน',
               'headname.required'=>'กรุณาป้อนคำนำหน้าชื่อ',
               'firstname.required'=>'กรุณาป้อนชื่อสมาชิก',
               'lastname.required'=>'กรุณาป้อนสกุลสมาชิก',

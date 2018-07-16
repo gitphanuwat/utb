@@ -67,12 +67,12 @@ class UserRepositoryuni extends BaseRepository
 	 */
 	public function index($n, $role)
 	{
-		$idu = Auth::user()->university_id;
+		$idu = Auth::user()->amphur_id;
 		if($role != 'total')
 		{
 			return $this->model
 			->with('role')
-			->where('university_id',$idu)
+			->where('amphur_id',$idu)
 			->whereHas('role', function($q) use($role) {
 				$q->whereSlug($role);
 			})
@@ -83,7 +83,7 @@ class UserRepositoryuni extends BaseRepository
 
 		return $this->model
 		->with('role')
-		->where('university_id',$idu)
+		->where('amphur_id',$idu)
 		->oldest('id')
 		->latest()
 		->paginate($n);
@@ -97,7 +97,7 @@ class UserRepositoryuni extends BaseRepository
 	 */
 	public function count($role = null)
 	{
-		$idu = Auth::user()->university_id;
+		$idu = Auth::user()->amphur_id;
 
 		if($role)
 		{
@@ -105,7 +105,7 @@ class UserRepositoryuni extends BaseRepository
 			->whereHas('role', function($q) use($role) {
 				$q->whereSlug($role);
 			})
-			->where('university_id',$idu)
+			->where('amphur_id',$idu)
 			->count();
 		}
 
@@ -122,8 +122,8 @@ class UserRepositoryuni extends BaseRepository
 	{
 		$counts = [
 			//'Admin' => $this->count('Admin'),
-			'University' => $this->count('University'),
-			'Manager' => $this->count('Manager'),
+			'Amphur' => $this->count('Amphur'),
+			'Organize' => $this->count('Organize'),
 			'Operator' => $this->count('Operator')
 		];
 

@@ -50,21 +50,47 @@
 <ul class="sidebar-menu">
 
 @if (Auth::user())
+@if (Auth::user()->role->slug == 'Admin')
+<li class="header">เมนู:บริหารข้อมูล</li>
+<li class="treeview {{ classActiveOnlySegment(1,'admin') }}">
+  <a href="#">
+    <i class="fa fa-laptop"></i>
+    <span>ตั้งค่าระบบ</span>
+    <span class="pull-right-container">
+      <i class="fa fa-angle-left pull-right"></i>
+    </span>
+  </a>
+  <ul class="treeview-menu">
+  <li {!! classActivePath('admin/group') !!}><a href="{{ url ('admin/group') }}"><i class="fa fa-circle-o"></i> กลุ่มปัญหา
+    <span class="pull-right-container">
+      <small class="label pull-right bg-gray"><div id = 'cgroup'>99</div></small>
+    </span></a></li>
+  <li {!! classActivePath('admin/amphur') !!}><a href="{{ url ('admin/amphur') }}"><i class="fa fa-circle-o"></i> เขตอำเภอ
+    <span class="pull-right-container">
+      <small class="label pull-right bg-gray"><div id = 'camphur'>99</div></small>
+    </span></a></li>
+  <li {!! classActivePath('admin/organize') !!}><a href="{{ url ('admin/organize') }}"><i class="fa fa-circle-o"></i> หน่วยงาน
+    <span class="pull-right-container">
+      <small class="label pull-right bg-gray"><div id = 'corganize'>99</div></small>
+    </span></a></li>
+  <li {!! classActivePath('admin/village') !!}><a href="{{ url ('admin/village') }}"><i class="fa fa-circle-o"></i> พื้นที่ชุมชน
+    <span class="pull-right-container">
+      <small class="label pull-right bg-gray"><div id = 'cvillages'>99</div></small>
+    </span></a></li>
+  <li {!! classActivePath('admin/member') !!}><a href="{{ url ('admin/member') }}"><i class="fa fa-circle-o"></i> สมาชิกระบบ
+    <span class="pull-right-container">
+      <small class="label pull-right bg-gray"><div id = 'cuser'>99</div></small>
+    </span></a></li>
+  </ul>
+</li>
+@endif
 
         <li class="header">เมนู:ข้อมูลหน่วยงาน</li>
-        <li {!! classActivePath('/') !!}><a href="{{ url('/')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
-          <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-
-            <li {!! classActivePath('manager/areauser') !!}><a href="{{ url ('manager/areauser') }}"><i class="fa fa-circle-o"></i> ข้อมูลพื้นที่ชุมชน
-              <span class="pull-right-container">
-                <small class="label pull-right bg-gray"><div id = 'carea'>{{ '99' }}</div></small>
-              </span></a></li>
-            <li {!! classActivePath('manager/expert') !!}><a href="{{ url ('manager/expert') }}"><i class="fa fa-circle-o"></i> ข้อมูลผู้เชี่ยวชาญ
-              <span class="pull-right-container">
-                <small class="label pull-right bg-gray"><div id = 'cexpert'>{{ '99' }}</div></small>
-              </span></a></li>
-
+        <li {!! classActivePath('organize') !!}><a href="{{ url('/managerset/organize')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
+        <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('organize') !!}><a href="{{ url('/managerset/organize')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
+                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+              <li {!! classActivePath('organize') !!}><a href="{{ url('/managerset/person')}}"><i class="fa fa-home"></i><span>บุคลากร</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('community') !!}><a href="{{ url('/managerset/village')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
@@ -110,9 +136,9 @@
     <li class="header">เมนูหลัก</li>
     <li {!! classActivePath('/') !!}><a href="{{ url('/')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-    <li {!! classActivePath('organize') !!}><a href="{{ url('/organize')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
+    <li {!! classActivePath('organize') !!}><a href="{{ url('public/organize')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-    <li {!! classActivePath('community') !!}><a href="{{ url('community')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
+    <li {!! classActivePath('community') !!}><a href="{{ url('public/community')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
     <li {!! classActivePath('activity') !!}><a href="{{ url('activity')}}"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>

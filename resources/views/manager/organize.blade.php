@@ -44,7 +44,11 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>ชื่อหน่วยงาน</label>
+                      <label>ชื่อหน่วยงาน (ภาษาอังกฤษ)</label>
+                      <input type="text" class="form-control" name="title" id="title" placeholder="ใช้อ้างอิงเว็บหน่วยงาน เช่น www.ttraraditbook.com/(ชื่อหน่วยงาน)" value="{{$objorg->title or ''}}">
+                    </div>
+                    <div class="form-group">
+                      <label>ชื่อหน่วยงาน (ภาษาไทย)</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงาน" value="{{$objorg->name or ''}}">
                     </div>
                     <div class="form-group">
@@ -89,9 +93,6 @@
                 <textarea type="text" class="form-control" name="vision" id="vision" placeholder="วิสัยทัศน์"></textarea>
               </div>
             </div>
-          </div>
-
-          <div class="box box-warning">
             <div class="box-header">
               <i class="fa fa-map-marker"></i>
               <h3 class="box-title">
@@ -103,9 +104,6 @@
                 <textarea type="text" class="form-control" name="basic" id="basic" placeholder="พันธกิจ"></textarea>
               </div>
             </div>
-          </div>
-
-          <div class="box box-default">
             <div class="box-header">
               <i class="fa fa-map-marker"></i>
               <h3 class="box-title">
@@ -116,9 +114,9 @@
               <div class="form-group">
                 <textarea type="text" class="form-control" name="history" id="history" placeholder="ประวัติหน่วยงาน"></textarea>
               </div>
+              <button type="button" class="btn btn-primary updatevision">อัพเดทข้อมูล</button>
             </div>
           </div>
-
           <div class="box box-default">
             <div class="box-header">
               <i class="fa fa-map-marker"></i>
@@ -148,62 +146,50 @@
 
 <script type="text/javascript">
     $(function(){
-      //$('#showdetail').hide();
-      //$('.btndetail').hide();
+      reload();
       setLocation();
-
-      $('.btndetail').click(function(){
-          $('#showdetail').show();
-          $('.btndetail').hide();
-          $('#msgname').html('');
-          getLocation();
-      });
-
-
-      //displaydata();
-
-      $('body').delegate('.edit','click',function(){
-        $('#showdetail').show();
-        $('.btndetail').hide();
-        $('#msgname').html('');
-        $('#name').focus();
-        var id = $(this).data('id');
-        $.ajax({
-            url : '{!! url('managerset/area') !!}'+'/'+id+'/edit',
-            type : "get",
-            data : {
-              '_token': '{{ csrf_token() }}'
-            },
-            success : function(e)
-            {
-              //alert(e.name);
-              $('#id').val(e.id);
-              $('#name').val(e.name);
-              $('#type').val(e.type);
-              $('#address').val(e.address);
-              $('#lat').val(e.lat);
-              $('#lng').val(e.lng);
-              $('#zm').val(e.zm);
-              $('#website').val(e.website);
-              $('#facebook').val(e.facebook);
-              $('#tel').val(e.tel);
-              setLocation();
-            },
-            error:function(err){
-                  alert('สิทธิ์การใช้งานไม่ถูกต้อง');
-             }
-        });
-
-      });
-
-
   });
 
+  function reload(){
 
+    $('#msgname').html('');
+    //('#name').focus();
+    var id = $('#id').val();
+    $.ajax({
+        url : '{!! url('managerset/organize') !!}'+'/'+id+'/edit',
+        type : "get",
+        data : {
+          '_token': '{{ csrf_token() }}'
+        },
+        success : function(e)
+        {
+          //alert(e.name);
+          $('#id').val(e.id);
+          $('#title').val(e.title);
+          $('#name').val(e.name);
+          $('#type').val(e.type);
+          $('#address').val(e.address);
+          $('#lat').val(e.lat);
+          $('#lng').val(e.lng);
+          $('#zm').val(e.zm);
+          $('#website').val(e.website);
+          $('#facebook').val(e.facebook);
+          $('#tel').val(e.tel);
+          $('#vision').val(e.vision);
+          $('#basic').val(e.basic);
+          $('#history').val(e.history);
+        },
+        error:function(err){
+              alert('สิทธิ์การใช้งานไม่ถูกต้อง');
+         }
+    });
+
+  };
 
     $('.updaterecord').click(function(){
       //alert(0);
         var id = $('#id').val();
+        var title = $('#title').val();
         var name = $('#name').val();
         var type = $('#type').val();
         var address = $('#address').val();
@@ -221,6 +207,7 @@
                 data : {
                   '_method':'PUT',
                   '_token': '{{ csrf_token() }}',
+                  'title' : title,
                   'name' : name,
                   'type' : type,
                   'address' : address,
@@ -235,14 +222,15 @@
                 {
                   //alert(re);
                   if(re == 0){
-                    //displaydata();
+                    reload();
+                    setLocation();
                     $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
                   }else{
                     $( '#msgname' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
                   }
                   //$('#showdetail').hide();
                   //$('.btndetail').show();
-                  $("#form_data")[0].reset();
+                  //$("#form_data")[0].reset();
                 },
                 error:function(err){
                     //alert(err);
@@ -257,6 +245,38 @@
                     }else{
                       $( '#msgname' ).html( 'ERROR : '+err.status );
                     }
+                 }
+            });
+    }) ;
+
+    $('.updatevision').click(function(){
+        var id = $('#id').val();
+        var vision = $('#vision').val();
+        var basic = $('#basic').val();
+        var history = $('#history').val();
+        //alert(vision);
+
+            $.ajax({
+              url : '{!! url('managerset/organize/updatevision') !!}'+'/'+id,
+                type : "post",
+                //asyncfalse
+                data : {
+                  '_method':'PUT',
+                  '_token': '{{ csrf_token() }}',
+                  'vision' : vision,
+                  'basic' : basic,
+                  'history' : history
+                },
+                success : function(re)
+                {
+                  //alert(re);
+                  if(re == 0){
+                    reload();
+                    $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
+                  }
+                },
+                error:function(err){
+                      $( '#msgname' ).html( 'ERROR : '+err.status );
                  }
             });
     }) ;

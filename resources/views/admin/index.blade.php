@@ -43,8 +43,8 @@
       			<td class="text-primary"><strong>{{ $user->headname.$user->firstname.' '.$user->lastname }}</strong></td>
       			<td>{{ $user->role->title }}{!! $user->permit==2? '(ผู้บริหาร)' : '' !!}</td>
       			<td>
-      				{!! $user->university_id? $user->university->name.'<br>' : '' !!}
-      				{!! $user->center_id? 'ศูนย์ : '.$user->center->name.'<br>' : '' !!}
+      				{!! $user->amphur_id? $user->amphur->name.'<br>' : '' !!}
+      				{!! $user->organize_id? 'ศูนย์ : '.$user->organize->name.'<br>' : '' !!}
       				{!! $user->area_id? 'พื้นที่ : '.$user->area->name : '' !!}
       			</td>
       			<td>{!! Form::checkbox('seen', $user->id, $user->seen) !!}</td>

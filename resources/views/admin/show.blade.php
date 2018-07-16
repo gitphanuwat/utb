@@ -13,17 +13,17 @@
       <div class="box-body">
 <form role="form" action="" method="POST">
     <div class="form-group">
-      <label>สิทธิ์การใช้งานระบบ : ระดับ</label>
+      <label>สิทธิ์การใช้งานระบบ : </label>
       <label>{{$obj->role->title}}{!! $obj->permit==2? '(ผู้บริหาร)' : '' !!}</label>
         <?php
-        if ($obj->university_id){
-          echo '<br>มหาวิทยาลัย'.$obj->university->name;
+        if ($obj->amphur_id){
+          echo '<br>เขตอำเภอ : '.$obj->amphur->name;
         }
-        if ($obj->center_id){
-          echo '<br>ศูนย์จัดการเครือข่าย'.$obj->center->name;
+        if ($obj->organize_id){
+          echo '<br>หน่วยงาน : '.$obj->organize->name;
         }
         if ($obj->area_id){
-          echo '<br>พื้นที่ : '.$obj->area->name;
+          echo '<br>ชุมชน : '.$obj->area->name;
         }
         ?>
 
@@ -98,12 +98,12 @@
 
 $(function() {
       var role_id = $('#role_txt_id').val();
-      var university_id = $('#university_txt_id').val();
-      var center_id = $('#center_txt_id').val();
+      var amphur_id = $('#amphur_txt_id').val();
+      var organize_id = $('#organize_txt_id').val();
       var area_id = $('#area_txt_id').val();
       $('#role_id').val(role_id);
-      $('#university_id').val(university_id);
-      $('#center_id').val(center_id);
+      $('#amphur_id').val(amphur_id);
+      $('#organize_id').val(organize_id);
       $('#area_id').val(area_id);
 
 

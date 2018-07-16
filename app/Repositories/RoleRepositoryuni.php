@@ -29,7 +29,7 @@ class RoleRepositoryuni {
 	 */
 	public function all()
 	{
-		return $this->role->whereIn ('slug',['university','manager','operator'])->get();
+		return $this->role->whereIn ('slug',['amphur','organize','operator'])->get();
 		//return $this->role->where ('slug','<>','admin')->get();
 	}
 

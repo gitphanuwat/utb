@@ -114,8 +114,8 @@ class UserRepository extends BaseRepository
 	{
 		$counts = [
 			'Admin' => $this->count('Admin'),
-			'University' => $this->count('University'),
-			'Manager' => $this->count('Manager'),
+			'Amphur' => $this->count('Amphur'),
+			'Organize' => $this->count('Organize'),
 			'Operator' => $this->count('Operator')
 		];
 

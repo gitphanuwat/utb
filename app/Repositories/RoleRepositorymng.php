@@ -13,7 +13,7 @@ class RoleRepositorymng {
 
 	public function all()
 	{
-		return $this->role->whereIn ('slug',['manager','operator'])->get();
+		return $this->role->whereIn ('slug',['organize','operator'])->get();
 	}
 
 	public function update($inputs)

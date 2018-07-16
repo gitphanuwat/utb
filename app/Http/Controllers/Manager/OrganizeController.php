@@ -9,8 +9,6 @@ use App\Http\Requests;
 use App\Organize;
 //use App\Area;
 
-use DB;
-
 use App\Http\Requests\OrganizeRequest;
 
 class OrganizeController extends Controller
@@ -45,18 +43,40 @@ class OrganizeController extends Controller
 
     public function edit($id)
     {
-
+      $data = Organize::findOrFail($id);
+      if($data->id == Auth::user()->organize_id){
+        header("Content-type: text/x-json");
+        echo json_encode($data);
+        exit();
+      }
+      abort(0);
     }
 
     public function update(OrganizeRequest $request, $id)
     {
         $obj = Organize::findOrFail($id);
+        $obj->title = $request['title'];
         $obj->name = $request['name'];
+        $obj->type = $request['type'];
         $obj->address = $request['address'];
+        $obj->website = $request['website'];
+        $obj->facebook = $request['facebook'];
+        $obj->tel = $request['tel'];
+
         $obj->lat = $request['lat'];
         $obj->lng = $request['lng'];
         $obj->zm = $request['zm'];
-        $obj->tel = $request['tel'];
+
+        $check = $obj->save();
+        if($check>0){return 0;}else{return 1;}
+    }
+
+    public function updatevision(Request $request, $id)
+    {
+        $obj = Organize::findOrFail($id);
+        $obj->vision = $request['vision'];
+        $obj->basic = $request['basic'];
+        $obj->history = $request['history'];
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
     }
