@@ -2,9 +2,11 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Session;
+
 use App\Http\Requests\Request;
 
-class GroupRequest extends Request
+class TouristRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,16 +25,18 @@ class GroupRequest extends Request
      */
     public function rules()
     {
-      return [
-        'name'=>'required',
-        'detail'=>'required'
-      ];
+        return [
+          //'organize_id'=>'required',
+          'name'=>'required',
+          'address'=>'required'
+        ];
     }
     public function messages()
     {
     	return [
-        'name.required'=>'ต้องป้อนชื่อกลุ่ม',
-        'detail.required'=>'ต้องป้อนรายละเอียด'
+              //'organize_id.required'=>'ต้องเลือกหน่วยงาน',
+              'name.required'=>'ต้องป้อนชื่อ',
+              'address.required'=>'ต้องป้อนที่อยู่'
     	];
     }
 }

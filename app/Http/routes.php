@@ -37,6 +37,9 @@ Route::group(['middleware' => 'organize'], function () {
   Route::post('managerset/personpost/{id}','Manager\PersonController@personupdate');
   Route::put('managerset/organize/updatevision/{id}','Manager\OrganizeController@updatevision');
   Route::resource('managerset/village','Manager\VillageController');
+  Route::resource('managerset/group','Manager\GroupController');
+  Route::resource('managerset/activity','Manager\ActivityController');
+  Route::resource('managerset/tourist','Manager\TouristController');
   Route::resource('managerset/member','Manager\MemberController');
   Route::get('manager/memberset/sort/{role}', 'Manager\MemberController@indexSort');
   Route::put('manager/memberset/userseen/{user}', 'Manager\MemberController@updateSeen');

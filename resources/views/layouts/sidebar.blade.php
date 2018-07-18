@@ -98,7 +98,7 @@
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('activity') !!}><a href="{{ url('/managerset/activity')}}"><i class="fa fa-flag"></i> <span>เรื่องเด่นชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('travel') !!}><a href="{{ url('/managerset/travel')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
+              <li {!! classActivePath('tourist') !!}><a href="{{ url('/managerset/tourist')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('calendar') !!}><a href="{{ url('/managerset/calendar')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
@@ -131,7 +131,7 @@
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
     <li {!! classActivePath('activity') !!}><a href="{{ url('activity')}}"><i class="fa fa-flag"></i> <span>กิจกรรมเด่นชุมชน</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-    <li {!! classActivePath('travel') !!}><a href="{{ url('travel')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
+    <li {!! classActivePath('tourist') !!}><a href="{{ url('tourist')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
     <li {!! classActivePath('calendar') !!}><a href="{{ url('calendar')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>

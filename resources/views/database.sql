@@ -114,9 +114,10 @@ ALTER TABLE `organizes`
 CREATE TABLE `groups` (
   `id` int(11) NOT NULL,
   `organize_id` int(11) NOT NULL,
+  `type` varchar(2) NOT NULL,
   `name` varchar(100) NOT NULL,
   `detail` text NULL,
-  `address` varchar(300) NOT NULL,
+  `address` varchar(300) NULL,
   `people` int(11) NULL,
   `leader` varchar(100) NULL,
   `contact` varchar(200) NULL,
@@ -177,8 +178,9 @@ ALTER TABLE `groups`
       (4, 'สมาชิกระบบ', 'Operator', NULL, '2018-07-13 06:31:56', '0000-00-00 00:00:00');
 
 
-      CREATE TABLE `tourist` (
+      CREATE TABLE `tourists` (
         `id` int(11) NOT NULL,
+        `organize_id` int(11) NOT NULL,
         `name` varchar(200) NOT NULL,
         `detail` text NULL,
         `address` varchar(200) NULL,
@@ -187,23 +189,25 @@ ALTER TABLE `groups`
         `lng` DOUBLE NULL,
         `zm` int(11) NULL,
         `website` varchar(100) NULL,
+        `contact` varchar(500) NULL,
         `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
         `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
       ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-      ALTER TABLE `tourist`
+      ALTER TABLE `tourists`
         ADD PRIMARY KEY (`id`);
-      ALTER TABLE `tourist`
+      ALTER TABLE `tourists`
         MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
         CREATE TABLE `activitys` (
           `id` int(11) NOT NULL,
+          `organize_id` int(11) NOT NULL,
           `name` varchar(200) NOT NULL,
           `type` varchar(50) NOT NULL,
           `detail` text NULL,
           `address` varchar(200) NULL,
-          `dateact` timestamp NULL,
-          `keyman` varchar(100) NULL,
+          `leader` varchar(100) NULL,
           `picture` varchar(100) NULL,
+          `tel` varchar(100) NULL,
           `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
           `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
         ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

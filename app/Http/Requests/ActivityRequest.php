@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class GroupRequest extends Request
+class ActivityRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,7 +31,7 @@ class GroupRequest extends Request
     public function messages()
     {
     	return [
-        'name.required'=>'ต้องป้อนชื่อกลุ่ม',
+        'name.required'=>'ต้องป้อนชื่อ',
         'detail.required'=>'ต้องป้อนรายละเอียด'
     	];
     }
