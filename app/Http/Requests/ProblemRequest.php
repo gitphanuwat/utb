@@ -14,17 +14,17 @@ class ProblemRequest extends Request
     public function rules()
     {
         return [
-          'taggroup_id'=>'required',
-          'title'=>'required',
-          'detail'=>'required',
+          'name'=>'required',
+          'type'=>'required',
+          'detail'=>'required'
         ];
     }
     public function messages()
     {
     	return [
-        'taggroup_id.required'=>'กรุณาเลือกกลุ่มปัญหา',
-        'title.required'=>'กรุณาป้อนหัวข้อปัญหา',
-        'detail.required'=>'กรุณาป้อนรายละเอียดปัญหา',
+        'name.required'=>'กรุณาป้อนหัวข้อปัญหา',
+        'type.required'=>'กรุณาระบบกลุ่มปัญหา',
+        'detail.required'=>'กรุณาป้อนรายละเอียดปัญหา'
     	];
     }
 }

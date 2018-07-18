@@ -105,7 +105,7 @@
               <li {!! classActivePath('problem') !!}><a href="{{ url('/managerset/problem')}}"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li><hr></li>
-              <li {!! classActivePath('download') !!}><a href="{{ url('/managerset/download')}}"><i class="fa fa-newspaper-o"></i> ข่าวสาร&กิจกรรม
+              <li {!! classActivePath('download') !!}><a href="{{ url('/managerset/info')}}"><i class="fa fa-newspaper-o"></i> ข่าวสาร&กิจกรรม
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('knowledge') !!}><a href="{{ url('/managerset/knowledge')}}"><i class="fa fa-wechat"></i> <span>บอร์ดสนทนา</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>

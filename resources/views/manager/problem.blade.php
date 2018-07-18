@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title','เรื่องเด่นในชุมชน')
+@section('title','ปัญหาในชุมชน')
 @section('subtitle','จัดการข้อมูล')
 @section('body')
 <div class="row">
@@ -8,7 +8,7 @@
     <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">โครงการเด่น</span>
+      <span class="info-box-text">ด้านบุคคล</span>
       <span class="info-box-number">--รายการ</span>
     </div>
     <!-- /.info-box-content -->
@@ -24,7 +24,7 @@
     <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">สถานที่สำคัญ</span>
+      <span class="info-box-text">ด้านสุขภาพ</span>
       <span class="info-box-number">--รายการ</span>
     </div>
     <!-- /.info-box-content -->
@@ -37,7 +37,7 @@
     <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">ผลิตภัณฑ์ชุมชน</span>
+      <span class="info-box-text">ด้านสิ่งแวดล้อม</span>
       <span class="info-box-number">-- รายการ</span>
     </div>
     <!-- /.info-box-content -->
@@ -71,28 +71,24 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>ชื่อกลุ่ม</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อกิจกรรม">
+                      <label>หัวข้อปัญหา</label>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="หัวข้อปัญหา">
                     </div>
                     <div class="form-group">
-                      <label>ประเภทกิจกรรม</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="ประเภทกิจกรรม">
+                      <label>กลุ่มปัญหา</label>
+                      <input type="text" class="form-control" name="type" id="type" placeholder="กลุ่มปัญหา">
                     </div>
                     <div class="form-group">
                       <label>รายละเอียด</label>
-                      <input type="text" class="form-control" name="detail" id="detail" placeholder="รายละเอียด">
+                      <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
                     </div>
                     <div class="form-group">
-                      <label>สถานที่จัด</label>
-                      <input type="text" class="form-control" name="address" id="address" placeholder="สถานที่จัด">
+                      <label>ที่อยู่</label>
+                      <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่">
                     </div>
                     <div class="form-group">
-                      <label>ผู้ประสานงาน</label>
-                      <input type="text" class="form-control" name="leader" id="leader" placeholder="ผู้ประสานงาน">
-                    </div>
-                    <div class="form-group">
-                      <label>เบอร์โทรติดต่อ</label>
-                      <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทรติดต่อ">
+                      <label>สถานะ</label>
+                      <input type="text" class="form-control" name="status" id="status" placeholder="สถานะ/การดำเนินการ">
                     </div>
 
                     <input type="hidden"  id="id">
@@ -116,7 +112,6 @@
 <!-- DataTables -->
 <script src="{{ asset("assets/plugins/datatables/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset("assets/plugins/datatables/dataTables.bootstrap.min.js") }}"></script>
-
 <script type="text/javascript">
     $(function(){
       $('#showdetail').hide();
@@ -151,7 +146,7 @@
 
         //alert(0);
         $.ajax({
-            url : '{!! url('managerset/activity') !!}'+'/'+id+'/edit',
+            url : '{!! url('managerset/problem') !!}'+'/'+id+'/edit',
             type : "get",
             //asyncfalse
             data : {
@@ -165,9 +160,7 @@
               $('#type').val(e.type);
               $('#detail').val(e.detail);
               $('#address').val(e.address);
-              $('#leader').val(e.leader);
-              $('#contact').val(e.contact);
-              $('#tel').val(e.tel);
+              $('#status').val(e.status);
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');
@@ -186,7 +179,7 @@
         $('.btndetail').show();
         $('#msgname').html('');
         $.ajax({
-            url : '{!! url('managerset/activity') !!}'+'/'+id,
+            url : '{!! url('managerset/problem') !!}'+'/'+id,
             type : "POST",
             //asyncfalse
             data : {
@@ -209,9 +202,9 @@
 
       $('.saverecord').click(function(){
 
-          //$('#new_activity').val('error');
+          //$('#new_problem').val('error');
               $.ajax({
-                  url : '{!! url('managerset/activity') !!}',
+                  url : '{!! url('managerset/problem') !!}',
                   async:false,
                   type:'post',
                   processData: false,
@@ -254,12 +247,10 @@
         var type = $('#type').val();
         var detail = $('#detail').val();
         var address = $('#address').val();
-        var leader = $('#leader').val();
-        var contact = $('#contact').val();
-        var tel = $('#tel').val();
+        var status = $('#status').val();
 
             $.ajax({
-              url : '{!! url('managerset/activity') !!}'+'/'+id,
+              url : '{!! url('managerset/problem') !!}'+'/'+id,
                 type : "post",
                 //asyncfalse
                 data : {
@@ -269,9 +260,7 @@
                   'type' : type,
                   'detail' : detail,
                   'address' : address,
-                  'leader' : leader,
-                  'contact' : contact,
-                  'tel' : tel
+                  'status' : status
                 },
                 success : function(re)
                 {
@@ -307,7 +296,7 @@
 
     function displaydata(){
       $.ajax({
-        url : '{!! url('managerset/activity/create') !!}',
+        url : '{!! url('managerset/problem/create') !!}',
         type : "get",
         //asyncfalse
         data : {},

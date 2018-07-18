@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class InforRequest extends Request
+class InfoRequest extends Request
 {
     public function authorize()
     {
@@ -21,7 +21,7 @@ class InforRequest extends Request
     public function messages()
     {
     	return [
-        'title.required'=>'กรุณาหัวเรื่อง',
+        'title.required'=>'กรุณาป้อนหัวเรื่อง',
         'detail.required'=>'กรุณาป้อนรายละเอียด'
     	];
     }

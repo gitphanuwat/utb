@@ -10,9 +10,10 @@ use App\Organize;
 use App\Problem;
 
 
-use App\Http\Requests\ActivityRequest;
 
-class ActivityController extends Controller
+use App\Http\Requests\ProblemRequest;
+
+class ProblemController extends Controller
 {
      public function __construct()
      {
@@ -22,22 +23,22 @@ class ActivityController extends Controller
     public function index()
     {
       $ido = Auth::user()->organize_id;
-      $data = Activity::where('organize_id',$ido)->get();
-      return view('manager.activity',compact('data'));
+      $data = Problem::where('organize_id',$ido)->get();
+      return view('manager.Problem',compact('data'));
     }
 
     public function create()
     {
       $idu = Auth::user()->organize_id;
-      $data = Activity::where('organize_id',$idu)->orderby('name')->get();
-      //$data = Activity::get();
+      $data = Problem::where('organize_id',$idu)->orderby('name')->get();
+      //$data = Problem::get();
       $display="
       <table id='example1' class='table table-bordered table-striped'>
         <thead>
         <tr>
         <th width='70'>ลำดับ</th>
-        <th>ชื่อชุมชน</th>
-        <th>ที่อยู่</th>
+        <th>ปัญหาชุมชน</th>
+        <th>พื้นที่ชุมชน</th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>
@@ -62,31 +63,29 @@ class ActivityController extends Controller
       return $display;
     }
 
-    public function store(ActivityRequest $request)
+    public function store(ProblemRequest $request)
     {
-        $obj = new Activity();
+        $obj = new Problem();
         $obj->organize_id = Auth::user()->organize_id;
         $obj->name = $request['name'];
         $obj->type = $request['type'];
         $obj->detail = $request['detail'];
         $obj->address = $request['address'];
-        $obj->leader = $request['leader'];
-        $obj->picture = $request['picture'];
-        $obj->tel = $request['tel'];
+        $obj->status = $request['status'];
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
     }
 
     public function show($id)
     {
-        //$obj = Activity::find($id);
+        //$obj = Problem::find($id);
         //dd($obj);
     }
 
     public function edit($id)
     {
 
-      $data = Activity::find($id);
+      $data = Problem::find($id);
       if($data->organize_id == Auth::user()->organize_id){
         header("Content-type: text/x-json");
         echo json_encode($data);
@@ -95,27 +94,23 @@ class ActivityController extends Controller
       abort(0);
     }
 
-    public function update(ActivityRequest $request, $id)
+    public function update(ProblemRequest $request, $id)
     {
 
-        $obj = Activity::findOrFail($id);
+        $obj = Problem::findOrFail($id);
         $obj->name = $request['name'];
         $obj->type = $request['type'];
         $obj->detail = $request['detail'];
         $obj->address = $request['address'];
-        $obj->leader = $request['leader'];
-        $obj->picture = $request['picture'];
-        $obj->tel = $request['tel'];
+        $obj->status = $request['status'];
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
-
-        //return 0;
 
     }
 
     public function destroy($id)
     {
-      $data = Activity::find($id);
+      $data = Problem::find($id);
       if($data->organize_id == Auth::user()->organize_id){
     		$check = $data->delete();
         if($check>0){return 0;}else{return 1;}

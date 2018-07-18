@@ -18,7 +18,7 @@ include('data.php');
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>{{$cresearcher}}</h3>
+          <h3>99</h3>
           <p>หน่วยงาน</p>
         </div>
         <div class="icon">
@@ -30,7 +30,7 @@ include('data.php');
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>{{$cexpert}}</h3>
+          <h3>99</h3>
           <p>ชุมชน</p>
         </div>
         <div class="icon">
@@ -42,7 +42,7 @@ include('data.php');
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>{{$cresearch}}</h3>
+          <h3>99</h3>
           <p>สมาชิก</p>
         </div>
         <div class="icon">
@@ -54,7 +54,7 @@ include('data.php');
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>{{$ccreative}}</h3>
+          <h3>99</h3>
           <p>กิจกรรม</p>
         </div>
         <div class="icon">

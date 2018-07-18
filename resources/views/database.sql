@@ -252,12 +252,10 @@ ALTER TABLE `groups`
               CREATE TABLE `problems` (
                 `id` int(11) NOT NULL,
                 `organize_id` int(11) NOT NULL,
-                `title` varchar(200) NOT NULL,
+                `name` varchar(200) NOT NULL,
                 `type` varchar(50) NOT NULL,
                 `detail` text NULL,
                 `address` varchar(200) NULL,
-                `sender` varchar(100) NULL,
-                `picture` varchar(100) NULL,
                 `status` varchar(1) NULL,
                 `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
@@ -304,21 +302,20 @@ ALTER TABLE `groups`
                   ALTER TABLE `files`
                     MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
-                    CREATE TABLE `news` (
+                    CREATE TABLE `infos` (
                       `id` int(11) NOT NULL,
                       `organize_id` int(11) NOT NULL,
                       `user_id` int(11) NOT NULL,
                       `title` varchar(200) NOT NULL,
                       `detail` text NULL,
-                      `type` varchar(50) NOT NULL,
                       `day` timestamp NULL,
                       `file` varchar(100) NULL,
                       `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                       `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-                    ALTER TABLE `news`
+                    ALTER TABLE `infos`
                       ADD PRIMARY KEY (`id`);
-                    ALTER TABLE `news`
+                    ALTER TABLE `infos`
                       MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
                       CREATE TABLE `counters` (
