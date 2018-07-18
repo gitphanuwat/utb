@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Organize;
-use App\Problem;
+use App\Activity;
 
 
 use App\Http\Requests\ActivityRequest;
