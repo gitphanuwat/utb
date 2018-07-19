@@ -234,12 +234,12 @@ ALTER TABLE `groups`
 
             CREATE TABLE `complaints` (
               `id` int(11) NOT NULL,
-              `title` varchar(200) NOT NULL,
+              `organize_id` int(11) NOT NULL,
+              `name` varchar(200) NOT NULL,
               `type` varchar(50) NOT NULL,
               `detail` text NULL,
-              `address` varchar(200) NULL,
               `sender` varchar(100) NULL,
-              `picture` varchar(100) NULL,
+              `contact` varchar(200) NULL,
               `status` varchar(1) NULL,
               `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
               `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP

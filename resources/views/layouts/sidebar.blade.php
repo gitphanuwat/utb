@@ -107,8 +107,6 @@
               <li><hr></li>
               <li {!! classActivePath('download') !!}><a href="{{ url('/managerset/info')}}"><i class="fa fa-newspaper-o"></i> ข่าวสาร&กิจกรรม
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('knowledge') !!}><a href="{{ url('/managerset/knowledge')}}"><i class="fa fa-wechat"></i> <span>บอร์ดสนทนา</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('poll') !!}><a href="{{ url('/managerset/poll')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('complaint') !!}><a href="{{ url('/managerset/complaint')}}"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
@@ -136,8 +134,6 @@
     <li {!! classActivePath('calendar') !!}><a href="{{ url('calendar')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรมชุมชน</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
     <li {!! classActivePath('problem') !!}><a href="{{ url('problem')}}"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
-      <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-    <li {!! classActivePath('knowledge') !!}><a href="{{ url('knowledge')}}"><i class="fa fa-wechat"></i> <span>แลกเปลี่ยนเรียนรู้</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
     <li {!! classActivePath('poll') !!}><a href="{{ url('poll')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
       <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>

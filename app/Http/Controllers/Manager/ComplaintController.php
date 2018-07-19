@@ -7,13 +7,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Organize;
-use App\Problem;
+use App\Complaint;
 
 
 
-use App\Http\Requests\ProblemRequest;
+use App\Http\Requests\ComplaintRequest;
 
-class ProblemController extends Controller
+class ComplaintController extends Controller
 {
      public function __construct()
      {
@@ -23,15 +23,14 @@ class ProblemController extends Controller
     public function index()
     {
       $ido = Auth::user()->organize_id;
-      $data = Problem::where('organize_id',$ido)->get();
-      return view('manager.problem',compact('data'));
+      $data = Complaint::where('organize_id',$ido)->get();
+      return view('manager.complaint',compact('data'));
     }
 
     public function create()
     {
       $idu = Auth::user()->organize_id;
-      $data = Problem::where('organize_id',$idu)->orderby('name')->get();
-      //$data = Problem::get();
+      $data = Complaint::where('organize_id',$idu)->orderby('name')->get();
       $display="
       <table id='example1' class='table table-bordered table-striped'>
         <thead>
@@ -63,9 +62,9 @@ class ProblemController extends Controller
       return $display;
     }
 
-    public function store(ProblemRequest $request)
+    public function store(ComplaintRequest $request)
     {
-        $obj = new Problem();
+        $obj = new Complaint();
         $obj->organize_id = Auth::user()->organize_id;
         $obj->name = $request['name'];
         $obj->type = $request['type'];
@@ -78,14 +77,12 @@ class ProblemController extends Controller
 
     public function show($id)
     {
-        //$obj = Problem::find($id);
-        //dd($obj);
     }
 
     public function edit($id)
     {
 
-      $data = Problem::find($id);
+      $data = Complaint::find($id);
       if($data->organize_id == Auth::user()->organize_id){
         header("Content-type: text/x-json");
         echo json_encode($data);
@@ -94,10 +91,10 @@ class ProblemController extends Controller
       abort(0);
     }
 
-    public function update(ProblemRequest $request, $id)
+    public function update(ComplaintRequest $request, $id)
     {
 
-        $obj = Problem::findOrFail($id);
+        $obj = Complaint::findOrFail($id);
         $obj->name = $request['name'];
         $obj->type = $request['type'];
         $obj->detail = $request['detail'];
@@ -110,7 +107,7 @@ class ProblemController extends Controller
 
     public function destroy($id)
     {
-      $data = Problem::find($id);
+      $data = Complaint::find($id);
       if($data->organize_id == Auth::user()->organize_id){
     		$check = $data->delete();
         if($check>0){return 0;}else{return 1;}

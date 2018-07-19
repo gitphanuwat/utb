@@ -47,6 +47,8 @@ Route::group(['middleware' => 'organize'], function () {
   Route::resource('managerset/info','Manager\InfoController');
   Route::post('managerset/infopost/{id}','Manager\InfoController@infoupdate');
 
+  Route::resource('managerset/complaint','Manager\ComplaintController');
+
 
   Route::resource('managerset/member','Manager\MemberController');
   Route::get('manager/memberset/sort/{role}', 'Manager\MemberController@indexSort');
