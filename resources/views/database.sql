@@ -340,8 +340,6 @@ ALTER TABLE `counters`
 ALTER TABLE `counters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
-
-
 CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `organize_id` int(11) NOT NULL,
@@ -350,8 +348,10 @@ CREATE TABLE `events` (
   `type` varchar(50) NOT NULL,
   `detail` text NULL,
   `address` varchar(200) NULL,
-  `day` timestamp NULL,
-  `sender` varchar(100) NULL,
+  `startdate` date NULL,
+  `endday` date NULL,
+  `repeat` varchar(1) NULL,
+  `contact` varchar(100) NULL,
   `picture` varchar(100) NULL,
   `status` varchar(1) NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,

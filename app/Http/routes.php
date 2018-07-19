@@ -40,6 +40,7 @@ Route::group(['middleware' => 'organize'], function () {
   Route::resource('managerset/group','Manager\GroupController');
   Route::resource('managerset/activity','Manager\ActivityController');
   Route::resource('managerset/tourist','Manager\TouristController');
+  Route::resource('managerset/event','Manager\EventController');
 
   Route::resource('managerset/problem','Manager\ProblemController');
 

@@ -11,62 +11,9 @@
 
 @endsection
 
-<?php
-
-use App\Counter;
-use App\Infor;
-use App\Models\Image;
-
-if(Auth::user()){include ('makedata.php');}
-include('data.php');
-
-$col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6',
-        '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6de', '#932ab6'];
-?>
 
 @section('body')
-  <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">อบจ.</span>
-                      <span class="info-box-number">{{$cresearcher}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">เทศบาล.</span>
-                      <span class="info-box-number">{{$cexpert}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">อบต.</span>
-                      <span class="info-box-number">{{$cresearch}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                  <div class="info-box">
-                    <span class="info-box-icon bg-yellow"><i class="fa fa-home"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text">อื่นๆ.</span>
-                      <span class="info-box-number">{{$ccreative}}</span>
-                      <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                  </div>
-                </div>
-  </div>
+
 
         <div class="row">
           <div class="col-md-3">
@@ -354,14 +301,14 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
       events: [
         {
           title: 'ส่งเสริมการท่องเที่ยว',
-          start: new Date(y, m, 1),
+          start: new Date(y, m, 1+1),
           backgroundColor: "#f56954", //red
           borderColor: "#f56954" //red
         },
         {
           title: 'สับปะรดห้วยมุ่น',
-          start: new Date(y, m, d - 5),
-          end: new Date(y, m, d - 2),
+          start: new Date(y, m, 4),
+          end: new Date(y, m, 5),
           backgroundColor: "#f39c12", //yellow
           borderColor: "#f39c12" //yellow
         },
@@ -388,6 +335,46 @@ $col = ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#39CCCC', '#d2d6
           backgroundColor: "#00a65a", //Success (green)
           borderColor: "#00a65a" //Success (green)
         },
+        {
+          title: 'แห่เทียนเข้าพรรษา',
+          start: new Date(y, m, 9),
+          end: new Date(y, m, 9),
+          allDay: false,
+          backgroundColor: "#00a65a", //Success (green)
+          borderColor: "#00a65a" //Success (green)
+        },
+        {
+          title: 'แห่เทียนเข้าพรรษา',
+          start: new Date(y, m, 9),
+          end: new Date(y, m, 9),
+          allDay: false,
+          backgroundColor: "#00a65a", //Success (green)
+          borderColor: "#00a65a" //Success (green)
+        },
+        {
+          title: 'แห่เทียนเข้าพรรษา',
+          start: new Date(y, m, 9),
+          end: new Date(y, m, 9),
+          allDay: false,
+          backgroundColor: "#00a65a", //Success (green)
+          borderColor: "#00a65a" //Success (green)
+        },
+        {
+          title: 'แห่เทียนเข้าพรรษา',
+          start: new Date(y, m, 9),
+          end: new Date(y, m, 9),
+          allDay: false,
+          backgroundColor: "#00a65a", //Success (green)
+          borderColor: "#00a65a" //Success (green)
+        },
+        {
+          title: 'แห่เทียนเข้าพรรษา',
+          start: new Date(y, m, 9),
+          end: new Date(y, m, 9),
+          allDay: false,
+          backgroundColor: "#00a65a", //Success (green)
+          borderColor: "#00a65a" //Success (green)
+        },-
         {
           title: 'พิชิตภูสอยดาว',
           start: new Date(y, m, 24),

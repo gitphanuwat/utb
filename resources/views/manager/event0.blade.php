@@ -1,51 +1,26 @@
 @extends('layouts.template')
-@section('title','เรื่องเด่นในชุมชน')
+@section('title','ปฏิทินกิจกรรม')
 @section('subtitle','จัดการข้อมูล')
+@section('styles')
+<!-- DataTables -->
+<link rel="stylesheet" href="{ asset("assets/plugins/datatables/dataTables.bootstrap.css") }}">
+<!-- fullCalendar 2.2.5-->
+<link rel="stylesheet" href="{{ asset("assets/plugins/fullcalendar/fullcalendar.min.css") }}">
+<link rel="stylesheet" href="{{ asset("assets/plugins/fullcalendar/fullcalendar.print.css") }}" media="print">
+@endsection
 @section('body')
 <div class="row">
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
-
-    <div class="info-box-content">
-      <span class="info-box-text">โครงการเด่น</span>
-      <span class="info-box-number">--รายการ</span>
+  <div class="col-md-12">
+    <div class="box box-primary">
+      <div class="box-body">
+        <!-- THE CALENDAR -->
+        <div id="calendar"></div>
+      </div>
+      <!-- /.box-body -->
     </div>
-    <!-- /.info-box-content -->
+    <!-- /. box -->
   </div>
-  <!-- /.info-box -->
-</div>
-<!-- /.col -->
-<!-- fix for small devices only -->
-<div class="clearfix visible-sm-block"></div>
-
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
-
-    <div class="info-box-content">
-      <span class="info-box-text">สถานที่สำคัญ</span>
-      <span class="info-box-number">--รายการ</span>
-    </div>
-    <!-- /.info-box-content -->
-  </div>
-  <!-- /.info-box -->
-</div>
-<!-- /.col -->
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
-
-    <div class="info-box-content">
-      <span class="info-box-text">ผลิตภัณฑ์ชุมชน</span>
-      <span class="info-box-number">-- รายการ</span>
-    </div>
-    <!-- /.info-box-content -->
-  </div>
-  <!-- /.info-box -->
-</div>
-<!-- /.col -->
-</div>      <!-- /.row -->
+</div><!-- /.row -->
 
 <div class="row">
 <div class="col-md-12">
@@ -71,28 +46,24 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>ชื่อกิจกรรม</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อกิจกรรม">
+                      <label>หัวข้อปัญหา</label>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="หัวข้อปัญหา">
                     </div>
                     <div class="form-group">
-                      <label>ประเภทกิจกรรม</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="ประเภทกิจกรรม">
+                      <label>กลุ่มปัญหา</label>
+                      <input type="text" class="form-control" name="type" id="type" placeholder="กลุ่มปัญหา">
                     </div>
                     <div class="form-group">
                       <label>รายละเอียด</label>
-                      <input type="text" class="form-control" name="detail" id="detail" placeholder="รายละเอียด">
+                      <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
                     </div>
                     <div class="form-group">
-                      <label>สถานที่จัด</label>
-                      <input type="text" class="form-control" name="address" id="address" placeholder="สถานที่จัด">
+                      <label>ที่อยู่</label>
+                      <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่">
                     </div>
                     <div class="form-group">
-                      <label>ผู้ประสานงาน</label>
-                      <input type="text" class="form-control" name="leader" id="leader" placeholder="ผู้ประสานงาน">
-                    </div>
-                    <div class="form-group">
-                      <label>เบอร์โทรติดต่อ</label>
-                      <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทรติดต่อ">
+                      <label>สถานะ</label>
+                      <input type="text" class="form-control" name="status" id="status" placeholder="สถานะ/การดำเนินการ">
                     </div>
 
                     <input type="hidden"  id="id">
@@ -116,6 +87,59 @@
 <!-- DataTables -->
 <script src="{{ asset("assets/plugins/datatables/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset("assets/plugins/datatables/dataTables.bootstrap.min.js") }}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- fullCalendar 2.2.5 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="{{ asset("assets/plugins/fullcalendar/fullcalendar.min.js") }}"></script>
+
+<script>
+var dataevent = <?php print_r(json_encode($data)) ?>;
+//alert(dataevent.title);
+  $(function () {
+    var date = new Date();
+    var d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear();
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'month,agendaWeek,agendaDay'
+      },
+      buttonText: {
+        today: 'today',
+        month: 'month',
+        week: 'week',
+        day: 'day'
+      },
+      //Random default events
+
+      events: [
+        //$.each( dataevent, function( index, value ){
+        {
+          title: dataevent.title,
+          start: dataevent.startdate,
+          end: dataevent.enddate,
+          backgroundColor: "#f56954", //red
+          borderColor: "#f56954" //red
+        },
+      //});
+      ],
+      events: [
+        //$.each( dataevent, function( index, value ){
+        {
+          title: 'สับปะรดห้วยมุ่น',
+          start: new Date(y, m, d - 5),
+          end: new Date(y, m, d - 2),
+          backgroundColor: "#f56954", //red
+          borderColor: "#f56954" //red
+        },
+      //});
+      ],
+    });
+  });
+</script>
 
 <script type="text/javascript">
     $(function(){
@@ -151,7 +175,7 @@
 
         //alert(0);
         $.ajax({
-            url : '{!! url('managerset/activity') !!}'+'/'+id+'/edit',
+            url : '{!! url('managerset/event') !!}'+'/'+id+'/edit',
             type : "get",
             //asyncfalse
             data : {
@@ -165,9 +189,7 @@
               $('#type').val(e.type);
               $('#detail').val(e.detail);
               $('#address').val(e.address);
-              $('#leader').val(e.leader);
-              $('#contact').val(e.contact);
-              $('#tel').val(e.tel);
+              $('#status').val(e.status);
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');
@@ -186,7 +208,7 @@
         $('.btndetail').show();
         $('#msgname').html('');
         $.ajax({
-            url : '{!! url('managerset/activity') !!}'+'/'+id,
+            url : '{!! url('managerset/event') !!}'+'/'+id,
             type : "POST",
             //asyncfalse
             data : {
@@ -209,9 +231,9 @@
 
       $('.saverecord').click(function(){
 
-          //$('#new_activity').val('error');
+          //$('#new_event').val('error');
               $.ajax({
-                  url : '{!! url('managerset/activity') !!}',
+                  url : '{!! url('managerset/event') !!}',
                   async:false,
                   type:'post',
                   processData: false,
@@ -254,12 +276,10 @@
         var type = $('#type').val();
         var detail = $('#detail').val();
         var address = $('#address').val();
-        var leader = $('#leader').val();
-        var contact = $('#contact').val();
-        var tel = $('#tel').val();
+        var status = $('#status').val();
 
             $.ajax({
-              url : '{!! url('managerset/activity') !!}'+'/'+id,
+              url : '{!! url('managerset/event') !!}'+'/'+id,
                 type : "post",
                 //asyncfalse
                 data : {
@@ -269,9 +289,7 @@
                   'type' : type,
                   'detail' : detail,
                   'address' : address,
-                  'leader' : leader,
-                  'contact' : contact,
-                  'tel' : tel
+                  'status' : status
                 },
                 success : function(re)
                 {
@@ -307,7 +325,7 @@
 
     function displaydata(){
       $.ajax({
-        url : '{!! url('managerset/activity/create') !!}',
+        url : '{!! url('managerset/event/create') !!}',
         type : "get",
         //asyncfalse
         data : {},

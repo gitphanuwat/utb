@@ -14,15 +14,15 @@ class PollanswerRequest extends Request
     public function rules()
     {
         return [
-          'title'=>'required',
-          'detail'=>'required'
+          'titletopic'=>'required',
+          'detailtopic'=>'required'
         ];
     }
     public function messages()
     {
     	return [
-        'title.required'=>'กรุณาป้อนหัวข้อ2',
-        'detail.required'=>'กรุณาป้อนรายละเอียด2'
+        'titletopic.required'=>'กรุณาป้อนหัวข้อ2',
+        'detailtopic.required'=>'กรุณาป้อนรายละเอียด2'
     	];
     }
 }

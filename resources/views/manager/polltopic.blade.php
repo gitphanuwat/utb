@@ -118,7 +118,11 @@
 
 
 <div id='displaytopic'>
-  <div id='showdtopic'>Show Topic</div>
+  <div class="box">
+    <div class="box-body">
+      <div class="showtopic" id='showtopic'>></div>
+    </div>
+  </div>
   <div id='msgtopic'></div>
   <form role="form" id="form_topic" name="form_topic">
   <div class="row">
@@ -126,13 +130,13 @@
         <div class="box-body">
           <div class="form-group">
             <label>หัวข้อสำรวจ</label>
-            <input type="text" class="form-control" name="title" id="title" placeholder="หัวข้อสำรวจ">
+            <input type="text" class="form-control" name="titletopic" id="titletopic" placeholder="หัวข้อสำรวจ">
           </div>
           <div class="form-group">
             <label>รายละเอียด</label>
-            <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
+            <textarea type="text" class="form-control" name="detailtopic" id="detailtopic"></textarea>
           </div>
-          <input type="hidden"  id="id">
+          <input type="hidden"  id="idtopic">
           <input type="hidden"  name="polltopic_id" id="polltopic_id" value="">
           <input type="hidden"  name="user_id" id="user_id" value="{{ Auth::user()->id }}">
           <button type="button"  class="btn btn-primary savetopic">บันทึกข้อมูล</button>
@@ -387,13 +391,11 @@
   $('body').delegate('.edittopic','click',function(){
     $('.updatetopic').show();
     $('.savetopic').hide();
-    $('#showdetail').show();
-    $('.btndetail').hide();
-    $('#msgname').html('');
-    $('#name').focus();
+    //$('#showdetail').show();
+    //$('.btndetail').hide();
+    $('#msgtopic').html('');
+    $('#titletopic').focus();
     var id = $(this).data('id');
-
-    //alert(0);
     $.ajax({
         url : '{!! url('managerset/pollanswer') !!}'+'/'+id+'/edit',
         type : "get",
@@ -404,10 +406,10 @@
         success : function(e)
         {
           //alert(e.name);
-          $('#id').val(e.id);
-          $('#title').val(e.title);
-          $('#detail').val(e.detail);
-          $('#type').val(e.type);
+          $('#idtopic').val(e.id);
+          $('#titletopic').val(e.title);
+          $('#detailtopic').val(e.detail);
+          //$('#type').val(e.type);
         }
     });
 
@@ -415,10 +417,11 @@
 
   $('.updatetopic').click(function(){
   //alert(0);
-    var id = $('#id').val();
-    var title = $('#title').val();
-    var detail = $('#detail').val();
-    var type = $('#type').val();
+  var id = $('#idtopic').val();
+  var polltopic_id = $('#polltopic_id').val();
+    var titletopic = $('#titletopic').val();
+    var detailtopic = $('#detailtopic').val();
+    //var type = $('#type').val();
         $.ajax({
           url : '{!! url('managerset/pollanswer') !!}'+'/'+id,
             type : "post",
@@ -426,9 +429,8 @@
             data : {
               '_method':'PUT',
               '_token': '{{ csrf_token() }}',
-              'title' : title,
-              'detail' : detail,
-              'type' : type
+              'titletopic' : titletopic,
+              'detailtopic' : detailtopic
             },
             success : function(re)
             {
@@ -441,9 +443,10 @@
               }
               $('.updatetopic').hide();
               $('.savetopic').show();
-              $('#showdetail').hide();
-              $('.btndetail').show();
+              //$('#showtopic').hide();
               $("#form_topic")[0].reset();
+              $('#polltopic_id').val(polltopic_id);
+              displaytopic(polltopic_id);
             },
             error:function(err){
                 //alert(err);
@@ -464,11 +467,13 @@
 
   $('body').delegate('.deletetopic','click',function(){
     if(confirm("ท่านต้องการลบรายการนี้หรือไม่ ?")){
+      var polltopic_id = $('#polltopic_id').val();
     var id = $(this).data('id');
     $('.updatetopic').hide();
     $('.savetopic').show();
-    $('#showdetail').hide();
-    $('.btndetail').show();
+    $('#msgtopic').html('');
+    //$('#showtopic').hide();
+    //$('.btndetail').show();
     $('#msgname').html('');
     $.ajax({
         url : '{!! url('managerset/pollanswer') !!}'+'/'+id,
@@ -482,7 +487,8 @@
         {
           //alert(d);
           $("#form_topic")[0].reset();
-          displaytopic();
+          $('#polltopic_id').val(polltopic_id);
+          displaytopic(polltopic_id);
         }
     });
   }
@@ -514,7 +520,7 @@
         data : {},
         success : function(s)
         {
-          $('#showdtopic').html(s);
+          $('#showtopic').html(s);
           //$("#example2").DataTable();
         }
       });

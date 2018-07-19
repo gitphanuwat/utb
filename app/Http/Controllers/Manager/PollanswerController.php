@@ -33,8 +33,8 @@ class PollanswerController extends Controller
         $obj = new Pollanswer();
         $obj->polltopic_id = $request['polltopic_id'];
         $obj->user_id = $request['user_id'];
-        $obj->title = $request['title'];
-        $obj->detail = $request['detail'];
+        $obj->title = $request['titletopic'];
+        $obj->detail = $request['detailtopic'];
         $check = $obj->save();
         $data['polltopic_id'] = $request['polltopic_id'];
         $data['check'] = $check;
@@ -93,23 +93,18 @@ class PollanswerController extends Controller
 
     public function edit($id)
     {
-
       $data = Pollanswer::find($id);
-      if($data->organize_id == Auth::user()->organize_id){
         header("Content-type: text/x-json");
         echo json_encode($data);
         exit();
-      }
-      abort(0);
     }
 
     public function update(PollanswerRequest $request, $id)
     {
 
         $obj = Pollanswer::findOrFail($id);
-        $obj->title = $request['title'];
-        $obj->type = $request['type'];
-        $obj->detail = $request['detail'];
+        $obj->title = $request['titletopic'];
+        $obj->detail = $request['detailtopic'];
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
 
@@ -118,10 +113,7 @@ class PollanswerController extends Controller
     public function destroy($id)
     {
       $data = Pollanswer::find($id);
-      if($data->organize_id == Auth::user()->organize_id){
     		$check = $data->delete();
         if($check>0){return 0;}else{return 1;}
-      }
-      abort(0);
     }
 }
