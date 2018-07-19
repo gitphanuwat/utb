@@ -88,7 +88,7 @@
                       </select>
                     </div>
                     <input type="hidden"  id="id">
-                    <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
+                    <input type="hidden"  name="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
                     <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
                     <button type="button" class="btn btn-primary updaterecord">อัพเดทข้อมูล</button>
                     <button type="reset" class="btn btn-danger btncancel">ยกเลิก</button>
@@ -101,11 +101,10 @@
           </div>
 
 
-
 <div id='displaytopic'>
   <div id='showdtopic'>Show Topic</div>
   <div id='msgtopic'></div>
-  <form role="form" id="form_data" name="form_data">
+  <form role="form" id="form_topic" name="form_topic">
   <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="box-body">
@@ -118,8 +117,10 @@
             <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
           </div>
           <input type="hidden"  id="id">
-          <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
+          <input type="hidden"  name="polltopic_id" id="polltopic_id" value="">
+          <input type="hidden"  name="user_id" id="user_id" value="{{ Auth::user()->id }}">
           <button type="button"  class="btn btn-primary savetopic">บันทึกข้อมูล</button>
+          <button type="button"  class="btn btn-primary updatetopic">อัพเดทข้อมูล</button>
           <button type="reset" class="btn btn-danger btncanceltopic">ยกเลิก</button>
           {{ csrf_field() }}
           {{ method_field('post') }}
@@ -161,93 +162,27 @@
           //$('.updatetopic').hide();
           $('.savetopic').show();
           //$('.btndetail').show();
-          //$('#showdetail').hide();
+          $('#showdetail').hide();
 
-          $('#msgnametopic').html('');
+          $('#msgtopic').html('');
           $('.displayrecord').show();
-          $('#showdetail').show();
+          $('#showdetail').hide();
           $('.btndetail').show();
           $('#displaytopic').hide();
-
+          displaydata();
       });
       displaydata();
-
-
-      $('body').delegate('.edit','click',function(){
-        $('.updaterecord').show();
-        $('.saverecord').hide();
-        $('#showdetail').show();
-        $('.btndetail').hide();
-        $('#msgname').html('');
-        $('#name').focus();
-        var id = $(this).data('id');
-
-        //alert(0);
-        $.ajax({
-            url : '{!! url('managerset/polltopic') !!}'+'/'+id+'/edit',
-            type : "get",
-            //asyncfalse
-            data : {
-              '_token': '{{ csrf_token() }}'
-            },
-            success : function(e)
-            {
-              //alert(e.name);
-              $('#id').val(e.id);
-              $('#title').val(e.title);
-              $('#detail').val(e.detail);
-              $('#type').val(e.type);
-            },
-            error:function(err){
-                  alert('สิทธิ์การใช้งานไม่ถูกต้อง');
-             }
-        });
-
-      });
 
       $('body').delegate('.bntopic','click',function(){
         $('.displayrecord').hide();
         $('#showdetail').hide();
         $('.btndetail').hide();
+        $('.updatetopic').hide();
         $('#displaytopic').show();
-        //$('#msgname').html('');
-        //$('#name').focus();
         var id = $(this).data('id');
-        //alert(id);
-
+        $('#polltopic_id').val(id);
         displaytopic(id);
       });
-
-
-      $('body').delegate('.delete','click',function(){
-        if(confirm("ท่านต้องการลบรายการนี้หรือไม่ ?")){
-        var id = $(this).data('id');
-        $('.updaterecord').hide();
-        $('.saverecord').show();
-        $('#showdetail').hide();
-        $('.btndetail').show();
-        $('#msgname').html('');
-        $.ajax({
-            url : '{!! url('managerset/polltopic') !!}'+'/'+id,
-            type : "POST",
-            //asyncfalse
-            data : {
-              '_method':'DELETE',
-              '_token': '{{ csrf_token() }}'
-            },
-            success : function(d)
-            {
-              //alert(d);
-              $("#form_data")[0].reset();
-              displaydata();
-            },
-            error:function(err){
-                  alert('สิทธิ์การใช้งานไม่ถูกต้อง');
-             }
-        });
-      }
-      });
-  });
 
       $('.saverecord').click(function(){
 
@@ -288,8 +223,36 @@
               });
       }) ;
 
+      $('body').delegate('.edit','click',function(){
+        $('.updaterecord').show();
+        $('.saverecord').hide();
+        $('#showdetail').show();
+        $('.btndetail').hide();
+        $('#msgname').html('');
+        $('#name').focus();
+        var id = $(this).data('id');
 
-    $('.updaterecord').click(function(){
+        //alert(0);
+        $.ajax({
+            url : '{!! url('managerset/polltopic') !!}'+'/'+id+'/edit',
+            type : "get",
+            //asyncfalse
+            data : {
+              '_token': '{{ csrf_token() }}'
+            },
+            success : function(e)
+            {
+              //alert(e.name);
+              $('#id').val(e.id);
+              $('#title').val(e.title);
+              $('#detail').val(e.detail);
+              $('#type').val(e.type);
+            }
+        });
+
+      });
+
+      $('.updaterecord').click(function(){
       //alert(0);
         var id = $('#id').val();
         var title = $('#title').val();
@@ -336,7 +299,181 @@
                     }
                  }
             });
-    }) ;
+      }) ;
+
+      $('body').delegate('.delete','click',function(){
+        if(confirm("ท่านต้องการลบรายการนี้หรือไม่ ?")){
+        var id = $(this).data('id');
+        $('.updaterecord').hide();
+        $('.saverecord').show();
+        $('#showdetail').hide();
+        $('.btndetail').show();
+        $('#msgname').html('');
+        $.ajax({
+            url : '{!! url('managerset/polltopic') !!}'+'/'+id,
+            type : "POST",
+            //asyncfalse
+            data : {
+              '_method':'DELETE',
+              '_token': '{{ csrf_token() }}'
+            },
+            success : function(d)
+            {
+              //alert(d);
+              $("#form_data")[0].reset();
+              displaydata();
+            }
+        });
+      }
+      });
+
+
+/////////////////////////////////////////////////////////////////////////////////for pollanswer
+  $('.savetopic').click(function(){
+      //$('#new_pollanswer').val('error');
+          $.ajax({
+              url : '{!! url('managerset/pollanswer') !!}',
+              async:false,
+              type:'post',
+              processData: false,
+              contentType: false,
+              data:new FormData($("#form_topic")[0]),
+              success:function(re)
+              {
+                //alert(re);
+                if(re.check){
+                  displaytopic(re.polltopic_id);
+                  $( '#msgtopic' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
+                }else{
+                  $( '#msgtopic' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
+                }
+                $("#form_topic")[0].reset();
+                $('#polltopic_id').val(re.polltopic_id);
+              },
+              error:function(err){
+                  //alert(err);
+                  if( err.status === 422 ) {
+                    var errors = err.responseJSON; //this will get the errors response data.
+                    errorsHtml = '<div class="alert alert-danger"><ul>';
+                    $.each( errors, function( key, value ) {
+                      errorsHtml += '<li>' + value[0] + '</li>'; //showing only the first error.
+                    });
+                    errorsHtml += '</ul></di>';
+
+                    $( '#msgtopic' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
+                  }else{
+                    $( '#msgtopic' ).html( 'ERROR : '+err.status );
+                  }
+               }
+          });
+  }) ;
+
+  $('body').delegate('.edittopic','click',function(){
+    $('.updatetopic').show();
+    $('.savetopic').hide();
+    $('#showdetail').show();
+    $('.btndetail').hide();
+    $('#msgname').html('');
+    $('#name').focus();
+    var id = $(this).data('id');
+
+    //alert(0);
+    $.ajax({
+        url : '{!! url('managerset/pollanswer') !!}'+'/'+id+'/edit',
+        type : "get",
+        //asyncfalse
+        data : {
+          '_token': '{{ csrf_token() }}'
+        },
+        success : function(e)
+        {
+          //alert(e.name);
+          $('#id').val(e.id);
+          $('#title').val(e.title);
+          $('#detail').val(e.detail);
+          $('#type').val(e.type);
+        }
+    });
+
+  });
+
+  $('.updatetopic').click(function(){
+  //alert(0);
+    var id = $('#id').val();
+    var title = $('#title').val();
+    var detail = $('#detail').val();
+    var type = $('#type').val();
+        $.ajax({
+          url : '{!! url('managerset/pollanswer') !!}'+'/'+id,
+            type : "post",
+            //asyncfalse
+            data : {
+              '_method':'PUT',
+              '_token': '{{ csrf_token() }}',
+              'title' : title,
+              'detail' : detail,
+              'type' : type
+            },
+            success : function(re)
+            {
+              //alert(re);
+              if(re == 0){
+                displaytopic();
+                $( '#msgtopic' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
+              }else{
+                $( '#msgtopic' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
+              }
+              $('.updatetopic').hide();
+              $('.savetopic').show();
+              $('#showdetail').hide();
+              $('.btndetail').show();
+              $("#form_topic")[0].reset();
+            },
+            error:function(err){
+                //alert(err);
+                if( err.status === 422 ) {
+                  var errors = err.responseJSON; //this will get the errors response data.
+                  errorsHtml = '<div class="alert alert-danger"><ul>';
+                  $.each( errors, function( key, value ) {
+                    errorsHtml += '<li>' + value[0] + '</li>'; //showing only the first error.
+                  });
+                  errorsHtml += '</ul></di>';
+                  $( '#msgname' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
+                }else{
+                  $( '#msgname' ).html( 'ERROR : '+err.status );
+                }
+             }
+        });
+  }) ;
+
+  $('body').delegate('.deletetopic','click',function(){
+    if(confirm("ท่านต้องการลบรายการนี้หรือไม่ ?")){
+    var id = $(this).data('id');
+    $('.updatetopic').hide();
+    $('.savetopic').show();
+    $('#showdetail').hide();
+    $('.btndetail').show();
+    $('#msgname').html('');
+    $.ajax({
+        url : '{!! url('managerset/pollanswer') !!}'+'/'+id,
+        type : "POST",
+        //asyncfalse
+        data : {
+          '_method':'DELETE',
+          '_token': '{{ csrf_token() }}'
+        },
+        success : function(d)
+        {
+          //alert(d);
+          $("#form_topic")[0].reset();
+          displaytopic();
+        }
+    });
+  }
+  });
+
+});//body
+
 
     function displaydata(){
       $.ajax({
@@ -351,6 +488,7 @@
         }
       });
     }
+
     function displaytopic(id){
       //alert(id);
       $.ajax({

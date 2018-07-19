@@ -31,17 +31,15 @@ class PollanswerController extends Controller
     public function store(PollanswerRequest $request)
     {
         $obj = new Pollanswer();
-        $obj->organize_id = Auth::user()->organize_id;
+        $obj->polltopic_id = $request['polltopic_id'];
+        $obj->user_id = $request['user_id'];
         $obj->title = $request['title'];
-        $obj->type = $request['type'];
         $obj->detail = $request['detail'];
         $check = $obj->save();
-        if($check>0){return 0;}else{return 1;}
-    }
-
-    public function show2($id)
-    {
-      return "testtttttttttttttttttttttttttttttt";
+        $data['polltopic_id'] = $request['polltopic_id'];
+        $data['check'] = $check;
+        return $data;
+        //if($check>0){return 0;}else{return 1;}
     }
 
     public function show($id)
@@ -71,7 +69,7 @@ class PollanswerController extends Controller
           <td>$i</td>
           <td>$key->title</td>
           <td>$key->score</td>
-          <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
+          <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edittopic'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs deletetopic'>ลบข้อมูล</a></td>
         </tr>
         ";
       }

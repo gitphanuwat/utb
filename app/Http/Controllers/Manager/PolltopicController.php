@@ -102,12 +102,10 @@ class PolltopicController extends Controller
     {
 
       $data = Polltopic::find($id);
-      if($data->organize_id == Auth::user()->organize_id){
         header("Content-type: text/x-json");
         echo json_encode($data);
         exit();
-      }
-      abort(0);
+
     }
 
     public function update(PolltopicRequest $request, $id)
@@ -125,10 +123,9 @@ class PolltopicController extends Controller
     public function destroy($id)
     {
       $data = Polltopic::find($id);
-      if($data->organize_id == Auth::user()->organize_id){
-    		$check = $data->delete();
+    		$data->delete();
+      $data2 = Pollanswer::where('polltopic_id',$id);
+    		$check = $data2->delete();
         if($check>0){return 0;}else{return 1;}
-      }
-      abort(0);
     }
 }
