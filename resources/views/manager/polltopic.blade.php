@@ -2,50 +2,66 @@
 @section('title','แบบสำรวจความคิดเห็น')
 @section('subtitle','จัดการข้อมูล')
 @section('body')
+<!-- Info boxes -->
 <div class="row">
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
-    <div class="info-box-content">
-      <span class="info-box-text">ด้านบุคคล</span>
-      <span class="info-box-number">--รายการ</span>
+      <div class="info-box-content">
+        <span class="info-box-text">ด้านการพัฒนา</span>
+        <span class="info-box-number">5 เรื่อง<small>%</small></span>
+      </div>
+      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box-content -->
+    <!-- /.info-box -->
   </div>
-  <!-- /.info-box -->
-</div>
-<!-- /.col -->
-<!-- fix for small devices only -->
-<div class="clearfix visible-sm-block"></div>
+  <!-- /.col -->
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
-
-    <div class="info-box-content">
-      <span class="info-box-text">ด้านสุขภาพ</span>
-      <span class="info-box-number">--รายการ</span>
+      <div class="info-box-content">
+        <span class="info-box-text">ด้านการส่งเสริม</span>
+        <span class="info-box-number">6 เรื่อง</span>
+      </div>
+      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box-content -->
+    <!-- /.info-box -->
   </div>
-  <!-- /.info-box -->
-</div>
-<!-- /.col -->
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
+  <!-- /.col -->
 
-    <div class="info-box-content">
-      <span class="info-box-text">ด้านสิ่งแวดล้อม</span>
-      <span class="info-box-number">-- รายการ</span>
+  <!-- fix for small devices only -->
+  <div class="clearfix visible-sm-block"></div>
+
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">การดูแลและป้องกัน</span>
+        <span class="info-box-number">7 เรื่อง</span>
+      </div>
+      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box-content -->
+    <!-- /.info-box -->
   </div>
-  <!-- /.info-box -->
+  <!-- /.col -->
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <div class="info-box">
+      <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">ด้านการให้บริการ</span>
+        <span class="info-box-number">2 เรื่อง</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+    <!-- /.info-box -->
+  </div>
+  <!-- /.col -->
 </div>
-<!-- /.col -->
-</div>      <!-- /.row -->
+<!-- /.row -->
 
 <div class="row">
 <div class="col-md-12">
