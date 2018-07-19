@@ -47,8 +47,14 @@ Route::group(['middleware' => 'organize'], function () {
   Route::resource('managerset/info','Manager\InfoController');
   Route::post('managerset/infopost/{id}','Manager\InfoController@infoupdate');
 
+  Route::resource('managerset/polltopic','Manager\PolltopicController');
+  Route::resource('managerset/pollanswer','Manager\PollanswerController');
+
+
   Route::resource('managerset/complaint','Manager\ComplaintController');
 
+  Route::resource('managerset/download','Manager\DownloadController');
+  Route::post('managerset/downloadpost/{id}','Manager\DownloadController@downloadupdate');
 
   Route::resource('managerset/member','Manager\MemberController');
   Route::get('manager/memberset/sort/{role}', 'Manager\MemberController@indexSort');

@@ -6,14 +6,12 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Organize;
-use App\Complaint;
+use App\Polltopic;
+use App\Pollanswer;
 
+use App\Http\Requests\PolltopicRequest;
 
-
-use App\Http\Requests\ComplaintRequest;
-
-class ComplaintController extends Controller
+class PolltopicController extends Controller
 {
      public function __construct()
      {
@@ -23,22 +21,24 @@ class ComplaintController extends Controller
     public function index()
     {
       $ido = Auth::user()->organize_id;
-      $data = Complaint::where('organize_id',$ido)->get();
-      return view('manager.complaint',compact('data'));
+      $data = Polltopic::where('organize_id',$ido)->get();
+      //$data = Polltopic::where('organize_id',$ido)->get();
+      return view('manager.polltopic',compact('data'));
     }
 
     public function create()
     {
       $idu = Auth::user()->organize_id;
-      $data = Complaint::where('organize_id',$idu)->orderby('name')->get();
+      $data = Polltopic::where('organize_id',$idu)->get();
+      //$data = Polltopic::get();
       $display="
       <table id='example1' class='table table-bordered table-striped'>
         <thead>
         <tr>
         <th width='70'>ลำดับ</th>
-        <th>เรื่องร้องเรียน</th>
-        <th>ผู้ส่งข้อมูล</th>
-        <th>สถานะ</th>
+        <th>ชื่อแบบสำรวจ</th>
+        <th>หมวดหมู่</th>
+        <th width='130'>หัวข้อคำถาม</th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>
@@ -46,17 +46,19 @@ class ComplaintController extends Controller
       ";
       $i=0;
       foreach ($data as $key) {
+          $ans = Pollanswer::where('polltopic_id',$key->id)->get();
         $i++;
         $display .= "
         <tr>
           <td>$i</td>
-          <td>$key->name</td>
-          <td> ".$key->sender."</td>
+          <td>$key->title</td>
           <td>";
-          if($key->status==1){$display .= "นำเข้าระบบ";}
-          if($key->status==2){$display .= "กำลังดำเนินการ";}
-          if($key->status==3){$display .= "ดำเนินการเสร็จสิ้น";}
+          if($key->type==1){$display .= "ด้านการพัฒนาและส่งเสริม";}
+          if($key->type==2){$display .= "การดูแลและป้องกัน";}
+          if($key->type==3){$display .= "ด้านการให้บริการ";}
+          if($key->type==4){$display .= "ด้านอื่นๆ";}
             $display .= "</td>
+            <td><a data-id='$key->id' href='#k' class='btn btn-success btn-xs bntopic'>".count($ans)." หัวข้อ</a></td>
           <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
         </tr>
         ";
@@ -68,28 +70,26 @@ class ComplaintController extends Controller
       return $display;
     }
 
-    public function store(ComplaintRequest $request)
+    public function store(PolltopicRequest $request)
     {
-        $obj = new Complaint();
+        $obj = new Polltopic();
         $obj->organize_id = Auth::user()->organize_id;
-        $obj->name = $request['name'];
+        $obj->title = $request['title'];
         $obj->type = $request['type'];
         $obj->detail = $request['detail'];
-        $obj->sender = $request['sender'];
-        $obj->contact = $request['contact'];
-        $obj->status = $request['status'];
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
     }
 
     public function show($id)
     {
+        //$obj = Polltopic::find($id);
+        //dd($obj);
     }
 
-    public function edit($id)
+    public function bntopic($id)
     {
-
-      $data = Complaint::find($id);
+      $data = Pollanswer::find($id);
       if($data->organize_id == Auth::user()->organize_id){
         header("Content-type: text/x-json");
         echo json_encode($data);
@@ -98,16 +98,25 @@ class ComplaintController extends Controller
       abort(0);
     }
 
-    public function update(ComplaintRequest $request, $id)
+    public function edit($id)
     {
 
-        $obj = Complaint::findOrFail($id);
-        $obj->name = $request['name'];
+      $data = Polltopic::find($id);
+      if($data->organize_id == Auth::user()->organize_id){
+        header("Content-type: text/x-json");
+        echo json_encode($data);
+        exit();
+      }
+      abort(0);
+    }
+
+    public function update(PolltopicRequest $request, $id)
+    {
+
+        $obj = Polltopic::findOrFail($id);
+        $obj->title = $request['title'];
         $obj->type = $request['type'];
         $obj->detail = $request['detail'];
-        $obj->sender = $request['sender'];
-        $obj->contact = $request['contact'];
-        $obj->status = $request['status'];
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
 
@@ -115,7 +124,7 @@ class ComplaintController extends Controller
 
     public function destroy($id)
     {
-      $data = Complaint::find($id);
+      $data = Polltopic::find($id);
       if($data->organize_id == Auth::user()->organize_id){
     		$check = $data->delete();
         if($check>0){return 0;}else{return 1;}

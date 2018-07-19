@@ -1,5 +1,5 @@
 @extends('layouts.template')
-@section('title','ข้อร้องเรียน')
+@section('title','แบบสำรวจความคิดเห็น')
 @section('subtitle','จัดการข้อมูล')
 @section('body')
 <div class="row">
@@ -8,7 +8,7 @@
     <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">ด้านการบริหารชุมชน</span>
+      <span class="info-box-text">ด้านบุคคล</span>
       <span class="info-box-number">--รายการ</span>
     </div>
     <!-- /.info-box-content -->
@@ -24,7 +24,7 @@
     <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
 
     <div class="info-box-content">
-      <span class="info-box-text">ด้านสวัสดิการ</span>
+      <span class="info-box-text">ด้านสุขภาพ</span>
       <span class="info-box-number">--รายการ</span>
     </div>
     <!-- /.info-box-content -->
@@ -71,31 +71,20 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>เรื่องร้องเรียน</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="หัวข้อปัญหา">
-                    </div>
-                    <div class="form-group">
-                      <label>ประเภทข้อร้องเรียน</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="กลุ่มปัญหา">
+                      <label>หัวข้อแบบสำรวจ</label>
+                      <input type="text" class="form-control" name="title" id="title" placeholder="หัวข้อปัญหา">
                     </div>
                     <div class="form-group">
                       <label>รายละเอียด</label>
                       <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
                     </div>
-                    <div class="form-group">
-                      <label>ผู้ส่งข้อมูล</label>
-                      <input type="text" class="form-control" name="sender" id="sender" placeholder="ผู้ส่งข้อมูล">
-                    </div>
-                    <div class="form-group">
-                      <label>ข้อมูลติดต่อ</label>
-                      <input type="text" class="form-control" name="contact" id="contact" placeholder="ข้อมูลติดต่อ">
-                    </div>
                     <div class="form-group" style="width:250px">
-                      <label>สถานะ</label>
-                      <select name="status" id="status" class="form-control">
-                        <option value="1">นำเข้าระบบ</option>
-                        <option value="2">กำลังดำเนินการ</option>
-                        <option value="3">ดำเนินการแล้วเสร็จ</option>
+                      <label>ประเภทเอกสาร</label>
+                      <select name="type" id="type" class="form-control">
+                        <option value="1">ด้านการพัฒนาและส่งเสริม</option>
+                        <option value="2">การดูแลและป้องกัน</option>
+                        <option value="3">ด้านการให้บริการ</option>
+                        <option value="4">ด้านอื่นๆ</option>
                       </select>
                     </div>
                     <input type="hidden"  id="id">
@@ -110,6 +99,36 @@
           </div>
         </form>
           </div>
+
+
+
+<div id='displaytopic'>
+  <div id='showdtopic'>Show Topic</div>
+  <div id='msgtopic'></div>
+  <form role="form" id="form_data" name="form_data">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box-body">
+          <div class="form-group">
+            <label>หัวข้อสำรวจ</label>
+            <input type="text" class="form-control" name="title" id="title" placeholder="หัวข้อสำรวจ">
+          </div>
+          <div class="form-group">
+            <label>รายละเอียด</label>
+            <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
+          </div>
+          <input type="hidden"  id="id">
+          <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
+          <button type="button"  class="btn btn-primary savetopic">บันทึกข้อมูล</button>
+          <button type="reset" class="btn btn-danger btncanceltopic">ยกเลิก</button>
+          {{ csrf_field() }}
+          {{ method_field('post') }}
+        </div>
+  </div>
+</div>
+</form>
+</div>
+
           </div>
         </div>
       </div>
@@ -122,6 +141,7 @@
 <script type="text/javascript">
     $(function(){
       $('#showdetail').hide();
+      $('#displaytopic').hide();
       //$('.btndetail').hide();
       $('.updaterecord').hide();
 
@@ -136,9 +156,20 @@
           $('.btndetail').show();
           $('#showdetail').hide();
           $('#msgname').html('');
+      });
+      $('.btncanceltopic').click(function(){
+          //$('.updatetopic').hide();
+          $('.savetopic').show();
+          //$('.btndetail').show();
+          //$('#showdetail').hide();
+
+          $('#msgnametopic').html('');
+          $('.displayrecord').show();
+          $('#showdetail').show();
+          $('.btndetail').show();
+          $('#displaytopic').hide();
 
       });
-
       displaydata();
 
 
@@ -153,7 +184,7 @@
 
         //alert(0);
         $.ajax({
-            url : '{!! url('managerset/complaint') !!}'+'/'+id+'/edit',
+            url : '{!! url('managerset/polltopic') !!}'+'/'+id+'/edit',
             type : "get",
             //asyncfalse
             data : {
@@ -163,18 +194,28 @@
             {
               //alert(e.name);
               $('#id').val(e.id);
-              $('#name').val(e.name);
-              $('#type').val(e.type);
+              $('#title').val(e.title);
               $('#detail').val(e.detail);
-              $('#sender').val(e.sender);
-              $('#contact').val(e.contact);
-              $('#status').val(e.status);
+              $('#type').val(e.type);
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');
              }
         });
 
+      });
+
+      $('body').delegate('.bntopic','click',function(){
+        $('.displayrecord').hide();
+        $('#showdetail').hide();
+        $('.btndetail').hide();
+        $('#displaytopic').show();
+        //$('#msgname').html('');
+        //$('#name').focus();
+        var id = $(this).data('id');
+        //alert(id);
+
+        displaytopic(id);
       });
 
 
@@ -187,7 +228,7 @@
         $('.btndetail').show();
         $('#msgname').html('');
         $.ajax({
-            url : '{!! url('managerset/complaint') !!}'+'/'+id,
+            url : '{!! url('managerset/polltopic') !!}'+'/'+id,
             type : "POST",
             //asyncfalse
             data : {
@@ -210,8 +251,9 @@
 
       $('.saverecord').click(function(){
 
+          //$('#new_polltopic').val('error');
               $.ajax({
-                  url : '{!! url('managerset/complaint') !!}',
+                  url : '{!! url('managerset/polltopic') !!}',
                   async:false,
                   type:'post',
                   processData: false,
@@ -250,26 +292,19 @@
     $('.updaterecord').click(function(){
       //alert(0);
         var id = $('#id').val();
-        var name = $('#name').val();
-        var type = $('#type').val();
+        var title = $('#title').val();
         var detail = $('#detail').val();
-        var sender = $('#sender').val();
-        var contact = $('#contact').val();
-        var status = $('#status').val();
-
+        var type = $('#type').val();
             $.ajax({
-              url : '{!! url('managerset/complaint') !!}'+'/'+id,
+              url : '{!! url('managerset/polltopic') !!}'+'/'+id,
                 type : "post",
                 //asyncfalse
                 data : {
                   '_method':'PUT',
                   '_token': '{{ csrf_token() }}',
-                  'name' : name,
-                  'type' : type,
+                  'title' : title,
                   'detail' : detail,
-                  'sender' : sender,
-                  'contact' : contact,
-                  'status' : status
+                  'type' : type
                 },
                 success : function(re)
                 {
@@ -305,7 +340,7 @@
 
     function displaydata(){
       $.ajax({
-        url : '{!! url('managerset/complaint/create') !!}',
+        url : '{!! url('managerset/polltopic/create') !!}',
         type : "get",
         //asyncfalse
         data : {},
@@ -316,7 +351,20 @@
         }
       });
     }
-
+    function displaytopic(id){
+      //alert(id);
+      $.ajax({
+        url : '{!! url('managerset/pollanswer') !!}'+'/'+id,
+        type : "get",
+        //asyncfalse
+        data : {},
+        success : function(s)
+        {
+          $('#showdtopic').html(s);
+          //$("#example2").DataTable();
+        }
+      });
+    }
 </script>
 
 @endsection

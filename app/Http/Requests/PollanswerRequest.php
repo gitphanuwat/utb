@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class DownloadRequest extends Request
+class PollanswerRequest extends Request
 {
     public function authorize()
     {
@@ -21,7 +21,7 @@ class DownloadRequest extends Request
     public function messages()
     {
     	return [
-        'title.required'=>'กรุณาป้อนหัวเรื่อง',
+        'title.required'=>'กรุณาป้อนหัวข้อ',
         'detail.required'=>'กรุณาป้อนรายละเอียด'
     	];
     }

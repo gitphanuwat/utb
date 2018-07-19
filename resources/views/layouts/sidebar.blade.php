@@ -107,7 +107,7 @@
               <li><hr></li>
               <li {!! classActivePath('download') !!}><a href="{{ url('/managerset/info')}}"><i class="fa fa-newspaper-o"></i> ข่าวสาร&กิจกรรม
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('poll') !!}><a href="{{ url('/managerset/poll')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
+              <li {!! classActivePath('polltopic') !!}><a href="{{ url('/managerset/polltopic')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
               <li {!! classActivePath('complaint') !!}><a href="{{ url('/managerset/complaint')}}"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
                 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
