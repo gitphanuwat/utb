@@ -1,3 +1,36 @@
+<?php
+use App\Group;
+
+use App\Social;
+use App\Organize;
+use App\Person;
+use App\Village;
+use App\Activity;
+use App\Tourist;
+use App\Event;
+use App\Problem;
+
+use App\Info;
+use App\Polltopic;
+use App\Complaint;
+use App\Download;
+
+
+if(Auth::user()){
+  if(Auth::user()->role->slug == 'Organize'){
+    $ido = Auth::user()->organize_id;
+    //$corganize = Social::where('organize_id',$ido)->get();
+    //$corganize = Organize::where('organize_id',$ido)->get();
+    //$cperson = Person::where('organize_id',$ido)->get();
+    $cc = Person::where('organize_id',$ido)->get();
+
+  }elseif(Auth::user()->role->slug == 'Admin'){
+    $cgroup = Group::get();
+  }
+
+}
+
+?>
 
 <section class="sidebar">
   <!-- Sidebar user panel -->
@@ -84,39 +117,39 @@
   </ul>
 </li>
 @endif
-
-        <li class="header">เมนู:ข้อมูลหน่วยงาน</li>
-        <li {!! classActivePath('organize') !!}><a href="{{ url('/managerset/organize')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
-        <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('organize') !!}><a href="{{ url('/managerset/organize')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('organize') !!}><a href="{{ url('/managerset/person')}}"><i class="fa fa-home"></i><span>บุคลากร</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('community') !!}><a href="{{ url('/managerset/village')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('group') !!}><a href="{{ url('/managerset/group')}}"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('activity') !!}><a href="{{ url('/managerset/activity')}}"><i class="fa fa-flag"></i> <span>เรื่องเด่นชุมชน</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('tourist') !!}><a href="{{ url('/managerset/tourist')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('event') !!}><a href="{{ url('/managerset/event')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรม</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('problem') !!}><a href="{{ url('/managerset/problem')}}"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li><hr></li>
-              <li {!! classActivePath('download') !!}><a href="{{ url('/managerset/info')}}"><i class="fa fa-newspaper-o"></i> ข่าวสาร&กิจกรรม
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('polltopic') !!}><a href="{{ url('/managerset/polltopic')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('complaint') !!}><a href="{{ url('/managerset/complaint')}}"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li {!! classActivePath('download') !!}><a href="{{ url('/managerset/download')}}"><i class="fa fa-paperclip"></i> ดาวน์โหลดเอกสาร
-                <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
-              <li><hr></li>
-              <li {!! classActivePath('about') !!}><a href="{{ url('about')}}"><i class="fa fa-book"></i> เกี่ยวกับระบบ</a></li>
-              <li {!! classActivePath('search') !!}><a href="{{ url('search')}}"><i class="fa fa-search"></i> <span>ค้นหาข้อมูล</span></a></li>
-                  <!-- Authentication Links -->
+@if (Auth::user()->role->slug == 'Organize')
+<li class="header">เมนู:ข้อมูลหน่วยงาน</li>
+<li {!! classActivePath('managerset/social') !!}><a href="{{ url('/managerset/social')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
+<span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/organize') !!}><a href="{{ url('/managerset/organize')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ $cc->count() }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/organize') !!}><a href="{{ url('/managerset/person')}}"><i class="fa fa-home"></i><span>บุคลากร</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/community') !!}><a href="{{ url('/managerset/village')}}"><i class="fa fa-users"></i> <span>ข้อมูลชุมชน</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/group') !!}><a href="{{ url('/managerset/group')}}"><i class="fa fa-tags"></i> <span>การรวมกลุ่มชุมชน</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/activity') !!}><a href="{{ url('/managerset/activity')}}"><i class="fa fa-flag"></i> <span>เรื่องเด่นชุมชน</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/tourist') !!}><a href="{{ url('/managerset/tourist')}}"><i class="fa fa-image"></i> <span>แหล่งท่องเที่ยว</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/event') !!}><a href="{{ url('/managerset/event')}}"><i class="fa fa-calendar"></i> <span>ปฏิทินกิจกรรม</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/problem') !!}><a href="{{ url('/managerset/problem')}}"><i class="fa fa-question"></i> <span>ปัญหาชุมชน</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li><hr></li>
+<li {!! classActivePath('managerset/info') !!}><a href="{{ url('/managerset/info')}}"><i class="fa fa-newspaper-o"></i> ข่าวสาร&กิจกรรม
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/polltopic') !!}><a href="{{ url('/managerset/polltopic')}}"><i class="fa fa-server"></i> <span>สำรวจความคิดเห็น</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/complaint') !!}><a href="{{ url('/managerset/complaint')}}"><i class="fa fa-legal"></i> <span>เรื่องร้องเรียน</span>
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li {!! classActivePath('managerset/download') !!}><a href="{{ url('/managerset/download')}}"><i class="fa fa-paperclip"></i> ดาวน์โหลดเอกสาร
+  <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cquestion'>{{ '99' }}</div></small></span></a></li>
+<li><hr></li>
+<li {!! classActivePath('managerset/search') !!}><a href="{{ url('search')}}"><i class="fa fa-search"></i> <span>ค้นหาข้อมูล</span></a></li>
+<!-- Authentication Links -->
+@endif
 @else
     <li class="header">เมนูหลัก</li>
     <li {!! classActivePath('/') !!}><a href="{{ url('/')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>

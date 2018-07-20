@@ -67,7 +67,7 @@ class EventController extends Controller
                      'id' => $key->id,
                      'title'=> $key->title,
                      'start'=> $key->startdate,
-                     'end'=> $key->enddate+1,
+                     'end'=> $key->enddate,
                      'url'=> "event/$key->id",
                      'color'=> $colors[$key->type]
                      );
@@ -115,7 +115,6 @@ class EventController extends Controller
 
     public function edit($id)
     {
-
       $data = Event::find($id);
       if($data->organize_id == Auth::user()->organize_id){
         header("Content-type: text/x-json");
@@ -128,13 +127,17 @@ class EventController extends Controller
     public function update(EventRequest $request, $id)
     {
 
-        $obj = Event::findOrFail($id);
-        $obj->title = $request['title'];
-        $obj->type = $request['type'];
-        $obj->detail = $request['detail'];
-        $obj->address = $request['address'];
-        $obj->status = $request['status'];
-        $check = $obj->save();
+        $entry = Event::findOrFail($id);
+        $entry->title = $request->input('title');
+        $entry->type = $request->input('type');
+        $entry->detail = $request->input('detail');
+        $entry->address = $request->input('address');
+        $entry->startdate = $request->input('startdate');
+        $entry->enddate = $request->input('enddate');
+        $entry->repeat = $request->input('repeat');
+        $entry->contact = $request->input('contact');
+        $entry->picture = 'filename';
+        $check = $entry->save();
         if($check>0){return 0;}else{return 1;}
 
     }

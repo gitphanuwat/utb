@@ -32,6 +32,7 @@ Route::group(['middleware' => 'amphur'], function () {
 });
 // Manager village
 Route::group(['middleware' => 'organize'], function () {
+  Route::resource('managerset/social','Manager\SocialController');
   Route::resource('managerset/organize','Manager\OrganizeController');
   Route::resource('managerset/person','Manager\PersonController');
   Route::post('managerset/personpost/{id}','Manager\PersonController@personupdate');
