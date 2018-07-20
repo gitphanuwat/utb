@@ -265,7 +265,7 @@
         thaiyear: true//Set เป็นปี พ.ศ.
       });
       $('#enddate').datepicker({
-        format: 'yyyy-mm-dd',
+        format: 'yyyy-mm-dd h:MM:ss',
         autoclose: true,
         orientation: "bottom auto",
         todayHighlight: true,
