@@ -88,7 +88,7 @@
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                           </div>
-                          <input type="text" class="form-control pull-right" name="startdate" id="startdate">
+                          <input type="text" class="form-control pull-right" name="startdate" id="startdate" value="2018-07-15 12:45">
                           </div>
                         </div>
                         <div class="form-group">
@@ -97,7 +97,7 @@
                           <div class="input-group-addon">
                             <i class="fa fa-calendar"></i>
                           </div>
-                          <input type="text" class="form-control pull-right" name="enddate" id="enddate">
+                          <input type="text" class="form-control pull-right" name="enddate" id="enddate" value="2018-07-16 12:45">
                           </div>
                         </div>
                         <div class="form-group">
@@ -157,7 +157,7 @@
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <!-- fullCalendar 2.2.5 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="{{ asset("assets/plugins/fullcalendar/fullcalendar.min.js") }}"></script>
+<script src="{{ asset("assets/plugins/fullcalendar/fullcalendar.js") }}"></script>
 <script src="{{ asset("assets/plugins/fullcalendar/locale/th.js") }}"></script>
 <!-- bootstrap datepicker -->
 <script src="{{ asset("assets/plugins/datepicker/bootstrap-datepicker.js") }}"></script>
@@ -198,7 +198,7 @@
         $('#showdetail').show();
         $('.btndetail').hide();
         $('#msgname').html('');
-        $('#name').focus();
+        $('#title').focus();
         var id = $(this).data('id');
 
         //alert(0);
@@ -213,11 +213,15 @@
             {
               //alert(e.name);
               $('#id').val(e.id);
-              $('#name').val(e.name);
+              $('#title').val(e.title);
               $('#type').val(e.type);
               $('#detail').val(e.detail);
               $('#address').val(e.address);
-              $('#status').val(e.status);
+              $('#startdate').val(e.startdate);
+              $('#enddate').val(e.enddate);
+              $('#repeat').val(e.repeat);
+              $('#contact').val(e.contact);
+              $('#picture').val(e.picture);
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');
@@ -318,11 +322,15 @@
     $('.updaterecord').click(function(){
       //alert(0);
         var id = $('#id').val();
-        var name = $('#name').val();
+        var title = $('#title').val();
         var type = $('#type').val();
         var detail = $('#detail').val();
         var address = $('#address').val();
-        var status = $('#status').val();
+        var startdate = $('#startdate').val();
+        var enddate = $('#enddate').val();
+        var repeat = $('#repeat').val();
+        var contact = $('#contact').val();
+        var picture = $('#picture').val();
 
             $.ajax({
               url : '{!! url('managerset/event') !!}'+'/'+id,
@@ -331,11 +339,15 @@
                 data : {
                   '_method':'PUT',
                   '_token': '{{ csrf_token() }}',
-                  'name' : name,
+                  'title' : title,
                   'type' : type,
                   'detail' : detail,
                   'address' : address,
-                  'status' : status
+                  'startdate' : startdate,
+                  'enddate' : enddate,
+                  'repeat' : repeat,
+                  'contact' : contact,
+                  'picture' : picture
                 },
                 success : function(re)
                 {
