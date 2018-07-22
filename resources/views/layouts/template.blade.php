@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="hold-transition skin-blue-light sidebar-mini">
+<body class="hold-transition skin-red-light sidebar-mini">
   <!-- Site wrapper -->
   <div class="wrapper">
 

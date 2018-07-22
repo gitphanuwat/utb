@@ -28,16 +28,16 @@ class VillageController extends Controller
 
     public function create()
     {
-      $data = Village::orderby('amphur_id')->get();
+      $data = Village::get();
       $display="
       <table id='example1' class='table table-bordered table-striped'>
         <thead>
         <tr>
-          <th data-sortable='false'>ลำดับ</th>
-          <th data-sortable='false'>ชื่อชุมชน</th>
-          <th data-sortable='false'>ศูนย์จัดการ</th>
-          <th data-sortable='false'>สังกัด</th>
-          <th width='80' data-sortable='false'>ดำเนินการ</th>
+          <th width='70'>ลำดับ</th>
+          <th>ชื่อชุมชน</th>
+          <th>สังกัดหน่วยงาน</th>
+          <th>เขตอำเภอ</th>
+          <th width='120' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>
         <tbody>
@@ -49,8 +49,8 @@ class VillageController extends Controller
         <tr>
           <td>$i</td>
           <td>$key->name</td>
-          <td>".$key->name."</td>
-          <td>".$key->name."</td>
+          <td>".$key->organize->name."</td>
+          <td>".$key->organize->amphur->name."</td>
           <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
         </tr>
         ";

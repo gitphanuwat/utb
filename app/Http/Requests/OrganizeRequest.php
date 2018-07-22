@@ -25,6 +25,7 @@ class OrganizeRequest extends Request
     {
         return [
           //'university_id'=>'required',
+          'title'=>'required',
           'name'=>'required'
           //'address'=>'required'
         ];
@@ -33,6 +34,7 @@ class OrganizeRequest extends Request
     {
     	return [
               //'university_id.required'=>'ต้องเลือกหน่วยงานมหาวิทยาลัย',
+              'title.required'=>'ต้องป้อนชื่อหน่วยงานภาษาอังกฤษ',
               'name.required'=>'ต้องป้อนข้อมูลชื่อหน่วยงาน'
               //'address.required'=>'ต้องป้อนที่อยู่ศูนย์จัดการเครือข่าย'
     	];

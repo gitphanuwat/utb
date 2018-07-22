@@ -133,7 +133,7 @@
                             <img class="img-responsive img-squar" src="{{url('/images/no_image.png')}}" width="250">
                           </div>
                           <input type="file" class="form-control" name="picture" id="picture">
-                          <input type="hidden" class="form-control" name="pictureold" id="pictureold">
+                          <input type="text" class="form-control" name="pictureold" id="pictureold">
                         </div>
                       </div>
                     </div>
@@ -221,7 +221,9 @@
               $('#enddate').val(e.enddate);
               $('#repeat').val(e.repeat);
               $('#contact').val(e.contact);
-              $('#picture').val(e.picture);
+              $('#pictureold').val(e.picture);
+              $('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/event")}}/'+e.picture+'" width="250">');
+
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');
@@ -269,7 +271,7 @@
         thaiyear: true//Set เป็นปี พ.ศ.
       });
       $('#enddate').datepicker({
-        format: 'yyyy-mm-dd h:MM:ss',
+        format: 'yyyy-mm-dd',
         autoclose: true,
         orientation: "bottom auto",
         todayHighlight: true,
@@ -320,35 +322,20 @@
 
 
     $('.updaterecord').click(function(){
-      //alert(0);
-        var id = $('#id').val();
-        var title = $('#title').val();
-        var type = $('#type').val();
-        var detail = $('#detail').val();
-        var address = $('#address').val();
-        var startdate = $('#startdate').val();
-        var enddate = $('#enddate').val();
-        var repeat = $('#repeat').val();
-        var contact = $('#contact').val();
-        var picture = $('#picture').val();
-
+      $('.updaterecord').show();
+      $('.saverecord').hide();
+      $('#showdetail').show();
+      $('.btndetail').hide();
+      $('#msgname').html('');
+      $('#title').focus();
+      var id = $('#id').val();
             $.ajax({
-              url : '{!! url('managerset/event') !!}'+'/'+id,
-                type : "post",
-                //asyncfalse
-                data : {
-                  '_method':'PUT',
-                  '_token': '{{ csrf_token() }}',
-                  'title' : title,
-                  'type' : type,
-                  'detail' : detail,
-                  'address' : address,
-                  'startdate' : startdate,
-                  'enddate' : enddate,
-                  'repeat' : repeat,
-                  'contact' : contact,
-                  'picture' : picture
-                },
+              url : '{!! url('managerset/eventpost') !!}'+'/'+id,
+              async:false,
+              type:'post',
+              processData: false,
+              contentType: false,
+              data:new FormData($("#form_data")[0]),
                 success : function(re)
                 {
                   //alert(re);

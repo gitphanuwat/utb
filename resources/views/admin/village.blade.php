@@ -53,9 +53,9 @@
 
                 <div class="form-group">
                   <label>พิกัดละติจูด</label>
-                  <input type="text" class="form-control" name="latitude" id="latitude" placeholder="ละติจูด เช่น 17.6328514">
+                  <input type="text" class="form-control" name="lat" id="lat" placeholder="ละติจูด เช่น 17.6328514">
                   <label>พิกัดลองจิจูด</label>
-                  <input type="text" class="form-control" name="longitude" id="longitude" placeholder="ลองจิจูด เช่น 100.0907392">
+                  <input type="text" class="form-control" name="lng" id="lng" placeholder="ลองจิจูด เช่น 100.0907392">
                 </div>
                 <input type="hidden"  id="id">
                 <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>

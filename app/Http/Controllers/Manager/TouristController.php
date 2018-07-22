@@ -64,19 +64,29 @@ class TouristController extends Controller
 
     public function store(TouristRequest $request)
     {
+      if($fileobj = $request->file('picture')){
+        $extension = $fileobj->getClientOriginalExtension();
+        $filename = $fileobj->getFilename().'.'.$extension;
+        $destinationPath = 'images/tourist';
+        $fileobj->move($destinationPath,$filename);
+      }else{
+        $filename='no_image.png';
+      }
         $obj = new Tourist();
         $obj->organize_id = Auth::user()->organize_id;
         $obj->name = $request['name'];
         $obj->detail = $request['detail'];
         $obj->address = $request['address'];
-        $obj->picture = $request['picture'];
+        $obj->picture = $filename;
         $obj->lat = $request['lat'];
         $obj->lng = $request['lng'];
         $obj->zm = $request['zm'];
         $obj->website = $request['website'];
         $obj->contact = $request['contact'];
         $check = $obj->save();
-        if($check>0){return 0;}else{return 1;}
+        $data['file'] = $filename;
+        $data['check'] = $check;
+        return $data;
     }
 
     public function show($id)
@@ -97,24 +107,31 @@ class TouristController extends Controller
       abort(0);
     }
 
-    public function update(TouristRequest $request, $id)
+    public function touristupdate(TouristRequest $request, $id)
     {
-
+      if($fileobj = $request->file('picture')){
+        $extension = $fileobj->getClientOriginalExtension();
+        $filename = $fileobj->getFilename().'.'.$extension;
+        $destinationPath = 'images/tourist';
+        $fileobj->move($destinationPath,$filename);
+        //Storage::put($filename,  File::get($fileobj));
+      }else{
+        $filename=$request->input('pictureold');
+      }
         $obj = Tourist::findOrFail($id);
         $obj->name = $request['name'];
         $obj->detail = $request['detail'];
         $obj->address = $request['address'];
-        $obj->picture = $request['picture'];
+        $obj->picture = $filename;
         $obj->lat = $request['lat'];
         $obj->lng = $request['lng'];
         $obj->zm = $request['zm'];
         $obj->website = $request['website'];
         $obj->contact = $request['contact'];
         $check = $obj->save();
-        if($check>0){return 0;}else{return 1;}
-
-        //return 0;
-
+        $data['file'] = $filename;
+        $data['check'] = $check;
+        return $data;
     }
 
     public function destroy($id)

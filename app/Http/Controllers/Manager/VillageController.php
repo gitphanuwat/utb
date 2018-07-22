@@ -21,15 +21,15 @@ class VillageController extends Controller
 
     public function index()
     {
-      $ido = Auth::user()->organize_id;
-      $data = Village::where('organize_id',$ido)->get();
+      $idu = Auth::user()->organize_id;
+      $data = Village::where('organize_id',$idu)->get();
       return view('manager.village',compact('data'));
     }
 
     public function create()
     {
       $idu = Auth::user()->organize_id;
-      $data = Village::where('organize_id',$idu)->orderby('name')->get();
+      $data = Village::where('organize_id',$idu)->get();
       //$data = Village::get();
       $display="
       <table id='example1' class='table table-bordered table-striped'>

@@ -29,7 +29,7 @@ class GroupController extends Controller
     public function create()
     {
       $idu = Auth::user()->organize_id;
-      $data = Group::where('organize_id',$idu)->orderby('name')->get();
+      $data = Group::where('organize_id',$idu)->get();
       //$data = Group::get();
       $display="
       <table id='example1' class='table table-bordered table-striped'>
@@ -37,6 +37,7 @@ class GroupController extends Controller
         <tr>
         <th width='70'>ลำดับ</th>
         <th>ชื่อชุมชน</th>
+        <th>ระดับกลุ่ม</th>
         <th>ที่อยู่</th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>
@@ -44,13 +45,15 @@ class GroupController extends Controller
         <tbody>
       ";
       $i=0;
+      $arrtype=array('','ระดับจังหวัด','ระดับอำเภอ','ระดับตำบล','ระดับชุมชน');
       foreach ($data as $key) {
         $i++;
         $display .= "
         <tr>
           <td>$i</td>
           <td>$key->name</td>
-          <td> ".$key->address."</td>
+          <td>".$arrtype[$key->type]."</td>
+          <td>$key->address</td>
           <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
         </tr>
         ";

@@ -34,23 +34,24 @@ class OrganizeController extends Controller
         <thead>
         <tr>
           <th data-sortable='false'>ลำดับ</th>
-          <th data-sortable='false'>ชื่อศูนย์</th>
-          <th data-sortable='false'>สังกัด</th>
-          <th data-sortable='false'>ที่อยู่</th>
+          <th data-sortable='false'>ชื่อหน่วยงาน</th>
+          <th data-sortable='false'>รูปแบบองค์กร</th>
+          <th data-sortable='false'>เขตอำเภอ</th>
           <th width='80' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>
         <tbody>
       ";
       $i=0;
+      $arrtype=array('','องค์การบริหารส่วนจังหวัด','เทศบาลเมือง','เทศบาลตำบล','องค์การบริหารส่วนตำบล','การปกครองพิเศษ','อื่นๆ');
       foreach ($data as $key) {
         $i++;
         $display .= "
         <tr>
           <td>$i</td>
-          <td>$key->name</td>
+          <td>$key->name($key->title)</td>
+          <td>".$arrtype[$key->type]."</td>
           <td>".$key->amphur->name."</td>
-          <td>$key->address</td>
           <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
         </tr>
         ";
@@ -65,11 +66,14 @@ class OrganizeController extends Controller
     public function store(OrganizeRequest $request)
     {
       $post = $request->all();
-
         $data = array(
-            'name' => $post['name'],
-            'amphur_id' => $post['amphur_id'],
-            'address' => $post['address']
+          'amphur_id' => $post['amphur_id'],
+          'title' => $post['title'],
+          'name' => $post['name'],
+          'type' => $post['type'],
+            'address' => $post['address'],
+            'lat' => $post['lat'],
+            'lng' => $post['lng']
         );
         $check = Organize::insert($data);
         if($check>0){return 0;}else{return 1;}
@@ -93,9 +97,13 @@ class OrganizeController extends Controller
     {
       $post = $request->all();
       $Organize = Organize::findOrFail($id);
+      $Organize->title = $post['title'];
       $Organize->name = $post['name'];
+      $Organize->type = $post['type'];
       $Organize->amphur_id = $post['amphur_id'];
       $Organize->address = $post['address'];
+      $Organize->lat = $post['lat'];
+      $Organize->lng = $post['lng'];
       $check = $Organize->save();
       if($check>0){return 0;}else{return 1;}
     }

@@ -59,6 +59,10 @@
                 <input type="text" class="form-control" name="duedate" id="duedate" placeholder="วันที่ดำรงตำแหน่ง">
               </div>
               <div class="form-group" >
+                <label>ที่อยู่</label>
+                <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่">
+              </div>
+              <div class="form-group" >
                 <label>เบอร์โทร</label>
                 <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทร">
               </div>
@@ -148,6 +152,7 @@
               $('#lastname').val(e.lastname);
               $('#position').val(e.position);
               $('#duedate').val(e.duedate);
+              $('#address').val(e.address);
               $('#tel').val(e.tel);
               $('#email').val(e.email);
               $('#pictureold').val(e.picture);
@@ -232,13 +237,7 @@
                     type:'post',
                     processData: false,
                     contentType: false,
-                    data:
-                    //{
-                    new FormData($("#form_data")[0]),
-                    //'_method':'PUT'
-                    //$('#form_data').serialize(),
-                    //},
-
+                    data:new FormData($("#form_data")[0]),
                     success:function(d)
                     {
                       //alert(d.file);
@@ -246,7 +245,6 @@
                         displaydata();
                         var url = d.file;
                         $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
-                        //$('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/person")}}/'+d.file+'" width="250">');
                         $('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/no_image.png")}}" width="250">');
                       }else{
                         $( '#msgname' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
@@ -282,7 +280,7 @@
         success : function(s)
         {
           $('.displayrecord').html(s);
-          //$("#example1").DataTable();
+          $("#example1").DataTable();
         }
       });
     }

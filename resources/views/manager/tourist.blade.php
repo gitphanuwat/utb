@@ -21,7 +21,6 @@
     </div>
     <div class="box-body">
       <div id="map" style="height: 400px; width: 100%;">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d486258.629774377!2d100.48741157093338!3d17.796605605247326!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sth!2sth!4v1497232249821" width="900" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div>
     <!-- /.box-body-->
@@ -43,7 +42,7 @@
             </div>
             <div id='showdetail'>
             <div id = 'msgname'></div>
-            <form role="form" id="form_data" name="form_data">
+            <form role="form" method="POST" id="form_data" name="form_data" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="box-body">
@@ -67,6 +66,13 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group">
+                  <div id='userpicture'>
+                    <img class="img-responsive img-squar" src="{{url('/images/no_image.png')}}" width="190">
+                  </div>
+                  <input type="file" class="form-control" name="picture" id="picture" placeholder="ภาพแหล่งท่องเที่ยว">
+                  <input type="hidden" class="form-control" name="pictureold" id="pictureold">
+                </div>
               </div>
               </div>
               <div class="col-md-6 col-sm-6 col-xs-12">
@@ -77,15 +83,11 @@
                     </div>
                     <div class="form-group">
                       <label>รายละเอียด</label>
-                      <input type="textarea" class="form-control" name="detail" id="detail" placeholder="รายละเอียด">
+                      <textarea type="text" class="form-control" name="detail" id="detail" rows='12'></textarea>
                     </div>
                     <div class="form-group">
                       <label>ที่อยู่</label>
                       <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่">
-                    </div>
-                    <div class="form-group">
-                      <label>รูปภาพ</label>
-                      <input type="text" class="form-control" name="picture" id="picture" placeholder="รูปภาพ">
                     </div>
                     <div class="form-group">
                       <label>เว็บไซต์</label>
@@ -95,12 +97,15 @@
                       <label>ข้อมูลติดต่อ</label>
                       <input type="text" class="form-control" name="contact" id="contact" placeholder="ข้อมูลติดต่อ">
                     </div>
-
+                    <hr>
                     <input type="hidden"  id="id">
                     <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
                     <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
                     <button type="button" class="btn btn-primary updaterecord">อัพเดทข้อมูล</button>
                     <button type="reset" class="btn btn-danger btncancel">ยกเลิก</button>
+                    {{ csrf_field() }}
+                    {{ method_field('post') }}
+
                   </div>
             </div>
           </div>
@@ -113,27 +118,45 @@
 @section('script')
 <script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
+<script src="{{ asset("assets/js/uttmap.js") }}"></script>
 <script>
+  var prev_infowindow =false;
   var locations = <?php print_r(json_encode($data)) ?>;
-  var map = new GMaps({
-    el: '#map',
-    lat: 17,
-    lng: 100,
-    zoom: 8,
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 9,
+    center: {lat: 17.75098, lng: 100.5304},
+    mapTypeId: 'roadmap'
   });
-  $.each( locations, function( index, value ){
-      map.addMarker({
-          id: value.id ,
-          lat: value.lat ,
-          lng: value.lng ,
-          title: value.name ,
-          infoWindow: {
-             content: 'หน่วยงาน:'+value.name
-          }
-      });
-});
-</script>
+  var bermudaTriangle = new google.maps.Polygon({
+    paths: mappolygon,
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.5,
+    strokeWeight: 1,
+    fillColor: '#FF0000',
+    fillOpacity: 0.05
+  });
+  bermudaTriangle.setMap(map);
 
+  $.each( locations, function( index, value ){
+      var marker = new google.maps.Marker({
+          position: {lat: value.lat, lng: value.lng},
+          map: map,
+          //icon: iconBase,
+          title: value.name,
+          zIndex: value.id
+      });
+      var infowindow = new google.maps.InfoWindow({
+          content: value.name
+        });
+      marker.addListener('click', function() {
+        if( prev_infowindow ) {
+           prev_infowindow.close();
+        }
+        prev_infowindow = infowindow;
+          infowindow.open(map, marker);
+      });
+  });
+</script>
 <!-- DataTables -->
 <script src="{{ asset("assets/plugins/datatables/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset("assets/plugins/datatables/dataTables.bootstrap.min.js") }}"></script>
@@ -143,9 +166,7 @@
 <script type="text/javascript">
     $(function(){
       $('#showdetail').hide();
-      //$('.btndetail').hide();
       $('.updaterecord').hide();
-
       $('.btndetail').click(function(){
           $('#showdetail').show();
           $('.btndetail').hide();
@@ -158,7 +179,6 @@
           $('.btndetail').show();
           $('#showdetail').hide();
           $('#msgname').html('');
-
       });
 
       displaydata();
@@ -188,12 +208,13 @@
               $('#name').val(e.name);
               $('#detail').val(e.detail);
               $('#address').val(e.address);
-              $('#picture').val(e.picture);
               $('#lat').val(e.lat);
               $('#lng').val(e.lng);
               $('#zm').val(e.zm);
               $('#website').val(e.website);
               $('#contact').val(e.contact);
+              $('#pictureold').val(e.picture);
+              $('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/tourist")}}/'+e.picture+'" width="190">');
               setLocation();
             },
             error:function(err){
@@ -235,108 +256,67 @@
   });
 
       $('.saverecord').click(function(){
-        var organize_id = $('#organize_id').val();
-        var name = $('#name').val();
-        var detail = $('#detail').val();
-        var address = $('#address').val();
-        var picture = $('#picture').val();
-        var lat = $('#lat').val();
-        var lng = $('#lng').val();
-        var zm = $('#zm').val();
-        var website = $('#website').val();
-        var contact = $('#contact').val();
-          //$('#new_group').val('error');
-              $.ajax({
-                  url : '{!! url('managerset/tourist') !!}',
-                  type : "POST",
-                  data : {
-                    '_token': '{{ csrf_token() }}',
-                    'organize_id' : organize_id,
-                    'name' : name,
-                    'detail' : detail,
-                    'address' : address,
-                    'picture' : picture,
-                    'lat' : lat,
-                    'lng' : lng,
-                    'zm' : zm,
-                    'website' : website,
-                    'contact' : contact
-                  },
-                  success:function(re)
-                  {
-                    //alert(re);
-                    if(re == 0){
-                      displaydata();
-                      $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
-                    }else{
-                      $( '#msgname' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
-                    }
-                    $("#form_data")[0].reset();
-                  },
-                  error:function(err){
-                      //alert(err);
-                      if( err.status === 422 ) {
-                        var errors = err.responseJSON; //this will get the errors response data.
-                        errorsHtml = '<div class="alert alert-danger"><ul>';
-                        $.each( errors, function( key, value ) {
-                          errorsHtml += '<li>' + value[0] + '</li>'; //showing only the first error.
-                        });
-                        errorsHtml += '</ul></di>';
+          $.ajax({
+              url : '{!! url('managerset/tourist') !!}',
+              async:false,
+              type:'post',
+              processData: false,
+              contentType: false,
+              data:new FormData($("#form_data")[0]),
+              success:function(d)
+              {
+                if(d.check){
+                  displaydata();
+                  //$('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/person")}}/'+d.file+'" width="250">');
+                  $('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/no_image.png")}}" width="250">');
+                  $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
+                }else{
+                  $( '#msgname' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
+                }
+                $("#form_data")[0].reset();
+                $('#name').focus();
+              },
+              error:function(err){
+                  //alert(err);
+                  if( err.status === 422 ) {
+                    var errors = err.responseJSON; //this will get the errors response data.
+                    errorsHtml = '<div class="alert alert-danger"><ul>';
+                    $.each( errors, function( key, value ) {
+                      errorsHtml += '<li>' + value[0] + '</li>'; //showing only the first error.
+                    });
+                    errorsHtml += '</ul></di>';
+                    $( '#msgname' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
+                  }else{
+                    $( '#msgname' ).html( 'ERROR : '+err.status );
+                  }
+               }
 
-                        $( '#msgname' ).html( errorsHtml ); //appending to a <div id="form-errors"></div> inside form
-                      }else{
-                        $( '#msgname' ).html( 'ERROR : '+err.status );
-                      }
-                   }
-              });
+          });
       }) ;
 
 
     $('.updaterecord').click(function(){
-      //alert(0);
-        var id = $('#id').val();
-        var organize_id = $('#organize_id').val();
-        var name = $('#name').val();
-        var detail = $('#detail').val();
-        var address = $('#address').val();
-        var picture = $('#picture').val();
-        var lat = $('#lat').val();
-        var lng = $('#lng').val();
-        var zm = $('#zm').val();
-        var website = $('#website').val();
-        var contact = $('#contact').val();
-
+      var id = $('#id').val();
             $.ajax({
-              url : '{!! url('managerset/tourist') !!}'+'/'+id,
-                type : "post",
-                //asyncfalse
-                data : {
-                  '_method':'PUT',
-                  '_token': '{{ csrf_token() }}',
-                  'name' : name,
-                  'detail' : detail,
-                  'address' : address,
-                  'picture' : picture,
-                  'lat' : lat,
-                  'lng' : lng,
-                  'zm' : zm,
-                  'website' : website,
-                  'contact' : contact
-                },
-                success : function(re)
+              url : '{!! url('managerset/touristpost') !!}'+'/'+id,
+                async:false,
+                type:'post',
+                processData: false,
+                contentType: false,
+                data:new FormData($("#form_data")[0]),
+                success:function(d)
                 {
-                  //alert(re);
-                  if(re == 0){
+                  //alert(d.file);
+                  if(d.check){
                     displaydata();
+                    var url = d.file;
                     $( '#msgname' ).html('<div class="alert alert-success">บันทึกข้อมูลสำเร็จ</div>');
+                    $('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/no_image.png")}}" width="250">');
                   }else{
                     $( '#msgname' ).html('<div class="alert alert-danger">เกิดข้อผิดพลาด</div>');
                   }
-                  $('.updaterecord').hide();
-                  $('.saverecord').show();
-                  $('#showdetail').hide();
-                  $('.btndetail').show();
                   $("#form_data")[0].reset();
+                  $('#name').focus();
                 },
                 error:function(err){
                     //alert(err);
@@ -352,6 +332,7 @@
                       $( '#msgname' ).html( 'ERROR : '+err.status );
                     }
                  }
+
             });
     }) ;
 

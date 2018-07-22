@@ -4,42 +4,50 @@
 @section('body')
 <!-- Small boxes (Stat box) -->
 <div class="row">
-  <div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="col-md-3 col-sm-6 col-xs-6">
+    <div class="info-box">
+      <span class="info-box-icon bg-blue"><i class="ion ion-pricetags"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">ระดับจังหวัด</span>
+        <span class="info-box-number">{{$data->where('type','1')->count()}} กลุ่ม</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 col-sm-6 col-xs-6">
     <div class="info-box">
       <span class="info-box-icon bg-aqua"><i class="ion ion-pricetags"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">ระดับอำเภอ</span>
-        <span class="info-box-number">--กลุ่ม</span>
+        <span class="info-box-number">{{$data->where('type','2')->count()}} กลุ่ม</span>
       </div>
-      <!-- /.info-box-content -->
     </div>
-    <!-- /.info-box -->
   </div>
   <!-- /.col -->
   <!-- fix for small devices only -->
   <div class="clearfix visible-sm-block"></div>
 
-  <div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="col-md-3 col-sm-6 col-xs-6">
     <div class="info-box">
       <span class="info-box-icon bg-green"><i class="ion-pricetag"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">ระดับตำบล</span>
-        <span class="info-box-number">--กลุ่ม</span>
+        <span class="info-box-number">{{$data->where('type','3')->count()}} กลุ่ม</span>
       </div>
       <!-- /.info-box-content -->
     </div>
     <!-- /.info-box -->
   </div>
   <!-- /.col -->
-  <div class="col-md-4 col-sm-6 col-xs-12">
+  <div class="col-md-3 col-sm-6 col-xs-6">
     <div class="info-box">
       <span class="info-box-icon bg-yellow"><i class="ion-location"></i></span>
 
       <div class="info-box-content">
         <span class="info-box-text">ระดับหมู่บ้าน</span>
-        <span class="info-box-number">-- กลุ่ม</span>
+        <span class="info-box-number">{{$data->where('type','4')->count()}} กลุ่ม</span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -75,12 +83,18 @@
                       <label>ชื่อกลุ่ม</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อกลุ่ม">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="width:250px">
                       <label>ระดับกลุ่ม</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="ระดับกลุ่ม">
-                    </div>                    <div class="form-group">
+                      <select name="type" id="type" class="form-control">
+                        <option value="1">ระดับจังหวัด</option>
+                        <option value="2">ระดับอำเภอ</option>
+                        <option value="3">ระดับตำบล</option>
+                        <option value="3">ระดับชุมชน</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
                       <label>รายละเอียด</label>
-                      <input type="text" class="form-control" name="detail" id="detail" placeholder="รายละเอียด">
+                      <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
                     </div>
                     <div class="form-group">
                       <label>ที่อยู่</label>
@@ -175,7 +189,6 @@
               $('#leader').val(e.leader);
               $('#contact').val(e.contact);
               $('#tel').val(e.tel);
-              setLocation();
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');

@@ -36,7 +36,8 @@ class ActivityController extends Controller
         <thead>
         <tr>
         <th width='70'>ลำดับ</th>
-        <th>ชื่อชุมชน</th>
+        <th>เรื่องเด่น</th>
+        <th>กลุ่ม</th>
         <th>ที่อยู่</th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>
@@ -44,12 +45,14 @@ class ActivityController extends Controller
         <tbody>
       ";
       $i=0;
+      $arrtype=array('','โครงการเด่น','สถานที่สำคัญ','ผลิตภัณฑ์ชุมชน','เรื่องอื่นๆ');
       foreach ($data as $key) {
         $i++;
         $display .= "
         <tr>
           <td>$i</td>
           <td>$key->name</td>
+          <td>".$arrtype[$key->type]."</td>
           <td> ".$key->address."</td>
           <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
         </tr>

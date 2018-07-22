@@ -30,19 +30,40 @@
                 <div class="form-group" id="j">
                   <label>เขตอำเภอ</label>
                   <select name="amphur_id" id="amphur_id" class="form-control" style="width:350px">
-                      <option value="">--- เลือกสังกัด ---</option>
+                      <option value="">--- เลือกเขตอำเภอ ---</option>
                       @foreach ($objunivs as $key => $value)
                           <option value="{{ $key }}">{{ $value }}</option>
                       @endforeach
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>หน่วยงาน</label>
+                  <label>ชื่อหน่วยงาน (ภาษาอังกฤษ) ใช้เป็นชื่อโฮมเพจหน่วยงาน</label>
+                  <input type="text" class="form-control" name="title" id="title" placeholder="ชื่อหน่วยงาน (ภาษาอังกฤษ)">
+                </div>
+                <div class="form-group">
+                  <label>ชื่อหน่วยงาน (ภาษาไทย)</label>
                   <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงานท้องถิ่น">
+                </div>
+                <div class="form-group" style="width:250px">
+                  <label>รูปแบบหน่วยงาน</label>
+                  <select name="type" id="type" class="form-control">
+                    <option value="1">องค์การบริหารส่วนจังหวัด</option>
+                    <option value="2">เทศบาลเมือง</option>
+                    <option value="3">เทศบาลตำบล</option>
+                    <option value="4">องค์การบริหารส่วนตำบล</option>
+                    <option value="5">การปกครองพิเศษ</option>
+                    <option value="6">อื่นๆ</option>
+                  </select>
                 </div>
                 <div class="form-group">
                   <label>ที่อยู่</label>
                   <textarea type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่หน่วยงาน"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>พิกัดละติจูด</label>
+                  <input type="text" class="form-control" name="lat" id="lat" placeholder="ละติจูด เช่น 17.6328514">
+                  <label>พิกัดลองจิจูด</label>
+                  <input type="text" class="form-control" name="lng" id="lng" placeholder="ลองจิจูด เช่น 100.0907392">
                 </div>
                 <input type="hidden"  id="id">
                 <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
@@ -87,7 +108,7 @@
         $('#showdetail').show();
         $('.btndetail').hide();
         $('#msgname').html('');
-        $('#name').focus();
+        $('#title').focus();
         var id = $(this).data('id');
         //alert(0);
         $.ajax({
@@ -102,8 +123,12 @@
               //alert(e.name);
               $('#id').val(e.id);
               $('#amphur_id').val(e.amphur_id);
+              $('#title').val(e.title);
               $('#name').val(e.name);
+              $('#type').val(e.type);
               $('#address').val(e.address);
+              $('#lat').val(e.lat);
+              $('#lng').val(e.lng);
             }
         });
       });
@@ -136,21 +161,27 @@
   });
 
       $('.saverecord').click(function(){
-          var name = $('#name').val();
+        var title = $('#title').val();
+        var name = $('#name').val();
+        var type = $('#type').val();
           var amphur_id = $('#amphur_id').val();
           var address = $('#address').val();
+          var lat = $('#lat').val();
+          var lng = $('#lng').val();
           //$('#new_group').val('error');
               //alert(0);
               $.ajax({
                   url : '{!! url('admin/organize') !!}',
                   type : "POST",
-                  ////asyncfalse
-                  //dataType : 'json',
                   data : {
                     '_token': '{{ csrf_token() }}',
+                    'title' : title,
                     'name' : name,
+                    'type' : type,
                     'amphur_id' : amphur_id,
-                    'address' : address
+                    'address' : address,
+                    'lat' : lat,
+                    'lng' : lng
                   },
                   success:function(re)
                   {
@@ -185,9 +216,13 @@
     $('.updaterecord').click(function(){
       //alert(0);
         var id = $('#id').val();
+        var title = $('#title').val();
         var name = $('#name').val();
+        var type = $('#type').val();
         var amphur_id = $('#amphur_id').val();
         var address = $('#address').val();
+        var lat = $('#lat').val();
+        var lng = $('#lng').val();
             //alert(0);
             $.ajax({
               url : '{!! url('admin/organize') !!}'+'/'+id,
@@ -196,9 +231,13 @@
                 data : {
                   '_method':'PUT',
                   '_token': '{{ csrf_token() }}',
+                  'title' : title,
                   'name' : name,
+                  'type' : type,
                   'amphur_id' : amphur_id,
-                  'address' : address
+                  'address' : address,
+                  'lat' : lat,
+                  'lng' : lng
                 },
                 success : function(re)
                 {

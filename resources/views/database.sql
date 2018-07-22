@@ -20,6 +20,7 @@ CREATE TABLE `organizes` (
 `id` int(11) NOT NULL,
 `amphur_id` int(11) NOT NULL,
 `tambon_id` int(11) NOT NULL,
+`title` varchar(50) NOT NULL,
 `name` varchar(100) NOT NULL,
 `type` varchar(1) NOT NULL,
 `address` varchar(300) NOT NULL,
@@ -100,6 +101,7 @@ CREATE TABLE `persons` (
 `lastname` varchar(100) NOT NULL,
 `position` varchar(150) NULL,
 `duedate` varchar(50) NULL,
+`address` varchar(200) NULL,
 `tel` varchar(20) NULL,
 `email` varchar(100) NULL,
 `picture` varchar(100) NULL,
@@ -132,7 +134,9 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE `users` (
 `id` int(11) NOT NULL,
+`amphur_id` int(11) NOT NULL,
 `organize_id` int(11) NOT NULL,
+`village_id` int(11) NOT NULL,
 `role_id` int(11) NOT NULL,
 `headname` varchar(100) NOT NULL,
 `firstname` varchar(100) NOT NULL,
@@ -294,52 +298,6 @@ ALTER TABLE `pollanswers`
 ALTER TABLE `pollanswers`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
-
-
-CREATE TABLE `products` (
-`id` int(11) NOT NULL,
-`name` varchar(200) NOT NULL,
-`type` varchar(50) NOT NULL,
-`detail` text NULL,
-`address` varchar(200) NULL,
-`keyman` varchar(100) NULL,
-`picture` varchar(100) NULL,
-`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-`updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-ALTER TABLE `products`
-ADD PRIMARY KEY (`id`);
-ALTER TABLE `products`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-CREATE TABLE `infos` (
-`id` int(11) NOT NULL,
-`organize_id` int(11) NOT NULL,
-`user_id` int(11) NOT NULL,
-`title` varchar(200) NOT NULL,
-`detail` text NULL,
-`day` timestamp NULL,
-`file` varchar(100) NULL,
-`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-`updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-ALTER TABLE `infos`
-ADD PRIMARY KEY (`id`);
-ALTER TABLE `infos`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-CREATE TABLE `counters` (
-  `id` int(11) NOT NULL,
-  `day` date NOT NULL,
-  `total` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-ALTER TABLE `counters`
-  ADD PRIMARY KEY (`id`);
-ALTER TABLE `counters`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
 CREATE TABLE `events` (
   `id` int(11) NOT NULL,
   `organize_id` int(11) NOT NULL,
@@ -360,6 +318,53 @@ CREATE TABLE `events` (
 ALTER TABLE `events`
   ADD PRIMARY KEY (`id`);
 ALTER TABLE `events`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+  CREATE TABLE `infos` (
+  `id` int(11) NOT NULL,
+  `organize_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `detail` text NULL,
+  `day` timestamp NULL,
+  `file` varchar(100) NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  ALTER TABLE `infos`
+  ADD PRIMARY KEY (`id`);
+  ALTER TABLE `infos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+
+
+
+CREATE TABLE `products` (
+`id` int(11) NOT NULL,
+`name` varchar(200) NOT NULL,
+`type` varchar(50) NOT NULL,
+`detail` text NULL,
+`address` varchar(200) NULL,
+`keyman` varchar(100) NULL,
+`picture` varchar(100) NULL,
+`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ALTER TABLE `products`
+ADD PRIMARY KEY (`id`);
+ALTER TABLE `products`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+CREATE TABLE `counters` (
+  `id` int(11) NOT NULL,
+  `day` date NOT NULL,
+  `total` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ALTER TABLE `counters`
+  ADD PRIMARY KEY (`id`);
+ALTER TABLE `counters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 CREATE TABLE `files` (

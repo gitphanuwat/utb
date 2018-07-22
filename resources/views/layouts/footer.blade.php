@@ -1,7 +1,7 @@
 <footer class="main-footer">
   <div class="pull-right hidden-xs">
-    <b>Lrd:version</b> 2.4.0
+    <b>UTB:version</b> 2.5.0
   </div>
-  <strong>Copyright &copy; 2018 <a href="http://www.lrd.com">Local Research Development</a>.</strong> All rights
+  <strong>Copyright &copy; 2018 <a href="http://www.uttaraditbook.com">Uttaradit Book System</a>.</strong> All rights
   reserved.
 </footer>

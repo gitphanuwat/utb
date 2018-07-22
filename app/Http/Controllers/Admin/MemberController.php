@@ -95,7 +95,7 @@ class MemberController extends Controller
     {
       $obj = User::find($id);
       $data['obj']=$obj;
-      $objrole = amphur::lists('name','id');
+      $objrole = Amphur::lists('name','id');
       $data['objuni']=$objrole;
         $objsrole = Role::lists('title', 'id');
         $data['objsrole']=$objsrole;

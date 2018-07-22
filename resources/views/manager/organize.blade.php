@@ -51,9 +51,16 @@
                       <label>ชื่อหน่วยงาน (ภาษาไทย)</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงาน" value="{{$objorg->name or ''}}">
                     </div>
-                    <div class="form-group">
-                      <label>ประเภทหน่วยงาน</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="ประเภทหน่วยงาน" value="{{$objorg->type or ''}}">
+                    <div class="form-group" style="width:250px">
+                      <label>สถานะ</label>
+                      <select name="type" id="type" class="form-control">
+                        <option value="1">องค์การบริหารส่วนจังหวัด</option>
+                        <option value="2">เทศบาลเมือง</option>
+                        <option value="3">เทศบาลตำบล</option>
+                        <option value="4">องค์การบริหารส่วนตำบล</option>
+                        <option value="5">การปกครองพิเศษ</option>
+                        <option value="6">อื่นๆ</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label>ที่อยู่</label>
@@ -117,19 +124,6 @@
               <button type="button" class="btn btn-primary updatevision">อัพเดทข้อมูล</button>
             </div>
           </div>
-          <div class="box box-default">
-            <div class="box-header">
-              <i class="fa fa-map-marker"></i>
-              <h3 class="box-title">
-                บุคลากร
-              </h3>
-            </div>
-            <div class="box-header">
-              <div class="form-group">
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
 @endsection

@@ -34,9 +34,9 @@ class PersonController extends Controller
       <table id='example1' class='table table-bordered table-striped'>
         <thead>
         <tr>
-          <th data-sortable='false'>ลำดับ</th>
-          <th data-sortable='false'>ชื่อ-สกุล</th>
-          <th data-sortable='false'>ตำแหน่ง</th>
+          <th>ลำดับ</th>
+          <th>ชื่อ-สกุล</th>
+          <th>ตำแหน่ง</th>
           <th width='80' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>
@@ -70,7 +70,7 @@ class PersonController extends Controller
               $destinationPath = 'images/person';
               $fileobj->move($destinationPath,$filename);
             }else{
-              $filename='';
+              $filename='no_image.png';
             }
             $entry = new Person();
             $entry->organize_id = $request->input('organize_id');
@@ -79,6 +79,7 @@ class PersonController extends Controller
             $entry->lastname = $request->input('lastname');
             $entry->position = $request->input('position');
             $entry->duedate = $request->input('duedate');
+            $entry->address = $request->input('address');
             $entry->tel = $request->input('tel');
             $entry->email = $request->input('email');
             $entry->picture = $filename;
@@ -119,6 +120,7 @@ class PersonController extends Controller
       $entry->lastname = $request->input('lastname');
       $entry->position = $request->input('position');
       $entry->duedate = $request->input('duedate');
+      $entry->address = $request->input('address');
       $entry->tel = $request->input('tel');
       $entry->email = $request->input('email');
       $entry->picture = $filename;

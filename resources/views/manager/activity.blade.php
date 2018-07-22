@@ -3,48 +3,43 @@
 @section('subtitle','จัดการข้อมูล')
 @section('body')
 <div class="row">
-<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="col-md-3 col-sm-6 col-xs-6">
   <div class="info-box">
-    <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
-
+    <span class="info-box-icon bg-blue"><i class="ion ion-ribbon-b"></i></span>
     <div class="info-box-content">
       <span class="info-box-text">โครงการเด่น</span>
-      <span class="info-box-number">--รายการ</span>
+      <span class="info-box-number">{{$data->where('type','1')->count()}} รายการ</span>
     </div>
-    <!-- /.info-box-content -->
   </div>
-  <!-- /.info-box -->
 </div>
-<!-- /.col -->
-<!-- fix for small devices only -->
 <div class="clearfix visible-sm-block"></div>
-
-<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="col-md-3 col-sm-6 col-xs-6">
   <div class="info-box">
-    <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
-
+    <span class="info-box-icon bg-aqua"><i class="ion ion-map"></i></span>
     <div class="info-box-content">
       <span class="info-box-text">สถานที่สำคัญ</span>
-      <span class="info-box-number">--รายการ</span>
+      <span class="info-box-number">{{$data->where('type','2')->count()}} รายการ</span>
     </div>
-    <!-- /.info-box-content -->
   </div>
-  <!-- /.info-box -->
 </div>
-<!-- /.col -->
-<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="col-md-3 col-sm-6 col-xs-6">
   <div class="info-box">
-    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
-
+    <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
     <div class="info-box-content">
       <span class="info-box-text">ผลิตภัณฑ์ชุมชน</span>
-      <span class="info-box-number">-- รายการ</span>
+      <span class="info-box-number">{{$data->where('type','3')->count()}} รายการ</span>
     </div>
-    <!-- /.info-box-content -->
   </div>
-  <!-- /.info-box -->
 </div>
-<!-- /.col -->
+<div class="col-md-3 col-sm-6 col-xs-6">
+  <div class="info-box">
+    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
+    <div class="info-box-content">
+      <span class="info-box-text">อื่นๆ</span>
+      <span class="info-box-number">{{$data->where('type','4')->count()}} รายการ</span>
+    </div>
+  </div>
+</div>
 </div>      <!-- /.row -->
 
 <div class="row">
@@ -71,20 +66,25 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>ชื่อกิจกรรม</label>
+                      <label>ชื่อเรื่อง</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อกิจกรรม">
                     </div>
-                    <div class="form-group">
-                      <label>ประเภทกิจกรรม</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="ประเภทกิจกรรม">
+                    <div class="form-group" style="width:250px">
+                      <label>กลุ่มเรื่องเด่น</label>
+                      <select name="type" id="type" class="form-control">
+                        <option value="1">โครงการเด่น</option>
+                        <option value="2">สถานที่สำคัญ</option>
+                        <option value="3">ผลิตภัณฑ์ชุมชน</option>
+                        <option value="3">อื่นๆ</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label>รายละเอียด</label>
-                      <input type="text" class="form-control" name="detail" id="detail" placeholder="รายละเอียด">
+                      <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
                     </div>
                     <div class="form-group">
-                      <label>สถานที่จัด</label>
-                      <input type="text" class="form-control" name="address" id="address" placeholder="สถานที่จัด">
+                      <label>สถานที่</label>
+                      <input type="text" class="form-control" name="address" id="address" placeholder="สถานที่/ที่อยู่">
                     </div>
                     <div class="form-group">
                       <label>ผู้ประสานงาน</label>

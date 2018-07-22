@@ -109,8 +109,8 @@ class EventController extends Controller
 
     public function show($id)
     {
-        $obj = Event::find($id);
-        dd($obj);
+        $data = Event::find($id);
+        return view('manager.eventshow',compact('data'));
     }
 
     public function edit($id)
@@ -123,10 +123,19 @@ class EventController extends Controller
       }
       abort(0);
     }
-
     public function update(EventRequest $request, $id)
-    {
+    {}
 
+    public function eventupdate(EventRequest $request, $id)
+    {
+      if($fileobj = $request->file('picture')){
+        $extension = $fileobj->getClientOriginalExtension();
+        $filename = $fileobj->getFilename().'.'.$extension;
+        $destinationPath = 'images/event';
+        $fileobj->move($destinationPath,$filename);
+      }else{
+        $filename=$request->input('pictureold');
+      }
         $entry = Event::findOrFail($id);
         $entry->title = $request->input('title');
         $entry->type = $request->input('type');
@@ -136,7 +145,7 @@ class EventController extends Controller
         $entry->enddate = $request->input('enddate');
         $entry->repeat = $request->input('repeat');
         $entry->contact = $request->input('contact');
-        $entry->picture = 'filename';
+        $entry->picture = $filename;
         $check = $entry->save();
         if($check>0){return 0;}else{return 1;}
 
