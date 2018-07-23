@@ -42,7 +42,8 @@ Route::group(['middleware' => 'organize'], function () {
   Route::resource('managerset/activity','Manager\ActivityController');
 
   Route::resource('managerset/tourist','Manager\TouristController');
-  Route::resource('managerset/touristpost/{id}','Manager\TouristController@touristupdate');
+  Route::post('managerset/touristpost/{id}','Manager\TouristController@touristupdate');
+  //Route::post('managerset/tpost/{id}','Manager\TouristController@touristupdate');
 
   Route::resource('managerset/event','Manager\EventController');
   Route::post('managerset/eventpost/{id}','Manager\EventController@eventupdate');

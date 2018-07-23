@@ -19,7 +19,6 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 CREATE TABLE `organizes` (
 `id` int(11) NOT NULL,
 `amphur_id` int(11) NOT NULL,
-`tambon_id` int(11) NOT NULL,
 `title` varchar(50) NOT NULL,
 `name` varchar(100) NOT NULL,
 `type` varchar(1) NOT NULL,

@@ -106,6 +106,9 @@ class TouristController extends Controller
       }
       abort(0);
     }
+    public function update($id)
+    {
+    }
 
     public function touristupdate(TouristRequest $request, $id)
     {

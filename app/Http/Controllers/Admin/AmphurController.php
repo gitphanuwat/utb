@@ -31,7 +31,7 @@ class AmphurController extends Controller
         <thead>
         <tr>
           <th data-sortable='false'>ลำดับ</th>
-          <th data-sortable='false'>ชื่อมหาวิทยาลัย</th>
+          <th data-sortable='false'>ชื่ออำเภอ</th>
           <th data-sortable='false'>รายละเอียด</th>
           <th width='80' data-sortable='false'>ดำเนินการ</th>
         </tr>
