@@ -3,13 +3,13 @@
 @section('subtitle','จัดการข้อมูล')
 @section('body')
 <div class="row">
-<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="col-md-3 col-sm-6 col-xs-12">
   <div class="info-box">
     <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
 
     <div class="info-box-content">
       <span class="info-box-text">ด้านการบริหารชุมชน</span>
-      <span class="info-box-number">--รายการ</span>
+      <span class="info-box-number">{{$data->where('type','1')->count()}} รายการ</span>
     </div>
     <!-- /.info-box-content -->
   </div>
@@ -19,32 +19,44 @@
 <!-- fix for small devices only -->
 <div class="clearfix visible-sm-block"></div>
 
-<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="col-md-3 col-sm-6 col-xs-12">
   <div class="info-box">
     <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
 
     <div class="info-box-content">
       <span class="info-box-text">ด้านสวัสดิการ</span>
-      <span class="info-box-number">--รายการ</span>
+      <span class="info-box-number">{{$data->where('type','2')->count()}} รายการ</span>
     </div>
     <!-- /.info-box-content -->
   </div>
   <!-- /.info-box -->
 </div>
 <!-- /.col -->
-<div class="col-md-4 col-sm-6 col-xs-12">
+<div class="col-md-3 col-sm-6 col-xs-12">
   <div class="info-box">
     <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
 
     <div class="info-box-content">
       <span class="info-box-text">ด้านสิ่งแวดล้อม</span>
-      <span class="info-box-number">-- รายการ</span>
+      <span class="info-box-number">{{$data->where('type','3')->count()}} รายการ</span>
     </div>
     <!-- /.info-box-content -->
   </div>
   <!-- /.info-box -->
 </div>
 <!-- /.col -->
+<div class="col-md-3 col-sm-6 col-xs-12">
+  <div class="info-box">
+    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
+
+    <div class="info-box-content">
+      <span class="info-box-text">ด้านอื่นๆ</span>
+      <span class="info-box-number">{{$data->where('type','4')->count()}} รายการ</span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+  <!-- /.info-box -->
+</div>
 </div>      <!-- /.row -->
 
 <div class="row">
@@ -74,9 +86,14 @@
                       <label>เรื่องร้องเรียน</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="หัวข้อปัญหา">
                     </div>
-                    <div class="form-group">
-                      <label>ประเภทข้อร้องเรียน</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="กลุ่มปัญหา">
+                    <div class="form-group" style="width:250px">
+                      <label>กลุ่มข้อร้องเรียน</label>
+                      <select name="type" id="type" class="form-control">
+                        <option value="1">ด้านการบริหารชุมชน</option>
+                        <option value="2">ด้านสวัสดิการ</option>
+                        <option value="3">ด้านสิ่งแวดล้อม</option>
+                        <option value="4">ด้านอื่นๆ</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label>รายละเอียด</label>

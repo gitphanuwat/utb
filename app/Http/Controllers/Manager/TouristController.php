@@ -36,7 +36,7 @@ class TouristController extends Controller
         <thead>
         <tr>
         <th width='70'>ลำดับ</th>
-        <th>ชื่อชุมชน</th>
+        <th>แหล่งท่องเที่ยว</th>
         <th>ที่อยู่</th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>

@@ -33,7 +33,7 @@
                         <div class="form-group">
                           <?php $type=array('','งานประจำปี','งานบริการชุมชน','ส่งเสริมท่องเที่ยว','งานประเพณี','ทำนุบำรุงศิลปะวัฒนธรรม','อื่นๆ');
                             if($data->picture!=''){
-                              echo '<img class="img-responsive img-squar" src="'.url("/images/event/".$data->picture).'" width="250">';
+                              echo '<img class="img-responsive img-squar" src="'.url("http://localhost/utb/public_html/images/event/".$data->picture).'" width="250">';
                             }
                           ?>
                         </div>
@@ -43,25 +43,20 @@
                         <div class="form-group" >
                           <label>รายละเอียด</label>
                           <blockquote>
-                            <p>{{$data->detail}}</p>
-                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                            <small>{{$data->detail}}</small>
                           </blockquote>
                         </div>
                         <div class="form-group">
-                          <label>สถานที่จัด</label>
-                          <label>{{$data->address}}</label>
+                          <p>สถานที่จัด <cite title="Source Title">{{$data->address}}</cite></p>
                         </div>
                         <div class="form-group">
-                          <label>วันเริ่มต้น:</label>
-                          <label>{{$data->startdate}}</label>
+                          <p>วันเริ่มต้น <cite title="Source Title">{{$data->startdate}}</cite></p>
                         </div>
                         <div class="form-group">
-                          <label>วันสิ้นสุด:</label>
-                          <label>{{$data->enddate}}</label>
+                          <p>วันสิ้นสุด <cite title="Source Title">{{$data->enddate}}</cite></p>
                         </div>
                         <div class="form-group">
-                          <label>ข้อมูลติดต่อ</label>
-                          <label>{{$data->contact}}</label>
+                          <p>ข้อมูลติดต่อ <cite title="Source Title">{{$data->contact}}</cite></p>
                         </div>
                         <button type="button" class="btn btn-warning" onclick="window.history.back()">ย้อนกลับ</button>
                       </div>

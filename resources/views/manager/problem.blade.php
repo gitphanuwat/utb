@@ -3,49 +3,38 @@
 @section('subtitle','จัดการข้อมูล')
 @section('body')
 <div class="row">
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+      <a class="btn btn-app">
+        <span class="badge bg-blue">{{$data->where('type','1')->count()}} </span>
+        <i class="fa fa-ship"></i> โครงสร้างพื้นฐานฯ
+      </a>
+      <a class="btn btn-app">
+        <span class="badge bg-green">{{$data->where('type','2')->count()}} </span>
+        <i class="fa fa-briefcase"></i> อาชีพฯ
+      </a>
+      <a class="btn btn-app">
+        <span class="badge bg-yellow">{{$data->where('type','3')->count()}} </span>
+        <i class="fa fa-user-md"></i> สุขภาพฯ
+      </a>
+      <a class="btn btn-app">
+        <span class="badge bg-red">{{$data->where('type','4')->count()}} </span>
+        <i class="fa fa-share-alt"></i> ความรู้ฯ
+      </a>
+      <a class="btn btn-app">
+        <span class="badge bg-purple">{{$data->where('type','5')->count()}} </span>
+        <i class="fa fa-users"></i> ความเข้มแข็งฯ
+      </a>
+      <a class="btn btn-app">
+        <span class="badge bg-teal">{{$data->where('type','6')->count()}} </span>
+        <i class="fa fa-photo"></i> ธรรมชาติฯ
+      </a>
+      <a class="btn btn-app">
+        <span class="badge bg-maroon">{{$data->where('type','7')->count()}} </span>
+        <i class="fa fa-list-ul"></i> อื่นๆ
+      </a>
 
-    <div class="info-box-content">
-      <span class="info-box-text">ด้านบุคคล</span>
-      <span class="info-box-number">--รายการ</span>
-    </div>
-    <!-- /.info-box-content -->
   </div>
-  <!-- /.info-box -->
 </div>
-<!-- /.col -->
-<!-- fix for small devices only -->
-<div class="clearfix visible-sm-block"></div>
-
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
-
-    <div class="info-box-content">
-      <span class="info-box-text">ด้านสุขภาพ</span>
-      <span class="info-box-number">--รายการ</span>
-    </div>
-    <!-- /.info-box-content -->
-  </div>
-  <!-- /.info-box -->
-</div>
-<!-- /.col -->
-<div class="col-md-4 col-sm-6 col-xs-12">
-  <div class="info-box">
-    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
-
-    <div class="info-box-content">
-      <span class="info-box-text">ด้านสิ่งแวดล้อม</span>
-      <span class="info-box-number">-- รายการ</span>
-    </div>
-    <!-- /.info-box-content -->
-  </div>
-  <!-- /.info-box -->
-</div>
-<!-- /.col -->
-</div>      <!-- /.row -->
 
 <div class="row">
 <div class="col-md-12">
@@ -74,9 +63,17 @@
                       <label>หัวข้อปัญหา</label>
                       <input type="text" class="form-control" name="name" id="name" placeholder="หัวข้อปัญหา">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="width:250px">
                       <label>กลุ่มปัญหา</label>
-                      <input type="text" class="form-control" name="type" id="type" placeholder="กลุ่มปัญหา">
+                      <select name="type" id="type" class="form-control">
+                        <option value="1">โครงสร้างพื้นฐานชุมชน</option>
+                        <option value="2">อาชีพและการมีงานทำ</option>
+                        <option value="3">สุขภาพและความปลอดภัย</option>
+                        <option value="4">ความรู้และการศึกษา</option>
+                        <option value="5">ความเข้มแข็งของชุมชน</option>
+                        <option value="6">ทรัพยากรธรรมชาติและสิ่งแวดล้อม</option>
+                        <option value="7">อื่นๆ</option>
+                      </select>
                     </div>
                     <div class="form-group">
                       <label>รายละเอียด</label>
@@ -86,11 +83,14 @@
                       <label>ที่อยู่</label>
                       <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="width:250px">
                       <label>สถานะ</label>
-                      <input type="text" class="form-control" name="status" id="status" placeholder="สถานะ/การดำเนินการ">
+                      <select name="status" id="status" class="form-control">
+                        <option value="1">นำเข้าระบบ</option>
+                        <option value="2">กำลังดำเนินการ</option>
+                        <option value="3">ดำเนินการแล้วเสร็จ</option>
+                      </select>
                     </div>
-
                     <input type="hidden"  id="id">
                     <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
                     <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>

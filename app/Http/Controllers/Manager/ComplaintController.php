@@ -55,7 +55,7 @@ class ComplaintController extends Controller
           <td>";
           if($key->status==1){$display .= "นำเข้าระบบ";}
           if($key->status==2){$display .= "กำลังดำเนินการ";}
-          if($key->status==3){$display .= "ดำเนินการเสร็จสิ้น";}
+          if($key->status==3){$display .= "ดำเนินการแล้วเสร็จ";}
             $display .= "</td>
           <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
         </tr>

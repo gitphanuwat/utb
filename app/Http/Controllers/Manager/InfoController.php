@@ -70,7 +70,7 @@ class InfoController extends Controller
               $destinationPath = 'images/info';
               $fileobj->move($destinationPath,$filename);
             }else{
-              $filename='';
+              $filename='no_image.png';
             }
             $entry = new Info();
             $entry->organize_id = $request->input('organize_id');

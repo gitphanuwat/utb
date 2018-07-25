@@ -119,7 +119,7 @@ if(Auth::user()){
 @endif
 @if (Auth::user()->role->slug == 'Organize')
 <li class="header">เมนู:ข้อมูลหน่วยงาน</li>
-<li {!! classActivePath('managerset/social') !!}><a href="{{ url('/managerset/social')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
+<li {!! classActivePath('/') !!}><a href="{{ url('/')}}"><i class="fa fa-dashboard"></i> <span>ศูนย์ข้อมูลข่าวสาร</span>
 <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'csocial'></div></small></span></a></li>
 <li {!! classActivePath('managerset/organize') !!}><a href="{{ url('/managerset/organize')}}"><i class="fa fa-home"></i><span>ข้อมูลหน่วยงาน</span>
   <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'corganize'></div></small></span></a></li>
@@ -147,7 +147,6 @@ if(Auth::user()){
 <li {!! classActivePath('managerset/download') !!}><a href="{{ url('/managerset/download')}}"><i class="fa fa-paperclip"></i> ดาวน์โหลดเอกสาร
   <span class="pull-right-container"><small class="label pull-right bg-gray"><div id = 'cdownload'>{{ $cdownload->count() }}</div></small></span></a></li>
 <li><hr></li>
-<li {!! classActivePath('managerset/search') !!}><a href="{{ url('search')}}"><i class="fa fa-search"></i> <span>ค้นหาข้อมูล</span></a></li>
 <!-- Authentication Links -->
 @endif
 @endif

@@ -9,8 +9,8 @@
       <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">ด้านการพัฒนา</span>
-        <span class="info-box-number">5 เรื่อง<small>%</small></span>
+        <span class="info-box-text">การพัฒนา</span>
+        <span class="info-box-number">{{$data->where('type','1')->count()}} เรื่อง<small>%</small></span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -19,11 +19,11 @@
   <!-- /.col -->
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
-      <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+      <span class="info-box-icon bg-red"><i class="fa fa-object-group"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">ด้านการส่งเสริม</span>
-        <span class="info-box-number">6 เรื่อง</span>
+        <span class="info-box-text">การดูแลป้องกัน</span>
+        <span class="info-box-number">{{$data->where('type','2')->count()}} เรื่อง</span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -36,11 +36,11 @@
 
   <div class="col-md-3 col-sm-6 col-xs-12">
     <div class="info-box">
-      <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+      <span class="info-box-icon bg-green"><i class="fa fa-send-o"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">การดูแลและป้องกัน</span>
-        <span class="info-box-number">7 เรื่อง</span>
+        <span class="info-box-text">การให้บริการ</span>
+        <span class="info-box-number">{{$data->where('type','3')->count()}} เรื่อง</span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -52,8 +52,8 @@
       <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
       <div class="info-box-content">
-        <span class="info-box-text">ด้านการให้บริการ</span>
-        <span class="info-box-number">2 เรื่อง</span>
+        <span class="info-box-text">ความเดือดร้อน</span>
+        <span class="info-box-number">{{$data->where('type','4')->count()}} เรื่อง</span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -100,7 +100,8 @@
                         <option value="1">ด้านการพัฒนาและส่งเสริม</option>
                         <option value="2">การดูแลและป้องกัน</option>
                         <option value="3">ด้านการให้บริการ</option>
-                        <option value="4">ด้านอื่นๆ</option>
+                        <option value="4">ด้านความเดือดร้อน</option>
+                        <option value="5">ด้านอื่นๆ</option>
                       </select>
                     </div>
                     <input type="hidden"  id="id">

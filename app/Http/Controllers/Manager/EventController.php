@@ -35,8 +35,8 @@ class EventController extends Controller
         <thead>
         <tr>
         <th width='70'>ลำดับ</th>
-        <th>ปัญหาชุมชน</th>
-        <th>พื้นที่ชุมชน</th>
+        <th>กิจกรรม</th>
+        <th>สถานที่</th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>

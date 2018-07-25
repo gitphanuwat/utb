@@ -24,11 +24,6 @@ Route::group(['middleware' => 'admin'], function () {
   });
 // amphur village
 Route::group(['middleware' => 'amphur'], function () {
-    //Route::resource('amphur/village','Amphur\VillageController');
-    //Route::resource('amphur/organize','amphur\OrganizeController');
-    //Route::resource('amphur/member','Amphur\MemberController');
-    //Route::get('amphur/member/sort/{role}', 'Amphur\MemberController@indexSort');
-    //Route::put('amphur/member/userseen/{user}', 'Amphur\MemberController@updateSeen');
 });
 // Manager village
 Route::group(['middleware' => 'organize'], function () {
@@ -88,7 +83,6 @@ Route::get('ajaxresch/{id}',array('as'=>'ajaxvillage','uses'=>'AjaxController@lo
 Route::get('ajaxmap', 'AjaxController@loadmap');
 
 Route::get('/', 'HomeController@index');
-//Route::get('/{name}', 'HomeController@organize');
 Route::get('/counterhit', 'HomeController@counterhit');
 Route::get('/stat', 'HomeController@stat');
 Route::get('/loadstat', 'HomeController@loadstat');

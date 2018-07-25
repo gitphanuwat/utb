@@ -14,5 +14,16 @@ class Organize extends Model  {
   {
     return $this->hasMany('App\Village');
   }
-
+	public function person()
+  {
+    return $this->hasMany('App\Person');
+  }
+	public function activity()
+	{
+		return $this->hasMany('App\Activity');
+	}
+	public function tourist()
+	{
+		return $this->hasMany('App\Tourist');
+	}
 }

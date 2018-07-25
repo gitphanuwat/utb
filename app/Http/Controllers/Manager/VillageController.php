@@ -36,7 +36,7 @@ class VillageController extends Controller
         <thead>
         <tr>
         <th width='70'>ลำดับ</th>
-        <th>ชื่อชุมชน</th>
+        <th>ชื่อชุมชน/หมู่บ้าน</th>
         <th>ที่อยู่</th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>

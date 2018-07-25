@@ -75,7 +75,7 @@
                         <option value="1">โครงการเด่น</option>
                         <option value="2">สถานที่สำคัญ</option>
                         <option value="3">ผลิตภัณฑ์ชุมชน</option>
-                        <option value="3">อื่นๆ</option>
+                        <option value="4">อื่นๆ</option>
                       </select>
                     </div>
                     <div class="form-group">

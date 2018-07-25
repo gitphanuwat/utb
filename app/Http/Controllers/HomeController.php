@@ -5,28 +5,15 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-use App\University;
-
-use App\Researcher;
-use App\Expert;
-use App\Research;
-use App\Creative;
-use App\Area;
-use App\Infor;
 use App\Counter;
 use App\Log;
 
 use App\Organize;
-
-use DB;
+use App\Amphur;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
       $this->middleware('auth');
@@ -34,25 +21,21 @@ class HomeController extends Controller
     }
     public function index()
     {
-      $locations = DB::table('organizes')->get();
-      return view('home',compact('locations'));
+      $ido = Auth::user()->organize_id;
+      $organize=Organize::find($ido);
+
+      return view('home',compact('organize'));
     }
 
-    public function maps()
-    {
-      $objarea = Area::get();
-      $objunivs = University::lists('name','id');
-      return view('eis/maps',compact('objarea','objunivs'));
-    }
+
     public function stat()
     {
       $objcou = Counter::get();
       //$objunivs = University::lists('name','id');
       return view('stat',compact('$objcou'));
     }
-    public function loadstat1(Request $request){
-      echo "test";
-    }
+
+
     public function loadstat(Request $request){
       $startdate = $request['startdate'];
       $enddate = $request['enddate'];
@@ -123,37 +106,5 @@ class HomeController extends Controller
       return $today.' '.$counttotal;
     }
 
-    public function gmaps()
-    {
-      $locations = DB::table('locations')->get();
-      return view('gmaps',compact('locations'));
-    }
-    public function gmaps1()
-    {
-      $locations = DB::table('locations')->get();
-      return view('gmaps1',compact('locations'));
-    }
-    public function gmaps2()
-    {
-      $locations = DB::table('locations')->get();
-      return view('gmaps2',compact('locations'));
-    }
-    public function gmaps5()
-    {
-      $locations = DB::table('locations')->get();
-      return view('gmaps5',compact('locations'));
-    }
-
-    public function organize($organize)
-    {
-      //$organize = $request['name'];
-      $data = Organize::where('title',$organize)->first();
-      //$locations = DB::table('organizes')->first();
-      //$data = DB::table("organizes")
-        //        ->where("title",$organize)
-          //      ->get();
-      return view('homepage',compact('data'));
-      //echo $data[0]->name;
-    }
 
 }

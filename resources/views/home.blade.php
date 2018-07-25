@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
-@section('title','ศูนย์จัดการข้อมูลงานวิจัยเพื่อท้องถิ่น')
-@section('subtitle','Local Research Development')
+@section('title','ศูนย์ข้อมูลท้องถิ่น')
+@section('subtitle','Uttaradit Book System')
 @section('styles')
 
 @endsection
@@ -9,7 +9,6 @@
 <?php
 
 use App\Counter;
-include('data.php');
 
 ?>
 
@@ -18,49 +17,49 @@ include('data.php');
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-aqua">
         <div class="inner">
-          <h3>99</h3>
-          <p>หน่วยงาน</p>
+          <h3>{{$organize->person->count()}}</h3>
+          <p>บุคลากร</p>
         </div>
         <div class="icon">
-          <i class="ion ion-person-add"></i>
+          <i class="fa fa-users"></i>
         </div>
-        <a href="{{url('/eis/researcher')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="{{url('/managerset/person')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-green">
         <div class="inner">
-          <h3>99</h3>
-          <p>ชุมชน</p>
+          <h3>{{$organize->village->count()}}</h3>
+          <p>พื้นที่ชุมชน</p>
         </div>
         <div class="icon">
-          <i class="fa fa-gears "></i>
+          <i class="fa fa-map"></i>
         </div>
-        <a href="{{url('/eis/expert')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="{{url('/managerset/village')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-yellow">
         <div class="inner">
-          <h3>99</h3>
-          <p>สมาชิก</p>
+          <h3>{{$organize->activity->count()}}</h3>
+          <p>เรื่องเด่นในชุมชน</p>
         </div>
         <div class="icon">
-          <i class="fa fa-pie-chart"></i>
+          <i class="fa fa-flag"></i>
         </div>
-        <a href="{{url('/eis/research')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="{{url('/managerset/activity')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
     <div class="col-lg-3 col-xs-6">
       <div class="small-box bg-red">
         <div class="inner">
-          <h3>99</h3>
-          <p>กิจกรรม</p>
+          <h3>{{$organize->tourist->count()}}</h3>
+          <p>แหล่งท่องเที่ยว</p>
         </div>
         <div class="icon">
-          <i class="fa fa-bookmark-o"></i>
+          <i class="fa fa-picture-o"></i>
         </div>
-        <a href="{{url('/eis/creative')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+        <a href="{{url('/managerset/tourist')}}" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
       </div>
     </div>
   </div>
@@ -354,7 +353,7 @@ include('data.php');
 <script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 <script>
-  var locations = <?php print_r(json_encode($locations)) ?>;
+  var locations = <?php print_r(json_encode($organize)) ?>;
   var map = new GMaps({
     el: '#map',
     lat: 17,

@@ -37,7 +37,7 @@ class OrganizeController extends Controller
           <th data-sortable='false'>ชื่อหน่วยงาน</th>
           <th data-sortable='false'>รูปแบบองค์กร</th>
           <th data-sortable='false'>เขตอำเภอ</th>
-          <th width='80' data-sortable='false'>ดำเนินการ</th>
+          <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>
         <tbody>

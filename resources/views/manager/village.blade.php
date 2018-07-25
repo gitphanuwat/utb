@@ -69,8 +69,8 @@
               <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>ชื่อหมู่บ้าน</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหมู่บ้าน">
+                      <label>ชื่อชุมชน/หมู่บ้าน</label>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหมู่บ้าน/หมู่บ้าน">
                     </div>
                     <div class="form-group">
                       <label>ที่อยู่</label>
@@ -130,8 +130,7 @@
           position: {lat: value.lat, lng: value.lng},
           map: map,
           //icon: iconBase,
-          title: value.name,
-          zIndex: value.id
+          title: value.name
       });
       var infowindow = new google.maps.InfoWindow({
           content: value.name

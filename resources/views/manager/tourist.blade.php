@@ -141,9 +141,7 @@
       var marker = new google.maps.Marker({
           position: {lat: value.lat, lng: value.lng},
           map: map,
-          //icon: iconBase,
-          title: value.name,
-          zIndex: value.id
+          title: value.name
       });
       var infowindow = new google.maps.InfoWindow({
           content: value.name
@@ -171,6 +169,7 @@
           $('#showdetail').show();
           $('.btndetail').hide();
           $('#msgname').html('');
+          $('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/tourist/no_image.png")}}" width="190">');
           getLocation();
       });
       $('.btncancel').click(function(){
