@@ -1,44 +1,66 @@
 @extends('layouts.template')
-@section('title','เรื่องเด่นในชุมชน')
+@section('title','ข้อร้องเรียน')
 @section('subtitle','จัดการข้อมูล')
+@section('styles')
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="{{ asset("assets/plugins/iCheck/all.css") }}">
+@endsection
+
 @section('body')
 <div class="row">
-<div class="col-md-3 col-sm-6 col-xs-6">
+<div class="col-md-3 col-sm-6 col-xs-12">
   <div class="info-box">
-    <span class="info-box-icon bg-blue"><i class="ion ion-ribbon-b"></i></span>
+    <span class="info-box-icon bg-aqua"><i class="ion ion-ribbon-b"></i></span>
+
     <div class="info-box-content">
-      <span class="info-box-text">โครงการเด่น</span>
+      <span class="info-box-text">ด้านการบริหารชุมชน</span>
       <span class="info-box-number">{{$data->where('type','1')->count()}} รายการ</span>
     </div>
+    <!-- /.info-box-content -->
   </div>
+  <!-- /.info-box -->
 </div>
+<!-- /.col -->
+<!-- fix for small devices only -->
 <div class="clearfix visible-sm-block"></div>
-<div class="col-md-3 col-sm-6 col-xs-6">
-  <div class="info-box">
-    <span class="info-box-icon bg-aqua"><i class="ion ion-map"></i></span>
-    <div class="info-box-content">
-      <span class="info-box-text">สถานที่สำคัญ</span>
-      <span class="info-box-number">{{$data->where('type','2')->count()}} รายการ</span>
-    </div>
-  </div>
-</div>
-<div class="col-md-3 col-sm-6 col-xs-6">
+
+<div class="col-md-3 col-sm-6 col-xs-12">
   <div class="info-box">
     <span class="info-box-icon bg-green"><i class="ion ion-map"></i></span>
+
     <div class="info-box-content">
-      <span class="info-box-text">ผลิตภัณฑ์ชุมชน</span>
-      <span class="info-box-number">{{$data->where('type','3')->count()}} รายการ</span>
+      <span class="info-box-text">ด้านสวัสดิการ</span>
+      <span class="info-box-number">{{$data->where('type','2')->count()}} รายการ</span>
     </div>
+    <!-- /.info-box-content -->
   </div>
+  <!-- /.info-box -->
 </div>
-<div class="col-md-3 col-sm-6 col-xs-6">
+<!-- /.col -->
+<div class="col-md-3 col-sm-6 col-xs-12">
   <div class="info-box">
     <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
+
     <div class="info-box-content">
-      <span class="info-box-text">อื่นๆ</span>
+      <span class="info-box-text">ด้านสิ่งแวดล้อม</span>
+      <span class="info-box-number">{{$data->where('type','3')->count()}} รายการ</span>
+    </div>
+    <!-- /.info-box-content -->
+  </div>
+  <!-- /.info-box -->
+</div>
+<!-- /.col -->
+<div class="col-md-3 col-sm-6 col-xs-12">
+  <div class="info-box">
+    <span class="info-box-icon bg-yellow"><i class="ion ion-bag"></i></span>
+
+    <div class="info-box-content">
+      <span class="info-box-text">ด้านอื่นๆ</span>
       <span class="info-box-number">{{$data->where('type','4')->count()}} รายการ</span>
     </div>
+    <!-- /.info-box-content -->
   </div>
+  <!-- /.info-box -->
 </div>
 </div>      <!-- /.row -->
 
@@ -66,16 +88,16 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                   <div class="box-body">
                     <div class="form-group">
-                      <label>ชื่อเรื่อง</label>
-                      <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อเรื่อง">
+                      <label>เรื่องร้องเรียน</label>
+                      <input type="text" class="form-control" name="name" id="name" placeholder="หัวข้อปัญหา">
                     </div>
                     <div class="form-group" style="width:250px">
-                      <label>กลุ่มเรื่องเด่น</label>
+                      <label>กลุ่มข้อร้องเรียน</label>
                       <select name="type" id="type" class="form-control">
-                        <option value="1">โครงการเด่น</option>
-                        <option value="2">สถานที่สำคัญ</option>
-                        <option value="3">ผลิตภัณฑ์ชุมชน</option>
-                        <option value="4">อื่นๆ</option>
+                        <option value="1">ด้านการบริหารชุมชน</option>
+                        <option value="2">ด้านสวัสดิการ</option>
+                        <option value="3">ด้านสิ่งแวดล้อม</option>
+                        <option value="4">ด้านอื่นๆ</option>
                       </select>
                     </div>
                     <div class="form-group">
@@ -83,18 +105,26 @@
                       <textarea type="text" class="form-control" name="detail" id="detail"></textarea>
                     </div>
                     <div class="form-group">
-                      <label>สถานที่</label>
-                      <input type="text" class="form-control" name="address" id="address" placeholder="สถานที่/ที่อยู่">
+                      <label>ผู้ส่งข้อมูล</label>
+                      <input type="text" class="form-control" name="sender" id="sender" placeholder="ผู้ส่งข้อมูล">
                     </div>
                     <div class="form-group">
-                      <label>ผู้ประสานงาน</label>
-                      <input type="text" class="form-control" name="leader" id="leader" placeholder="ผู้ประสานงาน">
+                      <label>ข้อมูลติดต่อ</label>
+                      <input type="text" class="form-control" name="contact" id="contact" placeholder="ข้อมูลติดต่อ">
+                    </div>
+                    <div class="form-group" style="width:250px">
+                      <label>สถานะ</label>
+                      <select name="status" id="status" class="form-control">
+                        <option value="1">นำเข้าระบบ</option>
+                        <option value="2">กำลังดำเนินการ</option>
+                        <option value="3">ดำเนินการแล้วเสร็จ</option>
+                      </select>
                     </div>
                     <div class="form-group">
-                      <label>เบอร์โทรติดต่อ</label>
-                      <input type="text" class="form-control" name="tel" id="tel" placeholder="เบอร์โทรติดต่อ">
+                      <label>
+                        <input type="checkbox" name="permit" id="permit" class="minimal" value="1"> เปิดเผยข้อมูลสาธารณะ
+                      </label>
                     </div>
-
                     <input type="hidden"  id="id">
                     <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
                     <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
@@ -116,6 +146,8 @@
 <!-- DataTables -->
 <script src="{{ asset("assets/plugins/datatables/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset("assets/plugins/datatables/dataTables.bootstrap.min.js") }}"></script>
+<!-- iCheck 1.0.1 -->
+<script src="{{ asset("assets/plugins/iCheck/icheck.min.js") }}"></script>
 
 <script type="text/javascript">
     $(function(){
@@ -139,6 +171,10 @@
 
       displaydata();
 
+      $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+        checkboxClass: 'icheckbox_minimal-blue',
+        radioClass: 'iradio_minimal-blue'
+      });
 
       $('body').delegate('.edit','click',function(){
         $('.updaterecord').show();
@@ -151,7 +187,7 @@
 
         //alert(0);
         $.ajax({
-            url : '{!! url('managerset/activity') !!}'+'/'+id+'/edit',
+            url : '{!! url('managerset/complaint') !!}'+'/'+id+'/edit',
             type : "get",
             //asyncfalse
             data : {
@@ -164,10 +200,10 @@
               $('#name').val(e.name);
               $('#type').val(e.type);
               $('#detail').val(e.detail);
-              $('#address').val(e.address);
-              $('#leader').val(e.leader);
+              $('#sender').val(e.sender);
               $('#contact').val(e.contact);
-              $('#tel').val(e.tel);
+              $('#status').val(e.status);
+              $('#permit').val(e.permit);
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');
@@ -186,7 +222,7 @@
         $('.btndetail').show();
         $('#msgname').html('');
         $.ajax({
-            url : '{!! url('managerset/activity') !!}'+'/'+id,
+            url : '{!! url('managerset/complaint') !!}'+'/'+id,
             type : "POST",
             //asyncfalse
             data : {
@@ -209,9 +245,8 @@
 
       $('.saverecord').click(function(){
 
-          //$('#new_activity').val('error');
               $.ajax({
-                  url : '{!! url('managerset/activity') !!}',
+                  url : '{!! url('managerset/complaint') !!}',
                   async:false,
                   type:'post',
                   processData: false,
@@ -253,13 +288,13 @@
         var name = $('#name').val();
         var type = $('#type').val();
         var detail = $('#detail').val();
-        var address = $('#address').val();
-        var leader = $('#leader').val();
+        var sender = $('#sender').val();
         var contact = $('#contact').val();
-        var tel = $('#tel').val();
+        var status = $('#status').val();
+        var permit = $('#permit').val();
 
             $.ajax({
-              url : '{!! url('managerset/activity') !!}'+'/'+id,
+              url : '{!! url('managerset/complaint') !!}'+'/'+id,
                 type : "post",
                 //asyncfalse
                 data : {
@@ -268,10 +303,10 @@
                   'name' : name,
                   'type' : type,
                   'detail' : detail,
-                  'address' : address,
-                  'leader' : leader,
+                  'sender' : sender,
                   'contact' : contact,
-                  'tel' : tel
+                  'status' : status,
+                  'permit' : permit
                 },
                 success : function(re)
                 {
@@ -307,7 +342,7 @@
 
     function displaydata(){
       $.ajax({
-        url : '{!! url('managerset/activity/create') !!}',
+        url : '{!! url('managerset/complaint/create') !!}',
         type : "get",
         //asyncfalse
         data : {},

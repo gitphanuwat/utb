@@ -1,6 +1,11 @@
 @extends('layouts.template')
 @section('title','หน่วยงานท้องถิ่น')
 @section('subtitle','จัดการข้อมูล')
+@section('styles')
+<!-- bootstrap wysihtml5 - text editor -->
+<link rel="stylesheet" href="{{ asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css") }}">
+
+@endsection
 @section('body')
 <div class="row">
 <div class="col-md-12">
@@ -15,7 +20,7 @@
             <!-- form start -->
 
             <div id = 'msgname'></div>
-            <form role="form" id="form_data" name="form_data">
+            <form role="form" method="POST" id="form_data" name="form_data" enctype="multipart/form-data">
             <div class="row">
               <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="box-body">
@@ -38,6 +43,15 @@
                         <input type="hidden" class="form-control" id="zm" name="zm" value="{{$objorg->zm or ''}}">
                     </div>
                   </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                  <div class="pull-right">โลโก้หน่วยงาน</div>
+                  <div id='userpicture'>
+                    <img class="img-responsive img-squar" src="{{url('/images/no_image.png')}}" width="90">
+                  </div>
+                  <input type="file" class="form-control" name="icon" id="icon" placeholder="โลโก้หน่วยงาน">
+                  <input type="hidden" class="form-control" name="iconold" id="iconold">
                 </div>
               </div>
               </div>
@@ -80,6 +94,8 @@
                     </div>
                     <input type="hidden"  id="id" value="{{$objorg->id or ''}}">
                     <button type="button" class="btn btn-primary updaterecord">อัพเดทข้อมูล</button>
+                    {{ csrf_field() }}
+                    {{ method_field('put') }}
                   </div>
             </div>
           </div>
@@ -119,7 +135,7 @@
             </div>
             <div class="box-header">
               <div class="form-group">
-                <textarea type="text" class="form-control" name="history" id="history" placeholder="ประวัติหน่วยงาน"></textarea>
+                <textarea class="textarea" name="history" id="history" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
               <button type="button" class="btn btn-primary updatevision">อัพเดทข้อมูล</button>
             </div>
@@ -128,7 +144,7 @@
       </div>
 @endsection
 @section('script')
-
+<!-- Google Maps -->
 <script  src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&key=AIzaSyCkw9kj6fQxsFQJ89BbuRqPRZ5c_SdoDqg"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.24/gmaps.js"></script>
 
@@ -172,6 +188,9 @@
           $('#vision').val(e.vision);
           $('#basic').val(e.basic);
           $('#history').val(e.history);
+          $('#history').wysihtml5();
+          $('#iconold').val(e.icon);
+          $('#userpicture').html('<img class="img-responsive img-squar" src="{{url("/images/organize")}}/'+e.icon+'" width="90">');
         },
         error:function(err){
               alert('สิทธิ์การใช้งานไม่ถูกต้อง');
@@ -181,37 +200,14 @@
   };
 
     $('.updaterecord').click(function(){
-      //alert(0);
-        var id = $('#id').val();
-        var title = $('#title').val();
-        var name = $('#name').val();
-        var type = $('#type').val();
-        var address = $('#address').val();
-        var lat = $('#lat').val();
-        var lng = $('#lng').val();
-        var zm = $('#zm').val();
-        var website = $('#website').val();
-        var facebook = $('#facebook').val();
-        var tel = $('#tel').val();
-
+      var id = $('#id').val();
             $.ajax({
               url : '{!! url('managerset/organize') !!}'+'/'+id,
-                type : "post",
-                //asyncfalse
-                data : {
-                  '_method':'PUT',
-                  '_token': '{{ csrf_token() }}',
-                  'title' : title,
-                  'name' : name,
-                  'type' : type,
-                  'address' : address,
-                  'lat' : lat,
-                  'lng' : lng,
-                  'zm' : zm,
-                  'website' : website,
-                  'facebook' : facebook,
-                  'tel' : tel
-                },
+                async:false,
+                type:'post',
+                processData: false,
+                contentType: false,
+                data:new FormData($("#form_data")[0]),
                 success : function(re)
                 {
                   //alert(re);
@@ -274,8 +270,8 @@
                  }
             });
     }) ;
-
-
 </script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{{ asset("assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js") }}"></script>
 
 @endsection

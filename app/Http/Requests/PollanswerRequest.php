@@ -21,8 +21,8 @@ class PollanswerRequest extends Request
     public function messages()
     {
     	return [
-        'titletopic.required'=>'กรุณาป้อนหัวข้อ2',
-        'detailtopic.required'=>'กรุณาป้อนรายละเอียด2'
+        'titletopic.required'=>'กรุณาป้อนหัวข้อ',
+        'detailtopic.required'=>'กรุณาป้อนรายละเอียด'
     	];
     }
 }

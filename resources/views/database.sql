@@ -228,6 +228,7 @@ CREATE TABLE `complaints` (
 `sender` varchar(100) NULL,
 `contact` varchar(200) NULL,
 `status` varchar(1) NULL,
+`permit` varchar(1) NULL,
 `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

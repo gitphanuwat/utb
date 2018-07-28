@@ -57,9 +57,9 @@ class DownloadController extends Controller
           }
           $display .= "</td>
           <td>";
-          if($key->type==1){$display .= "หนังสือราชการ";}
-          if($key->type==2){$display .= "มาตรฐานต่างๆ";}
-          if($key->type==3){$display .= "แบบฟอร์มต่างๆ";}
+          if($key->type==1){$display .= "ประกาศ";}
+          if($key->type==2){$display .= "กฎระเบียบ";}
+          if($key->type==3){$display .= "แบบฟอร์ม";}
           if($key->type==4){$display .= "เอกสารอื่นๆ";}
             $display .= "</td>
           <td width='150'><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'> แก้ไข </a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'> ลบข้อมูล </a></td>

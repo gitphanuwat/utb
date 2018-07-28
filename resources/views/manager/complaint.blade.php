@@ -1,6 +1,7 @@
 @extends('layouts.template')
 @section('title','ข้อร้องเรียน')
 @section('subtitle','จัดการข้อมูล')
+
 @section('body')
 <div class="row">
 <div class="col-md-3 col-sm-6 col-xs-12">
@@ -115,6 +116,13 @@
                         <option value="3">ดำเนินการแล้วเสร็จ</option>
                       </select>
                     </div>
+                    <div class="form-group">
+                      <label>
+                        <div id="state">
+                        <input type="checkbox" name="permit" id="permit" class="minimal" value="1"> เปิดเผยข้อมูลสาธารณะ
+                      </div>
+                      </label>
+                    </div>
                     <input type="hidden"  id="id">
                     <input type="hidden"  id="organize_id" id="organize_id" value="{{ Auth::user()->organize_id }}">
                     <button type="button"  class="btn btn-primary saverecord">บันทึกข้อมูล</button>
@@ -136,6 +144,7 @@
 <!-- DataTables -->
 <script src="{{ asset("assets/plugins/datatables/jquery.dataTables.min.js") }}"></script>
 <script src="{{ asset("assets/plugins/datatables/dataTables.bootstrap.min.js") }}"></script>
+
 <script type="text/javascript">
     $(function(){
       $('#showdetail').hide();
@@ -157,7 +166,6 @@
       });
 
       displaydata();
-
 
       $('body').delegate('.edit','click',function(){
         $('.updaterecord').show();
@@ -186,6 +194,10 @@
               $('#sender').val(e.sender);
               $('#contact').val(e.contact);
               $('#status').val(e.status);
+              if(e.permit==1){
+                var s = 'checked';
+              }else{ var s = '';}
+              $("#state").html('<input type="checkbox" name="permit" id="permit" '+s+'> เปิดเผยข้อมูลสาธารณะ');
             },
             error:function(err){
                   alert('สิทธิ์การใช้งานไม่ถูกต้อง');
@@ -226,7 +238,9 @@
   });
 
       $('.saverecord').click(function(){
-
+//var permit = $("#permit").is(':checked');
+//var permit = $("#permit").val();
+//alert(permit);
               $.ajax({
                   url : '{!! url('managerset/complaint') !!}',
                   async:false,
@@ -273,7 +287,8 @@
         var sender = $('#sender').val();
         var contact = $('#contact').val();
         var status = $('#status').val();
-
+        if($("#permit").is(':checked')){var permit = '1';}else{var permit = '0';}
+        //alert(permit);
             $.ajax({
               url : '{!! url('managerset/complaint') !!}'+'/'+id,
                 type : "post",
@@ -286,7 +301,8 @@
                   'detail' : detail,
                   'sender' : sender,
                   'contact' : contact,
-                  'status' : status
+                  'status' : status,
+                  'permit' : permit
                 },
                 success : function(re)
                 {

@@ -15,7 +15,7 @@
             <span class="info-box-icon bg-aqua"><i class="ion ion-android-download"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">หนังสือราชการ</span>
+              <span class="info-box-text">ประกาศ</span>
               <span class="info-box-number">{{ count($data->where('type','1')) }} รายการ</span>
             </div>
             <!-- /.info-box-content -->
@@ -31,7 +31,7 @@
             <span class="info-box-icon bg-green"><i class="ion ion-android-download"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">มาตรฐานต่างๆ</span>
+              <span class="info-box-text">กฎระเบียบ</span>
               <span class="info-box-number">{{ count($data->where('type','2')) }} รายการ</span>
             </div>
             <!-- /.info-box-content -->
@@ -105,9 +105,9 @@
               <div class="form-group" style="width:250px">
                 <label>ประเภทเอกสาร</label>
                 <select name="type" id="type" class="form-control">
-                  <option value="1">หนังสือราชการ</option>
-                  <option value="2">มาตรฐานต่างๆ</option>
-                  <option value="3">แบบฟอร์มต่างๆ</option>
+                  <option value="1">ประกาศ</option>
+                  <option value="2">กฎระเบียบ</option>
+                  <option value="3">แบบฟอร์ม</option>
                   <option value="4">เอกสารอื่นๆ</option>
                 </select>
               </div>

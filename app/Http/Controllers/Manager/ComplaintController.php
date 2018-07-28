@@ -30,7 +30,7 @@ class ComplaintController extends Controller
     public function create()
     {
       $idu = Auth::user()->organize_id;
-      $data = Complaint::where('organize_id',$idu)->orderby('name')->get();
+      $data = Complaint::where('organize_id',$idu)->orderby('id','decs')->get();
       $display="
       <table id='example1' class='table table-bordered table-striped'>
         <thead>
@@ -39,6 +39,7 @@ class ComplaintController extends Controller
         <th>เรื่องร้องเรียน</th>
         <th>ผู้ส่งข้อมูล</th>
         <th>สถานะ</th>
+        <th></th>
         <th width='130' data-sortable='false'>ดำเนินการ</th>
         </tr>
         </thead>
@@ -57,6 +58,10 @@ class ComplaintController extends Controller
           if($key->status==2){$display .= "กำลังดำเนินการ";}
           if($key->status==3){$display .= "ดำเนินการแล้วเสร็จ";}
             $display .= "</td>
+            <td>";
+            if($key->permit==1){$display .= "<span class='text-success'><i class='fa fa-unlock'></i> เผยแพร่</span>";}else
+            {$display .= "<label class='text-danger'><i class='fa fa-lock'></i> ไม่เผยแพร่</label>";}
+              $display .= "</td>
           <td><a data-id='$key->id' href='#j' class='btn btn-primary btn-xs edit'>แก้ไข</a> <a data-id='$key->id' href='#' class='btn btn-danger btn-xs delete'>ลบข้อมูล</a></td>
         </tr>
         ";
@@ -78,6 +83,7 @@ class ComplaintController extends Controller
         $obj->sender = $request['sender'];
         $obj->contact = $request['contact'];
         $obj->status = $request['status'];
+        $obj->permit = $request['permit'];
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
     }
@@ -102,15 +108,18 @@ class ComplaintController extends Controller
     {
 
         $obj = Complaint::findOrFail($id);
-        $obj->name = $request['name'];
-        $obj->type = $request['type'];
-        $obj->detail = $request['detail'];
-        $obj->sender = $request['sender'];
-        $obj->contact = $request['contact'];
-        $obj->status = $request['status'];
-        $check = $obj->save();
+        if($obj->organize_id == Auth::user()->organize_id){
+          $obj->name = $request['name'];
+          $obj->type = $request['type'];
+          $obj->detail = $request['detail'];
+          $obj->sender = $request['sender'];
+          $obj->contact = $request['contact'];
+          $obj->status = $request['status'];
+          $obj->permit = $request['permit'];
+          $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
-
+        }
+        abort(0);
     }
 
     public function destroy($id)

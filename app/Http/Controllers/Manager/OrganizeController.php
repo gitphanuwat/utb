@@ -54,6 +54,14 @@ class OrganizeController extends Controller
 
     public function update(OrganizeRequest $request, $id)
     {
+      if($fileobj = $request->file('icon')){
+        $extension = $fileobj->getClientOriginalExtension();
+        $filename = $fileobj->getFilename().'.'.$extension;
+        $destinationPath = 'images/organize';
+        $fileobj->move($destinationPath,$filename);
+      }else{
+        $filename=$request->input('iconold');
+      }
         $obj = Organize::findOrFail($id);
         $obj->title = $request['title'];
         $obj->name = $request['name'];
@@ -62,11 +70,10 @@ class OrganizeController extends Controller
         $obj->website = $request['website'];
         $obj->facebook = $request['facebook'];
         $obj->tel = $request['tel'];
-
         $obj->lat = $request['lat'];
         $obj->lng = $request['lng'];
         $obj->zm = $request['zm'];
-
+        $obj->icon = $filename;
         $check = $obj->save();
         if($check>0){return 0;}else{return 1;}
     }
