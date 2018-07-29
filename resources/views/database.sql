@@ -244,6 +244,7 @@ CREATE TABLE `problems` (
 `type` varchar(50) NOT NULL,
 `detail` text NULL,
 `address` varchar(200) NULL,
+`sender` varchar(100) NULL,
 `status` varchar(1) NULL,
 `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP
