@@ -98,19 +98,24 @@ class PolltopicController extends Controller
       abort(0);
     }
 
+
     public function edit($id)
     {
-
-      $data = Polltopic::find($id);
-        header("Content-type: text/x-json");
-        echo json_encode($data);
-        exit();
-
+      $ido = Auth::user()->organize_id;
+      $data = Polltopic::where('organize_id',$ido)->orderby('id','dece')->first();
+      //$data = Group::get();
+      $display="
+        <p>".$data->title."</p>";
+        foreach ($data->pollanswer as $key) {
+          $display.="<label><input type='radio' name='answer' value='".$key->id."' class='minimal'> ".$key->title."</label><br>";
+        }
+        $display.='<input type="hidden" id="idpoll" value="'.$data->id.'">';
+        $display.='['.$data->organize->name.']';
+      return $display;
     }
 
     public function update(PolltopicRequest $request, $id)
     {
-
         $obj = Polltopic::findOrFail($id);
         $obj->title = $request['title'];
         $obj->type = $request['type'];

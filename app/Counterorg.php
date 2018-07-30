@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model  {
+class Counterorg extends Model  {
 
-	protected $table = 'events';
+	protected $table = 'counterorgs';
 	public function organize()
   {
     return $this->belongsTo('App\Organize');

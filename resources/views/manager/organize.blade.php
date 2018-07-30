@@ -66,7 +66,7 @@
                       <input type="text" class="form-control" name="name" id="name" placeholder="ชื่อหน่วยงาน" value="{{$objorg->name or ''}}">
                     </div>
                     <div class="form-group" style="width:250px">
-                      <label>สถานะ</label>
+                      <label>ประเภทหน่วยงาน</label>
                       <select name="type" id="type" class="form-control">
                         <option value="1">องค์การบริหารส่วนจังหวัด</option>
                         <option value="2">เทศบาลเมือง</option>

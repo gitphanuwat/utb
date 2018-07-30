@@ -1,64 +1,60 @@
 <?php
 namespace App\Http\Controllers;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
-use App\Counter;
+use App\Counterorg;
 use App\Log;
 
 use App\Organize;
-use App\Amphur;
+use App\Person;
+use App\Village;
+use App\Activity;
+use App\Tourist;
 
 class HomeController extends Controller
 {
-
     public function __construct()
     {
-      $this->middleware('auth');
+      //$this->middleware('auth');
       //$this->middleware('logger');
     }
     public function index()
     {
       $ido = Auth::user()->organize_id;
-      $organize=Organize::find($ido);
 
-      return view('home',compact('organize'));
+      $data = Organize::where('id',$ido)->first();
+
+      $person = Person::where('organize_id',$ido)->get();
+      $village = Village::where('organize_id',$ido)->get();
+      $activity = Activity::where('organize_id',$ido)->get();
+      $tourist = Tourist::where('organize_id',$ido)->get();
+      return view('home',compact('data','person','village','activity','tourist'));
     }
-
 
     public function stat()
     {
-      $objcou = Counter::get();
-      //$objunivs = University::lists('name','id');
-      return view('stat',compact('$objcou'));
+      $ido = Auth::user()->organize_id;
+      $objcou = Counterorg::where('organize_id',$ido)->get();
+      return view('organize.stat',compact('$objcou'));
     }
 
-
     public function loadstat(Request $request){
+      $ido = Auth::user()->organize_id;
       $startdate = $request['startdate'];
       $enddate = $request['enddate'];
-
-      //$objcounter = Counter::where('day','like','%2016%')->get();
-      //$nowdate = date("Y-m-d");
-      //$date=date("Y-m-d",strtotime("-30 days",strtotime($nowdate)));
-      //$date=date("Y-m-d",strtotime("oct 2017"));
-      //$end_date = date("Y-m-d");
-      //$end_date = date("Y-m-d",strtotime("+1 month",strtotime($date)));
       $date=date("Y-m-d",strtotime("$startdate"));
       $end_date = date("Y-m-d",strtotime("$enddate"));
-
           $data = "<script>";
           $data .= "var line = new Morris.Line({";
           $data .= "element: 'line-chart',";
           $data .= "resize: true,";
           $data .= "data: [";
-          //foreach ($objcounter as $obj) {
-            //$data .= "{y: '$obj->day', item1: ".$obj->total."},";
-          //}
           while (strtotime($date) <= strtotime($end_date)) {
-            $objc = Counter::where('day','=',$date)->first();
+            $objc = Counterorg::where('organize_id',$ido)->where('day','=',$date)->first();
             if($objc){
               $counts = $objc->total;
             }else{
@@ -74,22 +70,23 @@ class HomeController extends Controller
           $data .= "lineColors: ['#3c8dbc'],";
           $data .= "hideHover: 'auto',";
         $data .= "});";
-      //$data .= "counterread()";
       $data .= "</script>";
       echo $data;
     }
+
     public function counterhit()
     {
+      $ido = Auth::user()->organize_id;
       $today = date("Y-m-d");
-      $objcounter = Counter::where('day','=',$today)->first();
+      $objcounter = Counterorg::where('organize_id',$ido)->where('day','=',$today)->first();
       if ($objcounter){
         $counttotal = $objcounter->total+1;
 
         global $COUNTER_USE_COOKIES;
-        $cookie_name = 'HIT_COUNTER_' . $today;
+        $cookie_name = 'HIT_COUNTER_'.$ido.$today;
        	if(!isset($_COOKIE[$cookie_name])) {
 
-          $cookie_name = 'HIT_COUNTER_' . $today;
+          $cookie_name = 'HIT_COUNTER_'.$ido.$today;
           setcookie($cookie_name, 'TRUE', time() + 360);
 
           $objcounter->day = $today;
@@ -98,13 +95,14 @@ class HomeController extends Controller
         }
       }else{
           $counttotal = 1;
-          $objcounter = new Counter();
+          $objcounter = new Counterorg();
           $objcounter->day = $today;
           $objcounter->total = $counttotal;
+          $objcounter->organize_id = $ido;
           $objcounter->save();
       }
-      return $today.' '.$counttotal;
+      //return $today.' '.$counttotal;
+      //return 'test count org';
     }
-
 
 }

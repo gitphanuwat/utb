@@ -20,7 +20,7 @@
       <div class="icon">
         <i class="fa fa-user"></i>
       </div>
-      <a href="{{url('')}}/{{$data->title}}/person" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="{{url('')}}/managerset/person" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <div class="col-lg-3 col-xs-6">
@@ -32,7 +32,7 @@
       <div class="icon">
         <i class="fa fa-users"></i>
       </div>
-      <a href="{{url('')}}/{{$data->title}}/village" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="{{url('')}}/managerset/village" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <div class="col-lg-3 col-xs-6">
@@ -44,7 +44,7 @@
       <div class="icon">
         <i class="fa fa-flag"></i>
       </div>
-      <a href="{{url('')}}/{{$data->title}}/activity" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="{{url('')}}/managerset/activity" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
   <div class="col-lg-3 col-xs-6">
@@ -56,7 +56,7 @@
       <div class="icon">
         <i class="fa fa-photo"></i>
       </div>
-      <a href="{{url('')}}/{{$data->title}}/tourist" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
+      <a href="{{url('')}}/managerset/tourist" class="small-box-footer">รายละเอียด <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
 </div>
@@ -87,7 +87,7 @@
     <div class="box box-info">
       <div class="box-header">
         <div class="box-tools pull-right">
-          <a href='{{url('')}}/{{$data->title}}/organize' class='name'>
+          <a href='{{url('')}}/managerset/organize' class='name'>
             <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
           </a>
         </div>
@@ -111,7 +111,7 @@
         <h3 class="box-title">กิจกรรมชุมชน</h3>
         <!-- tools box -->
         <div class="box-tools pull-right">
-          <a href="{{url('')}}/{{$data->title}}/event" class='name'>
+          <a href="{{url('')}}/managerset/event" class='name'>
             <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
           </a>
         </div>
@@ -134,7 +134,7 @@
         <div class="box-header with-border">
           <h3 class="box-title">สถิติการใช้ระบบ</h3>
           <div class="box-tools pull-right">
-            <a href="{{url('')}}/{{$data->title}}/stat" class='name'>
+            <a href="{{url('')}}/managerset/stat" class='name'>
               <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
             </a>
           </div>
@@ -152,7 +152,7 @@
         <h3 class="box-title">แจ้งปัญหาชุมชน</h3>
         <!-- tools box -->
         <div class="box-tools pull-right">
-          <a href='{{url('')}}/{{$data->title}}/problem' class='name'>
+          <a href='{{url('')}}/managerset/problem' class='name'>
             <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
           </a>
         </div>
@@ -193,7 +193,7 @@
       <div class="box-header">
         <h3 class="box-title">สำรวจความคิดเห็น</h3>
         <div class="box-tools pull-right">
-          <a href='{{url('')}}/{{$data->title}}/polltopic' class='name'>
+          <a href='{{url('')}}/managerset/polltopic' class='name'>
             <small class='text-muted pull-right'><i class='fa fa-list'></i> More..</small>
           </a>
         </div>
@@ -362,6 +362,7 @@ var counterfeed=0;
     });
   }
   function loadevent(){
+    //alert(1);
     $.ajax({
       url : '{!! url('managerset/eventshow') !!}',
       type : "get",
@@ -370,6 +371,7 @@ var counterfeed=0;
       },
       success : function(s)
       {
+        //alert(s);
         $('#showevent').html(s);
       }
     });

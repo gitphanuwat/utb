@@ -42,6 +42,7 @@ Route::group(['middleware' => 'organize'], function () {
 
   Route::resource('managerset/event','Manager\EventController');
   Route::post('managerset/eventpost/{id}','Manager\EventController@eventupdate');
+  Route::get('managerset/eventshow','Manager\EventController@active');
 
   Route::resource('managerset/problem','Manager\ProblemController');
 
@@ -66,12 +67,9 @@ Route::group(['middleware' => 'organize'], function () {
   Route::resource('manager/problem','Manager\ProblemController');
   Route::post('manager/uploadfile','Manager\VillageUserController@uploadFile');
 
-  Route::get('managerset/counterhit', 'Manager\HomeController@counterhit');
-  Route::get('managerset/stat', 'Manager\HomeController@stat');
-  Route::get('/managersetloadstat', 'Manager\HomeController@loadstat');
-
 });
 
+Route::resource('/feed','FeedController');
 
 Route::get('ajax/problem/{id}',array('as'=>'ajax','uses'=>'AjaxController@loadproblem'));
 Route::get('ajax/{id}',array('as'=>'ajax','uses'=>'AjaxController@loadorganizeselect'));
