@@ -65,6 +65,11 @@ Route::group(['middleware' => 'organize'], function () {
   Route::resource('manager/villageuser','Manager\VillageUserController');
   Route::resource('manager/problem','Manager\ProblemController');
   Route::post('manager/uploadfile','Manager\VillageUserController@uploadFile');
+
+  Route::get('managerset/counterhit', 'Manager\HomeController@counterhit');
+  Route::get('managerset/stat', 'Manager\HomeController@stat');
+  Route::get('/managersetloadstat', 'Manager\HomeController@loadstat');
+
 });
 
 
@@ -86,7 +91,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/counterhit', 'HomeController@counterhit');
 Route::get('/stat', 'HomeController@stat');
 Route::get('/loadstat', 'HomeController@loadstat');
-//Route::get('/counterread', 'HomeController@counterread');
+
 
 Route::auth();
 
