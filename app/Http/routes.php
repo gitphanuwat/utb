@@ -90,6 +90,7 @@ Route::get('/counterhit', 'HomeController@counterhit');
 Route::get('/stat', 'HomeController@stat');
 Route::get('/loadstat', 'HomeController@loadstat');
 
+Route::get('/summary', 'HomeController@summary');
 
 Route::auth();
 

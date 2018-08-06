@@ -19,7 +19,7 @@
 |
 */
 
-function public_path($path = 'public_html')  
+function public_path($path = 'manage')  
 {
     return realpath(__DIR__)
         .($path ? DIRECTORY_SEPARATOR.$path : $path);

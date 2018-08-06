@@ -19,7 +19,7 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-      //$this->middleware('auth');
+      $this->middleware('auth');
       //$this->middleware('logger');
     }
     public function index()
@@ -39,7 +39,7 @@ class HomeController extends Controller
     {
       $ido = Auth::user()->organize_id;
       $objcou = Counterorg::where('organize_id',$ido)->get();
-      return view('organize.stat',compact('$objcou'));
+      return view('organize.stat',compact('objcou'));
     }
 
     public function loadstat(Request $request){
@@ -103,6 +103,12 @@ class HomeController extends Controller
       }
       //return $today.' '.$counttotal;
       //return 'test count org';
+    }
+
+    public function summary()
+    {
+      $organize = Organize::get();
+      return view('summary',compact('organize'));
     }
 
 }

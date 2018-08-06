@@ -1,4 +1,4 @@
 <?php
- header( "location: /utb/public_html" );
+ header( "location: /utb/manage" );
  exit(0);
 ?>
