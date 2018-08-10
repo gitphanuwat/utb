@@ -3,11 +3,6 @@
 @section('subtitle','อ.'.$data->amphur->name.' จังหวัดอุตรดิตถ์')
 <?php
   use App\Counterorg;
-  //session(['sess_fb' => '']);
-  if(!session('sess_fb')){
-    //include ('makejson.php');
-    session(['sess_fb' => 'now']);
-  }
 ?>
 @section('body')
 <div class="row">
@@ -69,6 +64,16 @@
       <div class="box-header">
         <i class="fa fa-comments-o"></i>
         <h3 class="box-title">กิจกรรมชุมชน</h3>
+        <div class="box-tools pull-right">
+            <small class='text-muted pull-right'>
+              <?php
+              if(!session('sess_fb')){
+                echo '<i class="fa fa-circle text-danger"></i></small>';
+              }else{
+                echo '<i class="fa fa-circle text-success"></i></small>';
+              }
+               ?>
+        </div>
       </div>
 
       <div class="box-body chat">
