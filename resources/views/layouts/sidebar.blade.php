@@ -55,7 +55,9 @@ if(Auth::user()){
     <div class="pull-left image">
       @if (Auth::guest())
       <img src="{{ asset("/images/utb_logo.png") }}"  alt="Uttaradit Book System">
-      @elseif (Auth::user()->organize->icon)
+      @elseif (Auth::user()->picture && Auth::user()->role->slug == 'Admin')
+      <img src="{{ asset("/images/avatar/large") }}/{{ Auth::user()->picture }}" class="img-circle" alt="Uttaradit Book System">
+      @elseif (Auth::user()->organize->icon && Auth::user()->role->slug == 'Organize')
       <img src="{{ asset("/images/organize") }}/{{ Auth::user()->organize->icon }}" class="img-circle" alt="Uttaradit Book System">
       @else
       <img src="{{ asset("/images/no_image.png") }}"  class="img-circle"  alt="Uttaradit Book System">
@@ -67,7 +69,12 @@ if(Auth::user()){
       <p>UTB System</p>
       <a href="#">Uttaradit Book System.</a>
     </div>
-    @else
+    @elseif (Auth::user()->role->slug == 'Admin')
+    <div class="pull-left info">
+      <p>ผู้ดูแลระบบ</p>
+      <a href="#">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</a>
+    </div>
+    @elseif (Auth::user()->role->slug == 'Organize')
     <div class="pull-left info">
       <p>{{ Auth::user()->organize->name }}</p>
       <a href="#">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</a>

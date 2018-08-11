@@ -85,6 +85,13 @@ Route::get('ajaxcallcenter/{id}',array('as'=>'ajaxvillagecallcenter','uses'=>'Aj
 Route::get('ajaxresch/{id}',array('as'=>'ajaxvillage','uses'=>'AjaxController@loadresch'));
 Route::get('ajaxmap', 'AjaxController@loadmap');
 
+Route::get('profile/show','ProfileController@show');
+Route::get('profile/edit','ProfileController@edit');
+Route::get('profile/delpicture/{id}','ProfileController@delPicture');
+Route::post('profile/savepicture','ProfileController@savePicture');
+Route::put('profile/change','ProfileController@putEdit');
+Route::put('profile/changepass','ProfileController@putChangePassword');
+
 Route::get('/', 'HomeController@index');
 Route::get('/counterhit', 'HomeController@counterhit');
 Route::get('/stat', 'HomeController@stat');
